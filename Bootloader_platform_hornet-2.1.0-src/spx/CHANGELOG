@@ -1,0 +1,219 @@
+Package: Bootloader_platform_hornet (2.1.0); urgency = medium
+
+Abstract:
+	Changed HZ to 1KHZ which is 1 second to accomodate roll over issue in timer
+
+Files Modified: data/17-include_configs_HORNET.h
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Wed, 24 Dec 2014 11:46:24 HMT
+
+Package: Bootloader_platform_hornet (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 03:06:46 GMT
+
+Package: Bootloader_platform_hornet (1.16.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 04:51:38 GMT
+
+Package: Bootloader_platform_hornet (1.15.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 03:01:02 GMT
+
+Package: Bootloader_platform_hornet (1.14.0); urgency = medium
+
+Abstract:
+	update board init with respect to the Emulex BSP update
+
+Files Added: data/30-board_HORNET_ddr_asic.c, data/31-board_HORNET_init.S
+Files Modified: data/11-board_HORNET_Makefile
+
+--Submitter: George Hsin (georgehsin@ami.com.tw) Mon, 13 Jan 2014 18:36:53 CST
+
+Package: Bootloader_platform_hornet (1.13.0); urgency = critical
+
+Abstract:
+	solved: EIP#141294 : DELAY() was not delayed. fixed it.
+
+Files Added: data/29-board_HORNET_DELAY_ddr_asic.c
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Satoshi Azami (azami@ami.com) Fri, 13 Dec 2013 17:10:02 CJT
+
+Package: Bootloader_platform_hornet (1.12.0); urgency = high
+
+Abstract:
+	Adding support to configure baudrate of debug console from PRJ
+
+Files Added: data/28-vendors_ami_bootargs.c
+Files Deleted: data/28-vendors_ami_fmh_cmd_fmh.c
+
+--Submitter: Winston (winstont@ami.com) Wed, 27 Mar 2013 14:53:31 EDT
+
+Package: Bootloader_platform_hornet (1.11.0); urgency = medium
+
+Abstract:
+	Adding fail safe booting support when Dual Image support is enabled
+
+Files Modified: data/28-vendors_ami_fmh_cmd_fmh.c
+
+--Submitter: Winston (winstont@ami.com) Thu, 19 Apr 2012 18:58:52 EDT
+
+Package: Bootloader_platform_hornet (1.10.0); urgency = low
+
+Abstract:
+	Adding patch to trigger Watchdog timer when Dual Image support is enabled.
+
+Files Added: data/28-vendors_ami_fmh_cmd_fmh.c
+
+--Submitter: Winston (winstont@ami.com) Tue, 17 Apr 2012 11:38:47 EDT
+
+Package: Bootloader_platform_hornet (1.9.0); urgency = medium
+
+Abstract:
+	Fixes for strict compiler - Generates error if a variable is assigned and not used
+
+Files Added: data/23-ECC-ddr_asic.c
+Files Deleted: data/23-ECC-drr_asic.c
+Files Modified: data/05-board_HORNET_ddr_asic.c, data/20-board_HORNET_newddr.c, data/26-ddr_asic_server_engine.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 23 Mar 2012 12:05:37 EDT
+
+Package: Bootloader_platform_hornet (1.8.0); urgency = high
+
+Abstract:
+	Added the chnages from emulex for ddr memroy routine
+
+Files Added: data/26-ddr_asic_server_engine.c, data/27-init_server_engine.s
+
+--Submitter: othiyappnk (othiyappank@amiindia.co.in) Thu, 01 Dec 2011 15:31:04 IST
+
+Package: Bootloader_platform_hornet (1.7.0); urgency = medium
+
+Abstract:
+	1. Add ECC support(configurable)
+2. Remove unwant string from patch #20, #21
+
+Files Added: data/22-ECC-config.mk, data/23-ECC-drr_asic.c, data/24-ECC-HORNET.c, data/25-ECC-u-boot.lds
+Files Modified: data/20-board_HORNET_newddr.c, data/21-board_HORNET_newddrheader.h
+
+--Submitter:  () Tue, 25 Oct 2011 17:25:23 CST
+
+Package: Bootloader_platform_hornet (1.6.0); urgency = low
+
+Abstract:
+	Sync with Emulex's bootloader
+Note: Only DDR portion is added.
+
+Files Added: data/20-board_HORNET_newddr.c, data/21-board_HORNET_newddrheader.h
+
+--Submitter:  () Wed, 28 Sep 2011 14:04:50 CST
+
+Package: Bootloader_platform_hornet (1.5.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 14:02:11 EDT
+
+Package: Bootloader_platform_hornet (1.4.0); urgency = high
+
+Abstract:
+	Fix for new strict compilers
+
+Files Modified: data/07-board_HORNET_HORNET.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 16 Feb 2011 11:15:45 EST
+
+Package: Bootloader_platform_hornet (1.3.0); urgency = high
+
+Abstract:
+	DDR related changes as per the latest BSP from Emulex. This is to fix a bug that caused accidental reset while enabling CKE.
+
+Files Modified: data/05-board_HORNET_ddr_asic.c
+
+--Submitter: Anurag Bhatia (anuragb@ami.com) Fri, 11 Feb 2011 11:51:04 EST
+
+Package: Bootloader_platform_hornet (1.2.0); urgency = low
+
+Abstract:
+	Description files cleanup
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 10 Nov 2010 15:23:19 EST
+
+Package: Bootloader_platform_hornet (1.1.0); urgency = low
+
+Abstract:
+	Incrementing Minor and setting Aux to Zero
+
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 21 Sep 2010 13:39:03 EDT
+
+Package: Bootloader_platform_hornet (1.0.4); urgency = medium
+
+Abstract:
+	Last changeset for increasing memory to 128MB is wrong
+
+Files Modified: data/04-board_HORNET_config.mk, data/16-board_HORNET_u-boot.lds
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 24 Aug 2010 08:25:25 EDT
+
+Package: Bootloader_platform_hornet (1.0.3); urgency = medium
+
+Abstract:
+	Due to increase in memory size, Runtime location of Uboot moved to base of 128M (Current memory size of Hornet)
+
+Files Modified: data/04-board_HORNET_config.mk, data/16-board_HORNET_u-boot.lds
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Mon, 23 Aug 2010 15:19:33 EDT
+
+Package: Bootloader_platform_hornet (1.0.2); urgency = high
+
+Abstract:
+	Fix for u-boot reset and linux reboot hang 
+Some cleanup
+
+Files Added: data/14-board_HORNET_pilot_types.h
+Files Deleted: data/14-board_HORNET_sw_reset_modules.c
+Files Modified: data/04-board_HORNET_config.mk, data/07-board_HORNET_HORNET.c, data/08-board_HORNET_init.S, data/10-board_HORNET_lowlevel_init.S, data/11-board_HORNET_Makefile
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 21 May 2010 14:42:22 EDT
+
+Package: Bootloader_platform_hornet (1.0.1); urgency = low
+
+Abstract:
+	Changed platform name in install scripts and RULES to hornet
+
+Files Added: spx/PACKAGES.D/@Bootloader_platform_hornet, spx/PACKAGES.D/@Bootloader_platform_hornet/DATA, spx/PACKAGES.D/@Bootloader_platform_hornet/SCRIPTS, spx/PACKAGES.D/@Bootloader_platform_hornet/SCRIPTS/dev-install
+Files Deleted: spx/PACKAGES.D/@Bootloader_platform_aviator, spx/PACKAGES.D/@Bootloader_platform_aviator/DATA, spx/PACKAGES.D/@Bootloader_platform_aviator/SCRIPTS, spx/PACKAGES.D/@Bootloader_platform_aviator/SCRIPTS/dev-install
+Files Modified: spx/RULES
+
+--Submitter: Jothiram Selvam (jothirams@ami.com) Tue, 06 Apr 2010 11:17:04 EDT
+
+Package: Bootloader_platform_hornet (1.0.0); urgency = new
+
+Abstract:
+	Hornet (Pilot III Reference Board) Fixes to Bootloader 1.1.6
+
+Files Added: data, data/01-board_HORNET_arm.equ, data/02-board_HORNET_buffer.equ, data/03-board_HORNET_burst_ddr_init.S, data/04-board_HORNET_config.mk, data/05-board_HORNET_ddr_asic.c, data/06-board_HORNET_fmh.c, data/07-board_HORNET_HORNET.c, data/08-board_HORNET_init.S, data/09-board_HORNET_int.equ, data/10-board_HORNET_lowlevel_init.S, data/11-board_HORNET_Makefile, data/12-board_HORNET_pilot3.equ, data/13-board_HORNET_pilot.equ, data/14-board_HORNET_sw_reset_modules.c, data/15-board_HORNET_uart.equ, data/16-board_HORNET_u-boot.lds, data/17-include_configs_HORNET.h, data/18-MAKEALL, data/19-Makefile, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/@Bootloader_platform_aviator, spx/PACKAGES.D/@Bootloader_platform_aviator/DATA, spx/PACKAGES.D/@Bootloader_platform_aviator/SCRIPTS, spx/PACKAGES.D/@Bootloader_platform_aviator/SCRIPTS/dev-install, spx/RULES, spx/RULES.D, spx/RULES.D/ApplyPatch
+
+--Submitter: Jothiram Selvam (jothirams@ami.com) Mon, 05 Apr 2010 19:30:44 EDT
+

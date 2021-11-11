@@ -1,0 +1,43 @@
+Source : Bootloader
+Version : 2.2.15
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : Samvinesh Christopher (vineshc@ami.com)
+License : GPL-V2
+Source-Location : http://sourceforge.net/projects/u-boot/
+Source-Version : 1.1.6
+Builds : Bootloader
+Build-Depends : Crosscc, buildtools, @Bootloader_oem_iRMCS4
+Customization-Type : CONFIG
+Architecture : ARM
+SOC : PILOT_III
+PLATFORM : iRMCS4
+Urgency : low
+Description : Bootloader for iRMCS4 (Pilot-III Eval Board) -> Ver 0.31.F -> Ver 0.32.F -> Ver 0.33.F -> Ver 0.34.F ->Ver 0.35.F- >0.36F ->7.02F
+uboot - Winbond W25M512 SPI support
+V8.01F(PKG2.2.4): Moving Permdata to new arrea
+V8.02F(PKG2.2.5): Enable WatchDog support.(Save Boot feature)
+V8.02F(PKG2.2.6): Add support to monitore FW crashes with WD. Use WDO bit to determinate between WD during boot phase and during runtime.
+V8.03F(PKG2.2.7): MISCTL- USB Interface Control. Enabling USB in u-boot
+V8.03F(PKG2.2.8): Fix support for Winbond W25M512 SPI EEPROM
+V8.03F(PKG2.2.9): Initial RAM fs support in uboot.
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,Source-License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : Bootloader
+Section : sys
+Group : BASE
+Essential : YES
+Feature-Required : CONFIG_SPX_FEATURE_GLOBAL_BOOTLOADER_LEGACY
+Provides : BootSupport
+Description : Bootloader for iRMCS4 (Pilot-III Eval Board)
+.
+

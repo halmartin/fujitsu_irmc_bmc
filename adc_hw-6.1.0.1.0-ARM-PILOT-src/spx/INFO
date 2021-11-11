@@ -1,0 +1,35 @@
+Source : adc_hw
+Version : 6.1.0.1.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : Neelavathi G (neelavathig@amiindia.co.in)
+License : GPL-V2
+Source-Location : AMI
+Source-Version : 1.0.0
+Builds : adc_hw
+Build-Depends : Crosscc, adc_driver_dev, helper_driver_dev, kernel_dev, rules, DevNodes
+Architecture : ARM
+SOC : PILOT
+Urgency : medium
+Description : This package contains ADC hardware level driver for PILOT SOC
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : adc_hw
+Section : sys
+Group : DEVICE
+Essential : YES
+Depends : adc, kernel, DevNodes
+Required : helper
+Provides : adcDriver
+Description : This package contains built ADC hardware driver for PILOT SoC.
+.
+

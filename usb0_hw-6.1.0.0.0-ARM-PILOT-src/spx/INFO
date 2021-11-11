@@ -1,0 +1,35 @@
+Source : usb0_hw
+Version :   6.1.0.0.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : Rama Rao Bisa (RamaB@ami.com)
+License : GPL-V2
+Source-Location : AMI
+Source-Version : 1.0.0
+Builds : usb0_hw
+Build-Depends : Crosscc, global_dev, helper_driver_dev, kernel_dev, libdbgout_dev, reset_driver_dev, rules, usbe_driver_dev, DevNodes
+Architecture : ARM
+SOC : PILOT
+Urgency :   low
+Description : This package includes the hardware level USB 1.1 controller driver for Pilot Series of SOC
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,Source-License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : usb0_hw
+Section : sys
+Group : DEVICE
+Essential : NO
+Depends : usbe, kernel
+Required : helper, reset, DevNodes
+Provides : LowSpeedUSBDriver
+Description : This pacakge includes built USB 1.1 Controller hardware driver module for Pilot
+.
+

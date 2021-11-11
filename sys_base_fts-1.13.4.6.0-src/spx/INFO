@@ -1,0 +1,31 @@
+Source : sys_base_fts
+Version : 1.13.4.6.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : FTS
+Maintainer : Walter Unruh (walter.unruh@ts.fujitsu.com)
+License : GPL-V2
+Source-Location : FTS
+Source-Version : 1.0.0
+Builds : sys_base_fts
+Build-Depends : BaseSystem, Target, sys_base_target_update
+Architecture : ALL
+Urgency : low
+Description : FTS add-ons for root file system. Extend AMI root file system with FTS add-ons.
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : sys_base_fts
+Section : sys
+Group : BASE
+Essential : YES
+Description : FTS add-ons for root file system.
+.
+

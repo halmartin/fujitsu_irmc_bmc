@@ -1,0 +1,12 @@
+--- uboot/board/HORNET/Makefile	2015-07-07 23:27:42.984514906 +0530
++++ uboot_new/board/HORNET/Makefile	2015-07-07 23:39:41.248513319 +0530
+@@ -25,9 +25,6 @@
+ 
+ #CFLAGS+= -I $(TOPDIR)/cpu/arm926ejs/PILOTII -I $(TOPDIR)/../../development/oem/common/
+ CFLAGS+= -I $(TOPDIR)/include/pilotiii/  -I $(TOPDIR)/cpu/arm926ejs/PILOTIII -I $(TOPDIR)/../../development/oem/common/
+-#AFLAGS+= -DPCIE_PINS_ISOLATE
+-#AFLAGS+= -DUSB2_NOT_USED	
+-#AFLAGS+= -DUSB1_NOT_USED	
+ 
+ LIB	= lib$(BOARD).a
+ OBJS	= $(BOARD).o fmh.o

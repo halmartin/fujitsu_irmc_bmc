@@ -1,0 +1,17 @@
+--- linux.org/drivers/net/ethernet/pilot_tulip/Makefile	1970-01-01 05:30:00.000000000 +0530
++++ linux.new/drivers/net/ethernet/pilot_tulip/Makefile	2014-07-30 14:20:33.800880728 +0530
+@@ -0,0 +1,14 @@
++#
++# Makefile for the Linux "Tulip" family network device drivers.
++#
++
++EXTRA_CFLAGS+= -DP3_A0
++obj-$(CONFIG_PILOT_NET_TULIP)		+= tulip.o
++
++# Declare multi-part drivers.
++
++tulip-objs			:= interrupt.o media.o 	\
++				   timer.o tulip_core.o	\
++				   pilot_phy.o
++
++

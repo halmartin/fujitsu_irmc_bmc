@@ -1,0 +1,611 @@
+Package: videocap (2.9.200.6.0); urgency = low
+
+Abstract:
+	For patch_base 09.60j: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 20 Nov 2019 11:10:43 CET
+
+Package: videocap (2.9.200.5.0); urgency = low
+
+Abstract:
+	For patch_base 09.60g: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 03 Sep 2019 13:54:33 CEST
+
+Package: videocap (2.9.200.4.0); urgency = low
+
+Abstract:
+	For patch_base 02.41P: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 14 Mar 2019 13:32:50 CET
+
+Package: videocap (2.9.200.3.0); urgency = low
+
+Abstract:
+	For patch_base 02.20c: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Dec 2018 11:38:43 CET
+
+Package: videocap (2.9.200.2.0); urgency = low
+
+Abstract:
+	For patch_base 02.00b: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 28 Aug 2018 13:53:51 CEST
+
+Package: videocap (2.9.200.1.0); urgency = low
+
+Abstract:
+	For patch_base 01.60b oem version number incremented, OemAux version number set to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 21 Jun 2018 10:02:16 CEST
+
+Package: videocap (2.9.200.0.0); urgency = low
+
+Abstract:
+	adapt spx package with five digits
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 20 Mar 2018 13:32:35 CET
+
+Package: videocap (2.9.200); urgency = low
+
+Abstract:
+	For 01.20a_09.20a increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Sep 2017 16:47:53 CEST
+
+Package: videocap (2.9.100); urgency = low
+
+Abstract:
+	For 01.20aPre_R62446__base increment auxiliary version by 100
+
+
+--Submitter: Martin Clemens (Martin.Clemens.external@ts.fujitsu.com) Fri, 25 Aug 2017 17:53:11 CEST
+
+Package: videocap (2.9.1); urgency = low
+
+Abstract:
+	Merged FTS specific change
+
+Files Modified: data/cap90xx.c, data/capture.c
+
+--Submitter: Gourav Kumar Garg (gouravkumarg@amiindia.co.in) Mon, 10 Apr 2017 15:58:26 HMT
+
+Package: videocap (2.9.0); urgency = medium
+
+Abstract:
+	updated proper bpp values to fix 1920x1200 resolution issue
+
+Files Modified: data/capture.h
+
+--Submitter: gopinaths (gopinaths@amiindia.co.in) Fri, 27 May 2016 13:17:04 HMT
+
+Package: videocap (2.8.0); urgency = low
+
+Abstract:
+	Commented warning prints to avoid delay in reaction time.
+
+Files Added: spx/PACKAGES.D/videocap/DATA/keep.folder, spx/PACKAGES.D/videocap_driver_dev/DATA/keep.folder
+Files Deleted: spx/PACKAGES.D/videocap/DATA/.keep, spx/PACKAGES.D/videocap_driver_dev/DATA/.keep
+Files Modified: data/profile.c
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Tue, 26 Apr 2016 16:16:10 HMT
+
+Package: videocap (2.7.0); urgency = medium
+
+Abstract:
+	fix for video driver carash if we set maximum unsupported resolution 1920x1200_60
+
+Files Modified: data/cap90xx.c, data/capture.h
+
+--Submitter: gopinaths (gopinaths@amiindia.co.in) Thu, 03 Mar 2016 16:08:28 HMT
+
+Package: videocap (2.6.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/PACKAGES.D/videocap/DATA/.keep, spx/PACKAGES.D/videocap_driver_dev/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 23:55:19 EST
+
+Package: videocap (2.5.0); urgency = medium
+
+Abstract:
+	updated config-tag
+
+Files Modified: spx/INFO
+
+--Submitter: gopinaths (gopinaths@amiindia.co.in) Tue, 23 Jun 2015 19:20:07 HMT
+
+Package: videocap (2.4.0); urgency = low
+
+Abstract:
+	increased bigphysarea size
+
+Files Modified: data/videodata.h
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Tue, 26 May 2015 12:42:52 HMT
+
+Package: videocap (2.3.0); urgency = medium
+
+Abstract:
+	Adding proper Description
+
+Files Modified: spx/INFO, spx/RULES
+
+--Submitter: Winston (winstont@ami.com) Tue, 13 Jan 2015 21:16:25 GMT
+
+Package: videocap (2.2.0); urgency = low
+
+Abstract:
+	Updated Copyrights year
+
+Files Modified: data/cap90xx.c, data/cap90xx.h, data/capmain.c, data/capture.c, data/capture.h, data/dbglvl.h, data/dma90xx.c, data/dma90xx.h, data/fge.h, data/ioctl.c, data/ioctl.h, data/iohndlr.c, data/iohndlr.h, data/mmap.c, data/mmap.h, data/proc.c, data/proc.h, data/profile.c, data/profile.h, data/videocap.h, data/videoctl.h, data/videodata.h, spx/INFO
+
+--Submitter: prateekv (prateekv@amiindia.co.in) Tue, 16 Dec 2014 19:40:36 HMT
+
+Package: videocap (2.1.0); urgency = medium
+
+Abstract:
+	Unwanted initialisation code clean up
+
+Files Modified: data/capture.c
+
+--Submitter: othiyappank (othiyappank@ami.com) Wed, 03 Dec 2014 07:06:42 IST
+
+Package: videocap (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 07:16:54 GMT
+
+Package: videocap (1.40.0); urgency = medium
+
+Abstract:
+	INFO file for SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: shravan (shravan@amiindia.co.in) Fri, 17 Oct 2014 17:58:20 HMT
+
+Package: videocap (1.39.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 08:44:46 GMT
+
+Package: videocap (1.38.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 06:57:13 GMT
+
+Package: videocap (1.37.0); urgency = medium
+
+Abstract:
+	Kernel 3.14.17 related changes
+
+Files Modified: data/capmain.c, data/mmap.c, data/proc.c, data/proc.h, data/videoctl.h
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Sat, 06 Sep 2014 15:25:55 HMT
+
+Package: videocap (1.36.0); urgency = medium
+
+Abstract:
+	Fix for video redirection not working hornet platform
+
+Files Modified: data/ioctl.c
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Thu, 14 Aug 2014 14:29:43 HMT
+
+Package: videocap (1.35.0); urgency = medium
+
+Abstract:
+	Fixe Build Error for 2.6.X
+
+Files Modified: data/capmain.c, data/ioctl.c, data/ioctl.h
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Tue, 12 Aug 2014 15:41:32 HMT
+
+Package: videocap (1.34.0); urgency = medium
+
+Abstract:
+	3.x Kernel related changes
+
+Files Modified: data/Makefile, data/capmain.c, data/ioctl.c, data/ioctl.h, data/videoctl.h
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Fri, 08 Aug 2014 19:36:55 HMT
+
+Package: videocap (1.33.0); urgency = low
+
+Abstract:
+	removed unnecessary debug print statement
+
+Files Modified: data/iohndlr.c
+
+--Submitter: Gourav Kumar Garg (gouravkumarg@amiindia.co.in) Thu, 15 May 2014 14:28:59 UTC
+
+Package: videocap (1.32.0); urgency = medium
+
+Abstract:
+	Adding back proper macros ADD_MODULES,ADD_MODULES_ONLY which was changed recently for Faster Boot Support
+
+Files Modified: spx/PACKAGES.D/videocap/SCRIPTS/dev-install
+
+--Submitter: Winston (winstont@ami.com) Thu, 24 Apr 2014 11:06:37 GMT
+
+Package: videocap (1.31.0); urgency = medium
+
+Abstract:
+	Faster Boot Support
+
+Files Modified: spx/PACKAGES.D/videocap/SCRIPTS/dev-install
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Fri, 18 Apr 2014 21:07:28 HMT
+
+Package: videocap (1.30.0); urgency = medium
+
+Abstract:
+	Added config-tag to fix dependency.
+
+Files Modified: spx/INFO
+
+--Submitter: muthuchamyk (muthusamyk@amiindia.co.in) Tue, 08 Oct 2013 11:44:23 CST
+
+Package: videocap (1.29.0); urgency = medium
+
+Abstract:
+	Adding DevNodes to Build-Depends and Required fields
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Thu, 03 Oct 2013 23:38:12 EDT
+
+Package: videocap (1.28.0); urgency = medium
+
+Abstract:
+	Updated to support Debian Wheezy target and new complier
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Sun, 22 Sep 2013 02:53:47 EDT
+
+Package: videocap (1.27.0); urgency = medium
+
+Abstract:
+	Add a config for changing the usable address from start of LMEM to 16KB offsets of LMEM, due to first 16KB is reserved for the SSP
+
+Files Added: spx/P.CONFIG, spx/PACKAGES.D/videocap/P.CONFIG
+Files Modified: data/capmain.c, data/capture.c, data/dma90xx.c, data/fge.h
+
+--Submitter: joeychen (JoeyChen@ami.com.tw) Tue, 13 Aug 2013 11:56:52 CST
+
+Package: videocap (1.26.0); urgency = high
+
+Abstract:
+	Fixes from Emulex for convert2to3bPP method bug fix for RHEl 6.4u64 balck box Issue.
+SLES 11SP2 70H2 mouse Issue
+
+Files Modified: data/cap90xx.c
+
+--Submitter: othiyappank (othiyappank@amiindia.co.in) Wed, 07 Aug 2013 13:12:19 HMT
+
+Package: videocap (1.25.0); urgency = medium
+
+Abstract:
+	HAndled the show host cursor menu proeprly based on the register
+
+Files Modified: data/cap90xx.c
+
+--Submitter: othiyappank (othiyappank@amiindia.co.in) Fri, 21 Jun 2013 15:44:38 HMT
+
+Package: videocap (1.24.0); urgency = medium
+
+Abstract:
+	Modified the condition to work with UEFI video oprom policy in bios and win2k12 sleep mode wakeup screen display
+
+Files Modified: data/cap90xx.c
+
+--Submitter: othiyappank (othiyappank@amiindia.co.in) Fri, 10 May 2013 16:56:06 HMT
+
+Package: videocap (1.23.0); urgency = high
+
+Abstract:
+	Fixed the  RHEL 5.2 installation baclkbox.,added the tile change check in the column register
+
+Files Modified: data/capture.c
+
+--Submitter: othiyappank (othiyappank@amiindia.co.in) Thu, 02 May 2013 15:01:58 HMT
+
+Package: videocap (1.22.0); urgency = high
+
+Abstract:
+	Modified the buffer allocation to maximum size of resolution
+
+Files Modified: data/cap90xx.c
+
+--Submitter: othiyappank (othiyappank@amiindia.co.in) Wed, 10 Apr 2013 19:52:27 CST
+
+Package: videocap (1.21.0); urgency = medium
+
+Abstract:
+	Added condition to avoid accessing the non allocated buffer limit (8MB)
+
+Files Modified: data/cap90xx.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Wed, 27 Mar 2013 19:06:09 HMT
+
+Package: videocap (1.20.0); urgency = high
+
+Abstract:
+	Modified the essential to NO for videocap binary package
+
+Files Modified: spx/INFO
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Mon, 11 Mar 2013 12:15:31 EDT
+
+Package: videocap (1.19.0); urgency = medium
+
+Abstract:
+	Added the hostlaock status API
+
+Files Modified: data/cap90xx.c, data/cap90xx.h, data/iohndlr.c
+
+--Submitter: othiyappank (othiyappank@amiindia.co.in) Sat, 09 Mar 2013 00:01:32 CST
+
+Package: videocap (1.18.0); urgency = low
+
+Abstract:
+	Added newline char at the end of TDBG messages.
+
+Files Modified: data/iohndlr.c
+
+--Submitter: NagaRamakrishna.K (nagaramakrishnak@amiindia.co.in) Tue, 15 Jan 2013 05:11:29 EST
+
+Package: videocap (1.17.0); urgency = low
+
+Abstract:
+	Added new ioctl cmds to get/set PCI subsystem device Id and vendor Id.
+
+Files Modified: data/cap90xx.c, data/cap90xx.h, data/capmain.c, data/fge.h, data/ioctl.c, data/iohndlr.c, data/iohndlr.h, data/videoctl.h, data/videodata.h
+
+--Submitter: NagaRamakrishna.K (nagaramakrishnak@amiindia.co.in) Wed, 09 Jan 2013 05:22:07 EST
+
+Package: videocap (1.16.0); urgency = high
+
+Abstract:
+	Added the handler for the ioctl to read the appropriate register and return the pci card presence status
+
+Files Modified: data/cap90xx.c, data/cap90xx.h, data/ioctl.c, data/iohndlr.c, data/iohndlr.h, data/videoctl.h
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Tue, 28 Aug 2012 17:29:40 EDT
+
+Package: videocap (1.15.0); urgency = high
+
+Abstract:
+	Adding support for low bandwidth mode : adding ioctl and hw function for capturing in low bandwidth mode
+
+Files Modified: data/cap90xx.c, data/cap90xx.h, data/capmain.c, data/capture.c, data/capture.h, data/dma90xx.c, data/dma90xx.h, data/fge.h, data/ioctl.c, data/iohndlr.c, data/iohndlr.h, data/proc.c, data/videoctl.h, data/videodata.h
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Thu, 28 Jun 2012 15:51:06 EDT
+
+Package: videocap (1.14.0); urgency = high
+
+Abstract:
+	for resolutions >= 1280x1024x32bpp, some area in the bottom of screen were not getting updated in KVM. Updating the Upper Limit Register for TSE based on screen resolution
+
+Files Modified: data/cap90xx.c, data/capture.c
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Tue, 29 May 2012 15:40:33 EDT
+
+Package: videocap (1.13.0); urgency = medium
+
+Abstract:
+	Included capture palette ioctl without waiting for interrupt to capture BSOD.
+
+Files Deleted: data/cap90xx.c~
+Files Modified: data/cap90xx.c, data/ioctl.c, data/iohndlr.c, data/iohndlr.h, data/videoctl.h
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Tue, 24 Apr 2012 17:41:17 IST
+
+Package: videocap (1.12.0); urgency = medium
+
+Abstract:
+	Fixes for strict compiler - Generates error if a variable is assigned and not used
+
+Files Modified: data/cap90xx.c, data/iohndlr.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Thu, 22 Mar 2012 14:35:15 EDT
+
+Package: videocap (1.11.0); urgency = high
+
+Abstract:
+	Defining the IOCTL for hiding the P3 from host. This will mask the PCI device id, hence Host will not detect the P3 graphics controller.
+
+Files Added: data/cap90xx.c~
+Files Modified: data/cap90xx.c, data/cap90xx.h, data/capmain.c, data/fge.h, data/ioctl.c, data/iohndlr.c, data/iohndlr.h, data/videoctl.h, data/videodata.h
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Tue, 24 Jan 2012 12:44:08 EST
+
+Package: videocap (1.10.0); urgency = high
+
+Abstract:
+	Modifying SourceLicense, PackageLicense & Module_License to GPL-v2 from AMI
+
+Files Added: spx/LICENSES/LICENSE.GPL-V2
+Files Deleted: spx/LICENSES/LICENSE.AMI
+Files Modified: data/capmain.c, spx/INFO
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Thu, 23 Jun 2011 15:43:09 EDT
+
+Package: videocap (1.9.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 15:58:08 EDT
+
+Package: videocap (1.8.0); urgency = high
+
+Abstract:
+	Fixed the first blank screen that was occuring upon new session arrival either for kvm or auto video recording
+
+Files Modified: data/cap90xx.c
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Thu, 07 Apr 2011 10:49:24 EDT
+
+Package: videocap (1.7.0); urgency = high
+
+Abstract:
+	EIP 57373 Fixed: Bios post screens are also proper
+
+Files Modified: data/cap90xx.c
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Tue, 05 Apr 2011 14:03:41 EDT
+
+Package: videocap (1.6.0); urgency = high
+
+Abstract:
+	Fixed EIP 57373 : Getting Blank screen while changing resolution
+
+Files Modified: data/cap90xx.c
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Fri, 01 Apr 2011 17:44:47 EDT
+
+Package: videocap (1.5.0); urgency = high
+
+Abstract:
+	Modified hardware cursor functionality for individual session based.
+
+Files Modified: data/cap90xx.c, data/videoctl.h
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Wed, 01 Dec 2010 17:21:46 EST
+
+Package: videocap (1.4.0); urgency = medium
+
+Abstract:
+	Added the thread for sending the cursor packet based on the JViewer sent command
+
+Files Modified: data/cap90xx.c, data/cap90xx.h, data/fge.h, data/iohndlr.c, data/videoctl.h, data/videodata.h
+
+--Submitter: othiyappank (othiyappank@amiindia.co.in) Tue, 16 Nov 2010 21:46:53 IST
+
+Package: videocap (1.3.0); urgency = medium
+
+Abstract:
+	Copied driver to generic location instead of kernel specific locaton
+
+Files Modified: spx/PACKAGES.D/videocap/SCRIPTS/dev-install
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 27 Oct 2010 14:52:05 EDT
+
+Package: videocap (1.2.0); urgency = high
+
+Abstract:
+	Updating 24bpp capturing method to cover Wide screen 24bpp resolutions
+
+Files Modified: data/cap90xx.c, data/capture.c
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Wed, 22 Sep 2010 14:31:51 EDT
+
+Package: videocap (1.1.0); urgency = high
+
+Abstract:
+	multilingual support added in text mode redirection
+
+Files Modified: data/capture.c, data/fge.h, data/iohndlr.c, data/videoctl.h, data/videodata.h
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Thu, 16 Sep 2010 12:40:27 EDT
+
+Package: videocap (1.0.7); urgency = high
+
+Abstract:
+	Host lock feature updated
+
+Files Modified: data/cap90xx.c, data/cap90xx.h, data/iohndlr.c, data/videoctl.h
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Mon, 16 Aug 2010 20:03:19 EDT
+
+Package: videocap (1.0.6); urgency = high
+
+Abstract:
+	Optimization for hw compression in video driver
+
+Files Modified: data/capture.c
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Fri, 13 Aug 2010 12:24:51 EDT
+
+Package: videocap (1.0.5); urgency = high
+
+Abstract:
+	Added support for host monitor lock feature
+
+Files Modified: data/cap90xx.c, data/cap90xx.h, data/capmain.c, data/fge.h, data/ioctl.c, data/iohndlr.c, data/iohndlr.h, data/videoctl.h, data/videodata.h
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Thu, 12 Aug 2010 20:04:58 EDT
+
+Package: videocap (1.0.4); urgency = low
+
+Abstract:
+	Updated video driver code for Hw Compression
+
+Files Modified: data/iohndlr.c
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Wed, 11 Aug 2010 16:01:23 EDT
+
+Package: videocap (1.0.3); urgency = high
+
+Abstract:
+	Video codes updated for Hw Compression support
+
+Files Modified: data/iohndlr.c
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Wed, 11 Aug 2010 14:50:12 EDT
+
+Package: videocap (1.0.2); urgency = high
+
+Abstract:
+	Added Hw Compression support in Driver
+
+Files Modified: data/cap90xx.c, data/cap90xx.h, data/capmain.c, data/capture.c, data/dma90xx.c, data/dma90xx.h, data/fge.h, data/iohndlr.c, data/videodata.h
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Mon, 09 Aug 2010 19:05:23 EDT
+
+Package: videocap (1.0.1); urgency = high
+
+Abstract:
+	VideoDriverDevelopment added to the Pilot-III video driver
+
+Files Modified: spx/INFO
+
+--Submitter: Anurag Bhatia (anuragb@ami.com) Fri, 30 Apr 2010 12:56:13 EDT
+
+Package: videocap (1.0.0); urgency = new
+
+Abstract:
+	This package contains the videocap driver for Pilot-iii.
+
+Files Added: data, data/Makefile, data/cap90xx.c, data/cap90xx.h, data/capmain.c, data/capture.c, data/capture.h, data/dbglvl.h, data/dma90xx.c, data/dma90xx.h, data/fge.h, data/ioctl.c, data/ioctl.h, data/iohndlr.c, data/iohndlr.h, data/mmap.c, data/mmap.h, data/proc.c, data/proc.h, data/profile.c, data/profile.h, data/videocap.h, data/videoctl.h, data/videodata.h, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/PACKAGES.D, spx/PACKAGES.D/videocap, spx/PACKAGES.D/videocap/DATA, spx/PACKAGES.D/videocap/SCRIPTS, spx/PACKAGES.D/videocap/SCRIPTS/dev-install, spx/PACKAGES.D/videocap_driver_dev, spx/PACKAGES.D/videocap_driver_dev/DATA, spx/PACKAGES.D/videocap_driver_dev/SCRIPTS, spx/PACKAGES.D/videocap_driver_dev/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Vinay Tandon (vinayt@ami.com) Tue, 27 Apr 2010 19:45:50 EDT
+

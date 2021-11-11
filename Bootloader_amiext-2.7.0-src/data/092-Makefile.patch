@@ -1,0 +1,11 @@
+--- uboot/Makefile	2013-01-24 11:30:40.023147050 -0500
++++ uboot.orig/Makefile	2013-01-24 11:32:21.391150435 -0500
+@@ -285,8 +285,6 @@
+ version:
+ 		@echo -n "#define U_BOOT_VERSION \"U-Boot " > $(VERSION_FILE); \
+ 		echo -n "$(U_BOOT_VERSION)" >> $(VERSION_FILE); \
+-		echo -n $(shell $(CONFIG_SHELL) $(TOPDIR)/tools/setlocalversion \
+-			 $(TOPDIR)) >> $(VERSION_FILE); \
+ 		echo "\"" >> $(VERSION_FILE)
+ 
+ gdbtools:

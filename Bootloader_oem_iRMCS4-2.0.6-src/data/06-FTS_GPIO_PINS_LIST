@@ -1,0 +1,116 @@
+--- uboot/cpu/arm926ejs/PILOTIII/soc_hw.h	2012-09-20 11:36:59.148081320 -0400
++++ uboot_new/cpu/arm926ejs/PILOTIII/soc_hw.h	2012-09-20 11:39:20.535791479 -0400
+@@ -27,8 +27,111 @@
+ #define GPIO_PULL_UP     4
+ #define GPIO_PULL_NO     6
+ 
+-#define GPIO_00_0	 0	/* GPIO_PORT ( 0, 0) */
+-#define GPIO_00_1	 1	/* GPIO_PORT ( 0, 1) */
++#define GPIO_00_0	 0	/* GPIO_PORT ( 0, 0) 	IRQ_NMI_IRMC_N */
++#define GPIO_00_1	 1	/* GPIO_PORT ( 0, 1) 	BIOS_REC_BOOT_N*/
++#define GPIO_00_2	 2	/* GPIO_PORT ( 0, 2) 	FP_ID_LED*/
++#define GPIO_00_3	 3	/* GPIO_PORT ( 0, 3) 	IRQ_SMI_IRMC_IN_N*/
++#define GPIO_00_4	 4	/* GPIO_PORT ( 0, 4) 	IRQ_SML0_ALERT_N*/
++#define GPIO_00_5	 5	/* GPIO_PORT ( 0, 5) 	BIOS_READY_IRMC_N*/
++#define GPIO_00_6	 6	/* GPIO_PORT ( 0, 6) 	LED_GREEN_IRMC_N*/
++#define GPIO_00_7	 7	/* GPIO_PORT ( 0, 7) 	LED_HEARTBEAT_IRMC_N*/
++//----           
++#define GPIO_01_0	 8	/* GPIO_PORT ( 1, 0) 	IRQ_NMI_LOOP_N*/
++#define GPIO_01_1	 9	/* GPIO_PORT ( 1, 1) 	ID_SWITCH_IRMC_N*/
++#define GPIO_01_2	10	/* GPIO_PORT ( 1, 2) 	LED_CSS_IRMC_N*/
++#define GPIO_01_3	11	/* GPIO_PORT ( 1, 3) 	LED_GERR_IRMC_N*/
++#define GPIO_01_4	12	/* GPIO_PORT ( 1, 4) 	IRQ_WAKE_PCIE_L*/
++#define GPIO_01_5	13	/* GPIO_PORT ( 1, 5) 	SPI_IRMC_WP_N*/
++#define GPIO_01_6	14	/* GPIO_PORT ( 1, 6) 	PWROK_PSU_H*/
++#define GPIO_01_7	15	/* GPIO_PORT ( 1, 7) 	EN_WAKE_PCIE_L*/
++//----           
++#define GPIO_02_0	16	/* GPIO_PORT ( 2, 0) */
++#define GPIO_02_1	17	/* GPIO_PORT ( 2, 1) */
++#define GPIO_02_2	18	/* GPIO_PORT ( 2, 2) */
++#define GPIO_02_3	19	/* GPIO_PORT ( 2, 3) */
++#define GPIO_02_4	20	/* GPIO_PORT ( 2, 4) */
++#define GPIO_02_5	21	/* GPIO_PORT ( 2, 5) */
++#define GPIO_02_6	22	/* GPIO_PORT ( 2, 6) */
++#define GPIO_02_7	23	/* GPIO_PORT ( 2, 7) */
++//----
++#define GPIO_14_0      112	/* GPIO_PORT (14, 0) */
++#define GPIO_14_1      113	/* GPIO_PORT (14, 1) */
++#define GPIO_14_2      114	/* GPIO_PORT (14, 2) */
++#define GPIO_14_3      115	/* GPIO_PORT (14, 3) */
++#define GPIO_14_4      116	/* GPIO_PORT (14, 4) */
++//----
++#define GPIO_18_0      144	/* GPIO_PORT (18, 0) */
++#define GPIO_18_1      145	/* GPIO_PORT (18, 1) */
++#define GPIO_18_2      146	/* GPIO_PORT (18, 2) */
++#define GPIO_18_3      147	/* GPIO_PORT (18, 3) */
++#define GPIO_18_4      148	/* GPIO_PORT (18, 4) */
++#define GPIO_18_5      149	/* GPIO_PORT (18, 5) */
++#define GPIO_18_6      150	/* GPIO_PORT (18, 6) */
++#define GPIO_18_7      151	/* GPIO_PORT (18, 7) */
++//----
++#define GPIO_19_0      152	/* GPIO_PORT (19, 0) 	EN_USB_REAR_N*/
++#define GPIO_19_1      153	/* GPIO_PORT (19, 1) 	EN_USB_FRONT_N*/
++#define GPIO_19_2      154	/* GPIO_PORT (19, 2) 	EN_MAC0_PHY0_N*/
++#define GPIO_19_3      155	/* GPIO_PORT (19, 3) */
++#define GPIO_19_4      156	/* GPIO_PORT (19, 4) 	RST_LPO_FF_N*/
++#define GPIO_19_5      157	/* GPIO_PORT (19, 5) 	MAC0_SEL_PHY*/
++#define GPIO_19_6      158	/* GPIO_PORT (19, 6) 	MAC1_SEL_NCSI*/
++#define GPIO_19_7      159	/* GPIO_PORT (19, 7) 	TP_ENTER_0W_H*/
++//----
++#define GPIO_20_0      160	/* GPIO_PORT (20, 0) */
++#define GPIO_20_1      161	/* GPIO_PORT (20, 1) */
++#define GPIO_20_2      162	/* GPIO_PORT (20, 2) */
++#define GPIO_20_3      163	/* GPIO_PORT (20, 3) 	IRQ_NMI_BMC_OUT_H*/
++#define GPIO_20_4      164	/* GPIO_PORT (20, 4) */
++#define GPIO_20_5      165	/* GPIO_PORT (20, 5) */
++#define GPIO_20_6      166	/* GPIO_PORT (20, 6) */
++#define GPIO_20_7      167	/* GPIO_PORT (20, 7) */
++//----
++#define GPIO_22_0      176	/* GPIO_PORT (22, 0) */
++#define GPIO_22_1      177	/* GPIO_PORT (22, 1) */
++#define GPIO_22_2      178	/* GPIO_PORT (22, 2) */
++#define GPIO_22_3      179	/* GPIO_PORT (22, 3) */
++#define GPIO_22_4      180	/* GPIO_PORT (22, 4) */
++#define GPIO_22_5      181	/* GPIO_PORT (22, 5) */
++#define GPIO_22_6      182	/* GPIO_PORT (22, 6) */
++#define GPIO_22_7      183	/* GPIO_PORT (22, 7) */
++//----
++#define GPIO_23_0      184	/* GPIO_PORT (23, 0) */
++#define GPIO_23_1      185	/* GPIO_PORT (23, 1) */
++#define GPIO_23_2      186	/* GPIO_PORT (23, 2) */
++#define GPIO_23_3      187	/* GPIO_PORT (23, 3) */
++#define GPIO_23_4      188	/* GPIO_PORT (23, 4) */
++#define GPIO_23_5      189	/* GPIO_PORT (23, 5) */
++#define GPIO_23_6      190	/* GPIO_PORT (23, 6) */
++#define GPIO_23_7      191	/* GPIO_PORT (23, 7) */
++//----
++//#define GPIO_24_0      192	/* GPIO_PORT (24, 0) */
++//#define GPIO_24_1      193	/* GPIO_PORT (24, 1) */
++//#define GPIO_24_2      194	/* GPIO_PORT (24, 2) */
++//#define GPIO_24_3      195	/* GPIO_PORT (24, 3) */
++#define GPIO_24_4      196	/* GPIO_PORT (24, 4) */
++#define GPIO_24_5      197	/* GPIO_PORT (24, 5) */
++#define GPIO_24_6      198	/* GPIO_PORT (24, 6) */
++#define GPIO_24_7      199	/* GPIO_PORT (24, 7) */
++//----
++#define GPIO_26_0      208	/* GPIO_PORT (26, 0) */
++#define GPIO_26_1      209	/* GPIO_PORT (26, 1) */
++#define GPIO_26_2      210	/* GPIO_PORT (26, 2) */
++#define GPIO_26_3      211	/* GPIO_PORT (26, 3) */
++#define GPIO_26_4      212	/* GPIO_PORT (26, 4) */
++#define GPIO_26_5      213	/* GPIO_PORT (26, 5) */
++#define GPIO_26_6      214	/* GPIO_PORT (26, 6) */
++#define GPIO_26_7      215	/* GPIO_PORT (26, 7) */
++//----
++#define GPIO_29_0      232	/* GPIO_PORT (29, 0) */
++#define GPIO_29_1      233	/* GPIO_PORT (29, 1) */
++#define GPIO_29_2      234	/* GPIO_PORT (29, 2) */
++#define GPIO_29_3      235	/* GPIO_PORT (29, 3) */
++#define GPIO_29_4      236	/* GPIO_PORT (29, 4) */
++#define GPIO_29_5      237	/* GPIO_PORT (29, 5) */
++#define GPIO_29_6      238	/* GPIO_PORT (29, 6) */
++#define GPIO_29_7      239	/* GPIO_PORT (29, 7) */
++//----
+ 
+ #define REGISTER_TYPE_BIT8           8
+ #define REGISTER_TYPE_BIT16          16

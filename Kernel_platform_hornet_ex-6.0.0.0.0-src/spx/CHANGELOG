@@ -1,0 +1,135 @@
+Package: Kernel_platform_hornet_ex (6.0.0.0.0); urgency = high
+
+Abstract:
+	HORNET Fixes to Kernel 3.14.17
+
+
+--Submitter: Balasubramanian C (balasubramanianc)(balasubramanianc@amiindia.co.in) Wed, 20 Jun 2018 09:43:28 UTC
+
+Package: Kernel_platform_hornet_ex (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:03:03 UTC
+
+Package: Kernel_platform_hornet_ex (2.9.0); urgency = low
+
+Abstract:
+	Replaced printf in python RULES with print
+
+Files Modified: spx/RULES.py
+
+--Submitter: Abirami M (abiramim@amiindia.co.in) Thu, 03 Aug 2017 13:08:22 IST
+
+Package: Kernel_platform_hornet_ex (2.8.0); urgency = low
+
+Abstract:
+	Added code to reset the Boot SPI device and SPI controller during reset,reboot, panic and wdt expiration. Initialized wdt1 in uboot.  EIP:285416, Review Request:15980
+
+Files Deleted: data/15-arch_arm_mach-pilot_setup.c
+Files Modified: data/14-arch_arm_mach-pilot_setup.c
+
+--Submitter: Balaji Nagalingam Rajendiran (balajinr@ami.com) Mon, 17 Oct 2016 14:43:42 EDT
+
+Package: Kernel_platform_hornet_ex (2.7.0); urgency = medium
+
+Abstract:
+	Changes added to update time stamp accuracy with usec value.
+
+Files Added: data/15-arch_arm_mach-pilot_setup.c, data/16-arch_arm_soc-pilot_pilot-time.c, data/17-kernel_time_Kconfig
+
+--Submitter: neelavathi (neelavathi@amiindia.co.in) Thu, 07 Jul 2016 17:10:44 IST
+
+Package: Kernel_platform_hornet_ex (2.6.0); urgency = low
+
+Abstract:
+	Fix Build fail for the CONFIG_FLASH_OPERATION_MODE_MASK not defined issue.
+
+Files Modified: data/04-arch_arm_kconfig, spx/INFO
+
+--Submitter: jcchiu (jcchiu@ami.com.tw) Sun, 29 May 2016 19:46:13 JWST
+
+Package: Kernel_platform_hornet_ex (2.5.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: spx/PACKAGES.D/Kernel_platform_hornet_ex/DATA/keep.folder
+Files Deleted: spx/PACKAGES.D/Kernel_platform_hornet_ex/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 15:31:59 EDT
+
+Package: Kernel_platform_hornet_ex (2.4.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/PACKAGES.D/Kernel_platform_hornet_ex/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 20:41:26 EST
+
+Package: Kernel_platform_hornet_ex (2.3.0); urgency = medium
+
+Abstract:
+	Pilot-3 Device ID's are inverted bits in the hardware. Changed to 0 which is 5 for A2 Silicon,4 for A1 Silicon.
+
+Files Modified: data/14-arch_arm_mach-pilot_setup.c
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Tue, 13 Oct 2015 16:30:21 HMT
+
+Package: Kernel_platform_hornet_ex (2.2.0); urgency = medium
+
+Abstract:
+	Moved setup, IRQ, timer initialization specific to Pilot-III
+
+Files Added: data/09-arch_arm_soc-pilot_pilot-irq.c, data/10-arch_arm_soc-pilot_pilot-time.c, data/11-arch_arm_mach-pilot_Makefile, data/12-arch_arm_mm_Kconfig, data/13-arch_arm_mm_proc-arm926.S, data/14-arch_arm_mach-pilot_setup.c
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Thu, 23 Apr 2015 00:16:34 HMT
+
+Package: Kernel_platform_hornet_ex (2.1.0); urgency = medium
+
+Abstract:
+	Removing LICENSE.AMI from LICENSES folder to prevent multiple licensing issue
+
+Files Deleted: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Winston (winstont@ami.com) Tue, 23 Dec 2014 22:15:13 GMT
+
+Package: Kernel_platform_hornet_ex (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 04:20:08 GMT
+
+Package: Kernel_platform_hornet_ex (1.2.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 06:01:58 GMT
+
+Package: Kernel_platform_hornet_ex (1.1.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 04:11:50 GMT
+
+Package: Kernel_platform_hornet_ex (1.0.0); urgency = new
+
+Abstract:
+	HORNET Fixes to Kernel 3.14.17
+
+Files Added: data, data/01-arch_arm_boot_compressed-head_pilot.S, data/02-arch_arm_boot_compressed-Makefile, data/03-arch_arm_configs_hornet_defconfig, data/04-arch_arm_kconfig, data/05-arch_arm_kernel_head.S, data/06-arch_arm_Makefile, data/07-arch_arm_tools_mach-types, data/08-arch_arm_mach_pilot_Kconfig, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/Kernel_platform_hornet_ex, spx/PACKAGES.D/Kernel_platform_hornet_ex/DATA, spx/PACKAGES.D/Kernel_platform_hornet_ex/SCRIPTS, spx/PACKAGES.D/Kernel_platform_hornet_ex/SCRIPTS/dev-install.py, spx/RULES.py
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Tue, 09 Sep 2014 11:51:15 HMT
+

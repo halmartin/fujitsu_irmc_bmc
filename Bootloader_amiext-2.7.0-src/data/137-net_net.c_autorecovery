@@ -1,0 +1,51 @@
+--- uboot_old/net/net.c	2014-11-19 19:21:04.809723281 +0530
++++ uboot/net/net.c	2014-11-19 19:20:54.185532048 +0530
+@@ -282,7 +282,7 @@
+ NetLoop(proto_t protocol)
+ {
+ 	bd_t *bd = gd->bd;
+-
++	char    *value;
+ #ifdef CONFIG_NET_MULTI
+ 	NetRestarted = 0;
+ 	NetDevExists = 0;
+@@ -393,6 +393,21 @@
+ 		NetOurVLAN = getenv_VLAN("vlan");	/* VLANs must be read */
+ 		NetOurNativeVLAN = getenv_VLAN("nvlan");
+ 		break;
++	case RECOVERY:
++    	NetServerIP = getenv_IPaddr ("recoveryserverip");
++        load_addr = YAFU_IMAGE_UPLOAD_LOCATION;
++        value = getenv("recoverybootfile");
++        if(value == NULL)
++        {
++        	/*default boot file is rom.ima*/
++            copy_filename(BootFile,"rom.ima",sizeof(BootFile));
++        }
++        else
++        {
++        	copy_filename(BootFile,value,sizeof(BootFile));
++        }
++        break;
++
+ 	default:
+ 		break;
+ 	}
+@@ -479,6 +494,9 @@
+ 			NetState = NETLOOP_SUCCESS;		
+ 			break;
+ #endif
++		case RECOVERY:
++        	TftpStart();
++            break;
+ 		default:
+ 			break;
+ 		}
+@@ -1565,6 +1583,7 @@
+ #if (CONFIG_COMMANDS & CFG_CMD_NFS)
+ 	case NFS:
+ #endif
++	case RECOVERY:  /*AMI Extension*/
+ 	case NETCONS:
+ 	case TFTP:
+ 		if (NetServerIP == 0) {

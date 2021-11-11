@@ -1,0 +1,13 @@
+./Makefile 588 34cccf0e07b94998f4d9a19d47d38036
+./core/comm.c 5092 8883c1050d67f17df1ed1ca5a783e537
+./core/ethtool.c 12913 f6291f19c07f36725f00a433c3bfdfc2
+./core/interfaces.c 6157 03e0be06ee5650ef85ef6891841a6764
+./core/ncsi_if.c 13708 f5efff721710b925ba53be899d933a9b
+./core/ncsicore.c 46279 ef164dfb8c37ea3689381bfc07fa70bf
+./core/ncsilib.c 64028 bc91fb2c7436567dd4d13e011348fb70
+./core/proc.c 21828 f4f0e398069dc9d90cbde7df2a848226
+./helper/datadisp.c 3049 abb45edbafc8c58b680683cbbe617eec
+./include/datadisp.h 1071 992adb8b858de1a605816439635f7181
+./include/interfaces.h 4803 a4e0c5bbe9e1791b116d702d24ce06bf
+./include/ncsi.h 26955 559a799d7911615424e8ceb3cba8eecf
+./include/types.h 2427 306be2098cdad58690f7533dae43f909

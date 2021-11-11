@@ -1,0 +1,20 @@
+--- u-boot-1.1.6/include/net.h	2014-04-07 19:29:59.640418291 +0800
++++ u-boot-1.1.6-ami/include/net.h	2014-04-07 19:30:36.416418353 +0800
+@@ -166,6 +166,7 @@
+ #define PROT_ARP	0x0806		/* IP ARP protocol		*/
+ #define PROT_RARP	0x8035		/* IP ARP protocol		*/
+ #define PROT_VLAN	0x8100		/* IEEE 802.1q protocol		*/
++#define PROT_NCSI	0x88F8		/* DMTP NCSI 1.0 protocol	*/
+ 
+ #define IPPROTO_ICMP	 1	/* Internet Control Message Protocol	*/
+ #define IPPROTO_UDP	17	/* User Datagram Protocol		*/
+@@ -338,7 +339,8 @@
+ 
+ //typedef enum { BOOTP, RARP, ARP, TFTP, DHCP, PING, DNS, NFS, CDP, NETCONS, SNTP } proto_t;
+ //AMI Extension - R2C Protocol
+-typedef enum { BOOTP, RARP, ARP, TFTP, DHCP, PING, DNS, NFS, CDP, NETCONS, SNTP, R2C } proto_t;
++//DMTF NCSI Support
++typedef enum { BOOTP, RARP, ARP, TFTP, DHCP, PING, DNS, NFS, CDP, NETCONS, SNTP, R2C, NCSI, SIDEBAND} proto_t;
+ 
+ /* from net/net.c */
+ extern char	BootFile[128];			/* Boot File name		*/

@@ -1,0 +1,9 @@
+Package: Kernel_arch_arm_ex (6.0.0.0.0); urgency = high
+
+Abstract:
+	ARM Fixes to Kernel 3.4.74
+
+Files Added: data, data/01-arch_arm_boot_compressed_head.S, data/02-arch_arm_include_asm_serial.h, data/03-arch_arm_include_uapi_asm_setup.h, data/04-arch_arm_kernel_atags_parse.c, data/05-arch_arm_mm_alignment.c, data/06-Makefile, data/07-arch_arm_glue_cache.h, data/08-EarlyFault, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/Kernel_arch_arm_ex, spx/PACKAGES.D/Kernel_arch_arm_ex/DATA, spx/PACKAGES.D/Kernel_arch_arm_ex/DATA/keep.folder, spx/PACKAGES.D/Kernel_arch_arm_ex/SCRIPTS, spx/PACKAGES.D/Kernel_arch_arm_ex/SCRIPTS/dev-install.py, spx/RULES.py
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 05 May 2018 06:28:40 UTC
+

@@ -1,0 +1,185 @@
+Package: ttyplay (1.0.1000.6.0); urgency = low
+
+Abstract:
+	For patch_base 09.60j: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 20 Nov 2019 11:10:40 CET
+
+Package: ttyplay (1.0.1000.5.0); urgency = low
+
+Abstract:
+	For patch_base 09.60g: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 03 Sep 2019 13:54:30 CEST
+
+Package: ttyplay (1.0.1000.4.1); urgency = low
+
+Abstract:
+	Updated License from BDS to BSD.TTYPLAY
+
+Files Added: spx/LICENSES/LICENSE.BSD.TTYPLAY
+Files Deleted: spx/LICENSES/LICENSE.BSD
+Files Modified: spx/INFO
+
+--Submitter: Pravin V (pravinv@amiindia.co.in) Fri, 15 Mar 2019 18:09:53 IST
+
+Package: ttyplay (1.0.1000.4.0); urgency = low
+
+Abstract:
+	For patch_base 02.41P: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 14 Mar 2019 13:32:47 CET
+
+Package: ttyplay (1.0.1000.3.0); urgency = low
+
+Abstract:
+	For patch_base 02.20c: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Dec 2018 11:38:39 CET
+
+Package: ttyplay (1.0.1000.2.0); urgency = low
+
+Abstract:
+	For patch_base 02.00b: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 28 Aug 2018 13:53:47 CEST
+
+Package: ttyplay (1.0.1000.1.0); urgency = low
+
+Abstract:
+	For patch_base 01.60b oem version number incremented, OemAux version number set to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 21 Jun 2018 10:02:13 CEST
+
+Package: ttyplay (1.0.1000.0.0); urgency = low
+
+Abstract:
+	adapt spx package with five digits
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 20 Mar 2018 13:32:32 CET
+
+Package: ttyplay (1.0.1000); urgency = low
+
+Abstract:
+	For 01.20a_09.20a increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Sep 2017 16:46:50 CEST
+
+Package: ttyplay (1.0.900); urgency = low
+
+Abstract:
+	For 01.20aPre_R62446__base increment auxiliary version by 100
+
+
+--Submitter: Martin Clemens (Martin.Clemens.external@ts.fujitsu.com) Fri, 25 Aug 2017 17:52:01 CEST
+
+Package: ttyplay (1.0.800); urgency = low
+
+Abstract:
+	For 09.00b_R61776_base increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 02 Aug 2017 09:56:42 CEST
+
+Package: ttyplay (1.0.700); urgency = low
+
+Abstract:
+	For 01.04b_R59755_base increment auxiliary version by 100
+
+Files Added: spx/PACKAGES.D/ttyplay/DATA/keep.folder
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Fri, 19 May 2017 12:37:58 CEST
+
+Package: ttyplay (1.0.600); urgency = low
+
+Abstract:
+	For FW 8.61F increment auxiliary version by 100
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Thu, 01 Sep 2016 09:05:18 CEST
+
+Package: ttyplay (1.0.500); urgency = low
+
+Abstract:
+	For FW increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Tue, 07 Jun 2016 09:32:51 CEST
+
+Package: ttyplay (1.0.400); urgency = low
+
+Abstract:
+	For 08.20F_R49270__base increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Sun, 06 Mar 2016 16:38:05 CET
+
+Package: ttyplay (1.0.300); urgency = low
+
+Abstract:
+	Increment auxiliary version by 100 due to new patch_base 08.00g_R45733__150712
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Mon, 13 Jul 2015 11:38:41 CEST
+
+Package: ttyplay (1.0.201); urgency = low
+
+Abstract:
+	RR9 merge: checkin based on (1.10)
+
+Files Modified: spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 31 Mar 2015 10:54:42 CEST
+
+Package: ttyplay (1.0.200); urgency = low
+
+Abstract:
+	Increment auxiliary version by 100 due to new patch_base 07.80b_R41103__base
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Fri, 13 Mar 2015 23:17:28 CET
+
+Package: ttyplay (1.0.100); urgency = low
+
+Abstract:
+	Update aux version to next hundred
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sat, 29 Nov 2014 09:38:58 CET
+
+Package: ttyplay (1.0.2); urgency = high
+
+Abstract:
+	Closed open file descriptors
+
+Files Modified: data/ttyplay.c
+
+--Submitter: Nilesh Konar (nileshk@amiindia.co.in) Mon, 17 Nov 2014 15:02:21 HMT
+
+Package: ttyplay (1.0.1); urgency = low
+
+Abstract:
+	fix license, FTS -> BSD (source/binary package)
+
+Files Deleted: spx/LICENSES/LICENSE.FTS
+Files Modified: spx/INFO
+
+--Submitter: Diana Riemer (diana.riemer.externals@ts.fujitsu.com) Mon, 30 Jun 2014 12:07:34 CEST
+
+Package: ttyplay (1.0.0); urgency = new
+
+Abstract:
+	ttyplay tool
+
+Files Added: data, data/Makefile, data/io.c, data/io.h, data/ttyplay.c, data/ttyrec.h, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.BSD, spx/LICENSES/LICENSE.FTS, spx/PACKAGES.D, spx/PACKAGES.D/ttyplay, spx/PACKAGES.D/ttyplay/DATA, spx/PACKAGES.D/ttyplay/SCRIPTS, spx/PACKAGES.D/ttyplay/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 13 Mar 2012 11:46:20 CET
+

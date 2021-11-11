@@ -1,0 +1,23 @@
+Source                   	:	Bootloader_soc_pilot_iii
+Version : 2.1.0
+SPX-Version              	:	4.0
+SPX-Format               	:	2.0
+Owner                    	:	AMI
+Maintainer               	:	Samvinesh Christopher  (vineshc@ami.com)
+License                  	:	GPL-V2
+Source-Location          	:	AMI
+Source-Version           	:	1.1.6
+Builds                   	:	@Bootloader_soc_pilot_iii
+Build-Depends            	:	@Bootloader_cpu_arm926ejs
+Architecture             	:	ANY
+Urgency : medium
+Description              	:	ServerEngines Pilot III SOC Fixes to Bootloader (u-boot 1.1.6)
+.
+
+Package                  	:	@Bootloader_soc_pilot_iii
+Section                  	:	info
+Group                    	:	BASE
+Essential                	:	NO
+Description              	:	ServerEngines Pilot III SOC Fixes to Bootloader (u-boot 1.1.6)
+.
+

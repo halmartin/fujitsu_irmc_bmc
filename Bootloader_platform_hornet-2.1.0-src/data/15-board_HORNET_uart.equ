@@ -1,0 +1,131 @@
+--- u-boot-1.1.6/board/HORNET/uart.equ	1969-12-31 19:00:00.000000000 -0500
++++ u-boot-1.1.6-PilotIII/board/HORNET/uart.equ	2010-04-05 16:47:24.000000000 -0400
+@@ -0,0 +1,128 @@
++#* Purpose:
++#* This file contains all of the TL16C750 related definitions. 
++#*****************************************************************************
++ 		.include "buffer.equ"
++
++RBROff          =     0x0<<2
++THROff          =     0x0<<2
++IEROff          =     0x1<<2
++ERBI            =     0x01
++ETBEI           =     0x02
++ELSI            =     0x04
++EDSSI           =     0x08
++PTIME		=     0x80
++ETHRE		=     0x80
++
++IIROff          =     0x2<<2
++IIRNoInterrupt	=		0x01
++IIRRecvLStatInt         =     0x06
++IIRRecvdDataInt         =     0x04
++IIRCharTimeOutInt       =     0x0C
++IIRTHREInt              =     0x02
++IIRModemStatInt         =     0x00
++IIRFiFoEnabled		    =     0xC0
++
++FCROff          =     0x2<<2
++
++FIFOEN                  =     0x01
++RXFRST                  =     0x02
++TXFRST                  =     0x04
++DMAModeSel              =     0x08
++TXFifo16ByteTrig1       =     0x00
++TXFifo16ByteTrig4       =     0x10
++TXFifo16ByteTrig8       =     0x20
++TXFifo16ByteTrig14      =     0x30
++
++RXFifo64ByteTrig1       =     0x00
++RXFifo64ByteTrig16      =     0x40
++RXFifo64ByteTrig32      =     0x80
++RXFifo64ByteTrig56      =     0xC0
++
++
++LCROff          =     0x3<<2
++
++
++WordLength5             =     0x00
++WordLength6             =     0x01
++WordLength7             =     0x02
++WordLength8             =     0x03
++StopBits                =     0x04
++ParityEn                =     0x08
++EvenParity              =     0x10
++StickParity             =     0x20
++Break                   =     0x40
++DLAB                    =     0x80
++
++
++
++MCROff          =     0x4<<2
++
++DTR                     =     0x01
++RTS                     =     0x02
++OUT1                    =     0x04
++OUT2                    =     0x08
++Loop                    =     0x10
++AFE                     =     0x20
++DTRRTS			=     0x03
++
++#Line Status Register
++LSROff          =     0x5<<2
++
++DataRDY                 =     0x01
++OverrunErr              =     0x02
++ParityErr               =     0x04
++FrameErr                =     0x08
++BreakInt                =     0x10
++THRE                    =     0x20
++TEMT                    =     0x40
++RxFiFoErr               =     0x80
++
++
++#Modem Status Register
++MSROff          =     0x6<<2
++
++CTSChange               =     0x01
++DSRChange               =     0x02
++TERI                    =     0x04
++DCDChange               =     0x08
++CTS                     =     0x10
++DSR                     =     0x20
++RI                      =     0x40
++DCD                     =     0x80
++
++
++SCROff          =     0x7<<2
++DLLOff          =     0x0<<2
++DLMOff          =     0x1<<2
++
++USR		=	0x7C
++
++UARTTXPTR		=	0
++UARTTXSIZE	=	4
++UARTCTXPTR	=	8
++UARTCTXSIZE	=	0xC
++UARTRXPTR		=	0x10
++UARTRXSIZE	=	0x14
++UARTCRXPTR	=	0x18
++UARTCRXSIZE	=	0x1C
++UARTRXSTATUS	=	0x20
++UARTTXSTATUS	=	0x24
++
++
++UART1baseLPC	=     0x0001
++UART2baseLPC	=     0x0002
++RBROffLPC       =     0x0<<8	@left shift 8 becos model swaps address msb and lsb
++THROffLPC       =     0x0<<8
++DLLOffLPC          =     0x0<<8
++DLMOffLPC          =     0x1<<8
++IEROffLPC       =     0x1<<8
++IIROffLPC          =     0x2<<8
++FCROffLPC          =     0x2<<8
++LCROffLPC          =     0x3<<8
++MCROffLPC          =     0x4<<8
++LSROffLPC          =     0x5<<8
++MSROffLPC          =     0x6<<8
++SCROffLPC          =     0x7<<8
++USROffLPC	   =	0x7C<<8
++
++

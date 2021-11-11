@@ -1,0 +1,11 @@
+# Install Script
+#
+build-install:
+	MKDIR_NOCLEAN %SPXINC/fts
+	COPY_FILE ./fts_base32.h  %SPXINC/fts
+	MKDIR_NOCLEAN %SPXLIB/fts
+	COPY_FILE ./libfts_base32.a %SPXLIB/fts
+	COPY_FILE ./libfts_base32.so.%PKG_MAJOR.%PKG_MINOR.%PKG_AUX %SPXLIB/fts
+	ADD_LIBRARY_LINKS %SPXLIB/fts libfts_base32.so.%PKG_MAJOR.%PKG_MINOR.%PKG_AUX
+
+debug-install:

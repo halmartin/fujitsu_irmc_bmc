@@ -1,0 +1,162 @@
+Package: libjson (4.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:23:59 UTC
+
+Package: libjson (3.5.0); urgency = high
+
+Abstract:
+	Remove config-tag for releasing
+
+Files Modified: spx/INFO
+
+--Submitter: jenhuang (jenhuang) Wed, 22 Feb 2017 06:03:49 JWST
+
+Package: libjson (3.4.0); urgency = low
+
+Abstract:
+	Added changes to fix libjson build error
+
+Files Modified: spx/RULES.D/Buildjson.sh
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Wed, 15 Jun 2016 14:13:02 HMT
+
+Package: libjson (3.3.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: spx/PACKAGES.D/libjson/DATA/keep.folder, spx/PACKAGES.D/libjson_dev/DATA/keep.folder
+Files Deleted: spx/PACKAGES.D/libjson/DATA/.keep, spx/PACKAGES.D/libjson_dev/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 16:43:11 EDT
+
+Package: libjson (3.2.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/PACKAGES.D/libjson/DATA/.keep, spx/PACKAGES.D/libjson_dev/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 21:50:08 EST
+
+Package: libjson (3.1.0); urgency = medium
+
+Abstract:
+	Removed dev package configuration support
+
+Files Modified: spx/INFO
+
+--Submitter: Veerajothi R (veerajothir@amiindia.co.in) Thu, 02 Apr 2015 18:48:45 EDT
+
+Package: libjson (3.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 05:16:07 GMT
+
+Package: libjson (2.10.0); urgency = medium
+
+Abstract:
+	Remove Group Field from source section
+
+Files Modified: spx/INFO
+
+--Submitter: Dipankar Patra (dipankarpatra@amiindia.co.in) Fri, 17 Oct 2014 10:57:58 HMT
+
+Package: libjson (2.9.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 06:52:53 GMT
+
+Package: libjson (2.8.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 05:04:55 GMT
+
+Package: libjson (2.7.0); urgency = medium
+
+Abstract:
+	Removed unwanted files and added strip rule to reduce library size
+
+Files Modified: spx/PACKAGES.D/libjson_dev/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Balasubramanian C (balasubramanianc@amiindia.co.in) Fri, 06 Jun 2014 16:01:59 HMT
+
+Package: libjson (2.6.0); urgency = high
+
+Abstract:
+	Fix for cross compilation
+
+Files Modified: data/json-c.zip, spx/RULES.D/Buildjson.sh
+
+--Submitter: Chandrasekar.R (chandrasekarr@ami.com) Fri, 07 Feb 2014 20:01:37 EST
+
+Package: libjson (2.5.0); urgency = medium
+
+Abstract:
+	Build script updated for target system configure
+
+Files Deleted: spx/RULES.D/Configuresource.sh
+Files Modified: data/json-c.zip, spx/RULES, spx/RULES.D/Buildjson.sh
+
+--Submitter: ajay (ajaykumarg@amiindia.co.in) Wed, 18 Sep 2013 23:22:03 HMT
+
+Package: libjson (2.4.0); urgency = high
+
+Abstract:
+	Fixed building of libjson every time if libjson support is enabled
+
+Files Added: spx/RULES.D/Configuresource.sh
+Files Modified: spx/RULES, spx/RULES.D/Buildjson.sh
+
+--Submitter: Nilesh Konar (nileshk@amiindia.co.in) Mon, 05 Aug 2013 12:23:24 HMT
+
+Package: libjson (2.3.0); urgency = high
+
+Abstract:
+	Enabling cross compilation during configure
+
+Files Modified: spx/RULES.D/Buildjson.sh
+
+--Submitter: Chandrasekar R (chandrasekarr@amiindia.co.in) Wed, 17 Apr 2013 21:17:36 HMT
+
+Package: libjson (2.2.0); urgency = medium
+
+Abstract:
+	Dev-install script modification done by Chandru.
+
+Files Modified: spx/PACKAGES.D/libjson/SCRIPTS/dev-install, spx/PACKAGES.D/libjson_dev/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: manikandangm (manikandangm@amiindia.co.in) Thu, 28 Mar 2013 15:32:50 HMT
+
+Package: libjson (2.1.0); urgency = medium
+
+Abstract:
+	Fix for "undefined reference to rpl_realloc/rpl_malloc" error while building in non-glibc system
+
+Files Modified: data/json-c.zip
+
+--Submitter: valantina (valantinaa@amiindia.co.in) Fri, 22 Mar 2013 20:21:14 HMT
+
+Package:libjson (1.0.0);urgency=new
+
+Abstract:
+	Library package for json structure handling in C. It has wide variety of input and output handling mechanism including Strings, Number, Array, Object etc.. (Recommended by http://www.json.org)
+
+--Submitter: Chandrasekar R (chandrasekarr@amiindia.co.in) Mon, 7 Jan 2013 19:30:07 +0530
+

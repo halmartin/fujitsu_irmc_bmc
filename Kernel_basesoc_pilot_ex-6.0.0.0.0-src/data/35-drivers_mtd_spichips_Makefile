@@ -1,0 +1,7 @@
+--- linux-3.14.17/drivers/mtd/spichips/Makefile	2014-09-04 11:43:19.977786574 +0530
++++ linux-3.14.17.new/drivers/mtd/spichips/Makefile	2014-09-04 12:30:53.889869056 +0530
+@@ -13,3 +13,4 @@
+ 
+ # The default driver  should be the last in the list of suppported devices
+ obj-$(CONFIG_MTD_SPI_DEFAULT)   += default.o
++obj-$(CONFIG_MTD_PILOT_SPI) += pilot3spi.o pilot3spi_bkup.o

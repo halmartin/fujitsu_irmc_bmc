@@ -1,0 +1,408 @@
+Package: Bootloader (2.2.15); urgency = low
+
+Abstract:
+	Dummy check in for SYSCFG POR
+
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 22 Sep 2015 17:21:38 CEST
+
+Package: Bootloader (2.2.14); urgency = low
+
+Abstract:
+	Dummy check in for Emergency Flash fix
+
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Fri, 04 Sep 2015 12:23:07 CEST
+
+Package: Bootloader (2.2.13); urgency = low
+
+Abstract:
+	Dummy check in to increase the version of binary package
+
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Thu, 03 Sep 2015 11:37:29 CEST
+
+Package: Bootloader (2.2.11); urgency = low
+
+Abstract:
+	(dummy ci)
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Wed, 22 Jul 2015 08:47:34 CEST
+
+Package: Bootloader (2.2.10); urgency = low
+
+Abstract:
+	Build depends change according to oem package.
+
+Files Modified: spx/INFO
+
+--Submitter: ramakrishna (nagaramakrishnak@amiindia.co.in) Wed, 08 Jul 2015 19:46:21 HMT
+
+Package: Bootloader (2.2.9); urgency = low
+
+Abstract:
+	Dummy check in: 'Initial RAM fs support in uboot'
+
+Files Modified: spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 07 Jul 2015 11:41:04 CEST
+
+Package: Bootloader (2.2.8); urgency = low
+
+Abstract:
+	Dummy check in fix support for Winbond W25M512
+
+Files Modified: spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Thu, 02 Jul 2015 17:22:08 CEST
+
+Package: Bootloader (2.2.7); urgency = low
+
+Abstract:
+	Dummy Check in for MISCTL- USB Interface Control. Enabling USB in u-boot
+
+Files Modified: spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Fri, 26 Jun 2015 14:16:33 CEST
+
+Package: Bootloader (2.2.6); urgency = low
+
+Abstract:
+	Add support to monitore FW crashes with WD. Use WDO bit to determinate between WD during boot phase and during runtime.
+
+Files Modified: spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 09 Jun 2015 18:13:26 CEST
+
+Package: Bootloader (2.2.5); urgency = low
+
+Abstract:
+	FAIL_SAFE_BOOT feature
+
+Files Modified: spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 09 Jun 2015 10:27:01 CEST
+
+Package: Bootloader (2.2.4); urgency = low
+
+Abstract:
+	Copy permata to new basic address
+
+Files Modified: spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Wed, 20 May 2015 18:58:25 CEST
+
+Package: Bootloader (2.2.3); urgency = low
+
+Abstract:
+	Added Winbond W25M512 spi support.
+
+Files Modified: spx/INFO
+
+--Submitter: ramakrishna (nagaramakrishnak@amiindia.co.in) Thu, 07 May 2015 13:32:39 HMT
+
+Package: Bootloader (2.2.2); urgency = medium
+
+Abstract:
+	Increased Aux version for new uboot in binary pkg.
+
+
+--Submitter: revantha (revantha@amiindia.co.in) Tue, 28 Apr 2015 20:20:07 IST
+
+Package: Bootloader (2.2.1); urgency = medium
+
+Abstract:
+	Increased Aux version for new uboot.bin in binary pkg.
+
+
+--Submitter: revantha (revantha@amiindia.co.in) Tue, 28 Apr 2015 17:15:32 IST
+
+Package: Bootloader (2.2.0); urgency = medium
+
+Abstract:
+	Changed HZ to 1KHZ which is 1 second to accomodate roll over issue in timer
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Wed, 24 Dec 2014 11:46:59 HMT
+
+Package: Bootloader (2.1.0); urgency = medium
+
+Abstract:
+	Enable the Memtest based on PRJ Selection.
+
+Files Modified: spx/DEFCONFIG, spx/INFO
+
+--Submitter: muthuchamyk (muthusamyk@amiindia.co.in) Thu, 04 Dec 2014 12:14:30 HMT
+
+Package: Bootloader (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 02:56:11 GMT
+
+Package: Bootloader (1.23.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 04:42:36 GMT
+
+Package: Bootloader (1.22.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 02:52:16 GMT
+
+Package: Bootloader (1.21.0); urgency = medium
+
+Abstract:
+	#increased bigphysarea size
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: gopinaths (gopinaths@amiindia.co.in) Tue, 16 Sep 2014 16:46:19 CST
+
+Package: Bootloader (1.20.0); urgency = medium
+
+Abstract:
+	Added features required to handle multiple versions of u-boot
+
+Files Modified: spx/INFO
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Sat, 06 Sep 2014 15:35:20 HMT
+
+Package: Bootloader (1.19.0); urgency = medium
+
+Abstract:
+	Changed Provides field. Provides should not match with Package name
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 30 Oct 2013 14:45:40 EDT
+
+Package: Bootloader (1.18.0); urgency = medium
+
+Abstract:
+	Updated to support Debian Wheezy target and new complier
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Sat, 21 Sep 2013 23:48:37 EDT
+
+Package: Bootloader (1.17.0); urgency = high
+
+Abstract:
+	Adding support to configure baudrate of debug console from PRJ
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Winston (winstont@ami.com) Wed, 27 Mar 2013 14:49:45 EDT
+
+Package: Bootloader (1.16.0); urgency = high
+
+Abstract:
+	This will build depend on oem package which will in turn build depend on platform package for Bootloader
+
+Files Modified: spx/INFO
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Thu, 18 Oct 2012 22:57:01 EDT
+
+Package: Bootloader (1.15.0); urgency = high
+
+Abstract:
+	Making the Bootloader-ARCH-SOC-EVB-src packages customizable with CONFIG customization tag
+
+Files Modified: spx/INFO
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Wed, 17 Oct 2012 23:00:56 EDT
+
+Package: Bootloader (1.14.0); urgency = medium
+
+Abstract:
+	Build fix for Binary Build.
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: ravisastrys (ravisastrys@amiindia.co.in) Mon, 17 Sep 2012 15:04:54 IST
+
+Package: Bootloader (1.13.0); urgency = high
+
+Abstract:
+	- Define the maximum flash count with the current backup flash count, not always plus one.
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Cheng-Chia,Yang (ChiaYang@ami.com.tw) Wed, 29 Aug 2012 11:52:19 CST
+
+Package: Bootloader (1.12.0); urgency = medium
+
+Abstract:
+	Adding environmental variabled to DEFCONFIG needed for Dual Image Support.
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Winston (winstont@ami.com) Mon, 23 Jul 2012 18:42:56 EDT
+
+Package: Bootloader (1.11.0); urgency = medium
+
+Abstract:
+	Added Memory test Start and end RAM address.
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: muthuchamyk (muthusamyk@amiindia.co.in) Mon, 25 Jun 2012 18:05:23 IST
+
+Package: Bootloader (1.10.0); urgency = high
+
+Abstract:
+	- Modify Boot-loader with new definition for assign BACKUP SPI flash banks.
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Cheng-Chia,Yang (ChiaYang@ami.com.tw) Mon, 14 May 2012 16:37:25 CST
+
+Package: Bootloader (1.9.0); urgency = high
+
+Abstract:
+	- Increase the maximum sector numner to 1024 for N25Q512 flash.
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Cheng-Chia,Yang (ChiaYang@ami.com.tw) Wed, 09 May 2012 17:11:34 CST
+
+Package: Bootloader (1.8.0); urgency = medium
+
+Abstract:
+	handled all four combinations for PCIE function1 support and ECC support
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Tue, 06 Dec 2011 14:33:36 EST
+
+Package: Bootloader (1.7.0); urgency = medium
+
+Abstract:
+	build error fixed
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Mon, 31 Oct 2011 17:10:45 EDT
+
+Package: Bootloader (1.6.0); urgency = medium
+
+Abstract:
+	added PCIe Function1 support
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Mon, 31 Oct 2011 15:23:12 EDT
+
+Package: Bootloader (1.5.0); urgency = medium
+
+Abstract:
+	Add ECC support(configurable)
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter:  () Tue, 25 Oct 2011 17:30:18 CST
+
+Package: Bootloader (1.4.0); urgency = high
+
+Abstract:
+	licensing corrected
+
+Files Deleted: spx/LICENSES/LICENSE.AMI
+Files Modified: spx/INFO
+
+--Submitter: Anurag Bhatia (anuragb@ami.com) Thu, 23 Jun 2011 15:46:00 EDT
+
+Package: Bootloader (1.3.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 13:59:23 EDT
+
+Package: Bootloader (1.2.0); urgency = low
+
+Abstract:
+	Description files cleanup
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 10 Nov 2010 15:22:05 EST
+
+Package: Bootloader (1.1.0); urgency = low
+
+Abstract:
+	Incrementing Minor and setting Aux to Zero
+
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 21 Sep 2010 13:03:03 EDT
+
+Package: Bootloader (1.0.5); urgency = medium
+
+Abstract:
+	Enabled GBit Phy Support
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 07 Sep 2010 22:37:08 EDT
+
+Package: Bootloader (1.0.4); urgency = high
+
+Abstract:
+	Moved SOC Specific YAFU Download locations to Defconfig
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Thu, 26 Aug 2010 13:07:59 EDT
+
+Package: Bootloader (1.0.3); urgency = high
+
+Abstract:
+	Increased allocation for Hw Compression
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Mon, 09 Aug 2010 19:25:18 EDT
+
+Package: Bootloader (1.0.2); urgency = medium
+
+Abstract:
+	Removed hardcoded value of Flash Banks. Now it will get from Project configuration
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Thu, 08 Jul 2010 23:53:22 EDT
+
+Package: Bootloader (1.0.1); urgency = low
+
+Abstract:
+	Updated DEFCONFIG with proper values
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 06 Apr 2010 14:27:17 EDT
+
+Package: Bootloader (1.0.0); urgency = new
+
+Abstract:
+	Bootloader for Hornet (U-boot)
+
+Files Added: data, spx, spx/CHANGELOG, spx/DEFCONFIG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/Bootloader, spx/PACKAGES.D/Bootloader/DATA, spx/PACKAGES.D/Bootloader/SCRIPTS, spx/PACKAGES.D/Bootloader/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Jothiram Selvam (jothirams@ami.com) Mon, 05 Apr 2010 20:11:33 EDT
+

@@ -1,0 +1,93 @@
+Package: sys_zipunzip (3.2.0.0.0); urgency = medium
+
+Abstract:
+	Fix for CVE-2019-13232
+
+Files Added: data/usr/bin, data/usr/bin/unzip, data/usr/bin/unzipsfx, data/usr/bin/zipgrep, data/usr/bin/zipinfo
+Files Deleted: data/usr/usr, data/usr/usr/bin, data/usr/usr/bin/unzip, data/usr/usr/bin/unzipsfx, data/usr/usr/bin/zipgrep, data/usr/usr/bin/zipinfo
+
+--Submitter: gudipally sharanya (gudipallysharanya@amiindia.co.in) Fri, 06 Sep 2019 11:39:16 IST
+
+Package: sys_zipunzip (3.1.0.0.0); urgency = medium
+
+Abstract:
+	Fix for CVE-2019-13232
+
+Files Added: data/usr, data/usr/usr, data/usr/usr/bin, data/usr/usr/bin/unzip, data/usr/usr/bin/unzipsfx, data/usr/usr/bin/zipgrep, data/usr/usr/bin/zipinfo
+Files Deleted: data/keep.folder
+Files Modified: spx/INFO, spx/RULES, spx/RULES.D/files.lst
+
+--Submitter: gudipally sharanya (gudipallysharanya@amiindia.co.in) Thu, 05 Sep 2019 18:21:46 IST
+
+Package: sys_zipunzip (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:44:12 UTC
+
+Package: sys_zipunzip (2.2.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: data/keep.folder, spx/PACKAGES.D/sys_zipunzip/DATA/keep.folder
+Files Deleted: data/.keep, spx/PACKAGES.D/sys_zipunzip/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 18:31:09 EDT
+
+Package: sys_zipunzip (2.1.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: data/.keep, spx/PACKAGES.D/sys_zipunzip/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 23:33:35 EST
+
+Package: sys_zipunzip (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 06:43:00 GMT
+
+Package: sys_zipunzip (1.3.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 08:07:29 GMT
+
+Package: sys_zipunzip (1.2.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 06:19:27 GMT
+
+Package: sys_zipunzip (1.1.0); urgency = medium
+
+Abstract:
+	Moving the GROUP from FEATURES to BASE.
+
+Files Modified: spx/INFO, spx/RULES.D/files.lst
+
+--Submitter: Winston (winstont@ami.com) Thu, 09 Jan 2014 11:12:35 EST
+
+Package: sys_zipunzip (1.0.0); urgency = new
+
+Abstract:
+	This package contains binaries related to zip and unzip operations
+
+Files Added: data, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/P.CONFIG, spx/PACKAGES.D, spx/PACKAGES.D/sys_zipunzip, spx/PACKAGES.D/sys_zipunzip/DATA, spx/PACKAGES.D/sys_zipunzip/P.CONFIG, spx/PACKAGES.D/sys_zipunzip/SCRIPTS, spx/PACKAGES.D/sys_zipunzip/SCRIPTS/dev-install, spx/RULES, spx/RULES.D, spx/RULES.D/directory.lst, spx/RULES.D/files.lst, spx/RULES.D/softlink.lst
+
+--Submitter: Nilesh Konar (nileshk@amiindia.co.in) Tue, 26 Nov 2013 15:53:44 HMT
+

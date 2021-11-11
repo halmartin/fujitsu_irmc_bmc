@@ -1,0 +1,27 @@
+# Install Script
+
+build-install:
+# delete old libraries
+	DELETE_ALL %IMAGE_TREE/usr/lib libnetsnmp*
+	DELETE_ALL %IMAGE_TREE/usr/sbin snmpd*
+#create folder if neccessary
+	MKDIR_NOCLEAN %IMAGE_TREE/usr/sbin
+	MKDIR_NOCLEAN %IMAGE_TREE/usr/lib
+	MKDIR_NOCLEAN %IMAGE_TREE/etc/init.d
+	MKDIR_NOCLEAN %IMAGE_TREE/etc/rcS.d
+	MKDIR_NOCLEAN %IMAGE_TREE/etc/rc1.d
+	MKDIR_NOCLEAN %IMAGE_TREE/etc/rc3.d
+	MKDIR_NOCLEAN %IMAGE_TREE/etc/rc6.d
+	MKDIR_NOCLEAN %IMAGE_TREE/etc/rc8.d
+#intall libraries
+	COPY_DIR	./usr/lib %IMAGE_TREE/usr/lib/
+	ADD_LIBRARY_LINKS %IMAGE_TREE/usr/lib libnetsnmpagent.so.25.0.2
+	ADD_LIBRARY_LINKS %IMAGE_TREE/usr/lib libnetsnmphelpers.so.25.0.2
+	ADD_LIBRARY_LINKS %IMAGE_TREE/usr/lib libnetsnmpmibs.so.25.0.2
+	ADD_LIBRARY_LINKS %IMAGE_TREE/usr/lib libnetsnmp.so.25.0.2
+#install snmpd
+	COPY_FILE ./usr/sbin/snmpd %IMAGE_TREE/usr/sbin/
+
+	
+
+debug-install:

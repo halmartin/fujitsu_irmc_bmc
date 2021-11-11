@@ -1,0 +1,42 @@
+Source : sys_net_snmp
+Version : 1.9.0.6.1
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : FTS
+Maintainer : Vladimir Shakhov (Vladimir.Shakhov@ts.fujitsu.com)
+License : NET-SNMP
+Source-Location : www.net-snmp.org
+Source-Version : 5.6.2.1
+Builds : sys_net_snmp, sys_net_snmp_dev
+Architecture : ALL
+OEM : FTS
+Urgency : high
+Description : Binary version of net-snmp version 5.6.2.1 from www.net-snmp.org .
+
+Source package net_snmp_build_5621 is at FTS/OpenSource/NET-SNMP/packages repository.
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : sys_net_snmp
+Config-Tag : NET-SNMP v5.6.2.1 from binary
+Section : sys
+Group : FEATURES
+Essential : NO
+Provides : NET_SNMP
+Description : FTS package: Install net-snmp version 5.6.2.1
+.
+
+Package : sys_net_snmp_dev
+Section : dev
+Group : DEVEL
+Essential : NO
+Description : Install NET-SNMP library to devel folder version 5.6.2.1
+.
+

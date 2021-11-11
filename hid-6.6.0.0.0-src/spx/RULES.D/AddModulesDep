@@ -1,0 +1,16 @@
+#!/bin/sh
+
+MODULESDEP="$IMAGE_TREE/etc/modules.dep"
+
+already_present=`grep "hid: " $MODULESDEP | wc -l`
+if [ $already_present == 1 ]; then
+    exit
+fi
+
+if [ "$CONFIG_SPX_FEATURE_USB11_PRESENTED" == "YES" ]
+then
+	echo "hid: usb0_hw" >> $MODULESDEP
+else
+	echo "hid: usb1_hw" >> $MODULESDEP
+fi
+

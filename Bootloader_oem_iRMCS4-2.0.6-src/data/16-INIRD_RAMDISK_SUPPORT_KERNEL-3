@@ -1,0 +1,11 @@
+--- uboot/vendors/ami/bootargs.c	2015-07-07 23:52:13.076511659 +0530
++++ uboot_new/vendors/ami/bootargs.c	2015-07-08 13:05:31.920406515 +0530
+@@ -6,7 +6,7 @@
+ 
+ 	if(rootisinitrd == 1)
+ 	{
+-		sprintf(bootargs,"root=/dev/ramdisk ro ip=none ramdisk_blocksize=4096 ");
++		sprintf(bootargs,"root=/dev/ram0 ro ip=none ramdisk_blocksize=4096 ");
+ 	}
+ 	else
+ 	{

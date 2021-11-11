@@ -1,0 +1,13 @@
+--- linux-3.14.17/arch/arm/boot/compressed/Makefile	2014-08-14 07:08:34.000000000 +0530
++++ linux-3.14.17.new/arch/arm/boot/compressed/Makefile	2014-09-04 16:49:29.578317476 +0530
+@@ -40,6 +40,10 @@
+ #
+ # Architecture dependencies
+ #
++ifeq ($(CONFIG_ARCH_HORNET),y)
++OBJS            += head-pilot.o
++endif
++
+ ifeq ($(CONFIG_ARCH_ACORN),y)
+ OBJS		+= ll_char_wr.o font.o
+ endif

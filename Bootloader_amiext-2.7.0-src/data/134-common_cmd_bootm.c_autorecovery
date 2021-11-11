@@ -1,0 +1,26 @@
+--- uboot_old/common/cmd_bootm.c	2014-11-19 19:18:23.906825414 +0530
++++ uboot/common/cmd_bootm.c	2014-11-19 19:18:35.855040728 +0530
+@@ -215,6 +215,11 @@
+ 	if (crc32 (0, (uchar *)data, len) != checksum) {
+ 		puts ("Bad Header Checksum\n");
+ 		SHOW_BOOT_PROGRESS (-2);
++#if defined(CONFIG_SPX_FEATURE_BMC_FIRMWARE_AUTO_RECOVERY)
++		setenv("imgheadererr","yes");
++        saveenv();
++		do_reset (cmdtp, flag, argc, argv);
++#endif
+ 		return 1;
+ 	}
+ 	SHOW_BOOT_PROGRESS (3);
+@@ -246,6 +251,11 @@
+ 		if (crc32 (0, (uchar *)data, len) != ntohl(hdr->ih_dcrc)) {
+ 			printf ("Bad Data CRC\n");
+ 			SHOW_BOOT_PROGRESS (-3);
++#if defined(CONFIG_SPX_FEATURE_BMC_FIRMWARE_AUTO_RECOVERY)
++			setenv("imgheadererr","yes");
++            saveenv();
++			do_reset (cmdtp, flag, argc, argv);
++#endif
+ 			return 1;
+ 		}
+ 		puts ("OK\n");

@@ -1,0 +1,191 @@
+#!/bin/sh -e
+### BEGIN INIT INFO
+# Provides:          module-init-tools
+# Required-Start:    
+# Required-Stop:     
+# Should-Start:      checkroot
+# Should-stop:
+# Default-Start:     S
+# Default-Stop:
+# Short-Description: Process /etc/modules.
+# Description:       Load the modules listed in /etc/modules.
+### END INIT INFO
+
+# Silently exit if the kernel does not support modules or needs modutils.
+[ -f /proc/modules ] || exit 0
+[ ! -f /proc/ksyms ] || exit 0
+[ -x /sbin/modprobe  ] || exit 0
+
+. /etc/default/rcS
+. /lib/lsb/init-functions
+
+PATH="/sbin:/bin"
+
+KVER=$(uname -r)
+KMAJ=${KVER%${KVER#*.*[^.]}}
+KMAJ=${KMAJ%.}
+
+MODULEDEP="/etc/modules.dep"
+
+if [ -e /etc/modules-$KVER ]; then
+  MODULES_FILE=/etc/modules-$KVER
+elif [ -e /etc/modules-$KMAJ ]; then
+  MODULES_FILE=/etc/modules-$KMAJ
+else
+  MODULES_FILE=/etc/modules
+fi
+
+# FTSCHG_Ircona - Explicitly install i2c_hw module which is a dependency in some cases to read PLATFORM_NAME
+modprobe i2c_hw
+# FTSCHG_Ircona - end changes
+
+#PLATFORM_NAME=`cat /usr/local/platform/platform.conf`
+PLATFORM_NAME=`/usr/local/bin/ftsfam`
+PLATFORM_NAME_FILE=/usr/local/platform/$PLATFORM_NAME/system.conf                                                       #   FTSCHG_alois
+COMPATIBILITY_MODE=N                                                                                                    #   FTSCHG_alois
+#   backward compatibility                                                                                              #   FTSCHG_alois
+if [ ! -f $PLATFORM_NAME_FILE ]                                                                                         #   FTSCHG_alois
+then                                                                                                                    #   FTSCHG_alois
+        PLATFORM_NAME_FILE=/usr/local/platform/$PLATFORM_NAME/platform_drv.conf                                         #   FTSCHG_alois
+        COMPATIBILITY_MODE=Y                                                                                            #   FTSCHG_alois
+fi                                                                                                                      #   FTSCHG_alois
+
+load_module() {
+  local module args
+  module="$1"
+  args="$2"
+
+  if [ "$VERBOSE" != no ]; then
+    log_action_msg "Loading kernel module $module"
+    modprobe $module $args || true
+  else
+    modprobe $module $args > /dev/null 2>&1 || true
+  fi	
+}
+
+# modprobe the modules hid depends
+check_module_dep () {
+  local module args
+  module="$1"
+  args="$2"
+
+  # Check modules.dep exist
+  if [ -e "$MODULEDEP" ]; then
+    # modprobe dependent moduels
+    while read line
+    do
+	module_name=${line%%[:]*}
+	module_dep_list=${line##*[:]}
+	if [ $module == $module_name ]; then
+		for dep in $module_dep_list
+		do  
+			tmp=${dep%%[,]*}
+			load_module "$tmp"
+ 		done
+    	fi
+    done < $MODULEDEP
+    load_module "$module" "$args"
+  else
+   load_module "$module" "$args"
+  fi
+}
+
+#The following line is for Ractrends SP 4.0 
+#Busybox modprobe works without running depmod. Debian modprobe wants
+#modules.dep to be present and hence we have to run depmod for NFS
+#Busybox depmod does not have --quick option and issues error. So we 
+#redirect the stderr to null.
+if [ -x /sbin/depmod ]; then
+    /sbin/depmod --quick 2>/dev/null || true
+fi
+
+I2C9MUX2_REWORK_FILE="/conf/i2c9mux2.yes"                                                                           #   FTSCHG_HJH
+if [ -e "$PLATFORM_NAME_FILE" ]; then
+	log_action_msg "Loading platform driver from file $PLATFORM_NAME_FILE"
+	if [ $COMPATIBILITY_MODE != N ]                                                                                 #   FTSCHG_alois
+	then                                                                                                            #   FTSCHG_alois
+		platform_param="`cat $PLATFORM_NAME_FILE`"                                                              #   FTSCHG_alois
+	else                                                                                                            #   FTSCHG_alois
+		platform_param="`sed -n '/^\[gpioinit\]/,/^\[/s,^[^=]*\<drv_param\>[^=]*=[ \t]*"*\([^;"]*\)"*.*,\1,p' $PLATFORM_NAME_FILE`" #   FTSCHG_alois
+		if [ -f "$I2C9MUX2_REWORK_FILE" ]; then
+            platform_param="$platform_param I2C9MUX2_REWORK=1"                                                      #   FTSCHG_HJH - to be removed starting T50 of RX/TX13x0M4
+		fi
+	fi                                                                                                              #   FTSCHG_alois
+	if [ "$platform_param" != "" ];then                                                                             #   FTSCHG_alois
+		log_action_msg "Loading platform driver for $platform_param"                                            #   FTSCHG_alois
+		modprobe platform $platform_param || true	                                                        #   FTSCHG_alois
+	else
+		echo "Platform name not found in file $PLATFORM_NAME_FILE!!!!"
+	fi
+else
+	echo $PLATFORM_NAME_FILE not found!!!Could not load platform driver!!!
+fi
+
+if [ "$VERBOSE" = no ]; then
+  log_action_begin_msg 'Loading kernel modules'
+fi
+# Loop over every line in /etc/modules.
+if [ -f $MODULES_FILE ]; then
+    grep '^[^#]' $MODULES_FILE | \
+    while read module args; do
+        [ "$module" ] || continue
+        check_module_dep "$module" "$args"
+    done
+fi
+
+# FTSCHG_WU_Begin
+if [ -e "$PLATFORM_NAME_FILE" ]; then
+    i2c_mux_param="`sed -n '/^\[i2c_mux\]/,/^\[/s,^[^=]*\<mux_param\>[^=]*=[ \t]*"*\([^;"]*\)"*.*,\1,p' $PLATFORM_NAME_FILE`"
+	if [ "$i2c_mux_param" != "" ];then                                                                             
+		log_action_msg "Loading I2C mux driver with params: $i2c_mux_param"
+# FTSCHG_MC_Begin
+		device_id="`sed -n '/^\[systeminfo\]/,/^\[/s,^[^=]*\<device_id\>[^=]*=[ \t]*"*\([^ ;"]*\)"*.*,\1,p' $PLATFORM_NAME_FILE`"
+		if [ "$device_id" == "0x05" ] || [ "$device_id" == "0x55" ]; then
+		    modprobe i2c_mux_PILOT || true
+		    modprobe i2c_mux_PCA954 || true
+		    modprobe i2c_mux_gpiohal || true
+			modprobe i2c_mux_if || true 
+		else
+	 		modprobe i2c_mux_pca954x || true
+		fi
+# FTSCHG_MC_End
+		echo $i2c_mux_param >/proc/i2c_mux/bind
+	fi
+fi
+# FTSCHG_WU_End
+if [ -e "$PLATFORM_NAME_FILE" ]; then
+    i2c_mux_param="`sed -n '/^\[i2c_mux_gpio\]/,/^\[/s,^[^=]*\<mux_param\>[^=]*=[ \t]*"*\([^;"]*\)"*.*,\1,p' $PLATFORM_NAME_FILE`"
+	if [ "$i2c_mux_param" != "" ];then                                                                             
+		log_action_msg "Loading GPIO-based I2C mux driver with params: $i2c_mux_param"  
+		modprobe helper || true
+		modprobe gpio || true
+		modprobe gpio_hw || true
+		modprobe i2c_mux_gpio || true
+		echo $i2c_mux_param >/proc/i2c_mux_gpio/bind	                                                        
+	fi
+fi
+
+
+# Just in case a sysadmin prefers generic symbolic links in
+# /lib/modules/boot for boot time modules we will load these modules.
+#Commented out the following line for Ractrends SP 4.0 because 
+# 1.Busybox modprobe does not support these options
+# 2.SP 4.0 does not use boot time modules.
+#boot="$(modprobe --list --type boot)"
+for d in $boot; do
+  mod="${d##*/}"
+  mod="${mod%.ko}"
+  load_module "$mod" ""
+done
+
+if [ "$VERBOSE" = no ]; then 
+  log_action_end_msg 0
+fi
+
+if [ -r /etc/modprobe.conf ] \
+	&& ! grep -q '^include.*modprobe.d' /etc/modprobe.conf; then
+  log_warning_msg '/etc/modprobe.conf exists but does not include /etc/modprobe.d/!'
+fi
+
+exit 0
+

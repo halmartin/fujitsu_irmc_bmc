@@ -1,0 +1,9 @@
+#! /bin/sh
+# Deleting the status flag file to indicate warm reset is complete
+
+#Runlevel : 9 = S99
+STATUS_FLAG="/var/tmp/warmresetinprogress"
+if [ -f "$STATUS_FLAG" ]
+then 
+	    rm "$STATUS_FLAG"
+fi

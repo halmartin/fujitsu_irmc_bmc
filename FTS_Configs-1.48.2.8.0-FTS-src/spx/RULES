@@ -1,0 +1,17 @@
+#Extract Source	in %SOURCE
+extract_source:
+
+#Build Source in %BUILD
+build_source: 
+	#INVOKE_SHELL CreateTree %BUILD/%PACKAGE %TARGETDIR	
+	
+#Clean Source
+clean_source:
+
+#--------------------- Mandatory Rules for every binary package -------------------------
+
+# Rules to create inittab_FTS package
+build_package-FTS_Configs:
+	PACK_SPX  ./   %BUILD/%PACKAGE/data/
+
+

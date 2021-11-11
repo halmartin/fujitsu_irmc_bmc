@@ -1,0 +1,439 @@
+Package: luncombo (6.0.0.0.1); urgency = low
+
+Abstract:
+	initial commit
+
+Files Modified: spx/INFO
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Sep 2018 18:24:34 CEST
+
+Package: luncombo (6.0.0.0.0); urgency = high
+
+Abstract:
+	This package includes CDROM and Hard Disk LUN COMBO driver module.
+
+
+--Submitter: Winston (winstont)(winstont@ami.com) Mon, 10 Sep 2018 20:35:05 UTC
+
+Package: luncombo (6.0.0.0.0); urgency = high
+
+Abstract:
+	This package includes CDROM and Hard Disk LUN COMBO driver module.
+
+
+--Submitter: Balasubramanian C (balasubramanianc)(balasubramanianc@amiindia.co.in) Wed, 20 Jun 2018 09:52:21 UTC
+
+Package: luncombo (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:28:57 UTC
+
+Package: luncombo (2.6.0); urgency = medium
+
+Abstract:
+	Remove Floppy Code References.
+
+Files Modified: data/lun_combo_mod.c, spx/INFO
+
+--Submitter: Mohammed Javith Akthar M (mohammedjavitham@amiindia.co.in) Fri, 09 Dec 2016 18:42:04 HMT
+
+Package: luncombo (2.5.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: spx/PACKAGES.D/luncombo/DATA/keep.folder
+Files Deleted: spx/PACKAGES.D/luncombo/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 17:13:46 EDT
+
+Package: luncombo (2.4.0); urgency = medium
+
+Abstract:
+	Added suport for GET_EVENT_STATUS_NOTIFICATION SCSI command (0x4A) on Pilot-III SOC.
+
+Files Modified: data/lun_combo_mod.c, spx/INFO
+
+--Submitter: deepakmn (deepakmn@amiindia.co.in) Thu, 21 Apr 2016 19:54:38 CST
+
+Package: luncombo (2.3.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/PACKAGES.D/luncombo/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 22:19:15 EST
+
+Package: luncombo (2.2.0); urgency = low
+
+Abstract:
+	Added debug print to catch media stop
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Tue, 05 May 2015 12:21:24 HMT
+
+Package: luncombo (2.1.0); urgency = low
+
+Abstract:
+	Updated Copyrights year
+
+Files Modified: data/lun_combo_mod.c, spx/INFO
+
+--Submitter: prateekv (prateekv@amiindia.co.in) Thu, 18 Dec 2014 20:52:54 HMT
+
+Package: luncombo (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 05:43:00 GMT
+
+Package: luncombo (1.19.0); urgency = medium
+
+Abstract:
+	INFO file for SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: shravan (shravan@amiindia.co.in) Fri, 17 Oct 2014 17:45:34 HMT
+
+Package: luncombo (1.18.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 07:16:19 GMT
+
+Package: luncombo (1.17.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 05:28:22 GMT
+
+Package: luncombo (1.16.0); urgency = medium
+
+Abstract:
+	Adding back proper macros ADD_MODULES,ADD_MODULES_ONLY which was changed recently for Faster Boot Support
+
+Files Modified: spx/PACKAGES.D/luncombo/SCRIPTS/dev-install
+
+--Submitter: Winston (winstont@ami.com) Thu, 24 Apr 2014 11:00:44 GMT
+
+Package: luncombo (1.15.0); urgency = medium
+
+Abstract:
+	Faster Boot Support
+
+Files Modified: spx/PACKAGES.D/luncombo/SCRIPTS/dev-install
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Fri, 18 Apr 2014 20:59:49 HMT
+
+Package: luncombo (1.14.0); urgency = low
+
+Abstract:
+	Modified driver to support Kernel 3.4.11.
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: akshay p (akshayp@amiindia.co.in) Sun, 15 Sep 2013 02:30:26 HMT
+
+Package: luncombo (1.13.0); urgency = medium
+
+Abstract:
+	Updated to support Debian Wheezy target and new complier
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Sun, 22 Sep 2013 01:36:48 EDT
+
+Package: luncombo (1.12.0); urgency = medium
+
+Abstract:
+	#Increasing total device count to 12
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: gopinaths (gopinaths@amiindia.co.in) Wed, 21 Nov 2012 00:22:27 IST
+
+Package: luncombo (1.11.0); urgency = low
+
+Abstract:
+	Fixed Virtual Media settings
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: patra (poulabipatra@amiindia.co.in) Tue, 30 Oct 2012 11:55:51 HMT
+
+Package: luncombo (1.10.0); urgency = low
+
+Abstract:
+	Virtual Media Settings as configurable through PRJ
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: sandipan (sandipang@amiindia.co.in) Fri, 19 Oct 2012 14:18:27 HMT
+
+Package: luncombo (1.9.0); urgency = medium
+
+Abstract:
+	Fix for compilation errors when debug message support is enabled.
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Winston (winstont@ami.com) Tue, 26 Jun 2012 15:37:19 EDT
+
+Package: luncombo (1.8.0); urgency = medium
+
+Abstract:
+	Memory coruption in faliure cases handled
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: othiyappnk (othiyappank@amiindia.co.in) Tue, 22 May 2012 11:48:22 IST
+
+Package: luncombo (1.7.0); urgency = high
+
+Abstract:
+	Fixes for 64 Bit data structures
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 20 Sep 2011 08:55:50 EDT
+
+Package: luncombo (1.6.0); urgency = medium
+
+Abstract:
+	Licence Info changed to GPL-V2
+
+Files Added: spx/LICENSES/LICENSE.GPL-V2
+Files Deleted: spx/LICENSES/LICENSE.AMI
+Files Modified: data/lun_combo_mod.c, spx/INFO
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Thu, 23 Jun 2011 16:42:41 EDT
+
+Package: luncombo (1.5.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 15:17:53 EDT
+
+Package: luncombo (1.4.0); urgency = medium
+
+Abstract:
+	avoided accessing user space data.
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Thu, 04 Nov 2010 12:32:11 EDT
+
+Package: luncombo (1.3.0); urgency = medium
+
+Abstract:
+	Copied driver to generic location instead of kernel specific locaton
+
+Files Modified: spx/PACKAGES.D/luncombo/SCRIPTS/dev-install
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 27 Oct 2010 14:49:19 EDT
+
+Package: luncombo (1.2.0); urgency = medium
+
+Abstract:
+	missing initalization added.
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Tue, 26 Oct 2010 17:20:05 EDT
+
+Package: luncombo (1.1.0); urgency = low
+
+Abstract:
+	Incrementing Minor and setting Aux to Zero
+
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 21 Sep 2010 14:06:41 EDT
+
+Package: luncombo (1.0.18); urgency = medium
+
+Abstract:
+	This change is because of change in the number of hdisk/floppy instances.
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Mon, 16 Aug 2010 12:36:40 EDT
+
+Package: luncombo (1.0.17); urgency = medium
+
+Abstract:
+	luncombo module will not be connected to host on module registration with USB core module.
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Fri, 13 Aug 2010 11:50:33 EDT
+
+Package: luncombo (1.0.16); urgency = medium
+
+Abstract:
+	luncombo module modified to support dynamic vmedia devices.
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Thu, 12 Aug 2010 15:32:30 EDT
+
+Package: luncombo (1.0.15); urgency = medium
+
+Abstract:
+	this change because of IUSB_HEADER field name change.
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Thu, 15 Jul 2010 10:27:31 EDT
+
+Package: luncombo (1.0.14); urgency = medium
+
+Abstract:
+	removed USB_FLOPPY_EMULATE ioctl and released hdisk and cdrom instances during module unload.
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Thu, 08 Jul 2010 14:31:01 EDT
+
+Package: luncombo (1.0.13); urgency = low
+
+Abstract:
+	removed Config-Tag from binary package fields so that it will not appear as configurable option in Device Configuration of MDS and updated the description field.
+
+Files Modified: spx/INFO
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Mon, 14 Jun 2010 16:55:50 EDT
+
+Package: luncombo (1.0.12); urgency = high
+
+Abstract:
+	Dependecy on hw support added. This will avoid showing/selecting the core driver/application/library  if the hardware/soc does not support the device
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Thu, 03 Jun 2010 12:14:33 EDT
+
+Package: luncombo (1.0.11); urgency = high
+
+Abstract:
+	fixed issue in reading the hard disk type.
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Fri, 28 May 2010 14:13:32 EDT
+
+Package: luncombo (1.0.10); urgency = medium
+
+Abstract:
+	new IOCTLs added to be able to support both removable and fixed hard disk types. windows OS does not recognize multiple partitions in a USB removable hard disk.
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Tue, 25 May 2010 15:24:00 EDT
+
+Package: luncombo (1.0.9); urgency = medium
+
+Abstract:
+	Modified Rules to not to unload module when Firmware upgrade usb being used
+
+Files Modified: spx/PACKAGES.D/luncombo/SCRIPTS/dev-install
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 12 May 2010 16:22:48 EDT
+
+Package: luncombo (1.0.8); urgency = medium
+
+Abstract:
+	USB media dependencies resolved for MDS
+
+Files Modified: spx/INFO
+
+--Submitter: Anurag Bhatia (anuragb@ami.com) Wed, 21 Apr 2010 13:57:03 EDT
+
+Package: luncombo (1.0.7); urgency = medium
+
+Abstract:
+	dependencies fixed for MDS
+
+Files Modified: spx/INFO
+
+--Submitter: Anurag Bhatia (anuragb@ami.com) Tue, 20 Apr 2010 19:19:05 EDT
+
+Package: luncombo (1.0.6); urgency = high
+
+Abstract:
+	serial number string descriptor added to luncombo too,
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Mon, 12 Apr 2010 12:47:52 EDT
+
+Package: luncombo (1.0.5); urgency = low
+
+Abstract:
+	floppy device always reports 1.44 MB now and debug message changes.
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Fri, 26 Mar 2010 20:44:20 EDT
+
+Package: luncombo (1.0.4); urgency = low
+
+Abstract:
+	Luncombo now has hdisk interface too.
+
+Files Modified: data/lun_combo_mod.c
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Fri, 26 Mar 2010 18:18:07 EDT
+
+Package: luncombo (1.0.3); urgency = medium
+
+Abstract:
+	packages dependencies updated
+
+Files Modified: spx/INFO
+
+--Submitter: Anurag Bhatia (anuragb@ami.com) Wed, 17 Mar 2010 17:58:39 EDT
+
+Package: luncombo (1.0.2); urgency = low
+
+Abstract:
+	Version Dependecies Removed
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 10 Feb 2010 17:11:48 EST
+
+Package: luncombo (1.0.1); urgency = low
+
+Abstract:
+	version of iUSB and usbe module dependancy updated to >= 1.0.0
+
+Files Modified: spx/INFO
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Tue, 09 Feb 2010 10:54:44 EST
+
+Package:luncombo (1.0.0);urgency=new
+
+Abstract:
+	This package includes CDROM and Floppy LUN COMBO driver module.
+
+Files Added: Makefile, lun_combo_mod.c
+
+--Submitter: Rama Rao Bisa (RamaB@ami.com) Tue, 8 Dec 2009 15:06:35 -0500

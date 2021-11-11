@@ -1,0 +1,26 @@
+#Extract Source	in %SOURCE
+extract_source:
+
+#Build Source in %BUILD
+build_source:
+	CWD %BUILD/%PACKAGE/data
+	INVOKE_MAKE
+
+#Clean Source
+clean_source:
+	CWD %BUILD/%PACKAGE/data
+	INVOKE_MAKE clean
+
+#--------------------- Mandatory Rules for every binary package -------------------------
+
+# Rules to create function1hw package
+build_package-function1hw:
+	PACK_SPX ./ %BUILD/%PACKAGE/data/function1hw.ko
+
+# Rules to create function1hw_dev package
+build_package-function1hw_dev:
+	MKDIR_CLEAN %TEMPDIR/%PACKAGE/tmp
+	COPY_FILE %BUILD/%PACKAGE/data/function1_mod.h %TEMPDIR/%PACKAGE/tmp
+	PACK_SPX ./ %TEMPDIR/%PACKAGE/tmp
+	
+	

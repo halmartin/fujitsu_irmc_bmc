@@ -1,0 +1,15 @@
+--- linux-3.14.17/drivers/mtd/spichips/Kconfig	2014-09-04 11:43:19.973786574 +0530
++++ linux-3.14.17.new/drivers/mtd/spichips/Kconfig	2014-09-04 16:43:29.758307077 +0530
+@@ -79,4 +79,12 @@
+ 	help
+ 	   Erase Block Size of the SPI Device that does not support ReadID 
+ 
++config MTD_PILOT_SPI
++ bool "Pilot-3 SOC SPI Controller"
++ default y if SOC_SE_PILOT3
++ depends on MTD_SPI && (SOC_SE_PILOT3 || SOC_SE_PILOT4)
++ help
++    If you are using SPI device on Pilot-III/IV SOC, select Y
++
++
+ endmenu

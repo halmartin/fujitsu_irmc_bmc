@@ -1,0 +1,262 @@
+Package: wide_dhcpv6 (6.5.0.0.0); urgency = low
+
+Abstract:
+	This package contains wide dhcpv6 client binary (dhcp6c) for ARM architecture.
+
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 16 Feb 2019 01:36:43 UTC
+
+Package: wide_dhcpv6 (6.5.0.0.0); urgency = low
+
+Abstract:
+	License Info Missing error For /usr/sbin/dhcp6c
+
+Files Modified: spx/INFO
+
+--Submitter: Veeraputhiran T (veeraputhirant)(veeraputhirant@amiindia.co.in) Mon, 10 Dec 2018 11:55:18 UTC
+
+Package: wide_dhcpv6 (6.4.0.0.0); urgency = low
+
+Abstract:
+	Adding previous Changelog
+
+Files Modified: spx/CHANGELOG
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 08 Dec 2018 20:23:23 UTC
+
+Package: wide_dhcpv6 (6.3.0.0.0); urgency = high
+
+Abstract:
+	wide_dhcpv6 package license clean up
+
+Files Added: spx/LICENSES/LICENSE.WIDEDHCPV6
+Files Deleted: spx/LICENSES/LICENSE.BSD
+
+--Submitter: Rudhranandhan R (rudhranandhanr)(rudhranandhanr@amiindia.co.in) Wed, 01 Aug 2018 10:24:20 UTC
+
+Package: wide_dhcpv6 (6.2.0.0.0); urgency = medium
+
+Abstract:
+	Fix for IPv6 address is missing with bonding enable after enabled VLAN.
+
+Files Modified: data/dhcp6c
+
+--Submitter: Rudhranandhan R (rudhranandhanr)(rudhranandhanr@amiindia.co.in) Wed, 11 Jul 2018 07:44:07 UTC
+
+Package: wide_dhcpv6 (6.1.0.0.0); urgency = medium
+
+Abstract:
+	EIP 412496 - [AST2500][HTML5] eth0 IPv6 address is missing after do Firmware Update via Web UI
+
+Files Modified: data/dhcp6c
+
+--Submitter: desmondwu (DesmondWu)(desmondwu@ami.com.tw) Thu, 14 Jun 2018 08:43:21 UTC
+
+Package: wide_dhcpv6 (6.0.0.0.0); urgency = high
+
+Abstract:
+	This package contains wide dhcpv6 client binary (dhcp6c) for ARM architecture.
+
+Files Added: data, data/dhcp6c, spx, spx/CHANGELOG, spx/DATA, spx/DATA/keep.folder, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.BSD, spx/SCRIPTS, spx/SCRIPTS/dev-install
+
+--Submitter: Winston (winstont)(winstont@ami.com) Mon, 09 Apr 2018 23:41:29 UTC
+
+Package: wide_dhcpv6 (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:55:22 UTC
+
+Package: wide_dhcpv6 (2.4.0); urgency = medium
+
+Abstract:
+	Feature implementation of Client FQDN DNS support for IPV6.
+
+Files Modified: data/dhcp6c, spx/INFO
+
+--Submitter: Rudhranandhan R (rudhranandhanr@amiindia.co.in) Wed, 19 Oct 2016 12:54:01 HMT
+
+Package: wide_dhcpv6 (2.3.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: spx/DATA/keep.folder
+Files Deleted: spx/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 19:05:45 EDT
+
+Package: wide_dhcpv6 (2.2.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Tue, 05 Jan 2016 00:03:42 EST
+
+Package: wide_dhcpv6 (2.1.0); urgency = medium
+
+Abstract:
+	Correction for GROUP, Source-Location and Source-Version fields
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Thu, 23 Oct 2014 23:11:51 GMT
+
+Package: wide_dhcpv6 (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 07:25:23 GMT
+
+Package: wide_dhcpv6 (1.14.0); urgency = low
+
+Abstract:
+	Updated the Field Group in INFO file
+
+Files Modified: spx/INFO
+
+--Submitter: akshay p (akshayp@amiindia.co.in) Wed, 15 Oct 2014 17:08:36 HMT
+
+Package: wide_dhcpv6 (1.13.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 08:52:29 GMT
+
+Package: wide_dhcpv6 (1.12.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 07:05:07 GMT
+
+Package: wide_dhcpv6 (1.11.0); urgency = medium
+
+Abstract:
+	Updated dhcp6c binary with proper HOP_COUNT_LIMIT macro
+
+Files Modified: data/dhcp6c
+
+--Submitter: jithintk (jithintk@amiindia.com) Tue, 19 Aug 2014 18:50:35 HMT
+
+Package: wide_dhcpv6 (1.10.0); urgency = medium
+
+Abstract:
+	Modified the dhcp6c binary to update Timing configuration dynamically
+
+Files Modified: data/dhcp6c
+
+--Submitter: jithintk (jithintk@amiindia.com) Wed, 13 Aug 2014 16:57:29 HMT
+
+Package: wide_dhcpv6 (1.9.0); urgency = medium
+
+Abstract:
+	Compiled ARM binaryfor retrieving DHCP Server address from dhcpv6 client
+
+Files Modified: data/dhcp6c
+
+--Submitter: Anand Krishnan V (anandkrishnanv@amiindia.co.in) Wed, 07 Nov 2012 15:32:38 HMT
+
+Package: wide_dhcpv6 (1.8.0); urgency = medium
+
+Abstract:
+	Updated with latest change.
+
+Files Modified: data/dhcp6c
+
+--Submitter: muthuchamyk (muthusamyk@amiindia.co.in) Fri, 03 Feb 2012 21:12:01 IST
+
+Package: wide_dhcpv6 (1.7.0); urgency = medium
+
+Abstract:
+	Update dhcp6c binary with 10-dhcp6c_ia_c_no_release_ia.patch
+
+Files Modified: data/dhcp6c
+
+--Submitter: joeychen (JoeyChen@ami.com.tw) Fri, 06 Jan 2012 14:38:27 CST
+
+Package: wide_dhcpv6 (1.6.0); urgency = medium
+
+Abstract:
+	Just disable DEBUG flag and rebuild binary.
+
+Files Modified: data/dhcp6c
+
+--Submitter: joeychen (JoeyChen@ami.com.tw) Wed, 04 Jan 2012 13:44:11 CST
+
+Package: wide_dhcpv6 (1.5.0); urgency = medium
+
+Abstract:
+	Update dhcp6c binary with 09-dhcp6c_c.patch
+
+Files Modified: data/dhcp6c
+
+--Submitter: joeychen (JoeyChen@ami.com.tw) Tue, 27 Dec 2011 20:19:09 CST
+
+Package: wide_dhcpv6 (1.4.0); urgency = high
+
+Abstract:
+	licensing corrected
+
+Files Added: spx/LICENSES/LICENSE.BSD
+Files Deleted: spx/LICENSES/LICENSE.AMI, spx/LICENSES/LICENSE.GPL-V2
+Files Modified: spx/INFO
+
+--Submitter: Anurag Bhatia (anuragb@ami.com) Thu, 23 Jun 2011 17:17:29 EDT
+
+Package: wide_dhcpv6 (1.3.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 16:02:23 EDT
+
+Package: wide_dhcpv6 (1.2.0); urgency = medium
+
+Abstract:
+	Updated wide-dhcp client,which is compiled using cross-compiler.
+
+Files Modified: data/dhcp6c
+
+--Submitter: muthuchamyk (muthusamyk@amiindia.co.in) Tue, 03 May 2011 20:57:56 IST
+
+Package: wide_dhcpv6 (1.1.0); urgency = low
+
+Abstract:
+	Incrementing Minor and setting Aux to Zero
+
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 21 Sep 2010 14:55:46 EDT
+
+Package: wide_dhcpv6 (1.0.1); urgency = low
+
+Abstract:
+	Updated Provides field
+
+Files Modified: spx/INFO
+
+--Submitter: arunkumar (arunkumars@amiindia.co.in) Wed, 25 Aug 2010 15:03:01 IST
+
+Package: wide_dhcpv6 (1.0.0); urgency = new
+
+Abstract:
+	This package contains wide dhcpv6 client binary (dhcp6c) for ARM architecture.
+
+Files Added: data, data/dhcp6c, spx, spx/CHANGELOG, spx/DATA, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/LICENSES/LICENSE.GPL-V2, spx/SCRIPTS, spx/SCRIPTS/dev-install
+
+--Submitter: arunkumar (arunkumars@amiindia.co.in) Wed, 14 Jul 2010 21:44:00 IST
+

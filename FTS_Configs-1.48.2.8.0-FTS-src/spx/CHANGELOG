@@ -1,0 +1,724 @@
+Package: FTS_Configs (1.48.2.8.0); urgency = low
+
+Abstract:
+	For patch_base 09.60j: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 20 Nov 2019 10:56:50 CET
+
+Package: FTS_Configs (1.48.2.7.0); urgency = low
+
+Abstract:
+	For patch_base 09.60g: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 03 Sep 2019 13:40:09 CEST
+
+Package: FTS_Configs (1.48.2.6.0); urgency = medium
+
+Abstract:
+	Removed davfs group and used sysadmin group for davfs file system.
+
+Files Modified: data/group, spx/LICENSES/LICENSE.AMI
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Mon, 03 Jun 2019 11:51:14 IST
+
+Package: FTS_Configs (1.48.2.5.0); urgency = medium
+
+Abstract:
+	Included davfs group.
+
+Files Modified: data/group
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Tue, 30 Apr 2019 14:19:32 IST
+
+Package: FTS_Configs (1.48.2.4.0); urgency = low
+
+Abstract:
+	For patch_base 02.41P: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 14 Mar 2019 13:19:37 CET
+
+Package: FTS_Configs (1.48.2.3.0); urgency = low
+
+Abstract:
+	For patch_base 02.20c: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Dec 2018 11:17:22 CET
+
+Package: FTS_Configs (1.48.2.2.0); urgency = low
+
+Abstract:
+	For patch_base 02.00b: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 28 Aug 2018 13:38:28 CEST
+
+Package: FTS_Configs (1.48.2.1.0); urgency = low
+
+Abstract:
+	For patch_base 01.60b oem version number incremented, OemAux version number set to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 21 Jun 2018 09:40:25 CEST
+
+Package: FTS_Configs (1.48.2.0.0); urgency = low
+
+Abstract:
+	adapt spx package with five digits
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 20 Mar 2018 13:14:04 CET
+
+Package: FTS_Configs (1.48.2); urgency = low
+
+Abstract:
+	Check for existance of file /conf/i2c9mux2.yes. If available, platform driver will be called with additional parameter I2C9MUX2_REWORK=1
+
+Files Modified: data/module-init-tools
+
+--Submitter: Hans-Juergen Heinrichs (hans-juergen.heinrichs.external@ts.fujitsu.com) Tue, 13 Feb 2018 10:11:29 CET
+
+Package: FTS_Configs (1.48.1); urgency = medium
+
+Abstract:
+	Info: source location changed to FTS
+
+Files Modified: spx/INFO
+
+--Submitter: Karin Wulf (Karin.Wulf.external@ts.fujitsu.com) Mon, 04 Dec 2017 14:51:25 CET
+
+Package: FTS_Configs (1.48.0); urgency = low
+
+Abstract:
+	For 01.20a_09.20a increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Sep 2017 14:37:29 CEST
+
+Package: FTS_Configs (1.47.0); urgency = low
+
+Abstract:
+	For 01.20a_09.20a increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Sep 2017 14:24:02 CEST
+
+Package: FTS_Configs (1.46.0); urgency = low
+
+Abstract:
+	For 01.20aPre_R62446__base increment minor version by 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens.external@ts.fujitsu.com) Fri, 25 Aug 2017 16:34:31 CEST
+
+Package: FTS_Configs (1.45.0); urgency = low
+
+Abstract:
+	For 09.00b_R61776_base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 01 Aug 2017 16:16:34 CEST
+
+Package: FTS_Configs (1.44.0); urgency = low
+
+Abstract:
+	For 01.04b_R59755_base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Fri, 19 May 2017 12:25:08 CEST
+
+Package: FTS_Configs (1.43.3); urgency = low
+
+Abstract:
+	Add installation of missing i2c_mux_gpiohal module
+
+Files Added: spx/PACKAGES.D/FTS_Configs/DATA/keep.folder
+Files Modified: data/module-init-tools, spx/INFO
+
+--Submitter: Mark Dorman (mark.dorman@ircona.com) Fri, 17 Feb 2017 12:54:32 CET
+
+Package: FTS_Configs (1.43.2); urgency = low
+
+Abstract:
+	Added RedfishAdmin, RedfishOperator and RedfishReadOnly in group file
+
+Files Modified: data/group
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Wed, 25 Jan 2017 16:13:31 HMT
+
+Package: FTS_Configs (1.43.1); urgency = low
+
+Abstract:
+	to load i2c_mux_pca954x driver into CX400M4
+
+Files Modified: data/module-init-tools
+
+--Submitter: Tomohiko Sato (sato.tomo@jp.fujitsu.com) Fri, 11 Nov 2016 06:35:15 CET
+
+Package: FTS_Configs (1.43.0); urgency = low
+
+Abstract:
+	For FW 8.61F increment minor version by 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Thu, 01 Sep 2016 08:33:09 CEST
+
+Package: FTS_Configs (1.42.0); urgency = low
+
+Abstract:
+	For FW 8.40e increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Tue, 07 Jun 2016 08:31:09 CEST
+
+Package: FTS_Configs (1.41.2); urgency = low
+
+Abstract:
+	Loading GPIO-based I2C mux driver. This driver is required for RX4770 specific I2C switch (merge of FJJ changes).
+
+Files Modified: data/module-init-tools
+
+--Submitter: Sebastian Grabowski (Sebastian.Grabowski@ts.fujitsu.com) Tue, 31 May 2016 12:33:30 CEST
+
+Package: FTS_Configs (1.41.1); urgency = low
+
+Abstract:
+	Extended support for Pilot4 I2C MUX
+
+Files Modified: data/module-init-tools, spx/LICENSES/LICENSE.AMI
+
+--Submitter: Mark Dorman (mark.dorman@ircona.com) Wed, 11 May 2016 11:28:22 CEST
+
+Package: FTS_Configs (1.41.0); urgency = low
+
+Abstract:
+	For 08.20F_R49270__base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Sun, 06 Mar 2016 15:38:29 CET
+
+Package: FTS_Configs (1.40.5); urgency = medium
+
+Abstract:
+	add SyslogSeverityChange; add script change_syslog_severity.sh
+
+Files Added: data/change_syslog_severity.sh
+Files Modified: spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Tue, 02 Feb 2016 09:16:10 CET
+
+Package: FTS_Configs (1.40.4); urgency = medium
+
+Abstract:
+	Reduce the startup time by changing the flow.
+
+Files Modified: data/module-init-tools, data/mountall_iRMCS4.sh
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Thu, 27 Aug 2015 20:47:32 HMT
+
+Package: FTS_Configs (1.40.3); urgency = low
+
+Abstract:
+	Replace /proc/pca954x by /proc/i2c_mux/ to make it more generic
+
+Files Modified: data/module-init-tools
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 18 Aug 2015 16:36:16 CEST
+
+Package: FTS_Configs (1.40.2); urgency = low
+
+Abstract:
+	Force CIM disable with 8.02F Release
+
+Files Added: data/force_cim_disable.sh
+Files Modified: spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 18 Aug 2015 11:41:42 CEST
+
+Package: FTS_Configs (1.40.1); urgency = low
+
+Abstract:
+	Replace i2c_mux driver by Kernel setting: CONFIG_I2C_MUX
+
+Files Modified: data/module-init-tools
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Wed, 05 Aug 2015 12:32:38 CEST
+
+Package: FTS_Configs (1.40.0); urgency = low
+
+Abstract:
+	Increment minor version by 1 due to new patch_base 08.00g_R45733__150712
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Mon, 13 Jul 2015 10:56:10 CEST
+
+Package: FTS_Configs (1.39.1); urgency = low
+
+Abstract:
+	RR9 merge: checkin based on (1.38.3)
+
+Files Modified: data/module-init-tools, data/mountall_iRMCS4.sh, spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 31 Mar 2015 00:02:52 CEST
+
+Package: FTS_Configs (1.39.0); urgency = low
+
+Abstract:
+	Increment minor version by 1 due to new patch_base 07.80b_R41103__base
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Fri, 13 Mar 2015 22:31:13 CET
+
+Package: FTS_Configs (1.38.1); urgency = low
+
+Abstract:
+	GPIO-less family common firmware
+
+Files Modified: data/module-init-tools
+
+--Submitter: Mark Dorman (mark.dorman@ircona.com) Tue, 13 Jan 2015 16:35:02 CET
+
+Package: FTS_Configs (1.38.0); urgency = low
+
+Abstract:
+	increment minor version due to customer release 7.61d
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sun, 28 Sep 2014 18:50:59 CEST
+
+Package: FTS_Configs (1.37.0); urgency = low
+
+Abstract:
+	increment minor version due to customer release 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sun, 13 Jul 2014 13:19:30 CEST
+
+Package: FTS_Configs (1.36.1); urgency = low
+
+Abstract:
+	Add support for I2C mux support
+
+Files Modified: data/module-init-tools
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 02 Jun 2014 19:37:32 CEST
+
+Package: FTS_Configs (1.36.0); urgency = low
+
+Abstract:
+	increment minor version due to customer release 07.36F
+
+
+--Submitter: Diana Riemer (diana.riemer.externals@ts.fujitsu.com) Thu, 15 May 2014 11:27:30 CEST
+
+Package: FTS_Configs (1.35.8); urgency = low
+
+Abstract:
+	Add load for i2c_mux by parameter dependency from platform file
+
+Files Modified: data/module-init-tools
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 28 Apr 2014 19:42:33 CEST
+
+Package: FTS_Configs (1.35.7); urgency = low
+
+Abstract:
+	Enable Multi support
+
+Files Modified: data/module-init-tools, spx/LICENSES/LICENSE.AMI
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Thu, 30 Jan 2014 18:57:19 CET
+
+Package: FTS_Configs (1.35.6); urgency = medium
+
+Abstract:
+	Removed moving preservefiles_list file from tmp to conf because it replaces latest file.
+
+Files Modified: data/mountall_iRMCS2.sh, data/mountall_iRMCS4.sh
+
+--Submitter: revantha (revantha@amiindia.co.in) Fri, 24 May 2013 17:38:40 IST
+
+Package: FTS_Configs (1.35.5); urgency = medium
+
+Abstract:
+	Added support to preserve some files after executing restore factory defaults settings command.
+
+Files Added: data/preservefiles_list
+Files Modified: data/mountall_iRMCS2.sh, data/mountall_iRMCS4.sh, spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: revantha (revantha@amiindia.co.in) Fri, 10 May 2013 13:52:37 IST
+
+Package: FTS_Configs (1.35.4); urgency = medium
+
+Abstract:
+	Changes:
+if restorefactory file exists in conf folder then it will erase conf location and copies default files from the defconfig to conf.
+
+Files Modified: data/mountall_iRMCS2.sh, data/mountall_iRMCS4.sh
+
+--Submitter: revantha (revantha@amiindia.co.in) Thu, 28 Feb 2013 18:21:54 HMT
+
+Package: FTS_Configs (1.35.3); urgency = medium
+
+Abstract:
+	Added support for runlevel change upon warm reset
+
+Files Modified: data/inittab
+
+--Submitter: Nilesh Konar (nileshk@amiindia.co.in) Wed, 28 Nov 2012 10:43:32 EST
+
+Package: FTS_Configs (1.35.2); urgency = medium
+
+Abstract:
+	Added radius group in group file.
+
+Files Modified: data/group
+
+--Submitter: revantha (revantha@amiindia.co.in) Fri, 28 Sep 2012 16:37:20 CEST
+
+Package: FTS_Configs (1.35.1); urgency = medium
+
+Abstract:
+	Changing mount script to copy the missing files
+
+Files Modified: data/mountall_iRMCS4.sh, spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: sridhar chinthala (sridharch@amiindia.co.in) Fri, 31 Aug 2012 17:51:07 IST
+
+Package: FTS_Configs (1.35.0); urgency = low
+
+Abstract:
+	system specific configuration are moved from platform_drv.conf file to system.conf file.
+
+Files Modified: data/module-init-tools
+
+--Submitter: NagaRamakrishna.K (nagaramakrishnak@amiindia.co.in) Tue, 26 Jun 2012 11:41:00 EDT
+
+Package: FTS_Configs (1.34.0); urgency = medium
+
+Abstract:
+	Modified syslog file to support ssh-publickey failed audit
+
+Files Modified: data/syslog.conf
+
+--Submitter: sridhar chinthala (sridharch@amiindia.co.in) Tue, 22 May 2012 16:03:40 IST
+
+Package: FTS_Configs (1.33.0); urgency = medium
+
+Abstract:
+	Fix for incorrect interfaces file getting in case of binary build.
+
+Files Modified: spx/INFO
+
+--Submitter: akshay (akshayp@amiindia.co.in) Tue, 24 Apr 2012 12:13:12 IST
+
+Package: FTS_Configs (1.32.0); urgency = low
+
+Abstract:
+	passing platform_drv.conf file content as paramater to platfrom driver, the file can have multiple parameters with value.
+
+Files Modified: data/module-init-tools
+
+--Submitter: Revanth A (revantha@amiindia.co.in) Wed, 29 Feb 2012 21:41:26 IST
+
+Package: FTS_Configs (1.31.0); urgency = medium
+
+Abstract:
+	Added None Group in group entry.
+
+Files Modified: data/group
+
+--Submitter: Revanth A (revantha@amiindia.co.in) Fri, 24 Feb 2012 20:12:53 IST
+
+Package: FTS_Configs (1.30.0); urgency = medium
+
+Abstract:
+	passing platform_drv.conf file content as paramater to platfrom driver, the file can have multiple parameters with value
+
+Files Modified: data/module-init-tools
+
+--Submitter: pavithras (pavithras@amiindia.co.in) Wed, 11 Jan 2012 15:58:22 IST
+
+Package: FTS_Configs (1.29.0); urgency = medium
+
+Abstract:
+	branching module loading script for FTS, as platform driver is loaded with arguments
+
+Files Added: data/module-init-tools
+Files Modified: spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: pavithras (pavithras@amiindia.co.in) Fri, 23 Dec 2011 13:05:28 IST
+
+Package: FTS_Configs (1.28.0); urgency = medium
+
+Abstract:
+	Synchronizing with sys-base default_group file:
+Added standard groups needed for udev, default_group copied to group in init-sp.sh , so that udev will work.
+
+Files Modified: data/group, data/mountall_iRMCS2.sh, data/mountall_iRMCS4.sh
+
+--Submitter: Revanth A (revantha@amiindia.co.in) Thu, 22 Dec 2011 16:10:10 IST
+
+Package: FTS_Configs (1.27.0); urgency = low
+
+Abstract:
+	Changed mount scripts to handle all boot options irresptive of image running and num of images flashed.
+
+Files Modified: data/mountall_iRMCS4.sh
+
+--Submitter: NagaRamakrishna.K (nagaramakrishnak@amiindia.co.in) Mon, 12 Dec 2011 09:54:24 EST
+
+Package: FTS_Configs (1.26.0); urgency = low
+
+Abstract:
+	Missied colon(:) at the end of group entry.
+
+Files Modified: data/group
+
+--Submitter: Revanth A (revantha@amiindia.co.in) Mon, 05 Dec 2011 13:25:34 IST
+
+Package: FTS_Configs (1.25.0); urgency = medium
+
+Abstract:
+	Added Preferred Shell group entries in group file.
+
+Files Modified: data/group
+
+--Submitter: Revanth A (revantha@amiindia.co.in) Thu, 01 Dec 2011 18:10:23 IST
+
+Package: FTS_Configs (1.24.0); urgency = medium
+
+Abstract:
+	Copying FTS specific group file to etc.
+
+Files Modified: spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: Revanth A (revantha@amiindia.co.in) Wed, 30 Nov 2011 19:51:09 IST
+
+Package: FTS_Configs (1.23.0); urgency = low
+
+Abstract:
+	Changed mount scripts for new image number representation 1-2.
+
+Files Modified: data/mountall_iRMCS4.sh
+
+--Submitter: NagaRamakrishna.K (nagaramakrishnak@amiindia.co.in) Fri, 25 Nov 2011 08:32:02 EST
+
+Package: FTS_Configs (1.22.0); urgency = medium
+
+Abstract:
+	Added syslog.conf to FTS configuration
+
+Files Added: data/syslog.conf
+Files Modified: spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: sridhar chinthala (sridharch@amiindia.co.in) Fri, 21 Oct 2011 15:00:27 IST
+
+Package: FTS_Configs (1.21.0); urgency = medium
+
+Abstract:
+	In nfs platform will not be mounted and will use the nfs path platform folder
+
+Files Added: data/fstab
+Files Modified: data/mountall_iRMCS4.sh, spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: pavithras (pavithras@amiindia.co.in) Fri, 30 Sep 2011 16:17:05 IST
+
+Package: FTS_Configs (1.20.0); urgency = low
+
+Abstract:
+	Cleaned up mountscript changes for Dual Image feature in iRMCS2 platform
+
+Files Modified: data/mountall_iRMCS2.sh
+
+--Submitter: Naga Ramakrishna K (nagaramakrishnak@amiindia.co.in) Thu, 25 Aug 2011 15:49:26 TLT
+
+Package: FTS_Configs (1.19.0); urgency = low
+
+Abstract:
+	changes in mount script not mounting conf if only one SPI chip available
+
+Files Modified: data/mountall_iRMCS2.sh, data/mountall_iRMCS4.sh
+
+--Submitter: Naga Ramakrishna K (nagaramakrishnak@amiindia.co.in) Tue, 23 Aug 2011 00:03:11 TLT
+
+Package: FTS_Configs (1.18.0); urgency = low
+
+Abstract:
+	mounting www and platform mtd devices on ramdisk for iRMCS4 platform
+
+Files Added: data/mountall_iRMCS2.sh, data/mountall_iRMCS4.sh
+Files Deleted: data/mountall.sh
+Files Modified: spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: Naga Ramakrishna K (nagaramakrishnak@amiindia.co.in) Sat, 20 Aug 2011 00:33:37 TLT
+
+Package: FTS_Configs (1.17.0); urgency = low
+
+Abstract:
+	Changed Error Message when the group file doesn't exist.
+
+Files Modified: data/mountall.sh
+
+--Submitter: Revanth A (revantha@amiindia.co.in) Thu, 11 Aug 2011 12:51:43 IST
+
+Package: FTS_Configs (1.16.0); urgency = medium
+
+Abstract:
+	Fixing the mount issue of devpts
+
+Files Modified: data/mountall.sh
+
+--Submitter: sridhar chinthala (sridharch@amiindia.co.in) Wed, 03 Aug 2011 18:36:00 IST
+
+Package: FTS_Configs (1.15.0); urgency = medium
+
+Abstract:
+	moved /etc/defconfig/group to etc/default_group
+
+Files Modified: data/mountall.sh
+
+--Submitter: Revanth A (revantha@amiindia.co.in) Wed, 03 Aug 2011 15:33:05 IST
+
+Package: FTS_Configs (1.14.0); urgency = low
+
+Abstract:
+	Getting User Previlege using GROUPS instead of gid.
+
+Files Added: data/group
+Files Modified: data/mountall.sh, spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: Revanth A (revantha@amiindia.co.in) Mon, 01 Aug 2011 20:00:27 IST
+
+Package: FTS_Configs (1.13.0); urgency = medium
+
+Abstract:
+	removing platform specific comemnted code as it will be not be needed with MAP file changes
+
+Files Modified: data/mountall.sh
+
+--Submitter: pavithras (pavithras@amiindia.co.in) Mon, 25 Jul 2011 11:43:02 IST
+
+Package: FTS_Configs (1.12.0); urgency = low
+
+Abstract:
+	mounting platform mtd device correctly according MAP file change
+
+Files Modified: data/mountall.sh
+
+--Submitter: Naga Ramakrishna K (nagaramakrishnak@amiindia.co.in) Fri, 22 Jul 2011 19:52:37 TLT
+
+Package: FTS_Configs (1.11.0); urgency = medium
+
+Abstract:
+	mtd devices mounted by reading /proc/mtd based on the img booted
+
+Files Modified: data/mountall.sh
+
+--Submitter: pavithras (pavithras@amiindia.co.in) Fri, 22 Jul 2011 16:05:13 IST
+
+Package: FTS_Configs (1.10.0); urgency = medium
+
+Abstract:
+	default configs files are copied to conf only when conf is corrupted, when the special file is present the files are retained across reboots
+
+Files Modified: data/mountall.sh
+
+--Submitter: pavithras (pavithras@amiindia.co.in) Fri, 01 Jul 2011 19:19:33 IST
+
+Package: FTS_Configs (1.9.0); urgency = medium
+
+Abstract:
+	mounting script wiht changes to mount /conf and if fails,spi3 is formatted again.Also after proper mount AMI and FTS file are touched.
+
+Files Added: data/mountall.sh
+Files Modified: spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: pavithras (pavithras@amiindia.co.in) Sat, 11 Jun 2011 05:12:06 IST
+
+Package: FTS_Configs (1.8.0); urgency = medium
+
+Abstract:
+	adding FTS folder in default config
+
+Files Modified: spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: pavithras (pavithras@amiindia.co.in) Sat, 11 Jun 2011 04:54:52 IST
+
+Package: FTS_Configs (1.7.0); urgency = medium
+
+Abstract:
+	Updated license information.
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Mon, 30 May 2011 20:03:18 IST
+
+Package: FTS_Configs (1.6.0); urgency = medium
+
+Abstract:
+	Removed the Networking and activeinterface file, instead the active interface will be fetched from LAN State
+
+Files Deleted: data/activeinterface, data/networking
+Files Modified: spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Tue, 26 Apr 2011 17:29:37 IST
+
+Package: FTS_Configs (1.5.0); urgency = medium
+
+Abstract:
+	Added statement to put down all interfaces in the BMC boot up
+
+Files Modified: data/networking
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Wed, 20 Apr 2011 14:05:32 IST
+
+Package: FTS_Configs (1.4.0); urgency = low
+
+Abstract:
+	Removed appending of SERVICES in to file interface.
+
+Files Modified: spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: Revanth A (revantha@amiindia.co.in) Mon, 18 Apr 2011 15:40:35 IST
+
+Package: FTS_Configs (1.3.0); urgency = medium
+
+Abstract:
+	Added configuration files for Management LAN and Shared LAN
+
+Files Added: data/activeinterface, data/interfaces, data/networking
+Files Modified: spx/INFO, spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Fri, 08 Apr 2011 20:28:54 IST
+
+Package: FTS_Configs (1.2.0); urgency = low
+
+Abstract:
+	Added SERVICES in web Features list.
+
+Files Modified: spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install
+
+--Submitter: Revanth A (revantha@amiindia.co.in) Tue, 05 Apr 2011 19:44:32 IST
+
+Package: FTS_Configs (1.1.0); urgency = low
+
+Abstract:
+	Added sys_base depended to binary of FTS Configs.
+
+Files Modified: spx/INFO
+
+--Submitter: Revanth A (revantha@amiindia.co.in) Mon, 28 Feb 2011 14:48:04 IST
+
+Package: FTS_Configs (1.0.0); urgency = new
+
+Abstract:
+	Configs for FTS SOC
+
+Files Added: data, data/inittab, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/PACKAGES.D, spx/PACKAGES.D/FTS_Configs, spx/PACKAGES.D/FTS_Configs/DATA, spx/PACKAGES.D/FTS_Configs/SCRIPTS, spx/PACKAGES.D/FTS_Configs/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: revanth (revantha@amiindia.co.in) Mon, 03 Jan 2011 20:45:19 IST
+

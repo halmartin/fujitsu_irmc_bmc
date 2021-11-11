@@ -1,0 +1,17 @@
+#Extract Source	in %SOURCE
+extract_source:
+		
+#Build Source in %BUILD
+build_source:
+	INVOKE_SHELL ApplyPatch  %BOOT_SRC/uboot %SOURCE/%PACKAGE/data
+
+#Clean Source
+clean_source:
+	DELETE %BINARY/@Bootloader_soc_pilot_iii-*-ANY.spx
+
+#--------------------- Mandatory Rules for every binary package -------------------------
+
+# Rules to create @Kernel_soc_pilot_ii package
+build_package-@Bootloader_soc_pilot_iii:
+	PACK_SPX
+	

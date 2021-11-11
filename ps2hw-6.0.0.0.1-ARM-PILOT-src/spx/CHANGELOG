@@ -1,0 +1,198 @@
+Package: ps2hw (6.0.0.0.1); urgency = low
+
+Abstract:
+	initial commit
+
+Files Modified: spx/INFO
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Sep 2018 18:26:56 CEST
+
+Package: ps2hw (6.0.0.0.0); urgency = high
+
+Abstract:
+	This Package includes PS2 driver module for PILOT SOC
+
+
+--Submitter: Winston (winstont)(winstont@ami.com) Mon, 10 Sep 2018 20:49:32 UTC
+
+Package: ps2hw (6.0.0.0.0); urgency = high
+
+Abstract:
+	This Package includes PS2 driver module for PILOT SOC
+
+
+--Submitter: Balasubramanian C (balasubramanianc)(balasubramanianc@amiindia.co.in) Wed, 20 Jun 2018 09:56:25 UTC
+
+Package: ps2hw (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:34:51 UTC
+
+Package: ps2hw (2.3.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: spx/PACKAGES.D/ps2hw/DATA/keep.folder, spx/PACKAGES.D/ps2hw_dev/DATA/keep.folder
+Files Deleted: spx/PACKAGES.D/ps2hw/DATA/.keep, spx/PACKAGES.D/ps2hw_dev/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 17:49:42 EDT
+
+Package: ps2hw (2.2.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/PACKAGES.D/ps2hw/DATA/.keep, spx/PACKAGES.D/ps2hw_dev/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 22:53:03 EST
+
+Package: ps2hw (2.1.0); urgency = low
+
+Abstract:
+	Updated Copyrights year
+
+Files Modified: data/ps2.h, data/ps2main.c, data/ps2main.h, spx/INFO
+
+--Submitter: prateekv (prateekv@amiindia.co.in) Thu, 18 Dec 2014 20:54:12 HMT
+
+Package: ps2hw (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 06:13:05 GMT
+
+Package: ps2hw (1.13.0); urgency = medium
+
+Abstract:
+	INFO file for SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: shravan (shravan@amiindia.co.in) Fri, 17 Oct 2014 17:50:07 HMT
+
+Package: ps2hw (1.12.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 07:41:47 GMT
+
+Package: ps2hw (1.11.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 05:53:57 GMT
+
+Package: ps2hw (1.10.0); urgency = medium
+
+Abstract:
+	3.x Kernel related changes
+
+Files Modified: data/ps2main.c
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Fri, 08 Aug 2014 19:41:43 HMT
+
+Package: ps2hw (1.9.0); urgency = medium
+
+Abstract:
+	Adding back proper macros ADD_MODULES,ADD_MODULES_ONLY which was changed recently for Faster Boot Support
+
+Files Modified: spx/PACKAGES.D/ps2hw/SCRIPTS/dev-install
+
+--Submitter: Winston (winstont@ami.com) Thu, 24 Apr 2014 11:02:42 GMT
+
+Package: ps2hw (1.8.0); urgency = medium
+
+Abstract:
+	Faster Boot Support
+
+Files Modified: spx/PACKAGES.D/ps2hw/SCRIPTS/dev-install
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Fri, 18 Apr 2014 20:58:44 HMT
+
+Package: ps2hw (1.7.0); urgency = medium
+
+Abstract:
+	Adding DevNodes to Build-Depends and Required fields
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Thu, 03 Oct 2013 23:44:36 EDT
+
+Package: ps2hw (1.6.0); urgency = medium
+
+Abstract:
+	Updated to support Debian Wheezy target and new complier
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Sun, 22 Sep 2013 01:55:17 EDT
+
+Package: ps2hw (1.5.0); urgency = medium
+
+Abstract:
+	Fixes for strict compiler - Generates error if a variable is assigned and not used
+
+Files Modified: data/ps2main.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 23 Mar 2012 10:04:06 EDT
+
+Package: ps2hw (1.4.0); urgency = medium
+
+Abstract:
+	Fixes for strict compiler - Generates error if a variable is assigned and not used
+
+Files Modified: data/ps2main.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Thu, 22 Mar 2012 22:49:46 EDT
+
+Package: ps2hw (1.3.0); urgency = medium
+
+Abstract:
+	Licensing info changed to GPL-V2
+
+Files Added: spx/LICENSES/LICENSE.GPL-V2
+Files Deleted: spx/LICENSES/LICENSE.AMI
+Files Modified: data/ps2main.c, spx/INFO
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Thu, 23 Jun 2011 16:56:07 EDT
+
+Package: ps2hw (1.2.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 15:29:44 EDT
+
+Package: ps2hw (1.1.0); urgency = medium
+
+Abstract:
+	Copied driver to generic location instead of kernel specific locaton
+
+Files Modified: spx/PACKAGES.D/ps2hw/SCRIPTS/dev-install
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 27 Oct 2010 14:50:27 EDT
+
+Package: ps2hw (1.0.0); urgency = new
+
+Abstract:
+	This Package includes PS2 driver module for PILOT SOC
+
+Files Added: data, data/Makefile, data/ps2.h, data/ps2main.c, data/ps2main.h, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/PACKAGES.D, spx/PACKAGES.D/ps2hw, spx/PACKAGES.D/ps2hw/DATA, spx/PACKAGES.D/ps2hw/SCRIPTS, spx/PACKAGES.D/ps2hw/SCRIPTS/dev-install, spx/PACKAGES.D/ps2hw_dev, spx/PACKAGES.D/ps2hw_dev/DATA, spx/PACKAGES.D/ps2hw_dev/SCRIPTS, spx/PACKAGES.D/ps2hw_dev/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Mon, 16 Aug 2010 12:57:37 EDT
+

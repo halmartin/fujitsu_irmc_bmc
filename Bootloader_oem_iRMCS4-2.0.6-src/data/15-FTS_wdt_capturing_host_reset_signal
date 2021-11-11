@@ -1,0 +1,67 @@
+--- uboot/cpu/arm926ejs/PILOTIII/wdt.c	2015-07-08 14:57:22.600391692 +0530
++++ uboot_new/cpu/arm926ejs/PILOTIII/wdt.c	2015-07-08 15:06:14.184390517 +0530
+@@ -7,7 +7,7 @@
+ 
+ #define WATCHDOG_RESET_ARM 0x01
+ #define WATCHDOG_RESET_I2C 0xFF00
+-
++#define WATCHDOG_RESET_PWM 0x400000
+ #define WATCHDOG_TRIGGER 0x80
+ 
+ /**
+@@ -18,6 +18,7 @@
+  */
+ int Enable_watchdog(unsigned long *watchdog_reset_status)
+ {
++       unsigned long watchdog_fired=0,wdo_enable=0;
+        int wdt_count=300; // 5 minutes
+ 
+        *((volatile unsigned long *)(WDT_CONTROL_REG)) &= ~WATCHDOG_WDCTL_RUN; 
+@@ -26,32 +27,31 @@
+        /*pilot spec  recommends to reset only ARM processor */
+        *((volatile unsigned long *)(SYS_WDT_RST_EN)) = WATCHDOG_RESET_ARM; //Watchdod reset to ARM
+        *((volatile unsigned long *)(SYS_WDT_RST_EN)) |= WATCHDOG_RESET_I2C; //Watchdog reset to I2C
+-
++       *((volatile unsigned long *)(SYS_WDT_RST_EN)) |= WATCHDOG_RESET_PWM; //Watchdog reset to PWM
+        *((volatile unsigned long *)(SE_SYS_CLK_VA_BASE  + 0x00)) &= 0xFFFFFFFC;
+       
+        /* Check whether reset caused by watchdog, bit-0 indicates reset cause */
+-       *watchdog_reset_status = *((volatile unsigned long *)(SYS_RST_STAT_REG)) & 0x01;
++       watchdog_fired = *((volatile unsigned long *)(SYS_RST_STAT_REG)) & 0x01;
+        /* Clearing the Watdog Reset Status bit*/
+        *((volatile unsigned long *)(SYS_RST_STAT_REG)) |= 0x01;
+-       /* Setting Timeout value to 5 minutes */
+-
+ 
+-       //To configure watchdog Timer count
+-       /*  
+-       char *wdt_test = 0;
+-       wdt_test = getenv("wdtcnt");
+-       if (wdt_test != 0)
+-       {
+-                wdt_count = (int)simple_strtoul(wdt_test,0,0);
++       /* Check whether watchdog reset was caused by boot-loader or the OS */
++       wdo_enable = *((volatile unsigned long *)(WDT_CONTROL_REG))& 0x40;
++       /* Clearing the delayed WDO enable bit */
++       *((volatile unsigned long *)(WDT_CONTROL_REG)) &= ~0x40;
++
++       /*if watchdog fired but wdo is not set, bootloader watchdog expired */
++       if (watchdog_fired && !wdo_enable) {
++               *watchdog_reset_status = 1;
+        }
+-       */
+- 
++       else {
++               *watchdog_reset_status = 0;
++       }
++
++       /* Setting Timeout value to 5 minutes */
+        *((volatile unsigned long *)(WDT_LOAD_REG0)) = wdt_count & 0x000000FF;
+        *((volatile unsigned long *)(WDT_LOAD_REG1)) = (wdt_count & 0x0000FF00)>>8;
+ 
+-       // *((volatile unsigned long *)(WDT_LOAD_REG0)) = 0x2c;
+-       // *((volatile unsigned long *)(WDT_LOAD_REG1)) = 0x1;
+-
+        *((volatile unsigned long *)(WDT_CONTROL_REG)) |= WATCHDOG_WDCTL_RUN; 
+        /* Trigger Watchdog Timer */
+        *((volatile unsigned long *)(WDT_CONTROL_REG)) |= WATCHDOG_TRIGGER;

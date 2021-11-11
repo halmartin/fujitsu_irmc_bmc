@@ -1,0 +1,109 @@
+--- uboot_old/vendors/ami/fmh/cmd_fmh.c	2014-12-23 23:38:14.755554574 -0500
++++ uboot/vendors/ami/fmh/cmd_fmh.c	2014-12-23 23:38:58.580905890 -0500
+@@ -3,6 +3,13 @@
+ # include <command.h>
+ # include <flash.h>
+ # include <i2c.h>
++
++#ifdef CONFIG_SPX_FEATURE_BMC_FIRMWARE_AUTO_RECOVERY
++# include <mmc.h>
++# include <fat.h>
++# include <net.h>
++#endif
++
+ # include "cmd_fmh.h"
+ # include "fmh.h"
+ # include "cmd.h"
+@@ -603,8 +610,78 @@
+ return 0;
+ }
+ 
++#ifdef CONFIG_SPX_FEATURE_BMC_FIRMWARE_AUTO_RECOVERY
++void BMCAutoRecovery (void)
++{
++    char *pStr;
++    char value[2] = {0};
++    u8 force_recovery = 0, imgheadererr = 0, bootretry = 1, currentbootretry = 0;
++
++    unsigned long wdt_reset_status = 0 ;
++
++    /*Check whether force recovery image boot is triggered.*/
++    pStr= getenv("forcerecovery");
++    if ((pStr!= NULL ) && (strcmp(pStr,"yes") == 0))
++    {
++        force_recovery = 1;
++    }
++
++    pStr = NULL;
++    pStr = getenv("imgheadererr");
++    if ((pStr != NULL ) && (strcmp(pStr,"yes") == 0))
++    {
++        imgheadererr = 1;
++    }
++
++    pStr = NULL;
++    pStr = getenv("bootretry");
++    if (pStr != NULL )
++    {
++        bootretry = (int)simple_strtoul(pStr,NULL,0);
++    }
++
++    pStr = NULL;
++    pStr = getenv("currentbootretry");
++    if (pStr != NULL )
++    {
++        currentbootretry = (int)simple_strtoul(pStr,NULL,0);
++    }
++
++    currentbootretry++;
++    sprintf(value,"%d",currentbootretry);
++    setenv("currentbootretry",(char *)value);
++    saveenv();
++
++    if(force_recovery || imgheadererr || (currentbootretry > bootretry) )
++    {
++        if ( Firmware_AutoRecovery(force_recovery, imgheadererr) != 0 )
++        {
++            if(force_recovery == 1)
++            {
++                setenv("forcerecovery",NULL);
++                saveenv();
++            }
++
++            /*Disable the watchdog as both method was failed*/
++            Disable_watchdog();
++
++            /*Reset the lastrecoveryboot*/
++            setenv("lastrecoveryboot",NULL);
++            setenv("recoveryinprog",NULL);
++            saveenv();
++            /*Wait On KCS for Fimware update when Auto-Recovery failed */ 
++            fwupdate();
++            return -1;
++        }
++    }
++    else
++    {
++        Enable_watchdog(&wdt_reset_status); 
++    }
++
++}
++#endif
+ 
+-	
+ int
+ BootFMH(unsigned short PathID)
+ {
+@@ -688,7 +765,11 @@
+     if( GetBootImage(&imagetoboot) != 0 )
+ 	 return -1;
+ #endif
+-	 
++
++#ifdef CONFIG_SPX_FEATURE_BMC_FIRMWARE_AUTO_RECOVERY
++        BMCAutoRecovery();
++#endif
++
+ 	printf("Image to be booted is %d\n",imagetoboot);
+ 
+         if(imagetoboot == IMAGE_1)

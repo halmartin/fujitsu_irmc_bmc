@@ -1,0 +1,33 @@
+#Extract Source	in %SOURCE
+extract_source:
+
+#Build Source in %BUILD
+build_source:
+
+#Clean Source
+clean_source:
+
+#--------------------- Mandatory Rules for every binary package -------------------------
+
+# Rules to create sys_base_fts package
+build_package-sys_base_fts:
+		MKDIR_CLEAN %TEMPDIR/%PACKAGE/tmp
+		COPY_DIR %BUILD/%PACKAGE/data/terminfo %TEMPDIR/%PACKAGE/tmp/terminfo
+		COPY_DIR %BUILD/%PACKAGE/data/locale %TEMPDIR/%PACKAGE/tmp/locale
+		COPY_DIR %BUILD/%PACKAGE/data/defconfig/fts %TEMPDIR/%PACKAGE/tmp/fts
+		COPY_DIR %BUILD/%PACKAGE/data/certs %TEMPDIR/%PACKAGE/tmp/certs
+		COPY_FILE %BUILD/%PACKAGE/data/defconfig/irmclogrotate.conf %TEMPDIR/%PACKAGE/tmp/
+		COPY_FILE %BUILD/%PACKAGE/data/defconfig/irmclogmove.sh %TEMPDIR/%PACKAGE/tmp/
+		COPY_FILE %BUILD/%PACKAGE/data/defconfig/flasher.conf %TEMPDIR/%PACKAGE/tmp/
+		COPY_FILE %BUILD/%PACKAGE/data/defconfig/logfiles.conf %TEMPDIR/%PACKAGE/tmp/
+		COPY_FILE %BUILD/%PACKAGE/data/defconfig/sdcard-umount %TEMPDIR/%PACKAGE/tmp/
+		COPY_FILE %BUILD/%PACKAGE/data/defconfig/mount_tpl.sh %TEMPDIR/%PACKAGE/tmp/
+		COPY_FILE %BUILD/%PACKAGE/data/defconfig/ipmi_monitor.sh %TEMPDIR/%PACKAGE/tmp/
+		COPY_FILE %BUILD/%PACKAGE/data/defconfig/ipmi_monitor_crontab_register.sh %TEMPDIR/%PACKAGE/tmp/
+		COPY_FILE %BUILD/%PACKAGE/data/defconfig/reservedusers %TEMPDIR/%PACKAGE/tmp/
+		COPY_FILE %TARGETDIR/usr/bin/wget %TEMPDIR/%PACKAGE/tmp
+		COPY_FILE %BUILD/%PACKAGE/data/02-pre-up-resolv %TEMPDIR/%PACKAGE/tmp
+		#wget supporting library
+		EXECUTE if [ -f %TARGETDIR/usr/lib/%MULTI_ARCH_LIB/libidn.so.11.6.8 ]; then cp %TARGETDIR/usr/lib/%MULTI_ARCH_LIB/libidn.so.11.6.8 %TEMPDIR/%PACKAGE/tmp; else cp %TARGETDIR/usr/lib/%MULTI_ARCH_LIB/libidn.so.11.6.12 %TEMPDIR/%PACKAGE/tmp; fi
+		#COPY_FILE %TARGETDIR/usr/lib/%MULTI_ARCH_LIB/libidn.so.11 %TEMPDIR/%PACKAGE/tmp
+		PACK_SPX ./ %TEMPDIR/%PACKAGE/tmp

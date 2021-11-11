@@ -1,0 +1,35 @@
+Source : sys_xorriso
+Version :   2.0.0.0.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : Deepesh jain (deepeshjain@amiindia.co.in)
+License : GPL-V2
+Feature-Required 			:   CONFIG_SPX_FEATURE_GLOBAL_TARGET_NON_SQUEEZE
+Source-Location : AMI
+Source-Version : 2.0.0
+Builds : sys_xorriso
+Build-Depends : Target
+Architecture : ANY
+Urgency :   high
+Description : This Package copies binaries and essential libraries of xorriso from target to Imagetree.xorriso helps to create iso images.
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,Source-License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : sys_xorriso
+Config-Tag : xorriso iso image creater
+Section : sys
+Feature-Required 			:   CONFIG_SPX_FEATURE_GLOBAL_TARGET_NON_SQUEEZE
+Group : BASE
+Essential : NO
+Required : Target
+Description : This Package contains xorriso related files.
+.
+

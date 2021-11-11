@@ -1,0 +1,12 @@
+# Install Script
+
+build-install:
+	#copy header file
+	MKDIR_CLEAN %SPXINC/json-c/json-c
+    COPY_DIR ./json-c %SPXINC/json-c/json-c
+    #copy library files
+    MKDIR_CLEAN %SPXLIB/json-c
+	COPY_FILE libjson-c.so.2.0.0 %SPXLIB/json-c
+	ADD_LIBRARY_LINKS %SPXLIB/json-c libjson-c.so.2.0.0
+	
+debug-install:

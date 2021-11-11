@@ -1,0 +1,90 @@
+--- u-boot-1.1.6/board/HORNET/arm.equ	1969-12-31 19:00:00.000000000 -0500
++++ u-boot-1.1.6-PilotIII/board/HORNET/arm.equ	2010-04-05 16:47:24.000000000 -0400
+@@ -0,0 +1,87 @@
++
++
++
++# control register bits
++
++ARMintMMUenable         =       1
++ARMintMMUfaultenable    =       2
++ARMintMMUcacheenable    =       4
++ARMintMMUwritebufenable =       8
++ARMintMMU32bitprogram   =       0x10
++ARMintMMU32bitdata      =       0x20
++ARMintMMUmandatory      =       0x40
++ARMintMMUbigendian      =       0x80
++ARMintMMUsystem         =       0x100
++ARMintMMUROM            =       0x200
++ARMintMMUICache		=	  1<<12
++ARMintMMUVbit		=	  1<<13
++ARMintMMUnFastbus	=	  1<<30
++ARMintMMUiAsync		=	  1<<31
++
++# CPSR bits
++
++CPSR_M0                 =       1
++CPSR_M1                 =       2
++CPSR_M2                 =       4
++CPSR_M3                 =       8
++CPSR_M4                 =       16
++CPSR_MMASK              =       31
++CPSR_USR                =       CPSR_M4
++CPSR_FIQ                =       CPSR_M4 | CPSR_M0
++CPSR_IRQ                =       CPSR_M4 | CPSR_M1
++CPSR_SVC                =       CPSR_M4 | CPSR_M1 | CPSR_M0
++CPSR_ABT                =       CPSR_M4 | CPSR_M2 | CPSR_M1 | CPSR_M0
++CPSR_UND                =       CPSR_M4 | CPSR_M3 | CPSR_M1 | CPSR_M0
++CPSR_F                  =       1<<6
++CPSR_I                  =       1<<7
++CPSR_V                  =       1<<28
++CPSR_C                  =       1<<29
++CPSR_Z                  =       1<<30
++CPSR_N                  =       1<<31
++
++
++
++
++User26Mode              =     0x0
++FIQ26Mode               =     0x1
++IRQ26Mode               =     0x2
++SVC26Mode               =     0x3
++
++User32Mode              =     0x10
++FIQ32Mode               =     0x11
++IRQ32Mode               =     0x12
++SVC32Mode               =     0x13
++Abort32Mode             =     0x17
++Undef32Mode             =     0x1b
++SYSTEMMODE		=     0x1f
++
++Mask32Mode              =     0x1f
++
++PSR_32Bit               =     0x10
++ModeMask                =     0x0000001f 
++SubModeMask             =     0x0000000f 
++NoInt                   =     0x000000c0
++IFConfig                =     0x000000d0
++CCMask                  =     0xf0000000
++
++
++MMUCP                   =      15
++
++
++PageTable1Size          =     4 * 4 * 1024 @ one per megabyte
++
++MMU                     =     1 @ 0 is off, 1 is on
++AlignFault              =     0 @ 0 is off, 2 is on
++Cache                   =     4 @ 0 is off, 4 is on
++WriteBuffer             =     8 @ 0 is off, 8 is on
++Config26Bit             =     0 @ mmu, idc, wb off, 26 bit prog/data, little endian
++Config32Bit             =     0x10 + 0x20 + ARMintMMUnFastbus @ mmu, idc, wb off, 32 bit prog/data, little endian
++EnableICache            =     ARMintMMUICache    @Config32Bit + ARMintMMUICache
++EnableMMU26             =     Config26Bit + MMU + AlignFault + Cache + WriteBuffer
++EnableMMU32             =     EnableICache + MMU + AlignFault + Cache + WriteBuffer
++EnableMMU32Nocache      =     EnableICache + MMU + AlignFault  @ + Cache ; + WriteBuffer
++NoMMU                   =     EnableICache + AlignFault
++
++
++
++			#.end     

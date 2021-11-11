@@ -1,0 +1,152 @@
+Package: i2c_mux_PILOT (1.0.401.6.0); urgency = low
+
+Abstract:
+	For patch_base 09.60j: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 20 Nov 2019 10:59:28 CET
+
+Package: i2c_mux_PILOT (1.0.401.5.0); urgency = low
+
+Abstract:
+	For patch_base 09.60g: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 03 Sep 2019 13:42:58 CEST
+
+Package: i2c_mux_PILOT (1.0.401.4.0); urgency = low
+
+Abstract:
+	For patch_base 02.41P: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 14 Mar 2019 13:22:15 CET
+
+Package: i2c_mux_PILOT (1.0.401.3.0); urgency = low
+
+Abstract:
+	For patch_base 02.20c: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Dec 2018 11:21:30 CET
+
+Package: i2c_mux_PILOT (1.0.401.2.0); urgency = low
+
+Abstract:
+	For patch_base 02.00b: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 28 Aug 2018 13:41:18 CEST
+
+Package: i2c_mux_PILOT (1.0.401.1.2); urgency = low
+
+Abstract:
+	Copyright update
+
+Files Modified: data/PILOT.c, data/PILOT.h
+
+--Submitter: Wojciech Kunikowski (Wojciech.Kunikowski@ts.fujitsu.com) Thu, 16 Aug 2018 15:50:38 CEST
+
+Package: i2c_mux_PILOT (1.0.401.1.1); urgency = low
+
+Abstract:
+	Remove obsolete comments
+
+Files Modified: data/PILOT.c
+
+--Submitter: Mark Dorman (mark.dorman@ircona.com) Fri, 06 Jul 2018 14:12:15 CEST
+
+Package: i2c_mux_PILOT (1.0.401.1.0); urgency = low
+
+Abstract:
+	For patch_base 01.60b oem version number incremented, OemAux version number set to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 21 Jun 2018 09:44:01 CEST
+
+Package: i2c_mux_PILOT (1.0.401.0.0); urgency = low
+
+Abstract:
+	adapt spx package with five digits
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 20 Mar 2018 13:16:07 CET
+
+Package: i2c_mux_PILOT (1.0.401); urgency = low
+
+Abstract:
+	MTCP over SMBus support:
+- Added a new deselect function which allows to specify a deselect timeout via /proc file system
+
+Files Modified: data/PILOT.c, data/PILOT.h
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sun, 18 Mar 2018 17:00:20 CET
+
+Package: i2c_mux_PILOT (1.0.400); urgency = low
+
+Abstract:
+	For 01.20a_09.20a increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Sep 2017 16:39:26 CEST
+
+Package: i2c_mux_PILOT (1.0.300); urgency = low
+
+Abstract:
+	For 01.20aPre_R62446__base increment auxiliary version by 100
+
+
+--Submitter: Martin Clemens (Martin.Clemens.external@ts.fujitsu.com) Fri, 25 Aug 2017 17:15:00 CEST
+
+Package: i2c_mux_PILOT (1.0.200); urgency = low
+
+Abstract:
+	For 09.00b_R61776_base increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 02 Aug 2017 09:53:55 CEST
+
+Package: i2c_mux_PILOT (1.0.100); urgency = low
+
+Abstract:
+	For 01.04b_R59755_base increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Fri, 19 May 2017 13:11:51 CEST
+
+Package: i2c_mux_PILOT (1.0.3); urgency = low
+
+Abstract:
+	Changes from FJJ :
+ 1. Resolve the 3-channel problem by supporting a 4-channel solution.
+ 2. Support of I2C multiplexers which are supplied by main power and not by standby power.
+
+Files Modified: data/PILOT.c, data/PILOT.h, spx/INFO
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Mon, 13 Feb 2017 16:37:44 CET
+
+Package: i2c_mux_PILOT (1.0.2); urgency = medium
+
+Abstract:
+	use alternate addresses to switch the ports of the internal smbus-multiplexer
+
+Files Modified: data/PILOT.c
+
+--Submitter: Gisela Trost (Gisela.Trost@ts.fujitsu.com) Wed, 12 Oct 2016 15:12:50 CEST
+
+Package: i2c_mux_PILOT (1.0.1); urgency = low
+
+Abstract:
+	Pilot4 I2C MUX fixes
+
+Files Modified: data/PILOT.c
+
+--Submitter: Mark Dorman (mark.dorman@ircona.com) Wed, 11 May 2016 11:26:18 CEST
+
+Package:i2c_mux_PILOT (1.0.0);urgency=new
+
+Abstract:
+	internal i2c mux driver for Pilot 4
+
+--Submitter: Reinhard Bernhardi-Grisson (Reinhard.bernhardi@ts.fujitsu.com) Fri, 11 Mar 2016 17:13:53 +0100
+

@@ -1,0 +1,12 @@
+--- u-boot-1.1.6/Makefile	2010-04-05 15:53:47.000000000 -0400
++++ u-boot-1.1.6-PilotIII/Makefile	2010-04-05 16:47:24.000000000 -0400
+@@ -1943,6 +1943,9 @@
+ cm41xx_config	:	unconfig
+ 	@$(MKCONFIG) $(@:_config=) arm arm920t cm41xx NULL ks8695
+ 
++HORNET_config : unconfig
++	@$(MKCONFIG) $(@:_config=) arm arm926ejs HORNET NULL PILOTIII
++
+ gth2_config		: 	unconfig
+ 	@mkdir -p $(obj)include
+ 	@ >$(obj)include/config.h

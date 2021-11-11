@@ -1,0 +1,11 @@
+--- uboot_old/include/net.h	2014-11-19 19:19:17.175785194 +0530
++++ uboot/include/net.h	2014-11-19 19:19:08.411627313 +0530
+@@ -340,7 +340,7 @@
+ //typedef enum { BOOTP, RARP, ARP, TFTP, DHCP, PING, DNS, NFS, CDP, NETCONS, SNTP } proto_t;
+ //AMI Extension - R2C Protocol
+ //DMTF NCSI Support
+-typedef enum { BOOTP, RARP, ARP, TFTP, DHCP, PING, DNS, NFS, CDP, NETCONS, SNTP, R2C, NCSI, SIDEBAND} proto_t;
++typedef enum { BOOTP, RARP, ARP, TFTP, DHCP, PING, DNS, NFS, CDP, NETCONS, SNTP, R2C, NCSI, SIDEBAND, RECOVERY} proto_t;
+ 
+ /* from net/net.c */
+ extern char	BootFile[128];			/* Boot File name		*/

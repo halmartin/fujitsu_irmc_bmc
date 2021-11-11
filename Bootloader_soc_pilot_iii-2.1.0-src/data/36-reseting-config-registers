@@ -1,0 +1,19 @@
+--- uboot/cpu/arm926ejs/PILOTIII/misc.c	2013-01-22 00:11:02.888458992 -0500
++++ uboot_new/cpu/arm926ejs/PILOTIII/misc.c	2013-01-22 00:14:23.597780307 -0500
+@@ -185,8 +185,16 @@
+ return;
+ }
+ 
++void ResetConfigReg(void)
++{
++    WRITE_REG32(0x4010080C, 0x0000FF00);
++    WRITE_REG32(0x40100800, 0x00003002);
++    return;
++}
++
+ void platformSpecificInit(void)
+ {
++    ResetConfigReg();
+     CheckForEmergencyMode();
+ 
+ return;

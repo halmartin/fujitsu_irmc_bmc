@@ -1,0 +1,21 @@
+--- uboot/vendors/ami/ncsi/ncsi.h	2012-08-29 10:55:31.556553690 +0530
++++ uboot_new/vendors/ami/ncsi/ncsi.h	2012-08-29 16:12:35.981381170 +0530
+@@ -155,8 +155,17 @@
+ #define MK_CH_ID(p,c)    ((((p) & 0x7) << 5) | ((c) & 0x1F))
+ #define GET_PACKAGE_ID(id)    (((id) >> 5) & 0x7) 	
+ #define GET_CHANNEL_ID(id)    ((id) & 0x1F)
++
++#ifdef CONFIG_SPX_FEATURE_NCSI_MAXIMUM_CHANNELID
++#define MAX_CHANNEL_ID  CONFIG_SPX_FEATURE_NCSI_MAXIMUM_CHANNELID
++#else
+ #define MAX_CHANNEL_ID	 0x1F
+-#define MAX_PACKAGE_ID	 0x7 
++#endif
++#ifdef CONFIG_SPX_FEATURE_NCSI_MAXIMUM_PACKAGEID
++#define MAX_PACKAGE_ID  CONFIG_SPX_FEATURE_NCSI_MAXIMUM_PACKAGEID
++#else
++#define MAX_PACKAGE_ID	 0x7
++#endif
+ 
+ /*----------- NCSI Default (No Payload) Request and Response  -------*/
+ typedef struct 

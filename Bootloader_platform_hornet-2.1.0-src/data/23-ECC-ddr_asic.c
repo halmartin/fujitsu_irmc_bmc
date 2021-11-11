@@ -1,0 +1,15 @@
+--- /usr/src/dev/killme/build/hornet/Build/bootloader/uboot/board/HORNET/ddr_asic.c	2011-10-25 13:55:33.000000000 +0800
++++ uboot/board/HORNET/ddr_asic.c	2011-10-20 22:50:41.000000000 +0800
+@@ -253,9 +253,9 @@
+   ddrsize_calc();
+ 
+   // ECC Mode.
+-#if defined ECC
+-  *(tPVU32)(MC_REG_ADDRESS58) = LOWER_ECC_ADDRESS;
+-  *(tPVU32)(MC_REG_ADDRESS5C) = UPPER_ECC_ADDRESS;
++#ifdef CONFIG_SPX_FEATURE_GLOBAL_ECC_MEMORY_UPPER_ADDRESS
++  *(tPVU32)(MC_REG_ADDRESS58) = CONFIG_SPX_FEATURE_GLOBAL_ECC_MEMORY_LOWER_ADDRESS;
++  *(tPVU32)(MC_REG_ADDRESS5C) = CONFIG_SPX_FEATURE_GLOBAL_ECC_MEMORY_UPPER_ADDRESS;
+ 
+   temp = *(tPVU32)(MC_REG_ADDRESS08);
+   temp = temp & ~0x000000ff;

@@ -1,0 +1,93 @@
+--- uboot/vendors/ami/fmh/cmd_fmh.c	2015-07-21 17:29:29.906329114 +0530
++++ uboot_new/vendors/ami/fmh/cmd_fmh.c	2015-07-21 17:56:25.270325546 +0530
+@@ -434,6 +434,8 @@
+       {
+ 	 if(*imagetoboot == IMAGE_1)
+ 	 {
++        	if( getenv("imgheadererr") )
++       		    setenv("imgheadererr",NULL);
+ 		setenv("fwimage1corrupted","yes");
+ 		setenv("bootselector","2");
+ 		saveenv();
+@@ -441,6 +443,8 @@
+ 	 }
+ 	 else if(*imagetoboot == IMAGE_2)
+ 	 {
++        	if( getenv("imgheadererr") )
++       		    setenv("imgheadererr",NULL);
+ 		setenv("fwimage2corrupted","yes");
+ 		setenv("bootselector","1");
+ 		saveenv();
+@@ -470,17 +474,22 @@
+ 	unsigned long i=0,SectorSize=CONFIG_SPX_FEATURE_GLOBAL_ERASE_BLOCK_SIZE;
+ 	unsigned long SectorCount=0,flashsize=0;
+ 	unsigned long watchdog_reset_status = 0;
+-	u8 imgIndex=0,bank=0,img1_presence=0,img2_presence=0;
++	u8 imgIndex=0,bank=0,img1_presence=0,img2_presence=0,imgheadererr=0;
+ 	FMH	*fmh = NULL;
+ 	MODULE_INFO *mod = NULL;
+ 	VersionInfo firmware_ver[2], platform_ver[2];
+-
++        char *pStr = NULL;
+ 
+ 	#ifdef CONFIG_SPX_FEATURE_FAIL_SAFE_BOOTING
+ 		Enable_watchdog(&watchdog_reset_status);
+ 		*watchdog_status=watchdog_reset_status;
+ 	#endif
+ 
++        pStr = getenv("imgheadererr");
++        if ((pStr != NULL ) && (strcmp(pStr,"yes") == 0))
++        {
++            imgheadererr = 1;
++        }
+ 
+ 	for (bank=0;bank<CFG_MAX_FLASH_BANKS;bank++)
+ 	{
+@@ -562,25 +571,31 @@
+ 			}
+ 	    }
+ 
++
++
++              /*if both images corrupts uboot has to launch Recovery Console */
++              if( getenv("fwimage1corrupted") && getenv("fwimage2corrupted") )
++              {
++        	    if( getenv("imgheadererr") )
++		    {	
++       		    	setenv("imgheadererr",NULL);
++			saveenv();
++		    }	
++                    printf("Both Images corrupted so moving Remote Recovery Mode...\n");
++                    /*Need to disable watchdog reset before firmware Recovery */
++                    #ifdef CONFIG_SPX_FEATURE_FAIL_SAFE_BOOTING
++                          Disable_watchdog();
++                    #endif
++		    return rconsole();      /* Remote Recovery Mode */
++              } 
++
+                 /* check whether reboot caused by watchdog modules reset */
+-	        if(watchdog_reset_status == 1)
++	        if(watchdog_reset_status == 1 || imgheadererr== 1)
+ 		{
+-                        /*if both images corrupts uboot has to launch Recovery Console */
+-                        if( getenv("fwimage1corrupted") && getenv("fwimage2corrupted") )
+-                        {
+-                                printf("Both Images corrupted so moving Remote Recovery Mode...\n");
+-                                /*Need to disable watchdog reset before firmware Recovery */
+-                                #ifdef CONFIG_SPX_FEATURE_FAIL_SAFE_BOOTING
+-                                    Disable_watchdog();
+-                                #endif
+-				return rconsole();      /* Remote Recovery Mode */
+-                        } 
+-                        else
+-                        {
+-	        	   // Check uboot env variable bootselector and get boot option for failsafeboot 
+-			   if( ReadEnvVarAndGetBootOption(imagetoboot,1,firmware_ver, platform_ver) != 0)
++		   printf("Info: Previous boot failed, hence switching to other image. Reboot cause wdtReset: %d imgHdrErr: %d \n",watchdog_reset_status,imgheadererr);
++	           // Check uboot env variable bootselector and get boot option for failsafeboot 
++		   if( ReadEnvVarAndGetBootOption(imagetoboot,1,firmware_ver, platform_ver) != 0)
+ 			      return -1;
+-                        }
+ 		}
+ 		else
+ 		{

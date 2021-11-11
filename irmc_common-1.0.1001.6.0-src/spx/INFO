@@ -1,0 +1,46 @@
+Source : irmc_common
+Version : 1.0.1001.6.0
+SPX-Version : 4.0
+SPX-Format : 1.0
+Builds : irmc_common, irmc_common_dev
+Build-Depends : Crosscc, global_dev, kernel_dev, rules, libfts_dev
+Essential : NO
+Group : DEVICE
+Owner : FTS
+Maintainer : Walter Unruh  (maintainer@domain.com)
+Source-Location : FTS
+Source-Version : 1.0.0
+Source-License : GPL-V2
+Package-License : GPL-V2
+Architecture : ALL
+Urgency : low
+Description : iRMC common infrastructure (/proc/irmc/ entry)
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,Source-License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Install-Size (Optional) can be automatically calculated
+# Provides,Depends,Required,Conflicts ?
+# ---------------------------------------------------------------------------
+
+Package : irmc_common
+Section : sys
+Essential : NO
+Config-Tag : iRMC /proc/irmc/ entry
+Group : DEVICE
+Depends : kernel
+Package-License : GPL-V2
+Description : iRMC common infrastructure (/proc/irmc/ entry)
+.
+
+Package : irmc_common_dev
+Section : dev
+Essential : YES
+Group : DEVEL
+Package-License : GPL-V2
+Description : development package for iRMC common infrastructure (/proc/irmc/ entry)
+.
+

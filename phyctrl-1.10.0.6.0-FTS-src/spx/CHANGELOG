@@ -1,0 +1,202 @@
+Package: phyctrl (1.10.0.6.0); urgency = low
+
+Abstract:
+	For patch_base 09.60j: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 20 Nov 2019 11:09:46 CET
+
+Package: phyctrl (1.10.0.5.0); urgency = low
+
+Abstract:
+	For patch_base 09.60g: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 03 Sep 2019 13:53:37 CEST
+
+Package: phyctrl (1.10.0.4.0); urgency = low
+
+Abstract:
+	For patch_base 02.41P: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 14 Mar 2019 13:31:57 CET
+
+Package: phyctrl (1.10.0.3.0); urgency = low
+
+Abstract:
+	For patch_base 02.20c: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Dec 2018 11:37:12 CET
+
+Package: phyctrl (1.10.0.2.0); urgency = low
+
+Abstract:
+	For patch_base 02.00b: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 28 Aug 2018 13:52:46 CEST
+
+Package: phyctrl (1.10.0.1.0); urgency = low
+
+Abstract:
+	For patch_base 01.60b oem version number incremented, OemAux version number set to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 21 Jun 2018 10:00:40 CEST
+
+Package: phyctrl (1.10.0.0.0); urgency = low
+
+Abstract:
+	adapt spx package with five digits
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 20 Mar 2018 13:27:59 CET
+
+Package: phyctrl (1.10.0); urgency = low
+
+Abstract:
+	For 01.20a_09.20a increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Sep 2017 14:43:05 CEST
+
+Package: phyctrl (1.9.0); urgency = low
+
+Abstract:
+	For 01.20aPre_R62446__base increment minor version by 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens.external@ts.fujitsu.com) Fri, 25 Aug 2017 16:40:30 CEST
+
+Package: phyctrl (1.8.2); urgency = medium
+
+Abstract:
+	INFO: bug with checkin: version and location are corrected
+
+Files Modified: spx/INFO
+
+--Submitter: Karin Wulf (Karin.Wulf.external@ts.fujitsu.com) Mon, 14 Aug 2017 15:00:17 CEST
+
+Package: phyctrl (1.8.1); urgency = medium
+
+Abstract:
+	INFO: source location is changed to FTS
+
+Files Modified: spx/INFO
+
+--Submitter: Karin Wulf (Karin.Wulf.external@ts.fujitsu.com) Mon, 14 Aug 2017 14:43:15 CEST
+
+Package: phyctrl (1.8.0); urgency = low
+
+Abstract:
+	For 09.00b_R61776_base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 01 Aug 2017 16:22:02 CEST
+
+Package: phyctrl (1.7.0); urgency = low
+
+Abstract:
+	For 01.04b_R59755_base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Fri, 19 May 2017 12:31:06 CEST
+
+Package: phyctrl (1.6.1); urgency = low
+
+Abstract:
+	too many licenses, remove one
+
+Files Added: spx/PACKAGES.D/phyctrl/DATA/keep.folder, spx/PACKAGES.D/phyctrl_driver_dev/DATA/keep.folder
+Files Deleted: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Petra Weichel (Petra.Weichel.external@ts.fujitsu.com) Mon, 13 Mar 2017 12:34:54 CET
+
+Package: phyctrl (1.6.0); urgency = low
+
+Abstract:
+	For FW 8.61F increment minor version by 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Thu, 01 Sep 2016 08:38:48 CEST
+
+Package: phyctrl (1.5.0); urgency = low
+
+Abstract:
+	For FW 8.40e increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Tue, 07 Jun 2016 08:34:56 CEST
+
+Package: phyctrl (1.4.0); urgency = low
+
+Abstract:
+	For 08.20F_R49270__base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Sun, 06 Mar 2016 15:42:02 CET
+
+Package: phyctrl (1.3.0); urgency = low
+
+Abstract:
+	Increment minor version by 1 due to new patch_base 08.00g_R45733__150712
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Mon, 13 Jul 2015 11:14:24 CEST
+
+Package: phyctrl (1.2.1); urgency = medium
+
+Abstract:
+	Fixed strictly compile errors, new target libraries location changes in Makefile and Kernel Version 3 Build errors.
+
+Files Modified: data/phyctrl_mod.c
+
+--Submitter: revantha (revantha@amiindia.co.in) Mon, 09 Feb 2015 15:32:44 IST
+
+Package: phyctrl (1.2.0); urgency = low
+
+Abstract:
+	modified depends package as Crosscc
+
+Files Modified: spx/INFO
+
+--Submitter: Gourav Kumar Garg (gouravkumarg@amiindia.co.in) Thu, 22 Jan 2015 21:27:08 HMT
+
+Package: phyctrl (1.1.100); urgency = low
+
+Abstract:
+	Update aux version to next hundred
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sat, 29 Nov 2014 09:33:25 CET
+
+Package: phyctrl (1.1.1); urgency = medium
+
+Abstract:
+	Changed Src and Pkg license to GPL-V2
+
+Files Added: spx/LICENSES/LICENSE.GPL-V2
+Files Modified: spx/INFO
+
+--Submitter: revantha (revantha@amiindia.co.in) Tue, 06 Aug 2013 20:04:11 IST
+
+Package: phyctrl (1.1.0); urgency = medium
+
+Abstract:
+	Updated license information.
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Mon, 30 May 2011 20:14:17 IST
+
+Package: phyctrl (1.0.0); urgency = new
+
+Abstract:
+	PHY configuration driver for FTS platforms.
+
+Files Added: data, data/Makefile, data/phyctrl.h, data/phyctrl_mod.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/PACKAGES.D, spx/PACKAGES.D/phyctrl, spx/PACKAGES.D/phyctrl/DATA, spx/PACKAGES.D/phyctrl/SCRIPTS, spx/PACKAGES.D/phyctrl/SCRIPTS/dev-install, spx/PACKAGES.D/phyctrl_driver_dev, spx/PACKAGES.D/phyctrl_driver_dev/DATA, spx/PACKAGES.D/phyctrl_driver_dev/SCRIPTS, spx/PACKAGES.D/phyctrl_driver_dev/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Fri, 08 Apr 2011 19:55:01 IST
+

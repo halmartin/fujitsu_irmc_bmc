@@ -1,0 +1,211 @@
+Package: platform (1.4.1000.6.0); urgency = low
+
+Abstract:
+	For patch_base 09.60j: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 20 Nov 2019 11:09:49 CET
+
+Package: platform (1.4.1000.5.0); urgency = low
+
+Abstract:
+	For patch_base 09.60g: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 03 Sep 2019 13:53:40 CEST
+
+Package: platform (1.4.1000.4.0); urgency = low
+
+Abstract:
+	For patch_base 02.41P: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 14 Mar 2019 13:32:00 CET
+
+Package: platform (1.4.1000.3.0); urgency = low
+
+Abstract:
+	For patch_base 02.20c: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Dec 2018 11:37:18 CET
+
+Package: platform (1.4.1000.2.0); urgency = low
+
+Abstract:
+	For patch_base 02.00b: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 28 Aug 2018 13:52:50 CEST
+
+Package: platform (1.4.1000.1.0); urgency = low
+
+Abstract:
+	For patch_base 01.60b oem version number incremented, OemAux version number set to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 21 Jun 2018 10:00:45 CEST
+
+Package: platform (1.4.1000.0.0); urgency = low
+
+Abstract:
+	adapt spx package with five digits
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 20 Mar 2018 13:31:28 CET
+
+Package: platform (1.4.1000); urgency = low
+
+Abstract:
+	For 01.20a_09.20a increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Sep 2017 16:46:06 CEST
+
+Package: platform (1.4.900); urgency = low
+
+Abstract:
+	For 01.20aPre_R62446__base increment auxiliary version by 100
+
+
+--Submitter: Martin Clemens (Martin.Clemens.external@ts.fujitsu.com) Fri, 25 Aug 2017 17:51:23 CEST
+
+Package: platform (1.4.800); urgency = low
+
+Abstract:
+	For 09.00b_R61776_base increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 02 Aug 2017 09:56:08 CEST
+
+Package: platform (1.4.700); urgency = low
+
+Abstract:
+	For 01.04b_R59755_base increment auxiliary version by 100
+
+Files Added: spx/PACKAGES.D/platform/DATA/keep.folder
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Fri, 19 May 2017 12:37:25 CEST
+
+Package: platform (1.4.600); urgency = low
+
+Abstract:
+	For FW 8.61F increment auxiliary version by 100
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Thu, 01 Sep 2016 09:04:49 CEST
+
+Package: platform (1.4.500); urgency = low
+
+Abstract:
+	For FW increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Tue, 07 Jun 2016 09:32:24 CEST
+
+Package: platform (1.4.400); urgency = low
+
+Abstract:
+	For 08.20F_R49270__base increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Sun, 06 Mar 2016 16:37:41 CET
+
+Package: platform (1.4.300); urgency = low
+
+Abstract:
+	Increment auxiliary version by 100 due to new patch_base 08.00g_R45733__150712
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Mon, 13 Jul 2015 11:36:00 CEST
+
+Package: platform (1.4.201); urgency = low
+
+Abstract:
+	RR9 merge: convert spx format to version 2.0
+
+Files Modified: spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Wed, 01 Apr 2015 18:40:23 CEST
+
+Package: platform (1.4.200); urgency = low
+
+Abstract:
+	Increment auxiliary version by 100 due to new patch_base 07.80b_R41103__base
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Fri, 13 Mar 2015 23:11:51 CET
+
+Package: platform (1.4.101); urgency = low
+
+Abstract:
+	replace ioread/iowrite by __raw_read/__raw_write functions
+
+Files Modified: data/platform_hornet.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 02 Mar 2015 16:24:51 CET
+
+Package: platform (1.4.100); urgency = low
+
+Abstract:
+	Update aux version to next hundred
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sat, 29 Nov 2014 09:33:34 CET
+
+Package: platform (1.4.1); urgency = low
+
+Abstract:
+	Pin Mux Control support
+
+Files Modified: data/platform_hornet.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Sun, 05 Feb 2012 13:41:28 CET
+
+Package: platform (1.4.0); urgency = medium
+
+Abstract:
+	passing platform_drv.conf file content as paramater to platfrom driver, the file can have multiple parameters with value
+
+Files Modified: data/platform_hornet.c
+
+--Submitter: pavithras (pavithras@amiindia.co.in) Wed, 11 Jan 2012 15:59:42 IST
+
+Package: platform (1.3.0); urgency = medium
+
+Abstract:
+	Adding PlatName as argument to platform driver
+
+Files Modified: data/platform_hornet.c, spx/PACKAGES.D/platform/SCRIPTS/dev-install
+
+--Submitter: pavithras (pavithras@amiindia.co.in) Fri, 23 Dec 2011 13:01:15 IST
+
+Package: platform (1.2.0); urgency = medium
+
+Abstract:
+	Updating Platform driver licensing from AMI to GPL-v2
+
+Files Added: spx/LICENSES/LICENSE.GPL-V2
+Files Deleted: spx/LICENSES/LICENSE.AMI
+Files Modified: data/platform_hornet.c, spx/INFO
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Tue, 28 Jun 2011 20:04:49 IST
+
+Package: platform (1.1.0); urgency = medium
+
+Abstract:
+	Updated license information.
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Mon, 30 May 2011 20:14:35 IST
+
+Package: platform (1.0.0); urgency = new
+
+Abstract:
+	This package contains the platform-specific hardware initialization module for iRMCS4
+
+Files Added: data, data/Makefile, data/platform_hornet.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/PACKAGES.D, spx/PACKAGES.D/platform, spx/PACKAGES.D/platform/DATA, spx/PACKAGES.D/platform/SCRIPTS, spx/PACKAGES.D/platform/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: pavithras (pavithras@amiindia.co.in) Thu, 24 Feb 2011 10:55:17 IST
+

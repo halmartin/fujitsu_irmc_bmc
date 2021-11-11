@@ -1,0 +1,41 @@
+Source : miscctrl
+Version :   6.2.0.0.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : SP Core Team (spcoreteam@ami.com)
+License : GPL-V2
+Source-Location : AMI
+Source-Version : 1.0.0
+Builds : miscctrl, miscctrl_driver_dev
+Build-Depends : Crosscc, kernel_dev, rules, helper_driver_dev, global_dev, DevNodes
+Architecture : ARM
+SOC : PILOT
+Urgency :   low
+Description : Misc Control driver for PILOT paltforms.
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : miscctrl
+Section : sys
+Group : DEVICE
+Essential : YES
+Depends : kernel
+Required : helper, DevNodes
+Description : This package contains built miscctrl hardware driver for PILOT SoC.
+.
+
+Package : miscctrl_driver_dev
+Section : dev
+Group : DEVEL
+Essential : YES
+Description : This package contains miscctrl driver development header files.
+.
+

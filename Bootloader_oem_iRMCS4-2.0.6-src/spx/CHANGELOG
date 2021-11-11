@@ -1,0 +1,92 @@
+Package: Bootloader_oem_iRMCS4 (2.0.6); urgency = low
+
+Abstract:
+	Revert clearing of SYSCFG POR bit in uboot. Invalidating the permdat header in uboot if POR is set
+
+Files Added: data/19-FTS_init_PRAM_on_POR
+Files Deleted: data/19-FTS_wdt_preserve_POR_bit
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 22 Sep 2015 17:19:55 CEST
+
+Package: Bootloader_oem_iRMCS4 (2.0.5); urgency = low
+
+Abstract:
+	Prevent clearing the SYSCFG Power On Reset. This bit should be cleared during OS
+
+Files Added: data/19-FTS_wdt_preserve_POR_bit
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Thu, 03 Sep 2015 11:44:18 CEST
+
+Package: Bootloader_oem_iRMCS4 (2.0.4); urgency = low
+
+Abstract:
+	Fail safe firmware boot for image checksm failures.
+
+Files Added: data/18-FAIL_SAFE_BOOT_IMG_CHKSM_FAILURE
+
+--Submitter: ramakrishna (nagaramakrishnak@amiindia.co.in) Tue, 21 Jul 2015 18:33:56 HMT
+
+Package: Bootloader_oem_iRMCS4 (2.0.3); urgency = medium
+
+Abstract:
+	Fixed issue with power on in emergency mode.
+
+Files Deleted: spx/LICENSES/LICENSE.AMI
+Files Modified: data/07-FTS_initializing_GPIO_HW_REG_settings, spx/INFO
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Fri, 17 Jul 2015 20:27:37 HMT
+
+Package: Bootloader_oem_iRMCS4 (2.0.2); urgency = low
+
+Abstract:
+	Removed unnecessary delay
+
+Files Modified: data/01-Winbond_W25M512_support_generic
+
+--Submitter: Gourav Kumar Garg (gouravkumarg@amiindia.co.in) Fri, 10 Jul 2015 14:50:30 HMT
+
+Package: Bootloader_oem_iRMCS4 (2.0.1); urgency = low
+
+Abstract:
+	WTD otification
+
+Files Added: data/17-FTS-wdt_notification_to_OS
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Fri, 10 Jul 2015 09:29:53 CEST
+
+Package: Bootloader_oem_hornet (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 03:03:51 GMT
+
+Package: Bootloader_oem_hornet (1.2.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 04:48:58 GMT
+
+Package: Bootloader_oem_hornet (1.1.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO, spx/LICENSES/LICENSE.AMI
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 02:58:29 GMT
+
+Package: Bootloader_oem_hornet (1.0.0); urgency = new
+
+Abstract:
+	hornet OEM Patches to Bootloader (U-boot 1.1.6)
+
+Files Added: data, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/@Bootloader_oem_hornet, spx/PACKAGES.D/@Bootloader_oem_hornet/DATA, spx/PACKAGES.D/@Bootloader_oem_hornet/SCRIPTS, spx/PACKAGES.D/@Bootloader_oem_hornet/SCRIPTS/dev-install, spx/RULES, spx/RULES.D, spx/RULES.D/ApplyPatch
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Thu, 18 Oct 2012 22:54:39 EDT
+

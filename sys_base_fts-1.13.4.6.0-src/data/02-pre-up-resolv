@@ -1,0 +1,4 @@
+#!/bin/sh
+cat /conf/resolv.conf | grep options > /tmp/resolv_options.conf
+exit 0
+

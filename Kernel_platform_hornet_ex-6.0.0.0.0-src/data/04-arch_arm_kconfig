@@ -1,0 +1,55 @@
+--- linux-3.14.17/arch/arm/Kconfig	2014-08-14 09:38:34.000000000 +0800
++++ linux-3.14.17-ami/arch/arm/Kconfig	2016-05-29 16:29:57.817405821 +0800
+@@ -301,8 +301,16 @@
+ #
+ choice
+ 	prompt "ARM system type"
+-	default ARCH_VERSATILE if !MMU
+-	default ARCH_MULTIPLATFORM if MMU
++  default ARCH_HORNET
++
++ config ARCH_HORNET
++  bool "ServerEngines HORNET"
++  select SOC_SE_PILOT3
++  select NEED_MACH_IO_H
++  help
++    This is an evaluation board HORNET based on ServerEngine's PILOT-3 SOC
++    If you would like to build your kernel to run on one of these boards
++    then you must say 'Y' here. Otherwise say 'N'
+ 
+ config ARCH_MULTIPLATFORM
+ 	bool "Allow multiple platforms to be selected"
+@@ -935,6 +943,8 @@
+ 
+ source "arch/arm/mach-at91/Kconfig"
+ 
++source "arch/arm/mach-pilot/Kconfig"
++
+ source "arch/arm/mach-bcm/Kconfig"
+ 
+ source "arch/arm/mach-bcm2835/Kconfig"
+@@ -1058,6 +1068,12 @@
+ source "arch/arm/mach-zynq/Kconfig"
+ 
+ # Definitions to make life easier
++
++config SOC_SE_PILOT3
++ bool "PILOT-III SOC Support"
++ select CPU_ARM926T
++ default y if ARCH_HORNET
++
+ config ARCH_ACORN
+ 	bool
+ 
+@@ -1087,6 +1103,11 @@
+ 	select CLKSRC_MMIO
+ 	select CLKSRC_OF if OF
+ 
++config FLASH_OPERATION_MODE_MASK
++    hex "Flash Operation Mode Mask"
++    depends on SOC_SE_PILOT3
++    default "0x00010003"
++
+ source "arch/arm/firmware/Kconfig"
+ 
+ source arch/arm/mm/Kconfig

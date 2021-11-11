@@ -1,0 +1,13 @@
+--- linux-3.14.17/drivers/mmc/host/Kconfig	2014-08-14 01:38:34.000000000 +0000
++++ linux/drivers/mmc/host/Kconfig	2014-09-12 00:25:21.536353247 +0000
+@@ -689,3 +689,10 @@
+ 	help
+ 	  Say Y here to include driver code to support SD/MMC card interface
+ 	  of Realtek PCI-E card reader
++
++config MMC_SDHCI_PILOT
++	tristate "SD/MMC support for PILOT SoC Board"
++	depends on MMC_SDHCI
++	help
++		This selects the SD/MMC support for the PILOT SoC Platform Boards
++

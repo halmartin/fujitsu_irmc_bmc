@@ -1,0 +1,162 @@
+Package: opensslapp_common (6.2.0.0.0); urgency = medium
+
+Abstract:
+	openssl app to generate and view the SSL certificates for openssl version 1.0.1e.
+
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 16 Feb 2019 00:36:34 UTC
+
+Package: opensslapp_common (6.2.0.0.0); urgency = medium
+
+Abstract:
+	[LTS][WP]After successfully uploading SSL certificate, when upload again, the prompt is incorrect and get 403 status
+
+Files Added: data/asn1pars.c
+Files Modified: data/Makefile, data/openssl.c
+
+--Submitter: desmondwu (DesmondWu)(desmondwu@ami.com.tw) Thu, 31 Jan 2019 05:59:51 UTC
+
+Package: opensslapp_common (6.1.0.0.0); urgency = low
+
+Abstract:
+	Adding previous Changelog
+
+Files Modified: spx/CHANGELOG
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 08 Dec 2018 20:12:17 UTC
+
+Package: opensslapp_common (6.0.0.0.0); urgency = high
+
+Abstract:
+	openssl app to generate and view the SSL certificates for openssl version 1.0.1e.
+
+Files Added: data, data/Makefile, data/app_rand.c, data/apps.c, data/apps.h, data/e_os.h, data/openssl.c, data/progs.h, data/req.c, data/x509.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/opensslapp_common, spx/PACKAGES.D/opensslapp_common/DATA, spx/PACKAGES.D/opensslapp_common/DATA/keep.folder, spx/PACKAGES.D/opensslapp_common/SCRIPTS, spx/PACKAGES.D/opensslapp_common/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Winston (winstont)(winstont@ami.com) Mon, 09 Apr 2018 23:51:03 UTC
+
+Package: opensslapp_common (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:32:35 UTC
+
+Package: opensslapp_common (2.8.0); urgency = medium
+
+Abstract:
+	Fortify Fixes [NULL Dereference]
+
+Files Modified: data/req.c
+
+--Submitter: abhilash padmakar nimbalkar (abhilashpadmakarn@amiindia.co.in) Thu, 21 Jul 2016 12:14:58 HMT
+
+Package: opensslapp_common (2.7.0); urgency = medium
+
+Abstract:
+	Fortify Fixes [unchecked return value]
+
+Files Modified: data/apps.c, spx/INFO
+
+--Submitter: abhilash padmakar nimbalkar (abhilashpadmakarn@amiindia.co.in) Mon, 18 Jul 2016 12:37:13 HMT
+
+Package: opensslapp_common (2.6.0); urgency = medium
+
+Abstract:
+	zlib is not included in latest OpenSSL and so removed dependency of zlib
+
+Files Modified: data/Makefile, data/apps.h
+
+--Submitter: Winston (winstont@ami.com) Fri, 03 Jun 2016 23:43:18 EDT
+
+Package: opensslapp_common (2.5.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: spx/PACKAGES.D/opensslapp_common/DATA/keep.folder
+Files Deleted: spx/PACKAGES.D/opensslapp_common/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 17:28:53 EDT
+
+Package: opensslapp_common (2.4.0); urgency = medium
+
+Abstract:
+	Fortify fix for null dereference error
+
+Files Modified: data/req.c
+
+--Submitter: Sagar S Gohel (sagars@amiindia.co.in) Thu, 10 Mar 2016 18:46:03 HMT
+
+Package: opensslapp_common (2.3.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/PACKAGES.D/opensslapp_common/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 22:33:22 EST
+
+Package: opensslapp_common (2.2.0); urgency = medium
+
+Abstract:
+	Fix for bleeding edge compilation errors
+
+Files Modified: data/apps.c
+
+--Submitter: Prashant Vyankatrao Bharade (prashantbharadev@amiindia.co.in) Mon, 28 Dec 2015 22:41:45 HMT
+
+Package: opensslapp_common (2.1.0); urgency = medium
+
+Abstract:
+	Removing LICENSE.AMI from LICENSES folder to prevent multiple licensing issue
+
+Files Deleted: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Winston (winstont@ami.com) Tue, 23 Dec 2014 22:27:30 GMT
+
+Package: opensslapp_common (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 05:56:25 GMT
+
+Package: opensslapp_common (1.3.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 07:27:07 GMT
+
+Package: opensslapp_common (1.2.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 05:39:17 GMT
+
+Package: opensslapp_common (1.1.0); urgency = medium
+
+Abstract:
+	Removing openssl from Depends
+
+Files Modified: spx/INFO, spx/LICENSES/LICENSE.AMI
+
+--Submitter: Winston (winstont@ami.com) Thu, 17 Apr 2014 18:15:14 GMT
+
+Package: opensslapp_common (1.0.0); urgency = new
+
+Abstract:
+	openssl app to generate and view the SSL certificates for openssl version 1.0.1e.
+
+Files Added: data, data/Makefile, data/app_rand.c, data/apps.c, data/apps.h, data/e_os.h, data/openssl.c, data/progs.h, data/req.c, data/x509.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/opensslapp_common, spx/PACKAGES.D/opensslapp_common/DATA, spx/PACKAGES.D/opensslapp_common/SCRIPTS, spx/PACKAGES.D/opensslapp_common/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Sat, 21 Sep 2013 22:52:22 EDT
+

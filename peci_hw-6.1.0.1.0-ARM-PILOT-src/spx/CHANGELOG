@@ -1,0 +1,323 @@
+Package: peci_hw (6.1.0.1.0); urgency = medium
+
+Abstract:
+	Bug fix from AMI Japan for the issue of timeout during booting iRMC FW with NFS if MCTP is enabled
+
+Files Modified: spx/INFO, spx/PACKAGES.D/peci_hw/SCRIPTS/dev-install
+
+--Submitter: Pravin V (pravinv@amiindia.co.in) Thu, 28 Feb 2019 18:56:57 IST
+
+Package: peci_hw (6.1.0.0.0); urgency = low
+
+Abstract:
+	This Package includes PECI hardware module for Pilot SoC.
+
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 16 Feb 2019 00:37:36 UTC
+
+Package: peci_hw (6.1.0.0.0); urgency = low
+
+Abstract:
+	Adding previous Changelog
+
+Files Modified: spx/CHANGELOG
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 08 Dec 2018 19:46:47 UTC
+
+Package: peci_hw (6.0.0.0.0); urgency = low
+
+Abstract:
+	This Package includes PECI hardware module for Pilot SoC.
+
+Files Added: data, data/Makefile, data/peci_hw.h, data/pecimain_hw.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/peci_hw, spx/PACKAGES.D/peci_hw/DATA, spx/PACKAGES.D/peci_hw/DATA/keep.folder, spx/PACKAGES.D/peci_hw/SCRIPTS, spx/PACKAGES.D/peci_hw/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Winston (winstont)(winstont@ami.com) Mon, 09 Apr 2018 23:25:48 UTC
+
+Package: peci_hw (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:33:15 UTC
+
+Package: peci_hw (2.5.0); urgency = low
+
+Abstract:
+	Enabling the PECI for pilot4.
+
+Files Modified: data/peci_hw.h, data/pecimain_hw.c
+
+--Submitter: akshay p (akshayp@amiindia.co.in) Thu, 11 Aug 2016 18:46:37 GMT-5
+
+Package: peci_hw (2.4.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: spx/PACKAGES.D/peci_hw/DATA/keep.folder
+Files Deleted: spx/PACKAGES.D/peci_hw/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 17:33:50 EDT
+
+Package: peci_hw (2.3.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/PACKAGES.D/peci_hw/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 22:38:20 EST
+
+Package: peci_hw (2.2.0); urgency = low
+
+Abstract:
+	Added function declaration to avoid build error
+
+Files Modified: data/pecimain_hw.c
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Tue, 05 May 2015 12:31:56 HMT
+
+Package: peci_hw (2.1.0); urgency = low
+
+Abstract:
+	Updated Copyrights year
+
+Files Modified: data/peci_hw.h, data/pecimain_hw.c, spx/INFO
+
+--Submitter: prateekv (prateekv@amiindia.co.in) Tue, 16 Dec 2014 19:30:57 HMT
+
+Package: peci_hw (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 06:00:54 GMT
+
+Package: peci_hw (1.20.0); urgency = medium
+
+Abstract:
+	Remove Group Field from source section
+
+Files Modified: spx/INFO
+
+--Submitter: Dipankar Patra (dipankarpatra@amiindia.co.in) Fri, 17 Oct 2014 15:54:53 HMT
+
+Package: peci_hw (1.19.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 07:31:07 GMT
+
+Package: peci_hw (1.18.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 05:43:17 GMT
+
+Package: peci_hw (1.17.0); urgency = medium
+
+Abstract:
+	Kernel 3.14.17 related changes
+
+Files Modified: data/pecimain_hw.c
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Sat, 06 Sep 2014 15:22:11 HMT
+
+Package: peci_hw (1.16.0); urgency = medium
+
+Abstract:
+	3.x Kernel related changes
+
+Files Modified: data/pecimain_hw.c
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Fri, 08 Aug 2014 19:46:38 HMT
+
+Package: peci_hw (1.15.0); urgency = medium
+
+Abstract:
+	Faster Boot Support
+
+Files Modified: spx/PACKAGES.D/peci_hw/SCRIPTS/dev-install
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Fri, 18 Apr 2014 20:57:57 HMT
+
+Package: peci_hw (1.14.0); urgency = medium
+
+Abstract:
+	Adding DevNodes to Build-Depends and Required fields
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Thu, 03 Oct 2013 23:26:23 EDT
+
+Package: peci_hw (1.13.0); urgency = medium
+
+Abstract:
+	Updated to support Debian Wheezy target and new complier
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Sun, 22 Sep 2013 01:45:35 EDT
+
+Package: peci_hw (1.12.0); urgency = medium
+
+Abstract:
+	Fixes for strict compiler - Generates error if a variable is assigned and not used
+
+Files Modified: data/pecimain_hw.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 23 Mar 2012 10:04:16 EDT
+
+Package: peci_hw (1.11.0); urgency = high
+
+Abstract:
+	Updating PECI hardware module for offset handling. PECI module is working
+
+Files Modified: data/pecimain_hw.c
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Fri, 05 Aug 2011 16:04:00 EDT
+
+Package: peci_hw (1.10.0); urgency = high
+
+Abstract:
+	Using Xmit_Feedback flag to control the fcs offsets as well as to display the transmitted feedback data
+
+Files Modified: data/pecimain_hw.c
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Mon, 18 Jul 2011 15:14:48 EDT
+
+Package: peci_hw (1.9.0); urgency = high
+
+Abstract:
+	Updating the RX and TX FCS based on teh Transmit feedback length. Also updating the read buffer according to the offset
+
+Files Modified: data/pecimain_hw.c
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Mon, 18 Jul 2011 14:39:38 EDT
+
+Package: peci_hw (1.8.0); urgency = high
+
+Abstract:
+	AWFCS feature is specific to Pilot-III. Adding the SOC macro appropriately
+
+Files Modified: data/pecimain_hw.c
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Mon, 18 Jul 2011 13:29:06 EDT
+
+Package: peci_hw (1.7.0); urgency = high
+
+Abstract:
+	Updating PILOT PECI module with AWFCS support
+
+Files Modified: data/peci_hw.h, data/pecimain_hw.c
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Mon, 18 Jul 2011 13:24:56 EDT
+
+Package: peci_hw (1.6.0); urgency = high
+
+Abstract:
+	Updating SourceLicense, PackageLicense, BinaryLicense and Module_License to GPL-v2
+
+Files Added: spx/LICENSES/LICENSE.GPL-V2
+Files Deleted: spx/LICENSES/LICENSE.AMI
+Files Modified: data/pecimain_hw.c, spx/INFO
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Thu, 23 Jun 2011 16:39:34 EDT
+
+Package: peci_hw (1.5.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 15:23:50 EDT
+
+Package: peci_hw (1.4.0); urgency = high
+
+Abstract:
+	Support Pilot-III.
+
+Files Modified: data/peci_hw.h, data/pecimain_hw.c
+
+--Submitter: David Chang (DavidChang@ami.com.tw) Fri, 24 Dec 2010 16:41:40 CST
+
+Package: peci_hw (1.3.0); urgency = medium
+
+Abstract:
+	Copied driver to generic location instead of kernel specific locaton
+
+Files Modified: spx/PACKAGES.D/peci_hw/SCRIPTS/dev-install
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 27 Oct 2010 14:50:08 EDT
+
+Package: peci_hw (1.2.0); urgency = low
+
+Abstract:
+	Fixed :Now PECI works even HOST is rebooted without rebooting BMC.
+
+Files Modified: data/pecimain_hw.c, spx/INFO
+
+--Submitter: revanth (revantha@amiindia.co.in) Thu, 14 Oct 2010 22:37:45 IST
+
+Package: peci_hw (1.1.0); urgency = low
+
+Abstract:
+	Incrementing Minor and setting Aux to Zero
+
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 21 Sep 2010 14:08:18 EDT
+
+Package: peci_hw (1.0.4); urgency = medium
+
+Abstract:
+	PILOT_II SOC renamed to PILOT to support Both PILOT_II and PILOT_III
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 13 Apr 2010 14:31:35 EDT
+
+Package: peci_hw (1.0.3); urgency = medium
+
+Abstract:
+	dependencies fixed
+
+Files Modified: spx/INFO
+
+--Submitter: Anurag Bhatia (anuragb@ami.com) Fri, 02 Apr 2010 18:24:14 EDT
+
+Package: peci_hw (1.0.2); urgency = medium
+
+Abstract:
+	packages dependencies updated
+
+Files Modified: spx/INFO
+
+--Submitter: Anurag Bhatia (anuragb@ami.com) Wed, 17 Mar 2010 17:59:27 EDT
+
+Package: peci_hw (1.0.1); urgency = low
+
+Abstract:
+	Version Dependecies Removed
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 10 Feb 2010 17:12:51 EST
+
+Package:peci_hw (1.0.0);urgency=new
+
+Abstract:
+	This Package includes PECI hardware module for Pilot-II SoC.
+
+Files Added: Makefile, peci_hw.h, pecimain_hw.c
+
+--Submitter: Dinesh Selvam (dineshs@amiindia.co.in) Thu, 26 Nov 2009 16:54:45 +0530

@@ -1,0 +1,35 @@
+Source : reset_hw
+Version :   6.1.0.0.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : Vinay Tandon (vinayt@ami.com)
+License : GPL-V2
+Source-Location : AMI
+Source-Version : 1.0.0
+Builds : reset_hw
+Build-Depends : Crosscc, global_dev, helper_driver_dev, kernel_dev, rules, reset_driver_dev, DevNodes
+Architecture : ARM
+SOC : PILOT
+Urgency :   low
+Description : Reset Hardware driver package.
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,Source-License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : reset_hw
+Section : sys
+Group : DEVICE
+Essential : YES
+Depends : kernel, reset
+Required : helper, DevNodes
+Provides : resetDriver
+Description : Reset Hardware driver package.
+.
+

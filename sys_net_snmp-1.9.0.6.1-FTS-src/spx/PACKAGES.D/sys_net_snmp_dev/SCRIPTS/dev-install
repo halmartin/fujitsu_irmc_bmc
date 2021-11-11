@@ -1,0 +1,16 @@
+# Install Script
+
+build-install:
+	MKDIR_NOCLEAN %SPXINC/net-snmp
+	COPY_DIR  ./include/net-snmp %SPXINC/net-snmp
+	MKDIR_NOCLEAN %SPXLIB/net-snmp
+	COPY_DIR  ./lib %SPXLIB/net-snmp
+	ADD_LIBRARY_LINKS %SPXLIB/net-snmp libnetsnmpagent.so.25.0.2
+	ADD_LIBRARY_LINKS %SPXLIB/net-snmp libnetsnmphelpers.so.25.0.2
+	ADD_LIBRARY_LINKS %SPXLIB/net-snmp libnetsnmpmibs.so.25.0.2
+	ADD_LIBRARY_LINKS %SPXLIB/net-snmp libnetsnmp.so.25.0.2
+	# Cleanup other versions of Net-SNMP
+	EXECUTE rm -vfr %BLDPRJAREA/target/usr/include/net-snmp
+	EXECUTE rm -vf %BLDPRJAREA/target/usr/lib/arm-linux-gnueabi/libnetsnmp*
+
+debug-install:

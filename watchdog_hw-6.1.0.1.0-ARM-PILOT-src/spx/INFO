@@ -1,0 +1,35 @@
+Source : watchdog_hw
+Version : 6.1.0.1.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : David Chang (DavidChang@ami.com.tw)
+License : GPL-V2
+Source-Location : AMI
+Source-Version : 1.0.0
+Builds : watchdog_hw
+Build-Depends : Crosscc, global_dev, helper_driver_dev, kernel_dev, rules, watchdog_driver_dev, DevNodes
+Architecture : ARM
+SOC : PILOT
+Urgency : medium
+Description : This package contains watchdog hardware driver for Pilot SoC.
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : watchdog_hw
+Section : sys
+Group : DEVICE
+Essential : YES
+Depends : kernel, watchdog
+Required : helper, DevNodes
+Provides : watchdogDriver
+Description : This package contains built watchdog hardware driver for Pilot SoC.
+.
+

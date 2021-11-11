@@ -1,0 +1,75 @@
+--- uboot_old/lib_arm/armlinux.c	2014-11-19 19:20:04.312634152 +0530
++++ uboot/lib_arm/armlinux.c	2014-11-19 19:20:12.900788796 +0530
+@@ -123,13 +123,16 @@
+ 		if (ntohl (hdr->ih_magic) != IH_MAGIC) {
+ 			printf ("Bad Magic Number\n");
+ 			SHOW_BOOT_PROGRESS (-10);
+-#ifndef CONFIG_SPX_FEATURE_FAIL_SAFE_BOOTING
++#if !defined(CONFIG_SPX_FEATURE_FAIL_SAFE_BOOTING) && !defined(CONFIG_SPX_FEATURE_BMC_FIRMWARE_AUTO_RECOVERY)
+ #ifdef CFG_YAFU_SUPPORT 
+ 			       printf ("Jumping to Firmware Update Mode... waits for 2 minutes for somebody to start firmware upgrade process\n");
+ 				fwupdate();
+ #endif
+-			do_reset (cmdtp, flag, argc, argv);
++
+ #endif
++			setenv("imgheadererr","yes");
++			saveenv();
++			do_reset (cmdtp, flag, argc, argv);
+ 		}
+ 
+ 		data = (ulong) & header;
+@@ -141,13 +144,15 @@
+ 		if (crc32 (0, (unsigned char *) data, len) != checksum) {
+ 			printf ("Bad Header Checksum\n");
+ 			SHOW_BOOT_PROGRESS (-11);
+-#ifndef CONFIG_SPX_FEATURE_FAIL_SAFE_BOOTING
++#if !defined(CONFIG_SPX_FEATURE_FAIL_SAFE_BOOTING) && !defined(CONFIG_SPX_FEATURE_BMC_FIRMWARE_AUTO_RECOVERY)
+ #ifdef CFG_YAFU_SUPPORT 
+ 			       printf ("Jumping to Firmware Update Mode... waits for 2 minutes for somebody to start firmware upgrade process\n");
+ 				fwupdate();
+ #endif
+-			do_reset (cmdtp, flag, argc, argv);
+ #endif
++			setenv("imgheadererr","yes");
++			saveenv();
++			do_reset (cmdtp, flag, argc, argv);
+ 		}
+ 
+ 		SHOW_BOOT_PROGRESS (10);
+@@ -172,13 +177,15 @@
+ 			if (csum != ntohl (hdr->ih_dcrc)) {
+ 				printf ("Bad Data CRC\n");
+ 				SHOW_BOOT_PROGRESS (-12);
+-#ifndef CONFIG_SPX_FEATURE_FAIL_SAFE_BOOTING
++#if !defined(CONFIG_SPX_FEATURE_FAIL_SAFE_BOOTING) && !defined(CONFIG_SPX_FEATURE_BMC_FIRMWARE_AUTO_RECOVERY)
+ #ifdef CFG_YAFU_SUPPORT
+ 				printf ("Jumping to Firmware Update Mode... waits for 2 minutes for somebody to start firmware upgrade process\n");
+ 				fwupdate();
+ #endif
+-				do_reset (cmdtp, flag, argc, argv);
+ #endif
++				setenv("imgheadererr","yes");
++				saveenv();
++				do_reset (cmdtp, flag, argc, argv);
+ 			}
+ 			printf ("OK\n");
+ 		}
+@@ -190,13 +197,15 @@
+ 		    (hdr->ih_type != IH_TYPE_RAMDISK)) {
+ 			printf ("No Linux ARM Ramdisk Image\n");
+ 			SHOW_BOOT_PROGRESS (-13);
+-#ifndef CONFIG_SPX_FEATURE_FAIL_SAFE_BOOTING
++#if !defined(CONFIG_SPX_FEATURE_FAIL_SAFE_BOOTING) && !defined(CONFIG_SPX_FEATURE_BMC_FIRMWARE_AUTO_RECOVERY)
+ #ifdef CFG_YAFU_SUPPORT
+ 				printf ("Jumping to Firmware Update Mode... waits for 2 minutes for somebody to start firmware upgrade process\n");
+ 				fwupdate();
+ #endif			
+-			do_reset (cmdtp, flag, argc, argv);
+ #endif
++			setenv("imgheadererr","yes");
++			saveenv();
++			do_reset (cmdtp, flag, argc, argv);
+ 		}
+ 
+ #if defined(CONFIG_B2) || defined(CONFIG_EVB4510) || defined(CONFIG_ARMADILLO)

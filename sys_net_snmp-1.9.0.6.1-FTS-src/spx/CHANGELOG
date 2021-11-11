@@ -1,0 +1,209 @@
+Package: sys_net_snmp (1.9.0.6.1); urgency = high
+
+Abstract:
+	IRMC-4511 Change of NetSNMP configuration for iRMC
+to fix broken snmpd initialization of SNMPv3 paramters
+
+Files Modified: data/include/net-snmp/net-snmp-config.h, data/lib/libnetsnmp.so.25.0.2
+
+--Submitter: Lukasz Kazmierczak (Lukasz.Kazmierczak@ts.fujitsu.com) Tue, 21 Jan 2020 10:53:33 CET
+
+Package: sys_net_snmp (1.9.0.6.0); urgency = low
+
+Abstract:
+	For patch_base 09.60j: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 20 Nov 2019 11:10:30 CET
+
+Package: sys_net_snmp (1.9.0.5.0); urgency = low
+
+Abstract:
+	For patch_base 09.60g: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 03 Sep 2019 13:54:19 CEST
+
+Package: sys_net_snmp (1.9.0.4.0); urgency = low
+
+Abstract:
+	For patch_base 02.41P: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 14 Mar 2019 13:32:37 CET
+
+Package: sys_net_snmp (1.9.0.3.1); urgency = low
+
+Abstract:
+	IRMC-4122 Fixing Net-SNMP includes version mismatch
+
+Files Modified: spx/PACKAGES.D/sys_net_snmp_dev/SCRIPTS/dev-install
+
+--Submitter: Vladimir Shakhov (Vladimir.Shakhov@ts.fujitsu.com) Fri, 15 Feb 2019 17:21:26 CET
+
+Package: sys_net_snmp (1.9.0.3.0); urgency = low
+
+Abstract:
+	For patch_base 02.20c: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Dec 2018 11:38:25 CET
+
+Package: sys_net_snmp (1.9.0.2.1); urgency = high
+
+Abstract:
+	IRMC-3948 CVE-2018-18065 and CVE-2018-18066 fixes backports from 5.7.x NetSNMP
+
+Files Modified: data/include/net-snmp/net-snmp-config.h, data/lib/libnetsnmp.so.25.0.2, data/lib/libnetsnmpagent.so.25.0.2, data/lib/libnetsnmphelpers.so.25.0.2, data/lib/libnetsnmpmibs.so.25.0.2, data/sbin/snmpd, spx/INFO
+
+--Submitter: Vladimir Shakhov (Vladimir.Shakhov@ts.fujitsu.com) Wed, 21 Nov 2018 15:54:19 CET
+
+Package: sys_net_snmp (1.9.0.2.0); urgency = low
+
+Abstract:
+	For patch_base 02.00b: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 28 Aug 2018 13:53:35 CEST
+
+Package: sys_net_snmp (1.9.0.1.2); urgency = critical
+
+Abstract:
+	UTF-8 encoding issue: xa9 removed from LICENSE-NET-SNMP
+
+Files Modified: spx/LICENSES/LICENSE.NET-SNMP
+
+--Submitter: Karin Wulf (Karin.Wulf.external@ts.fujitsu.com) Mon, 20 Aug 2018 10:52:32 CEST
+
+Package: sys_net_snmp (1.9.0.1.1); urgency = medium
+
+Abstract:
+	LICENSE.NET-SNMP now containing the original license of net-snmp-5.6.2.1/COPYING
+
+Files Modified: spx/LICENSES/LICENSE.NET-SNMP
+
+--Submitter: Karin Wulf (Karin.Wulf.external@ts.fujitsu.com) Fri, 10 Aug 2018 11:24:51 CEST
+
+Package: sys_net_snmp (1.9.0.1.0); urgency = low
+
+Abstract:
+	For patch_base 01.60b oem version number incremented, OemAux version number set to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 21 Jun 2018 10:02:00 CEST
+
+Package: sys_net_snmp (1.9.0.0.0); urgency = low
+
+Abstract:
+	adapt spx package with five digits
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 20 Mar 2018 13:32:20 CET
+
+Package: sys_net_snmp (1.9.0); urgency = low
+
+Abstract:
+	For 01.20a_09.20a increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Sep 2017 14:43:12 CEST
+
+Package: sys_net_snmp (1.8.0); urgency = low
+
+Abstract:
+	For 01.20aPre_R62446__base increment minor version by 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens.external@ts.fujitsu.com) Fri, 25 Aug 2017 16:40:39 CEST
+
+Package: sys_net_snmp (1.7.0); urgency = low
+
+Abstract:
+	For 09.00b_R61776_base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 01 Aug 2017 16:22:09 CEST
+
+Package: sys_net_snmp (1.6.0); urgency = low
+
+Abstract:
+	For 01.04b_R59755_base increment minor version by 1
+
+Files Added: spx/PACKAGES.D/sys_net_snmp/DATA/keep.folder, spx/PACKAGES.D/sys_net_snmp_dev/DATA/keep.folder
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Fri, 19 May 2017 12:31:14 CEST
+
+Package: sys_net_snmp (1.5.0); urgency = low
+
+Abstract:
+	For FW 8.61F increment minor version by 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Thu, 01 Sep 2016 08:38:56 CEST
+
+Package: sys_net_snmp (1.4.0); urgency = low
+
+Abstract:
+	For FW 8.40e increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Tue, 07 Jun 2016 08:35:03 CEST
+
+Package: sys_net_snmp (1.3.1); urgency = low
+
+Abstract:
+	Rebuild NetSNMP from FTS/OpenSource/NET-SNMP/packages/net_snmp_build_5621-1.0.6-FTS-src.spx
+
+* Import new NetSNMP binaries + headers for the same source version (5.6.2.1)
+* Remove init-script (not used from here, but from FTS_SNMP_CONFIG)
+* Remove static libraries .a and .la
+* Patches moved to source package
+* Update README information
+
+Files Deleted: data/init.d, data/init.d/netsnmp, data/lib/libnetsnmp.a, data/lib/libnetsnmp.la, data/lib/libnetsnmpagent.a, data/lib/libnetsnmpagent.la, data/lib/libnetsnmphelpers.a, data/lib/libnetsnmphelpers.la, data/lib/libnetsnmpmibs.a, data/lib/libnetsnmpmibs.la, data/patches, data/patches/SVS-222_error_on_subcontainer_ia_addr_insert.patch, data/patches/net-snmp-5.6.2.1_CONTAINER_INSERT_HELPER.patch, data/patches/net-snmp-5.6.2.1_ipAddressTable_IPv6z-convention-for-link-l.patch
+Files Modified: data/include/net-snmp/library/container.h, data/include/net-snmp/net-snmp-config.h, data/lib/libnetsnmp.so.25.0.2, data/lib/libnetsnmpagent.so.25.0.2, data/lib/libnetsnmphelpers.so.25.0.2, data/lib/libnetsnmpmibs.so.25.0.2, data/readme, data/sbin/snmpd, spx/INFO, spx/PACKAGES.D/sys_net_snmp/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Vlad Shakhov (Vlad.Shakhov@ts.fujitsu.com) Fri, 08 Apr 2016 14:28:31 CEST
+
+Package: sys_net_snmp (1.3.0); urgency = low
+
+Abstract:
+	For 08.20F_R49270__base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Sun, 06 Mar 2016 15:42:08 CET
+
+Package: sys_net_snmp (1.2.0); urgency = low
+
+Abstract:
+	Increment minor version by 1 due to new patch_base 08.00g_R45733__150712
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Mon, 13 Jul 2015 11:14:55 CEST
+
+Package: sys_net_snmp (1.1.1); urgency = low
+
+Abstract:
+	Rename dev folder to net-snmp
+
+Files Modified: spx/INFO, spx/PACKAGES.D/sys_net_snmp_dev/SCRIPTS/dev-install
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Wed, 13 May 2015 10:40:28 CEST
+
+Package: sys_net_snmp (1.1.0); urgency = low
+
+Abstract:
+	Increment minor version by 1 due to new patch_base 07.80b_R41103__base
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Fri, 13 Mar 2015 22:42:16 CET
+
+Package: sys_net_snmp (1.0.0); urgency = new
+
+Abstract:
+	Binary version of net-snmp version 5.6.2.1 from www.net-snmp.org
+
+Files Added: data, data/bin, data/bin/net-snmp-config, data/bin/net-snmp-create-v3-user, data/include, data/include/net-snmp, data/include/net-snmp/agent, data/include/net-snmp/agent/agent_callbacks.h, data/include/net-snmp/agent/agent_handler.h, data/include/net-snmp/agent/agent_index.h, data/include/net-snmp/agent/agent_module_config.h, data/include/net-snmp/agent/agent_read_config.h, data/include/net-snmp/agent/agent_registry.h, data/include/net-snmp/agent/agent_sysORTable.h, data/include/net-snmp/agent/agent_trap.h, data/include/net-snmp/agent/all_helpers.h, data/include/net-snmp/agent/auto_nlist.h, data/include/net-snmp/agent/baby_steps.h, data/include/net-snmp/agent/bulk_to_next.h, data/include/net-snmp/agent/cache_handler.h, data/include/net-snmp/agent/debug_handler.h, data/include/net-snmp/agent/ds_agent.h, data/include/net-snmp/agent/instance.h, data/include/net-snmp/agent/mfd.h, data/include/net-snmp/agent/mib_module_config.h, data/include/net-snmp/agent/mib_module_includes.h, data/include/net-snmp/agent/mib_modules.h, data/include/net-snmp/agent/mode_end_call.h, data/include/net-snmp/agent/multiplexer.h, data/include/net-snmp/agent/net-snmp-agent-includes.h, data/include/net-snmp/agent/null.h, data/include/net-snmp/agent/old_api.h, data/include/net-snmp/agent/read_only.h, data/include/net-snmp/agent/row_merge.h, data/include/net-snmp/agent/scalar.h, data/include/net-snmp/agent/scalar_group.h, data/include/net-snmp/agent/serialize.h, data/include/net-snmp/agent/set_helper.h, data/include/net-snmp/agent/snmp_agent.h, data/include/net-snmp/agent/snmp_get_statistic.h, data/include/net-snmp/agent/snmp_vars.h, data/include/net-snmp/agent/stash_cache.h, data/include/net-snmp/agent/stash_to_next.h, data/include/net-snmp/agent/struct.h, data/include/net-snmp/agent/sysORTable.h, data/include/net-snmp/agent/table.h, data/include/net-snmp/agent/table_array.h, data/include/net-snmp/agent/table_container.h, data/include/net-snmp/agent/table_data.h, data/include/net-snmp/agent/table_dataset.h, data/include/net-snmp/agent/table_iterator.h, data/include/net-snmp/agent/table_tdata.h, data/include/net-snmp/agent/util_funcs, data/include/net-snmp/agent/util_funcs.h, data/include/net-snmp/agent/util_funcs/Exit.h, data/include/net-snmp/agent/util_funcs/MIB_STATS_CACHE_TIMEOUT.h, data/include/net-snmp/agent/util_funcs/header_generic.h, data/include/net-snmp/agent/util_funcs/header_simple_table.h, data/include/net-snmp/agent/util_funcs/restart.h, data/include/net-snmp/agent/var_struct.h, data/include/net-snmp/agent/watcher.h, data/include/net-snmp/config_api.h, data/include/net-snmp/definitions.h, data/include/net-snmp/library, data/include/net-snmp/library/README, data/include/net-snmp/library/asn1.h, data/include/net-snmp/library/callback.h, data/include/net-snmp/library/cert_util.h, data/include/net-snmp/library/check_varbind.h, data/include/net-snmp/library/cmu_compat.h, data/include/net-snmp/library/container.h, data/include/net-snmp/library/container_binary_array.h, data/include/net-snmp/library/container_iterator.h, data/include/net-snmp/library/container_list_ssll.h, data/include/net-snmp/library/container_null.h, data/include/net-snmp/library/data_list.h, data/include/net-snmp/library/default_store.h, data/include/net-snmp/library/dir_utils.h, data/include/net-snmp/library/factory.h, data/include/net-snmp/library/fd_event_manager.h, data/include/net-snmp/library/file_utils.h, data/include/net-snmp/library/getopt.h, data/include/net-snmp/library/int64.h, data/include/net-snmp/library/keytools.h, data/include/net-snmp/library/large_fd_set.h, data/include/net-snmp/library/lcd_time.h, data/include/net-snmp/library/md5.h, data/include/net-snmp/library/mib.h, data/include/net-snmp/library/mt_support.h, data/include/net-snmp/library/oid.h, data/include/net-snmp/library/oid_stash.h, data/include/net-snmp/library/parse.h, data/include/net-snmp/library/read_config.h, data/include/net-snmp/library/scapi.h, data/include/net-snmp/library/snmp-tc.h, data/include/net-snmp/library/snmp.h, data/include/net-snmp/library/snmpAliasDomain.h, data/include/net-snmp/library/snmpCallbackDomain.h, data/include/net-snmp/library/snmpIPv4BaseDomain.h, data/include/net-snmp/library/snmpIPv6BaseDomain.h, data/include/net-snmp/library/snmpSocketBaseDomain.h, data/include/net-snmp/library/snmpTCPBaseDomain.h, data/include/net-snmp/library/snmpTCPDomain.h, data/include/net-snmp/library/snmpTCPIPv6Domain.h, data/include/net-snmp/library/snmpUDPBaseDomain.h, data/include/net-snmp/library/snmpUDPDomain.h, data/include/net-snmp/library/snmpUDPIPv4BaseDomain.h, data/include/net-snmp/library/snmpUDPIPv6Domain.h, data/include/net-snmp/library/snmpUnixDomain.h, data/include/net-snmp/library/snmp_alarm.h, data/include/net-snmp/library/snmp_api.h, data/include/net-snmp/library/snmp_assert.h, data/include/net-snmp/library/snmp_client.h, data/include/net-snmp/library/snmp_debug.h, data/include/net-snmp/library/snmp_enum.h, data/include/net-snmp/library/snmp_impl.h, data/include/net-snmp/library/snmp_logging.h, data/include/net-snmp/library/snmp_parse_args.h, data/include/net-snmp/library/snmp_secmod.h, data/include/net-snmp/library/snmp_service.h, data/include/net-snmp/library/snmp_transport.h, data/include/net-snmp/library/snmpusm.h, data/include/net-snmp/library/snmpv3-security-includes.h, data/include/net-snmp/library/snmpv3.h, data/include/net-snmp/library/system.h, data/include/net-snmp/library/text_utils.h, data/include/net-snmp/library/tools.h, data/include/net-snmp/library/transform_oids.h, data/include/net-snmp/library/types.h, data/include/net-snmp/library/ucd_compat.h, data/include/net-snmp/library/vacm.h, data/include/net-snmp/library/winpipe.h, data/include/net-snmp/library/winservice.h, data/include/net-snmp/machine, data/include/net-snmp/machine/generic.h, data/include/net-snmp/mib_api.h, data/include/net-snmp/net-snmp-config.h, data/include/net-snmp/net-snmp-includes.h, data/include/net-snmp/output_api.h, data/include/net-snmp/pdu_api.h, data/include/net-snmp/session_api.h, data/include/net-snmp/snmpv3_api.h, data/include/net-snmp/system, data/include/net-snmp/system/aix.h, data/include/net-snmp/system/bsd.h, data/include/net-snmp/system/bsdi.h, data/include/net-snmp/system/bsdi3.h, data/include/net-snmp/system/bsdi4.h, data/include/net-snmp/system/cygwin.h, data/include/net-snmp/system/darwin.h, data/include/net-snmp/system/darwin10.h, data/include/net-snmp/system/darwin7.h, data/include/net-snmp/system/darwin8.h, data/include/net-snmp/system/darwin9.h, data/include/net-snmp/system/dragonfly.h, data/include/net-snmp/system/dynix.h, data/include/net-snmp/system/freebsd.h, data/include/net-snmp/system/freebsd10.h, data/include/net-snmp/system/freebsd2.h, data/include/net-snmp/system/freebsd3.h, data/include/net-snmp/system/freebsd4.h, data/include/net-snmp/system/freebsd5.h, data/include/net-snmp/system/freebsd6.h, data/include/net-snmp/system/freebsd7.h, data/include/net-snmp/system/freebsd8.h, data/include/net-snmp/system/freebsd9.h, data/include/net-snmp/system/generic.h, data/include/net-snmp/system/hpux.h, data/include/net-snmp/system/irix.h, data/include/net-snmp/system/linux.h, data/include/net-snmp/system/mingw32.h, data/include/net-snmp/system/mips.h, data/include/net-snmp/system/netbsd.h, data/include/net-snmp/system/openbsd.h, data/include/net-snmp/system/openbsd4.h, data/include/net-snmp/system/openbsd5.h, data/include/net-snmp/system/osf5.h, data/include/net-snmp/system/solaris.h, data/include/net-snmp/system/solaris2.3.h, data/include/net-snmp/system/solaris2.4.h, data/include/net-snmp/system/solaris2.5.h, data/include/net-snmp/system/solaris2.6.h, data/include/net-snmp/system/sunos.h, data/include/net-snmp/system/svr5.h, data/include/net-snmp/system/sysv.h, data/include/net-snmp/system/ultrix4.h, data/include/net-snmp/types.h, data/include/net-snmp/utilities.h, data/include/net-snmp/varbind_api.h, data/include/net-snmp/version.h, data/init.d, data/init.d/netsnmp, data/lib, data/lib/libnetsnmp.a, data/lib/libnetsnmp.la, data/lib/libnetsnmp.so.25.0.2, data/lib/libnetsnmpagent.a, data/lib/libnetsnmpagent.la, data/lib/libnetsnmpagent.so.25.0.2, data/lib/libnetsnmphelpers.a, data/lib/libnetsnmphelpers.la, data/lib/libnetsnmphelpers.so.25.0.2, data/lib/libnetsnmpmibs.a, data/lib/libnetsnmpmibs.la, data/lib/libnetsnmpmibs.so.25.0.2, data/patches, data/patches/SVS-222_error_on_subcontainer_ia_addr_insert.patch, data/patches/net-snmp-5.6.2.1_CONTAINER_INSERT_HELPER.patch, data/patches/net-snmp-5.6.2.1_ipAddressTable_IPv6z-convention-for-link-l.patch, data/readme, data/sbin, data/sbin/snmpd, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.NET-SNMP, spx/PACKAGES.D, spx/PACKAGES.D/sys_net_snmp, spx/PACKAGES.D/sys_net_snmp/DATA, spx/PACKAGES.D/sys_net_snmp/SCRIPTS, spx/PACKAGES.D/sys_net_snmp/SCRIPTS/dev-install, spx/PACKAGES.D/sys_net_snmp_dev, spx/PACKAGES.D/sys_net_snmp_dev/DATA, spx/PACKAGES.D/sys_net_snmp_dev/SCRIPTS, spx/PACKAGES.D/sys_net_snmp_dev/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 02 Mar 2015 22:19:07 CET
+

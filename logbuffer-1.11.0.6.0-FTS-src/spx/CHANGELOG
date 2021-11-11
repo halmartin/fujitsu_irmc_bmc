@@ -1,0 +1,338 @@
+Package: logbuffer (1.11.0.6.0); urgency = low
+
+Abstract:
+	For patch_base 09.60j: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 20 Nov 2019 11:09:21 CET
+
+Package: logbuffer (1.11.0.5.0); urgency = low
+
+Abstract:
+	For patch_base 09.60g: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 03 Sep 2019 13:53:11 CEST
+
+Package: logbuffer (1.11.0.4.0); urgency = low
+
+Abstract:
+	For patch_base 02.41P: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 14 Mar 2019 13:31:23 CET
+
+Package: logbuffer (1.11.0.3.0); urgency = low
+
+Abstract:
+	For patch_base 02.20c: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Dec 2018 11:36:09 CET
+
+Package: logbuffer (1.11.0.2.0); urgency = low
+
+Abstract:
+	For patch_base 02.00b: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 28 Aug 2018 13:52:06 CEST
+
+Package: logbuffer (1.11.0.1.1); urgency = low
+
+Abstract:
+	Copyright update
+
+Files Modified: data/logbuffer.h, data/logbuffer_mod.c
+
+--Submitter: Wojciech Kunikowski (Wojciech.Kunikowski@ts.fujitsu.com) Thu, 16 Aug 2018 15:38:57 CEST
+
+Package: logbuffer (1.11.0.1.0); urgency = low
+
+Abstract:
+	For patch_base 01.60b oem version number incremented, OemAux version number set to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 21 Jun 2018 09:59:31 CEST
+
+Package: logbuffer (1.11.0.0.0); urgency = low
+
+Abstract:
+	adapt spx package with five digits
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 20 Mar 2018 13:27:05 CET
+
+Package: logbuffer (1.11.0); urgency = low
+
+Abstract:
+	For 01.20a_09.20a increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Sep 2017 14:42:47 CEST
+
+Package: logbuffer (1.10.0); urgency = low
+
+Abstract:
+	For 01.20aPre_R62446__base increment minor version by 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens.external@ts.fujitsu.com) Fri, 25 Aug 2017 16:40:11 CEST
+
+Package: logbuffer (1.9.1); urgency = medium
+
+Abstract:
+	INFO: source location is changed to FTS
+
+Files Modified: spx/INFO
+
+--Submitter: Karin Wulf (Karin.Wulf.external@ts.fujitsu.com) Mon, 14 Aug 2017 14:42:27 CEST
+
+Package: logbuffer (1.9.0); urgency = low
+
+Abstract:
+	For 09.00b_R61776_base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 01 Aug 2017 16:21:44 CEST
+
+Package: logbuffer (1.8.3); urgency = low
+
+Abstract:
+	Fixed issue with log buffer corruption and potentional infinity do:while loop
+
+Files Modified: data/logbuffer.h, data/logbuffer_mod.c
+
+--Submitter: Stephen Boylan (sboylan@ircona.com) Thu, 20 Jul 2017 17:21:00 CEST
+
+Package: logbuffer (1.8.2); urgency = low
+
+Abstract:
+	Avoid logbuffer corruption
+
+Files Modified: data/logbuffer.h
+
+--Submitter: Mark Dorman (mark.dorman@ircona.com) Thu, 22 Jun 2017 11:31:10 CEST
+
+Package: logbuffer (1.8.1); urgency = low
+
+Abstract:
+	Adding iRMC logs to PrimeCollect
+
+Files Modified: data/logbuffer_mod.c
+
+--Submitter: Mario Malenica (mmalenica@ircona.com) Wed, 07 Jun 2017 15:06:45 CEST
+
+Package: logbuffer (1.8.0); urgency = low
+
+Abstract:
+	For 01.04b_R59755_base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Fri, 19 May 2017 12:30:47 CEST
+
+Package: logbuffer (1.7.3); urgency = low
+
+Abstract:
+	Fix potential memory leakage
+
+Files Modified: data/logbuffer_mod.c
+
+--Submitter: Mario Malenica (mmalenica@ircona.com) Fri, 07 Apr 2017 12:51:39 CEST
+
+Package: logbuffer (1.7.2); urgency = high
+
+Abstract:
+	fix a typo I chcked in, sorry
+
+Files Modified: data/logbuffer_mod.c
+
+--Submitter: Arthur Krieger (Arthur.Krieger.external@ts.fujitsu.com) Wed, 22 Mar 2017 18:09:30 CET
+
+Package: logbuffer (1.7.1); urgency = low
+
+Abstract:
+	Fix two uninit variables (Coverity 21430 21449)
+
+Files Added: spx/PACKAGES.D/logbuffer/DATA/keep.folder, spx/PACKAGES.D/logbuffer_driver_dev/DATA/keep.folder
+Files Modified: data/logbuffer_mod.c
+
+--Submitter: Arthur Krieger (Arthur.Krieger.external@ts.fujitsu.com) Wed, 22 Mar 2017 17:55:32 CET
+
+Package: logbuffer (1.7.0); urgency = low
+
+Abstract:
+	For FW 8.61F increment minor version by 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Thu, 01 Sep 2016 08:38:30 CEST
+
+Package: logbuffer (1.6.0); urgency = low
+
+Abstract:
+	For FW 8.40e increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Tue, 07 Jun 2016 08:34:36 CEST
+
+Package: logbuffer (1.5.0); urgency = low
+
+Abstract:
+	For 08.20F_R49270__base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Sun, 06 Mar 2016 15:41:47 CET
+
+Package: logbuffer (1.4.0); urgency = low
+
+Abstract:
+	Increment minor version by 1 due to new patch_base 08.00g_R45733__150712
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Mon, 13 Jul 2015 11:13:18 CEST
+
+Package: logbuffer (1.3.6); urgency = medium
+
+Abstract:
+	Fixed build error. Typecasting 3 argument with unsigned long to expected format %ld.
+
+Files Modified: data/logbuffer_mod.c
+
+--Submitter: revantha (revantha@amiindia.co.in) Thu, 16 Apr 2015 19:42:22 IST
+
+Package: logbuffer (1.3.5); urgency = low
+
+Abstract:
+	Fix compiler error
+
+Files Modified: data/logbuffer_mod.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 30 Mar 2015 13:22:04 CEST
+
+Package: logbuffer (1.3.4); urgency = low
+
+Abstract:
+	Removed Build Error after using proper access specifiers
+
+Files Modified: data/logbuffer_mod.c
+
+--Submitter: Gourav Kumar Garg (gouravkumarg@amiindia.co.in) Wed, 25 Mar 2015 17:27:40 HMT
+
+Package: logbuffer (1.3.3); urgency = low
+
+Abstract:
+	Start using PRAM settings from PRJ file, move IOCTL call to 100h
+
+Files Modified: data/logbuffer.h, data/logbuffer_mod.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Thu, 19 Mar 2015 22:16:50 CET
+
+Package: logbuffer (1.3.2); urgency = low
+
+Abstract:
+	replace ioread/iowrite by __raw_read/__raw_write functions
+
+Files Modified: data/logbuffer_mod.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 02 Mar 2015 16:48:14 CET
+
+Package: logbuffer (1.3.1); urgency = low
+
+Abstract:
+	Kernel 3.x change
+
+Files Modified: data/logbuffer_mod.c
+
+--Submitter: Gourav Kumar Garg (gouravkumarg@amiindia.co.in) Mon, 02 Feb 2015 16:04:38 HMT
+
+Package: logbuffer (1.3.0); urgency = low
+
+Abstract:
+	modified depends package as Crosscc
+
+Files Modified: spx/INFO
+
+--Submitter: Gourav Kumar Garg (gouravkumarg@amiindia.co.in) Thu, 22 Jan 2015 21:25:39 HMT
+
+Package: logbuffer (1.2.100); urgency = low
+
+Abstract:
+	Update aux version to next hundred
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sat, 29 Nov 2014 09:30:07 CET
+
+Package: logbuffer (1.2.5); urgency = low
+
+Abstract:
+	Fixing some issues with the intrement of the read/write pointers.
+Extending debug interface. Minor bugfixes in debug interface.
+
+Files Modified: data/logbuffer_mod.c
+
+--Submitter: Stavros Passas (spassas@ircona.com) Mon, 07 Jul 2014 12:09:40 CEST
+
+Package: logbuffer (1.2.4); urgency = low
+
+Abstract:
+	Minor issues fixed in debug logging
+
+Files Modified: data/logbuffer_mod.c
+
+--Submitter: Mark Dorman (mark.dorman@ircona.com) Thu, 04 Apr 2013 16:41:44 CEST
+
+Package: logbuffer (1.2.3); urgency = low
+
+Abstract:
+	Add support for Log Buffer
+
+Files Modified: data/logbuffer.h, data/logbuffer_mod.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Thu, 21 Feb 2013 18:19:04 CET
+
+Package: logbuffer (1.2.2); urgency = low
+
+Abstract:
+	Update from SaM
+
+Files Modified: data/logbuffer.h, data/logbuffer_mod.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Thu, 20 Dec 2012 18:24:30 CET
+
+Package: logbuffer (1.2.1); urgency = low
+
+Abstract:
+	Merge logbuffer support
+
+Files Added: spx/PACKAGES.D/logbuffer_driver_dev, spx/PACKAGES.D/logbuffer_driver_dev/DATA, spx/PACKAGES.D/logbuffer_driver_dev/SCRIPTS, spx/PACKAGES.D/logbuffer_driver_dev/SCRIPTS/dev-install
+Files Modified: data/Makefile, data/logbuffer.h, data/logbuffer_mod.c, spx/INFO, spx/RULES
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 19 Nov 2012 18:14:06 CET
+
+Package: logbuffer (1.2.0); urgency = medium
+
+Abstract:
+	Getting the PRAM values from PRJ
+
+Files Modified: data/logbuffer.h, data/logbuffer_mod.c
+
+--Submitter: sridhar chinthala (sridharch@amiindia.co.in) Wed, 02 May 2012 20:36:02 IST
+
+Package: logbuffer (1.1.0); urgency = medium
+
+Abstract:
+	Implementing Log buffer driver
+
+Files Modified: data/logbuffer.h, data/logbuffer_mod.c
+
+--Submitter: sridhar chinthala (sridharch@amiindia.co.in) Tue, 18 Oct 2011 14:00:48 IST
+
+Package: logbuffer (1.0.0); urgency = new
+
+Abstract:
+	Log buffer driver implementation.
+
+Files Added: data, data/Makefile, data/logbuffer.h, data/logbuffer_mod.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/logbuffer, spx/PACKAGES.D/logbuffer/DATA, spx/PACKAGES.D/logbuffer/SCRIPTS, spx/PACKAGES.D/logbuffer/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Tue, 20 Sep 2011 21:24:41 IST
+

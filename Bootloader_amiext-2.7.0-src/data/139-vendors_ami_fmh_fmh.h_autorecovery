@@ -1,0 +1,13 @@
+--- uboot_old/vendors/ami/fmh/fmh.h	2014-11-19 19:25:54.246927110 +0530
++++ uboot/vendors/ami/fmh/fmh.h	2014-11-21 15:26:54.347206250 +0530
+@@ -122,6 +122,10 @@
+ #define le16_to_host(x)	__le16_to_cpu((x))
+ #define le32_to_host(x)	__le32_to_cpu((x))
+ 
++#ifdef CONFIG_SPX_FEATURE_BMC_FIRMWARE_AUTO_RECOVERY
++FMH*    ScanforFMH_RAM(unsigned char *SectorAddr, unsigned long SectorSize);
++#endif
++
+ /* Function Prototypes */
+ FMH* 	ScanforFMH(unsigned char *SectorAddr, unsigned long SectorSize);
+ void	CreateFMH(FMH *fmh,unsigned long AllocatedSize, MODULE_INFO *mod);

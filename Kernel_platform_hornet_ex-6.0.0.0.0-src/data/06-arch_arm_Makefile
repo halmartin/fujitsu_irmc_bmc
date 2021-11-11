@@ -1,0 +1,11 @@
+--- linux-3.14.17/arch/arm/Makefile	2014-08-14 07:08:34.000000000 +0530
++++ linux-3.14.17.new/arch/arm/Makefile	2014-09-04 15:25:56.130172582 +0530
+@@ -205,7 +205,7 @@
+ machine-$(CONFIG_ARCH_ZYNQ)		+= zynq
+ machine-$(CONFIG_FOOTBRIDGE)		+= footbridge
+ machine-$(CONFIG_PLAT_SPEAR)		+= spear
+-
++machine-$(CONFIG_ARCH_HORNET) += pilot
+ # Platform directory name.  This list is sorted alphanumerically
+ # by CONFIG_* macro name.
+ plat-$(CONFIG_ARCH_EXYNOS)	+= samsung

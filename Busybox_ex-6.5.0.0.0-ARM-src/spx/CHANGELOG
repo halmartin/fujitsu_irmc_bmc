@@ -1,0 +1,217 @@
+Package: Busybox_Builder_ex (6.5.0.0.0); urgency = low
+
+Abstract:
+	Busybox builder. Combines all configurattions and builds the busybox
+
+
+--Submitter: Winston (winstont)(winstont@ami.com) Fri, 15 Feb 2019 23:29:22 UTC
+
+Package: Busybox_Builder_ex (6.5.0.0.0); urgency = low
+
+Abstract:
+	Fix for EIP 449665 - IPv6 VLAN don't work after BMC cold reset
+
+Files Modified: spx/PACKAGES.D/Busybox_ex/DATA/dhcp6.script
+
+--Submitter: Gourav Kumar Garg (gouravkumarg)(gouravkumarg@amiindia.co.in) Thu, 31 Jan 2019 10:33:25 UTC
+
+Package: Busybox_Builder_ex (6.4.0.0.0); urgency = low
+
+Abstract:
+	Fix to disable completely in firmware , after global ipv6 support is disabled in PRJ
+
+Files Modified: spx/PACKAGES.D/Busybox_ex/SCRIPTS/dev-install.py
+
+--Submitter: Gourav Kumar Garg (gouravkumarg)(gouravkumarg@amiindia.co.in) Wed, 12 Dec 2018 10:31:52 UTC
+
+Package: Busybox_Builder_ex (6.3.0.0.0); urgency = low
+
+Abstract:
+	Adding previous Changelog
+
+Files Modified: spx/CHANGELOG
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 08 Dec 2018 19:50:15 UTC
+
+Package: Busybox_Builder_ex (6.2.0.0.0); urgency = medium
+
+Abstract:
+	[LTS][NeonCity][Network_Configurable][DNS][HTML5] DNS (DHCP Client FQDN) DHCP Request didn't update the correct domain name from DHCP Offer
+The FQDN macro has old domain name and it sends wrong request to dhcp server, DNS record is not getting updated.
+Sending Hostname is enough for DHCP client FQDN registration method.
+
+Files Modified: spx/PACKAGES.D/Busybox_ex/DATA/dhcp4.script
+
+--Submitter: desmondwu (DesmondWu)(desmondwu@ami.com.tw) Fri, 07 Sep 2018 09:28:29 UTC
+
+Package: Busybox_Builder_ex (6.1.0.0.0); urgency = medium
+
+Abstract:
+	Fix for IPv6 address is missing with bonding enable after enabled VLAN.
+
+Files Modified: spx/PACKAGES.D/Busybox_ex/DATA/dhcp6.script
+
+--Submitter: Rudhranandhan R (rudhranandhanr)(rudhranandhanr@amiindia.co.in) Wed, 11 Jul 2018 07:44:05 UTC
+
+Package: Busybox_Builder_ex (6.0.0.0.0); urgency = high
+
+Abstract:
+	Busybox builder. Combines all configurattions and builds the busybox
+
+Files Added: data, data/keep.folder, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/MergeConfig.py, spx/PACKAGES.D, spx/PACKAGES.D/Busybox_ex, spx/PACKAGES.D/Busybox_ex/DATA, spx/PACKAGES.D/Busybox_ex/DATA/dhcp4.script, spx/PACKAGES.D/Busybox_ex/DATA/dhcp6.script, spx/PACKAGES.D/Busybox_ex/SCRIPTS, spx/PACKAGES.D/Busybox_ex/SCRIPTS/dev-install.py, spx/RULES.py
+
+--Submitter: Winston (winstont)(winstont@ami.com) Tue, 10 Apr 2018 00:17:15 UTC
+
+Package: Busybox_Builder_ex (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 02:58:14 UTC
+
+Package: Busybox_Builder_ex (2.9.0); urgency = medium
+
+Abstract:
+	Feature implementation of Client FQDN DNS support for IPV6.
+
+Files Modified: spx/PACKAGES.D/Busybox_ex/DATA/dhcp6.script
+
+--Submitter: Rudhranandhan R (rudhranandhanr@amiindia.co.in) Wed, 19 Oct 2016 12:51:38 HMT
+
+Package: Busybox_Builder_ex (2.8.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: data/keep.folder
+Files Deleted: data/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 14:13:48 EDT
+
+Package: Busybox_Builder_ex (2.7.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: data/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 19:31:13 EST
+
+Package: Busybox_Builder_ex (2.6.0); urgency = high
+
+Abstract:
+	Fix for Eip:232598
+
+Files Modified: spx/PACKAGES.D/Busybox_ex/DATA/dhcp4.script
+
+--Submitter: Lakshmi Sravya K (lakshmisk@amiindia.co.in) Mon, 21 Sep 2015 11:06:10 IST
+
+Package: Busybox_Builder_ex (2.5.0); urgency = medium
+
+Abstract:
+	Reverting back dependency changes
+
+Files Modified: spx/INFO
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Thu, 18 Jun 2015 12:05:34 HMT
+
+Package: Busybox_Builder_ex (2.4.0); urgency = medium
+
+Abstract:
+	added Busybox_configuration_ex dependency
+
+Files Modified: spx/INFO
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Tue, 02 Jun 2015 21:06:44 HMT
+
+Package: Busybox_Builder_ex (2.3.0); urgency = medium
+
+Abstract:
+	Update oem in Build-Depends.
+
+Files Modified: spx/INFO
+
+--Submitter: ivanlee (ivanlee@ami.com.tw) Thu, 30 Apr 2015 19:22:20 CST
+
+Package: Busybox_Builder_ex (2.2.0); urgency = low
+
+Abstract:
+	Fixed runtime error
+
+Files Modified: spx/PACKAGES.D/Busybox_ex/DATA/dhcp4.script
+
+--Submitter: u b s kiran kumar (suryakk@amiindia.co.in) Fri, 20 Mar 2015 19:58:24 IST
+
+Package: Busybox_Builder_ex (2.1.0); urgency = medium
+
+Abstract:
+	Fix for Binary Build Fail for Kernel 3.xx.
+
+Files Modified: spx/INFO
+
+--Submitter: madhug (gaddammadhug@amiindia.co.in) Tue, 28 Oct 2014 19:37:29 HMT
+
+Package: Busybox_Builder_ex (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 03:13:54 GMT
+
+Package: Busybox_Builder_ex (1.5.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 04:58:55 GMT
+
+Package: Busybox_Builder_ex (1.4.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 03:07:27 GMT
+
+Package: Busybox_Builder_ex (1.3.0); urgency = low
+
+Abstract:
+	Removed provides
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 13 Aug 2014 14:54:28 EDT
+
+Package: Busybox_Builder_ex (1.2.0); urgency = medium
+
+Abstract:
+	Added depenency on sys_base as it provides the default basic config file
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 06 Aug 2014 10:20:17 EDT
+
+Package: Busybox_Builder_ex (1.1.0); urgency = medium
+
+Abstract:
+	Added Busysbox fixes as Bulild-depends
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 05 Aug 2014 14:30:56 EDT
+
+Package: Busybox_Builder_ex (1.0.0); urgency = new
+
+Abstract:
+	Busybox builder. Combines all configurattions and builds the busybox
+
+Files Added: data, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/MergeConfig.py, spx/PACKAGES.D, spx/PACKAGES.D/Busybox_ex, spx/PACKAGES.D/Busybox_ex/DATA, spx/PACKAGES.D/Busybox_ex/DATA/dhcp4.script, spx/PACKAGES.D/Busybox_ex/DATA/dhcp6.script, spx/PACKAGES.D/Busybox_ex/SCRIPTS, spx/PACKAGES.D/Busybox_ex/SCRIPTS/dev-install.py, spx/RULES.py
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Thu, 31 Jul 2014 17:59:20 EDT
+

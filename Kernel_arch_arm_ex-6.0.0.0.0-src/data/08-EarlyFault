@@ -1,0 +1,99 @@
+diff -Naur linux-3.14.17/arch/arm/include/asm/irqflags.h linux_ami/arch/arm/include/asm/irqflags.h
+--- linux-3.14.17/arch/arm/include/asm/irqflags.h	2014-08-14 07:08:34.000000000 +0530
++++ linux_ami/arch/arm/include/asm/irqflags.h	2017-08-09 18:22:03.544742964 +0530
+@@ -18,6 +18,14 @@
+ #define IRQMASK_I_BIT	PSR_I_BIT
+ #endif
+ 
++#ifndef CONFIG_CPU_V7M
++#define local_abt_enable()  __asm__("cpsie a    @ __sta" : : : "memory", "cc")
++#define local_abt_disable() __asm__("cpsid a    @ __cla" : : : "memory", "cc")
++#else
++#define local_abt_enable()  do { } while (0)
++#define local_abt_disable() do { } while (0)
++#endif
++
+ #if __LINUX_ARM_ARCH__ >= 6
+ 
+ static inline unsigned long arch_local_irq_save(void)
+diff -Naur linux-3.14.17/arch/arm/mm/fault.c linux_ami/arch/arm/mm/fault.c
+--- linux-3.14.17/arch/arm/mm/fault.c	2014-08-14 07:08:34.000000000 +0530
++++ linux_ami/arch/arm/mm/fault.c	2017-08-09 18:32:39.518622406 +0530
+@@ -593,6 +593,30 @@
+ 	arm_notify_die("", regs, &info, ifsr, 0);
+ }
+ 
++/*
++* Abort handler to be used only during first unmasking of asynchronous aborts
++	 * on the boot CPU. This makes sure that the machine will not die if the
++	 * firmware/bootloader left an imprecise abort pending for us to trip over.
++	 */
++	static int __init early_abort_handler(unsigned long addr, unsigned int fsr,
++	                      struct pt_regs *regs)
++	{
++	    pr_warn("Hit pending asynchronous external abort (FSR=0x%08x) during "
++	        "first unmask, this is most likely caused by a "
++	        "firmware/bootloader bug.\n", fsr);
++	
++	    return 0;
++	}
++	
++	void __init early_abt_enable(void)
++	{
++	    fsr_info[FSR_FS_AEA].fn = early_abort_handler;
++#ifdef CONFIG_PILOT4
++	    local_abt_enable();
++#endif
++	    fsr_info[FSR_FS_AEA].fn = do_bad;
++	}
++
+ #ifndef CONFIG_ARM_LPAE
+ static int __init exceptions_init(void)
+ {
+diff -Naur linux-3.14.17/arch/arm/mm/fault.h linux_ami/arch/arm/mm/fault.h
+--- linux-3.14.17/arch/arm/mm/fault.h	2014-08-14 07:08:34.000000000 +0530
++++ linux_ami/arch/arm/mm/fault.h	2017-08-09 18:26:03.633675595 +0530
+@@ -11,11 +11,13 @@
+ #define FSR_FS5_0		(0x3f)
+ 
+ #ifdef CONFIG_ARM_LPAE
++#define FSR_FS_AEA             17
+ static inline int fsr_fs(unsigned int fsr)
+ {
+ 	return fsr & FSR_FS5_0;
+ }
+ #else
++#define FSR_FS_AEA             22
+ static inline int fsr_fs(unsigned int fsr)
+ {
+ 	return (fsr & FSR_FS3_0) | (fsr & FSR_FS4) >> 6;
+@@ -24,5 +26,6 @@
+ 
+ void do_bad_area(unsigned long addr, unsigned int fsr, struct pt_regs *regs);
+ unsigned long search_exception_table(unsigned long addr);
++void early_abt_enable(void);
+ 
+ #endif	/* __ARCH_ARM_FAULT_H */
+diff -Naur linux-3.14.17/arch/arm/mm/mmu.c linux_ami/arch/arm/mm/mmu.c
+--- linux-3.14.17/arch/arm/mm/mmu.c	2014-08-14 07:08:34.000000000 +0530
++++ linux_ami/arch/arm/mm/mmu.c	2017-08-10 10:48:24.908335108 +0530
+@@ -38,6 +38,7 @@
+ 
+ #include "mm.h"
+ #include "tcm.h"
++#include "fault.h"
+ 
+ /*
+  * empty_zero_page is a special page that is used for
+@@ -1352,6 +1353,11 @@
+ 	 */
+ 	local_flush_tlb_all();
+ 	flush_cache_all();
++	
++#ifdef CONFIG_PILOT4
++	/* Enable asynchronous aborts */
++	early_abt_enable();
++#endif
+ }
+ 
+ static void __init kmap_init(void)

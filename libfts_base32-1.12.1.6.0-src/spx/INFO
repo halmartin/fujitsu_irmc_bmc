@@ -1,0 +1,46 @@
+Source : libfts_base32
+Version : 1.12.1.6.0
+SPX-Version : 4.0
+SPX-Format : 1.0
+Builds : libfts_base32, libfts_base32_dev
+Build-Depends : Crosscc, libfts_dev, rules, libencryption_dev
+Essential : NO
+Config-Tag : FTS Base32 decoding library
+Group : LIBRARY
+Owner : FTS
+Maintainer : Holger Liebig  (Holger.Liebig@ts.fujitsu.com)
+Source-Location : FTS
+Source-Version : 1.0.0
+Source-License : OPEN_EVIDENCE
+Package-License : OPEN_EVIDENCE
+Architecture : ALL
+Urgency : low
+Description : Utilities for base32 decoding / encoding based on Open Evidence toolkit
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,Source-License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Install-Size (Optional) can be automatically calculated
+# Provides,Depends,Required,Conflicts ?
+# ---------------------------------------------------------------------------
+
+Package : libfts_base32
+Section : lib
+Essential : NO
+Config-Tag : FTS Base32 decoding library
+Group : LIBRARY
+Package-License : OPEN_EVIDENCE
+Description : Shared library helpers for base32 encoding/decoding data
+.
+
+Package : libfts_base32_dev
+Section : lib
+Essential : NO
+Group : LIBRARY
+Package-License : OPEN_EVIDENCE
+Description : Header and Library files for base32 encoding/decoding data
+.
+

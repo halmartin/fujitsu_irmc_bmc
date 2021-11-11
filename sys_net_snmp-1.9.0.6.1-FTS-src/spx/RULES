@@ -1,0 +1,37 @@
+#Extract Source	in %SOURCE
+extract_source:
+
+#Build Source in %BUILD
+build_source:
+
+#Clean Source
+clean_source:
+
+#--------------------- Mandatory Rules for every binary package -------------------------
+
+# Rules to create sys_net_snmp package
+build_package-sys_net_snmp:
+#create folder structure
+		MKDIR_CLEAN %TEMPDIR/%PACKAGE/tmp
+		MKDIR_CLEAN %TEMPDIR/%PACKAGE/tmp/usr
+		MKDIR_CLEAN %TEMPDIR/%PACKAGE/tmp/usr/lib
+		MKDIR_CLEAN %TEMPDIR/%PACKAGE/tmp/usr/sbin
+#copy libraries
+		COPY_FILE 	%BUILD/%PACKAGE/data/lib/libnetsnmpagent.so.25.0.2 %TEMPDIR/%PACKAGE/tmp/usr/lib
+		COPY_FILE 	%BUILD/%PACKAGE/data/lib/libnetsnmphelpers.so.25.0.2 %TEMPDIR/%PACKAGE/tmp/usr/lib
+		COPY_FILE 	%BUILD/%PACKAGE/data/lib/libnetsnmpmibs.so.25.0.2 %TEMPDIR/%PACKAGE/tmp/usr/lib
+		COPY_FILE 	%BUILD/%PACKAGE/data/lib/libnetsnmp.so.25.0.2 %TEMPDIR/%PACKAGE/tmp/usr/lib
+#copy snmpd
+		COPY_FILE 	%BUILD/%PACKAGE/data/sbin/snmpd %TEMPDIR/%PACKAGE/tmp/usr/sbin
+		PACK_SPX ./ %TEMPDIR/%PACKAGE/tmp
+
+# Rules to create sys_net_snmp_dev package
+build_package-sys_net_snmp_dev:
+#create folder structure
+		MKDIR_CLEAN %TEMPDIR/%PACKAGE/tmp
+		MKDIR_CLEAN %TEMPDIR/%PACKAGE/tmp/lib
+		MKDIR_CLEAN %TEMPDIR/%PACKAGE/tmp/include
+#copy libraries
+		COPY_DIR  %BUILD/%PACKAGE/data/include %TEMPDIR/%PACKAGE/tmp/include
+		COPY_DIR  %BUILD/%PACKAGE/data/lib %TEMPDIR/%PACKAGE/tmp/lib
+		PACK_SPX ./ %TEMPDIR/%PACKAGE/tmp

@@ -1,0 +1,37 @@
+Source : libjson
+Version :   4.0.0.0.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : Chandrasekar R (chandrasekarr@amiindia.co.in)
+License : PublicDomain
+Source-Location : https://github.com/json-c/json-c
+Source-Version : 0.10.99
+Builds : libjson, libjson_dev
+Architecture : ALL
+Urgency :   high
+Description : Library package for json structure handling in C. It has wide variety of input and output handling mechanism including Strings, Number, Array, Object etc.. (Recommended by http://www.json.org)
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : libjson
+Section : lib
+Group : LIBRARY
+Essential : NO
+Description : json-c library.
+.
+
+Package : libjson_dev
+Section : dev
+Group : DEVEL
+Essential : NO
+Description : json-c development files.
+.
+

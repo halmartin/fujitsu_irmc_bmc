@@ -1,0 +1,27 @@
+#!/bin/sh
+# /etc/init.d/sdcard-umount: Unmount SD card  
+#
+#Starting at rc3.d and stopping at rc6.d
+#Runlevel : 0 = K55
+#Runlevel : 3 = S55
+#Runlevel : 6 = K55
+# Stop the service on warm reboot
+#Runlevel : 9 = K55
+
+
+PATH=/bin:/usr/bin:/sbin:/usr/sbin
+MOUNT_PATH=/usr/local/lmedia
+
+case "$1" in
+  start)
+    echo "Unmount SD card: skiping."
+    ;;
+  stop)
+    echo -n "Unmount SD card "
+	umount -f "$MOUNT_PATH"
+    echo "."
+    ;;
+   *)
+    echo "Usage: /etc/init.d/$0 {start|stop}"
+    exit 1
+esac

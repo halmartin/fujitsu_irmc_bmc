@@ -1,0 +1,33 @@
+Source : i2c_mux_pca954x
+Version : 1.0.1000.7.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : FTS
+Maintainer : Walter Unruh (walter.unruh@ts.fujitsu.com)
+License : GPL-V2
+Source-Location : www.kernel.org -> linux/drivers/i2c/muxes/i2c-mux-pca954x.c
+Source-Version : 1.0.0
+Builds : i2c_mux_pca954x
+Build-Depends : Crosscc, rules, i2c_hw
+Architecture : ARM
+SOC : PILOT_III
+Urgency : low
+Description : This module supports the PCA954x series of I2C multiplexer.
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : i2c_mux_pca954x
+Config-Tag : I2C MUX PCA954X Module
+Section : app
+Group : DEVICE
+Essential : NO
+Description : This package contains i2c_mux module for PCA954x devices.
+.
+

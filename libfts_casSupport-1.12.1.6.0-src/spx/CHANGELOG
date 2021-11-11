@@ -1,0 +1,217 @@
+Package: libfts_casSupport (1.12.1.6.0); urgency = low
+
+Abstract:
+	For patch_base 09.60j: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 20 Nov 2019 11:03:06 CET
+
+Package: libfts_casSupport (1.12.1.5.0); urgency = low
+
+Abstract:
+	For patch_base 09.60g: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 03 Sep 2019 13:46:46 CEST
+
+Package: libfts_casSupport (1.12.1.4.0); urgency = low
+
+Abstract:
+	For patch_base 02.41P: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 14 Mar 2019 13:25:26 CET
+
+Package: libfts_casSupport (1.12.1.3.0); urgency = low
+
+Abstract:
+	For patch_base 02.20c: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Dec 2018 11:26:02 CET
+
+Package: libfts_casSupport (1.12.1.2.0); urgency = low
+
+Abstract:
+	For patch_base 02.00b: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 28 Aug 2018 13:44:54 CEST
+
+Package: libfts_casSupport (1.12.1.1.0); urgency = low
+
+Abstract:
+	For patch_base 01.60b oem version number incremented, OemAux version number set to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 21 Jun 2018 09:49:08 CEST
+
+Package: libfts_casSupport (1.12.1.0.0); urgency = low
+
+Abstract:
+	adapt spx package with five digits
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 20 Mar 2018 13:17:32 CET
+
+Package: libfts_casSupport (1.12.1); urgency = low
+
+Abstract:
+	Copyright update
+
+Files Modified: data/Makefile, data/fts_cas.c, data/fts_cas.h
+
+--Submitter: Wojciech Kunikowski (Wojciech.Kunikowski@ts.fujitsu.com) Mon, 19 Feb 2018 13:19:17 CET
+
+Package: libfts_casSupport (1.12.0); urgency = low
+
+Abstract:
+	For 01.20a_09.20a increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Sep 2017 14:39:21 CEST
+
+Package: libfts_casSupport (1.11.0); urgency = low
+
+Abstract:
+	For 01.20aPre_R62446__base increment minor version by 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens.external@ts.fujitsu.com) Fri, 25 Aug 2017 16:36:35 CEST
+
+Package: libfts_casSupport (1.10.0); urgency = low
+
+Abstract:
+	For 09.00b_R61776_base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 01 Aug 2017 16:18:29 CEST
+
+Package: libfts_casSupport (1.9.1); urgency = medium
+
+Abstract:
+	added header for ipmi session
+
+Files Modified: data/fts_cas.h, spx/LICENSES/LICENSE.JA-SIG
+
+--Submitter: Radoslaw Pajak (Radoslaw.Pajak@ts.fujitsu.com) Tue, 13 Jun 2017 10:13:38 CEST
+
+Package: libfts_casSupport (1.9.0); urgency = low
+
+Abstract:
+	For 01.04b_R59755_base increment minor version by 1
+
+Files Added: spx/PACKAGES.D/libfts_casSupport/DATA/keep.folder, spx/PACKAGES.D/libfts_casSupport_dev/DATA/keep.folder
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Fri, 19 May 2017 12:27:20 CEST
+
+Package: libfts_casSupport (1.8.0); urgency = low
+
+Abstract:
+	For FW 8.61F increment minor version by 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Thu, 01 Sep 2016 08:35:07 CEST
+
+Package: libfts_casSupport (1.7.0); urgency = low
+
+Abstract:
+	For FW 8.40e increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Tue, 07 Jun 2016 08:32:23 CEST
+
+Package: libfts_casSupport (1.6.0); urgency = low
+
+Abstract:
+	For 08.20F_R49270__base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Sun, 06 Mar 2016 15:39:40 CET
+
+Package: libfts_casSupport (1.5.0); urgency = low
+
+Abstract:
+	Increment minor version by 1 due to new patch_base 08.00g_R45733__150712
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Mon, 13 Jul 2015 11:01:40 CEST
+
+Package: libfts_casSupport (1.4.1); urgency = low
+
+Abstract:
+	RR9 merge: checkin based on (1.4.0)
+
+Files Modified: spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 31 Mar 2015 19:13:24 CEST
+
+Package: libfts_casSupport (1.4.0); urgency = low
+
+Abstract:
+	Increment minor version by 1 due to new patch_base 07.80b_R41103__base
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Fri, 13 Mar 2015 22:33:39 CET
+
+Package: libfts_casSupport (1.3.1); urgency = low
+
+Abstract:
+	Use SSLv23_client_method() instead of SSLv3_client_method (Poodle)
+
+Files Modified: data/fts_cas.c, spx/LICENSES/LICENSE.JA-SIG
+
+--Submitter: Holger Liebig (holger.liebig@ts.fujitsu.com) Tue, 25 Nov 2014 10:38:43 CET
+
+Package: libfts_casSupport (1.3.0); urgency = low
+
+Abstract:
+	increment minor version due to customer release 7.61d
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sun, 28 Sep 2014 18:53:28 CEST
+
+Package: libfts_casSupport (1.2.1); urgency = low
+
+Abstract:
+	add dependency libipmi_dev, libfts_nvram_dev
+
+Files Modified: spx/INFO, spx/LICENSES/LICENSE.JA-SIG
+
+--Submitter: Diana Riemer (diana.riemer.externals@ts.fujitsu.com) Wed, 30 Jul 2014 15:20:41 CEST
+
+Package: libfts_casSupport (1.2.0); urgency = low
+
+Abstract:
+	increment minor version due to customer release 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sun, 13 Jul 2014 13:21:56 CEST
+
+Package: libfts_casSupport (1.1.0); urgency = low
+
+Abstract:
+	increment minor version due to customer release 07.36F
+
+
+--Submitter: Diana Riemer (diana.riemer.externals@ts.fujitsu.com) Thu, 15 May 2014 11:28:44 CEST
+
+Package: libfts_casSupport (1.0.1); urgency = low
+
+Abstract:
+	mv binary license FTS to JA-SIG
+
+Files Deleted: spx/LICENSES/LICENSE.FTS
+Files Modified: spx/INFO
+
+--Submitter: Diana Riemer (diana.riemer.externals@ts.fujitsu.com) Wed, 05 Mar 2014 15:22:21 CET
+
+Package: libfts_casSupport (1.0.0); urgency = new
+
+Abstract:
+	Utilities for CAS support (see http://www.jasig.org/cas)
+
+Files Added: data, data/Makefile, data/fts_cas.c, data/fts_cas.h, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.FTS, spx/LICENSES/LICENSE.JA-SIG, spx/PACKAGES.D, spx/PACKAGES.D/libfts_casSupport, spx/PACKAGES.D/libfts_casSupport/DATA, spx/PACKAGES.D/libfts_casSupport/SCRIPTS, spx/PACKAGES.D/libfts_casSupport/SCRIPTS/dev-install, spx/PACKAGES.D/libfts_casSupport_dev, spx/PACKAGES.D/libfts_casSupport_dev/DATA, spx/PACKAGES.D/libfts_casSupport_dev/SCRIPTS, spx/PACKAGES.D/libfts_casSupport_dev/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Holger Liebig (holger.liebig@ts.fujitsu.com) Wed, 05 Mar 2014 12:34:07 CET
+

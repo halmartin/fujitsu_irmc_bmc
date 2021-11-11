@@ -1,0 +1,1 @@
+FEATURE_GLOBAL_FUNCTION1_ENABLE_HOST_INTR : PCIe_Function1_Configurable, PCIe_Function1

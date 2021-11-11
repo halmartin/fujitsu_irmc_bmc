@@ -1,0 +1,100 @@
+diff -Naur linux_orig/drivers/mtd/maps/ractrends.c linux/drivers/mtd/maps/ractrends.c
+--- linux_orig/drivers/mtd/maps/ractrends.c	2018-08-16 14:43:01.877429080 +0530
++++ linux/drivers/mtd/maps/ractrends.c	2018-08-16 14:51:32.546507511 +0530
+@@ -56,7 +56,7 @@
+ 	unsigned long i;
+ 	unsigned long startingsector=0,endingsector=0,startaddress=0;
+ 
+-#if defined (CONFIG_SPX_FEATURE_GLOBAL_DUAL_IMAGE_SUPPORT)
++#if 0 //defined (CONFIG_SPX_FEATURE_GLOBAL_DUAL_IMAGE_SUPPORT)
+ 	unsigned long startingsector_p=0,endingsector_p=0,startaddress_p=0;
+ 	int scan_flag=1;
+ 
+@@ -115,7 +115,7 @@
+ 	(*PartCount)++;
+ 	PartNameCnt++;
+ 
+-#if defined (CONFIG_SPX_FEATURE_GLOBAL_DUAL_IMAGE_SUPPORT)
++#if 0 //defined (CONFIG_SPX_FEATURE_GLOBAL_DUAL_IMAGE_SUPPORT)
+ START_SCAN:
+ #endif
+ 
+@@ -170,7 +170,7 @@
+ 		(*PartCount)++;
+ 		PartNameCnt++;
+ 	}
+-#if defined (CONFIG_SPX_FEATURE_GLOBAL_DUAL_IMAGE_SUPPORT)
++#if 0 //defined (CONFIG_SPX_FEATURE_GLOBAL_DUAL_IMAGE_SUPPORT)
+ 	if(scan_flag== 1){
+ 		scan_flag=2;
+ 		startingsector=startingsector_p;
+@@ -187,6 +187,7 @@
+ 
+ struct map_info ractrends_flash_map[MAX_BANKS];
+ static struct mtd_info *concat_mtd = NULL;
++#define ACTUAL_FRU_SIZE        0x300
+ static unsigned long bankcount= 0;
+ 
+ 
+@@ -253,6 +254,7 @@
+ 	unsigned long bank;
+ 	unsigned long PartCount=0;
+ 	int status = 0;
++	unsigned long conf_size=0,fru_size=0;
+ 	printk(KERN_NOTICE "Ractrends Flash mapping: 0x%08lx at 0x%08lx\n",
+ 					FlashSize, FlashAddr);
+ 
+@@ -318,15 +320,23 @@
+ 		return status;
+ 	}
+ 
+-#if defined (CONFIG_SPX_FEATURE_GLOBAL_DUAL_IMAGE_SUPPORT) && defined (CONFIG_SPX_FEATURE_COMMON_CONF_SECTION)
++	//creating fru mtd device with fixed size.
++	fru_size=CONFIG_SPX_FEATURE_GLOBAL_ERASE_BLOCK_SIZE+ACTUAL_FRU_SIZE;
++	fru_size=((unsigned long)div_u64(fru_size,CONFIG_SPX_FEATURE_GLOBAL_ERASE_BLOCK_SIZE ))*CONFIG_SPX_FEATURE_GLOBAL_ERASE_BLOCK_SIZE;
++
++	//creating conf with size as specified from PRJ.
++	conf_size=CONFIG_SPX_FEATURE_GLOBAL_CONF_SIZE-fru_size;
++
++//#if defined (CONFIG_SPX_FEATURE_GLOBAL_DUAL_IMAGE_SUPPORT) && defined (CONFIG_SPX_FEATURE_COMMON_CONF_SECTION)
+ 	printk("Creating Partition for conf \n");
+ 	ractrends_flash_partitions[PartCount].name   		= "conf";
+ #if defined CONFIG_SPX_FEATURE_DEDICATED_SPI_FLASH_BANK
+     ractrends_flash_partitions[PartCount].offset        = CONFIG_SPX_FEATURE_GLOBAL_USED_FLASH_SIZE + ractrends_mtd[0]->size;
+ #else
+-    ractrends_flash_partitions[PartCount].offset 		= (CONFIG_SPX_FEATURE_GLOBAL_USED_FLASH_SIZE * 2);//concat_mtd->size - CONFIG_SPX_FEATURE_GLOBAL_FLASH_SIZE; //starting of SPI-3
++    ractrends_flash_partitions[PartCount].offset 		= concat_mtd->size - CONFIG_SPX_FEATURE_GLOBAL_CONF_SIZE;
+ #endif
+-	ractrends_flash_partitions[PartCount].size   		= CONFIG_SPX_FEATURE_GLOBAL_CONF_SIZE;
++	//ractrends_flash_partitions[PartCount].size   		= CONFIG_SPX_FEATURE_GLOBAL_CONF_SIZE;
++	ractrends_flash_partitions[PartCount].size          = conf_size;
+ 	ractrends_flash_partitions[PartCount].mask_flags 	= 0;
+ 	printk("MTD Partition %ld : %s @ 0x%lx of Size 0x%lx\n",PartCount,
+                                                 ractrends_flash_partitions[PartCount].name,
+@@ -335,10 +345,11 @@
+ 	status = add_mtd_partitions(concat_mtd,&ractrends_flash_partitions[PartCount],1);
+ 	if(status !=0) 
+ 		return status;
+-#ifdef CONFIG_SPX_FEATURE_GLOBAL_FAILSAFECONF
+-	ractrends_flash_partitions[PartCount].name   		= "conf";
+-	ractrends_flash_partitions[PartCount].offset        = ractrends_flash_partitions[PartCount-1].offset + CONFIG_SPX_FEATURE_GLOBAL_CONF_SIZE;
+-    ractrends_flash_partitions[PartCount].size   		= CONFIG_SPX_FEATURE_GLOBAL_CONF_SIZE;
++//#ifdef CONFIG_SPX_FEATURE_GLOBAL_FAILSAFECONF
++	PartCount++;
++	ractrends_flash_partitions[PartCount].name              = "fru";
++	ractrends_flash_partitions[PartCount].offset            = concat_mtd->size-CONFIG_SPX_FEATURE_GLOBAL_CONF_SIZE+conf_size;
++	ractrends_flash_partitions[PartCount].size              = fru_size;
+ 	ractrends_flash_partitions[PartCount].mask_flags 	= 0;
+ 	printk("MTD Partition %ld : %s @ 0x%lx of Size 0x%lx\n",PartCount,
+                                                 ractrends_flash_partitions[PartCount].name,
+@@ -347,8 +358,8 @@
+ 	status = add_mtd_partitions(concat_mtd,&ractrends_flash_partitions[PartCount],1);
+ 	if(status!=0) 
+ 		return status;
+-#endif
+-#endif
++//#endif
++//#endif
+ 
+ #ifdef CONFIG_SPX_FEATURE_INDIVIDUAL_SPI_ACCESS
+ 	create_individual_spi_partition();

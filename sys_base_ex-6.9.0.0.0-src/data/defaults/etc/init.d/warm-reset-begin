@@ -1,0 +1,4 @@
+#! /bin/sh
+# Creating the status flag file to indicate warm reset is in progress
+#Runlevel : 9 = K1
+touch /var/tmp/warmresetinprogress

@@ -1,0 +1,35 @@
+# List of Supported Rules
+supported_rules: extract_source build_source clean_source
+
+#Extract Source	in %SOURCE
+extract_source:
+	MKDIR_CLEAN %SOURCE/%PACKAGE/data/.workspace
+	SET_VALUE PACKAGE_NAME %PACKAGE
+	INVOKE_SHELL Extractsource.sh
+	RENAME %SOURCE/%PACKAGE/data/.workspace/json  %SOURCE/%PACKAGE/data/.workspace/libjson
+
+
+#Build Source in %BUILD
+build_source:
+	CWD %BUILD/%PACKAGE/data/.workspace/libjson
+	SET_VALUE PACKAGE_NAME %PACKAGE
+	SET_VALUE BUILDAREA %DEVAREA/Build
+	INVOKE_SHELL Buildjson.sh
+
+#Clean Source
+clean_source:
+
+#--------------------- Mandatory Rules for every binary package -------------------------
+# Rules to create libjson package
+build_package-libjson:
+	STRIP_UNNEEDED %BUILD/%PACKAGE/data/.workspace/libjson/OUTPUT/usr/local/lib/libjson-c.so.2.0.0
+	PACK_SPX  ./   %BUILD/%PACKAGE/data/.workspace/libjson/OUTPUT/usr/local/lib/libjson-c.so.2.0.0
+
+# Rules to create libjson_dev package
+build_package-libjson_dev:
+	#header file
+	MKDIR_CLEAN %TEMPDIR/%PACKAGE/tmp/json-c
+	COPY_DIR %BUILD/%PACKAGE/data/.workspace/libjson/OUTPUT/usr/local/include/json-c %TEMPDIR/%PACKAGE/tmp/json-c
+	COPY_FILE %BUILD/%PACKAGE/data/.workspace/libjson/OUTPUT/usr/local/lib/libjson-c.so.2.0.0 %TEMPDIR/%PACKAGE/tmp
+	STRIP_UNNEEDED %TEMPDIR/%PACKAGE/tmp/libjson-c.so.2.0.0
+	PACK_SPX ./ %TEMPDIR/%PACKAGE/tmp

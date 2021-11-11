@@ -1,0 +1,25 @@
+Source                   	:	sys_zipunzip
+Version : 3.2.0.0.0
+SPX-Version              	:	4.0
+SPX-Format               	:	2.0
+Owner                    	:	AMI
+Maintainer               	:	Nilesh Konar  (nileshk@amiindia.co.in)
+License                  	:	GPL-V2
+Source-Location          	:	AMI
+Source-Version           	:	1.0.0
+Builds                   	:	sys_zipunzip
+Build-Depends            	:	Target
+Architecture             	:	ALL
+Urgency : medium
+Description              	:	This package contains binaries related to zip and unzip operations
+.
+
+Package                  	:	sys_zipunzip
+Config-Tag               	:	Standard zip_unzip Support
+Section                  	:	sys
+Group                    	:	BASE
+Essential                	:	NO
+Required                 	:	Target
+Description              	:	This package contains the binaries related to zip and unzip operations
+.
+

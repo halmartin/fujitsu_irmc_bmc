@@ -1,0 +1,9 @@
+# Install Script
+
+build-install:
+		COPY_DIR ./ %IMAGE_TREE/lib/modules/generic/misc/
+		ADD_MODULES irmc_common
+		MAKE_CHAR_NODE irmc-cl 254 0
+		MAKE_CHAR_NODE irmc-debug-uart-cl 254 1
+
+debug-install:

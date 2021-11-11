@@ -1,0 +1,43 @@
+diff -Naur uboot.old/common/cmd_date.c uboot/common/cmd_date.c
+--- uboot.old/common/cmd_date.c	2012-06-25 15:29:08.390753151 +0530
++++ uboot/common/cmd_date.c	2012-06-25 13:45:53.639131576 +0530
+@@ -36,7 +36,11 @@
+ 	"Sun", "Mon", "Tues", "Wednes", "Thurs", "Fri", "Satur",
+ };
+ 
++#ifdef CONFIG_ARM
++#define RELOC(a)	((typeof(a))((unsigned long)(a)))
++#else
+ #define RELOC(a)	((typeof(a))((unsigned long)(a) + gd->reloc_off))
++#endif
+ 
+ int mk_date (char *, struct rtc_time *);
+ 
+diff -Naur uboot.old/common/env_common.c uboot/common/env_common.c
+--- uboot.old/common/env_common.c	2012-06-25 15:29:36.590860918 +0530
++++ uboot/common/env_common.c	2012-06-25 13:45:45.128004394 +0530
+@@ -271,6 +271,9 @@
+ 		env_relocate_spec ();
+ 	}
+ 	gd->env_addr = (ulong)&(env_ptr->data);
++#ifdef CONFIG_ARM
++	gd->bd->bi_env = env_ptr;
++#endif
+ 
+ #ifdef CONFIG_AMIGAONEG3SE
+ 	disable_nvram();
+diff -Naur uboot.old/lib_arm/board.c uboot/lib_arm/board.c
+--- uboot.old/lib_arm/board.c	2012-06-25 16:15:32.255879165 +0530
++++ uboot/lib_arm/board.c	2012-06-25 16:10:44.751131287 +0530
+@@ -253,6 +253,11 @@
+ 	gd->bd = (bd_t*)((char*)gd - sizeof(bd_t));
+ 	memset (gd->bd, 0, sizeof (bd_t));
+ 
++#ifdef CONFIG_ARM
++	gd->flags |= GD_FLG_RELOC;
++	gd->reloc_off = _armboot_start;
++#endif
++
+ 	monitor_flash_len = _bss_start - _armboot_start;
+ 
+ 	for (init_fnc_ptr = init_sequence; *init_fnc_ptr; ++init_fnc_ptr) {

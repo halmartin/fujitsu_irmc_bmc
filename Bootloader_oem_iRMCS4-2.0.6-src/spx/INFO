@@ -1,0 +1,32 @@
+Source : Bootloader_oem_iRMCS4
+Version : 2.0.6
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : Viswanathan Swaminathan (viswanathans@ami.com)
+License : GPL-V2
+Source-Location : AMI
+Source-Version : 1.1.6
+Builds : @Bootloader_oem_iRMCS4
+Build-Depends : @Bootloader_platform_hornet
+Customization-Type : OEMEXTN
+Architecture : ANY
+Urgency : low
+Description : hornet OEM Patches to Bootloader (U-boot 1.1.6)
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,Source-License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : @Bootloader_oem_iRMCS4
+Section : info
+Group : BASE
+Essential : NO
+Description : hornet OEM Patches to Bootloader (U-boot 1.1.6)
+.
+

@@ -1,0 +1,11 @@
+--- uboot/config.mk	2012-04-30 15:13:41.309191194 +0530
++++ uboot-new/config.mk	2012-04-30 15:36:29.014267785 +0530
+@@ -159,7 +159,7 @@
+ CPPFLAGS += -fno-builtin -ffreestanding -nostdinc 	\
+ 	-isystem $(gccincdir) -pipe $(PLATFORM_CPPFLAGS)
+ 
+-CPPFLAGS += -Wall -Werror
++CPPFLAGS += -Wall
+ 
+ CPPFLAGS := $(CPPFLAGS) -include ${SPXINC}/projdef.h
+ 

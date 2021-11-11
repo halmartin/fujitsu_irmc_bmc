@@ -1,0 +1,42 @@
+--- uboot/vendors/ami/fmh/cmd_fmh.c	2013-06-19 12:25:22.000000000 +0200
++++ uboot_new/vendors/ami/fmh/cmd_fmh.c	2013-06-19 13:36:22.000000000 +0200
+@@ -633,11 +633,13 @@
+ 	int RootMtdNo = 0;
+ 	char bootargs[256];
+ 	char imagebooted[16];
++	char frontlanphy[32], *phyindex = NULL;
+ 	int rootisinitrd = 0; /*indicates root is actually an initrd*/
+ 	unsigned long initrd_address = 0xFFFFFFFF;
+ 	char INITRDAddrStr[] = "0xFFFFFFFF";
+ 	char baudrate_str[16];
+ 	u8 imagetoboot = IMAGE_1; /* By default will boot image-1 */
++	char phyreg0[16],*pReg = NULL;	
+ 
+ 	sprintf(baudrate_str,"%ld",CONFIG_BAUDRATE);
+ 
+@@ -925,7 +927,24 @@
+ #endif
+ 		sprintf(imagebooted," imagebooted=%d",imagetoboot);
+ 		strcat(bootargs,imagebooted);		
+-
++		
++		/* Kernel parameter for front lan phy index */
++		phyindex = getenv((char *)"frontlanphy");
++		if (phyindex != NULL)
++		{
++			sprintf(frontlanphy, " frontlanphy=%s", phyindex);
++		}
++		else
++		{
++			strcpy(frontlanphy, " frontlanphy=2");
++		}
++		strcat(bootargs, frontlanphy);
++		pReg = getenv((char *)"phyreg0");
++                if ( pReg != NULL )
++                {
++                        sprintf(phyreg0, " phyreg0=%s", pReg);
++                        strcat(bootargs, phyreg0);
++                }
+ 	}
+ 
+ 	/* Check if anything to be executed */

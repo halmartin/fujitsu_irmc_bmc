@@ -1,0 +1,12 @@
+./Makefile 352 95bfd68809ce42dcd50bc6c8e6b14e4d
+./iusb-cdrom.c 7474 2afe7d208adbfb14583d378c54963e58
+./iusb-cdrom.h 1445 710853cea55d9c5507ed34188fea9d9f
+./iusb-hdisk.c 7667 d5404416a372eb5e93d09aecf27fbc85
+./iusb-hdisk.h 1473 e91897908922d77dedbb53f244abcb60
+./iusb-hid.c 8211 457c438f623d39e7edd458045ef9606a
+./iusb-hid.h 1210 c2d14ca72a68b788c686a950567d6d34
+./iusb-inc.h 835 44098d17a219d10d5b91e508a68996e8
+./iusb-scsi.c 18109 8f10471f3381fe41da5ae764cef505ae
+./iusb-scsi.h 1355 a415bc18fc4790464b38a99df95a40af
+./iusb-vendor.c 3805 ff3b62b88b6c943a7dfc4eef8ad97216
+./iusb-vendor.h 1046 1a5d1e389744f3e868f8e5c3588c47d7

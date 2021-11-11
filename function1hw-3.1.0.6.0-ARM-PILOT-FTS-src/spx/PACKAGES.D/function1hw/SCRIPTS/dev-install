@@ -1,0 +1,10 @@
+# Install Script
+
+build-install:
+	COPY_DIR ./ %IMAGE_TREE/lib/modules/generic/misc/
+	ADD_MODULES function1hw
+	ADD_UNLOAD_MODULE function1hw 6
+	MAKE_CHAR_NODE function10 57 0
+
+debug-install:
+

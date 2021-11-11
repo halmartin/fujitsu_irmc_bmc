@@ -1,0 +1,235 @@
+--- u-boot-1.1.6/board/HORNET/buffer.equ	1969-12-31 19:00:00.000000000 -0500
++++ u-boot-1.1.6-PilotIII/board/HORNET/buffer.equ	2010-04-05 16:47:24.000000000 -0400
+@@ -0,0 +1,232 @@
++#****************************************************************************
++#* Confidential
++#* Copyright (c) 2004 Server Engines
++#* All rights reserved
++#*
++#*       Project  : Pilot
++#*       Filename : buffer.equ
++#*       Author   : Dhanraj Jhawar
++#******************************************************************************
++#*****************************************************************************/
++
++DDRBASE     =       0x80000000
++DDRTOP      =       0x10000000             @total of 128MB
++
++
++@@@@ first 8mb for graphics data.. code starts at 0x80800000
++@@@@ Leave 4 Mb for code. thus buffers start at 0x80c00000
++
++Bank1start  =         0x80C00000            @ 8Mb for code 
++Bank2start  =         Bank1start+0x32000    @200k for code 
++
++@@@PTABLEINDDR   =       0x09ff8000
++PTABLEINDDR   =       0x81ff8000
++
++
++SSP_MEMSTART	=        0x04000000
++FGB_MEMSTART	 =       0x04000000     
++
++SSP_MEMEND	  =      0x04008000
++FGB_MEMEND	   =     0x04008000     
++  
++
++
++
++TXPTR	=		0
++CTXPTR	=	4
++TXSIZE	=	8
++CTXSIZE	=	0xC
++
++RXPTR	=	0x10
++CRXPTR	=	0x14
++RXSIZE	=	0x18
++CRXSIZE	=	0x1C
++
++
++
++SystemWorkBase    =   Bank1start	
++.ifdef SPI_BOOT
++INTVectors        =   0x04004000
++.else
++INTVectors        =   SystemWorkBase+0x400
++.endif
++AbortStackBase    =   SystemWorkBase+0x800
++UndefStackBase    =   SystemWorkBase+0xC00
++SVCStackBase      =   SystemWorkBase+0x1000
++FIQStackBase      =   SystemWorkBase+0x1400
++IRQStackBase      =   SystemWorkBase+0x1800
++UserStackBase     =   SystemWorkBase+0x1C00  
++
++
++UART1WorkBase     =   SystemWorkBase+0x2000
++UART2WorkBase     =   SystemWorkBase+0x2400
++GPIOWorkBase      =   SystemWorkBase+0x2800	
++INTWorkBase       =   SystemWorkBase+0x2C00
++KBDWorkBase       =   SystemWorkBase+0x3000
++#;UFCWorkBase       =   SystemWorkBase+0x3400
++MAC1WORKBASE	  =   SystemWorkBase+0x3400    
++MAC2WORKBASE	=	SystemWorkBase+0x3c00  
++
++I2C1WorkBase =        SystemWorkBase+0x4000      
++I2C2WorkBase =         SystemWorkBase+0x4400 
++I2C3WorkBase =         SystemWorkBase+0x4800 
++I2C4WorkBase   =       SystemWorkBase+0x4C00 
++I2C5WorkBase   =       SystemWorkBase+0x5000 
++I2C6WorkBase   =       SystemWorkBase+0x5400 
++FGEEWorkBase=	    SystemWorkBase+0x5800
++BMCWDTWorkBase	  =  SystemWorkBase+0x9800
++PS2WorkBase	  =  SystemWorkBase+0x9840
++UART3WorkBase     =   SystemWorkBase+0x98C0
++UART4WorkBase     =   SystemWorkBase+0x9940
++UART5WorkBase     =   SystemWorkBase+0x99C0
++MBWorkBase	  =   SystemWorkBase+0x9A40
++KCS1WorkBase	  =   SystemWorkBase+0x9B40
++KCS2WorkBase	  =   SystemWorkBase+0x9B80
++KCS3WorkBase	  =   SystemWorkBase+0x9C00
++KCS4WorkBase	  =   SystemWorkBase+0x9C40
++KCS5WorkBase	  =   SystemWorkBase+0x9C80
++SMICWorkBase	  =   SystemWorkBase+0x9CC0
++BTWorkBase	  =   SystemWorkBase+0x9D40
++UART6WorkBase     =   SystemWorkBase+0x9DC0
++UART7WorkBase     =   SystemWorkBase+0x9E40
++PSRWorkBase       = SystemWorkBase+0x9EC0
++RTCWorkBase       = SystemWorkBase+0x9F40
++FTWorkBase        = SystemWorkBase+0xA0C0
++SWCWorkBase       = SystemWorkBase+0xA040
++Timer1WorkBase	  = SystemWorkBase+0xA0C0
++Timer2WorkBase	=	   SystemWorkBase+0xA140
++Timer3WorkBase	=	   SystemWorkBase+0xA1C0
++SPIWorkBase	=	   SystemWorkBase+0xA240
++SMBWorkBase	=	   SystemWorkBase+0xA340
++RTCIntCount	=	SystemWorkBase+0xA400
++WdogIntCount	=	SystemWorkBase+0xA480
++GPIO0IntCount	=        SystemWorkBase+0xA484
++RTCMatchValue	=        SystemWorkBase+0xA488
++KCS1INTCount	=        SystemWorkBase+0xA48C
++KCS3INTCount	=        SystemWorkBase+0xA490
++KCS4INTCount	=        SystemWorkBase+0xA494
++KCS5INTCount	=        SystemWorkBase+0xA498
++SMICINTCount	=        SystemWorkBase+0xA49C
++BTINTCount	=        SystemWorkBase+0xA4A0
++
++BomberWorkBase	=        SystemWorkBase+0xA540
++
++MBINTFLAG     	=	    MBWorkBase+0x100
++I2CConfigTable  =     I2C1WorkBase+0x0
++I2COperationTable  =  I2C1WorkBase+0x80
++
++GPIOConfigTable    =  GPIOWorkBase+0
++GPIOOperationTable =  GPIOWorkBase+0x180
++
++
++UART1ConfigTable   =  UART1WorkBase+0
++UART1OperationTable=  UART1WorkBase+0x40
++
++UART2ConfigTable   =  UART2WorkBase+0
++UART2OperationTable = UART2WorkBase+0x40
++
++
++UART1XmitBuffer     =        Bank2start
++UART1RecvBuffer     =        Bank2start+0x800
++
++UART2XmitBuffer     =        Bank2start+0x1000
++UART2RecvBuffer     =        Bank2start+0x1800
++
++KBDXmitBuffer       =        Bank2start+0x2000
++KBDRecvBuffer       =        Bank2start+0x2800
++
++I2C1XmitBuffer      =         Bank2start+0x3000
++I2C1RecvBuffer      =         Bank2start+0x3800
++
++I2C2XmitBuffer      =         Bank2start+0x4000
++I2C2RecvBuffer      =         Bank2start+0x4800
++
++I2C3XmitBuffer      =         Bank2start+0x5000
++I2C3RecvBuffer      =         Bank2start+0x5800
++
++I2C4XmitBuffer      =         Bank2start+0x6000
++I2C4RecvBuffer      =         Bank2start+0x6800
++
++I2C5XmitBuffer      =         Bank2start+0x7000
++I2C5RecvBuffer      =         Bank2start+0x7800
++ 
++I2C6XmitBuffer      =         Bank2start+0x8000
++I2C6RecvBuffer      =         Bank2start+0x8800
++
++
++PS2XmitBuffer       =        Bank2start+0x9000
++PS2RecvBuffer       =        Bank2start+0x9800
++
++UART3XmitBuffer     =        Bank2start+0xA000
++UART3RecvBuffer     =        Bank2start+0xA800
++
++UART4XmitBuffer     =        Bank2start+0xB000
++UART4RecvBuffer     =        Bank2start+0xB800
++
++MBXmitBuffer        = 	    Bank2start+0xC000
++MBRecvBuffer        = 	    Bank2start+0xC800
++
++KCS1XmitBuffer	=	    Bank2start+0xD000
++KCS1RecvBuffer	=	    Bank2start+0xD800
++	
++KCS2XmitBuffer	=	    Bank2start+0xE000
++KCS2RecvBuffer	=	    Bank2start+0xE800
++
++KCS3XmitBuffer		 =   Bank2start+0xF000
++KCS3RecvBuffer		 =   Bank2start+0xF800
++
++KCS4XmitBuffer		 =   Bank2start+0x20000
++KCS4RecvBuffer		 =   Bank2start+0x20800
++
++KCS5XmitBuffer		 =   Bank2start+0x21000
++KCS5RecvBuffer		 =   Bank2start+0x21800
++
++SMICXmitBuffer		 =   Bank2start+0x22000
++SMICRecvBuffer		 =   Bank2start+0x22800
++
++BTXmitBuffer		 =   Bank2start+0x23000
++BTRecvBuffer		 =   Bank2start+0x23800
++
++UART5XmitBuffer          =   Bank2start+0x24000
++UART5RecvBuffer          =   Bank2start+0x24800
++
++UART6XmitBuffer          =   Bank2start+0x25000
++UART6RecvBuffer          =   Bank2start+0x25800
++
++UART7XmitBuffer          =   Bank2start+0x26000
++UART7RecvBuffer          =   Bank2start+0x26800
++
++PSRXmitBuffer            = Bank2start+0x27000
++PSRRecvBuffer            = Bank2start+0x27800
++
++RTCRecvBuffer            = Bank2start+0x28800
++
++SPIXmitBuffer            = Bank2start+0x29000
++SPIRecvBuffer            = Bank2start+0x29800
++
++SMBXmitBuffer       =      Bank2start+0x2A000
++SMBRecvBuffer       =      Bank2start+0x2A800
++
++USBXmitBuffer       =        Bank2start+0x2B000	
++USBRecvBuffer       =        Bank2start+0x2C000
++
++MAC1XmitBuffer      =         Bank2start+0x2D000	
++MAC1RecvBuffer      =         Bank2start+0x2f000
++
++MAC2XmitBuffer      =         Bank2start+0x31000	
++MAC2RecvBuffer      =         Bank2start+0x33000
++
++FGEEXmitBuffer      =         Bank2start+0x35000
++FGEERecvBuffer      =         Bank2start+0x38800
++
++RCEXmitBuffer       =        Bank1start+0x39000
++RCERecvBuffer       =        Bank1start+0x3a000
++RCEWorkBase	    =  	    Bank1start+0x3b000
++
++TFEXmitBuffer       =        Bank1start+0x3c000
++TFERecvBuffer       =        Bank1start+0x3d000
++TFEWorkBase	    =  	    Bank1start+0x3e000
++
++
++
++		#.end     

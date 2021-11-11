@@ -1,0 +1,48 @@
+Source : libfts_casSupport
+Version : 1.12.1.6.0
+SPX-Version : 4.0
+SPX-Format : 1.0
+Builds : libfts_casSupport, libfts_casSupport_dev
+Build-Depends : Crosscc, libfts_dev, rules, libencryption_dev, libfts_appHelper_dev, libipmi_dev, libfts_nvram_dev
+Essential : NO
+Config-Tag : FTS CAS support library
+Group : LIBRARY
+Owner : FTS
+Maintainer : Holger Liebig  (Holger.Liebig@ts.fujitsu.com)
+Source-Location : FTS
+Source-Version : 1.0.0
+Source-License : JA-SIG
+Package-License : JA-SIG
+Architecture : ALL
+Urgency : low
+Description : Utilities for CAS support (see http://www.jasig.org/cas)
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,Source-License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Install-Size (Optional) can be automatically calculated
+# Provides,Depends,Required,Conflicts ?
+# ---------------------------------------------------------------------------
+
+Package : libfts_casSupport
+Section : lib
+Essential : NO
+Config-Tag : FTS CAS support library
+Group : LIBRARY
+Required : libipmi, libfts_nvram
+Package-License : JA-SIG
+Description : Shared library helpers for CAS support
+.
+
+Package : libfts_casSupport_dev
+Section : lib
+Essential : NO
+Group : LIBRARY
+Required : libipmi_dev, libfts_nvram_dev
+Package-License : JA-SIG
+Description : Header and Library files for CAS support
+.
+

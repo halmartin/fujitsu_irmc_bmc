@@ -1,0 +1,460 @@
+Package: miscctrl (6.2.0.0.0); urgency = low
+
+Abstract:
+	Misc Control driver for PILOT paltforms.
+
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 16 Feb 2019 00:35:05 UTC
+
+Package: miscctrl (6.2.0.0.0); urgency = low
+
+Abstract:
+	Adding previous Changelog
+
+Files Modified: spx/CHANGELOG
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 08 Dec 2018 19:46:39 UTC
+
+Package: miscctrl (6.1.0.0.0); urgency = medium
+
+Abstract:
+	Included option and API to get the SLPS3 and SLPS5 pin status from SWC status register 1
+
+Files Modified: data/miscctrl.h, data/miscctrl_mod.c
+
+--Submitter: Balasubramanian C (balasubramanianc)(balasubramanianc@amiindia.co.in) Tue, 19 Jun 2018 12:02:00 UTC
+
+Package: miscctrl (6.0.0.0.0); urgency = high
+
+Abstract:
+	Misc Control driver for PILOT paltforms.
+
+Files Added: data, data/Makefile, data/miscctrl.h, data/miscctrl_mod.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/miscctrl, spx/PACKAGES.D/miscctrl/DATA, spx/PACKAGES.D/miscctrl/DATA/keep.folder, spx/PACKAGES.D/miscctrl/SCRIPTS, spx/PACKAGES.D/miscctrl/SCRIPTS/dev-install, spx/PACKAGES.D/miscctrl_driver_dev, spx/PACKAGES.D/miscctrl_driver_dev/DATA, spx/PACKAGES.D/miscctrl_driver_dev/DATA/keep.folder, spx/PACKAGES.D/miscctrl_driver_dev/SCRIPTS, spx/PACKAGES.D/miscctrl_driver_dev/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Winston (winstont)(winstont@ami.com) Mon, 09 Apr 2018 23:26:31 UTC
+
+Package: miscctrl (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:29:31 UTC
+
+Package: miscctrl (2.11.0); urgency = medium
+
+Abstract:
+	Poll wakeup done only when registered interrupt is received
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: Pravinash (pravinashj@amiindia.co.in) Wed, 24 May 2017 12:43:33 HMT
+
+Package: miscctrl (2.10.0); urgency = low
+
+Abstract:
+	enable/disable PASS2_CFG IRQ bit based on the given request
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: Abirami M (abiramim@amiindia.co.in) Wed, 29 Mar 2017 18:58:23 IST
+
+Package: miscctrl (2.9.0); urgency = low
+
+Abstract:
+	Instead of registering mutiple IRQ handlers against same IRQ, implemented way to register call back function for particular interrupt type from other driver modules to miscctrl.
+
+Files Modified: data/miscctrl.h, data/miscctrl_mod.c, spx/INFO
+
+--Submitter: akshay p (akshayp@amiindia.co.in) Thu, 19 Jan 2017 12:21:43 GMT-5
+
+Package: miscctrl (2.8.0); urgency = medium
+
+Abstract:
+	De-registering interrupt handler properly in pilot miscctrl driver
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: Pravinash (pravinashj@amiindia.co.in) Tue, 05 Jul 2016 10:55:18 HMT
+
+Package: miscctrl (2.7.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: spx/PACKAGES.D/miscctrl/DATA/keep.folder, spx/PACKAGES.D/miscctrl_driver_dev/DATA/keep.folder
+Files Deleted: spx/PACKAGES.D/miscctrl/DATA/.keep, spx/PACKAGES.D/miscctrl_driver_dev/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 17:17:31 EDT
+
+Package: miscctrl (2.6.0); urgency = medium
+
+Abstract:
+	Made the IRQ as shared for using the same in usb hub.
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Wed, 03 Feb 2016 15:39:36 HMT
+
+Package: miscctrl (2.5.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/PACKAGES.D/miscctrl/DATA/.keep, spx/PACKAGES.D/miscctrl_driver_dev/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 22:22:51 EST
+
+Package: miscctrl (2.4.0); urgency = low
+
+Abstract:
+	replaced ioctl values by Kernel preprocessor macros and moved values by 100
+
+Files Modified: data/miscctrl.h
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Fri, 08 May 2015 12:06:58 HMT
+
+Package: miscctrl (2.3.0); urgency = low
+
+Abstract:
+	Moved ioctl stated by 0x100
+
+Files Modified: data/miscctrl.h
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Tue, 05 May 2015 12:16:38 HMT
+
+Package: miscctrl (2.2.0); urgency = low
+
+Abstract:
+	Updated Copyrights year
+
+Files Modified: data/miscctrl.h, data/miscctrl_mod.c, spx/INFO
+
+--Submitter: prateekv (prateekv@amiindia.co.in) Thu, 18 Dec 2014 20:53:48 HMT
+
+Package: miscctrl (2.1.0); urgency = high
+
+Abstract:
+	Validation, memory leak and FTS merge related changes
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: Nilesh Konar (nileshk@amiindia.co.in) Fri, 12 Dec 2014 14:44:03 HMT
+
+Package: miscctrl (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 05:46:08 GMT
+
+Package: miscctrl (1.33.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 07:18:37 GMT
+
+Package: miscctrl (1.32.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 05:30:38 GMT
+
+Package: miscctrl (1.31.0); urgency = medium
+
+Abstract:
+	Kernel 3.14.17 related changes
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Sat, 06 Sep 2014 15:21:46 HMT
+
+Package: miscctrl (1.30.0); urgency = medium
+
+Abstract:
+	3.x Kernel related changes
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Fri, 08 Aug 2014 19:41:07 HMT
+
+Package: miscctrl (1.29.0); urgency = medium
+
+Abstract:
+	Adding back proper macros ADD_MODULES,ADD_MODULES_ONLY which was changed recently for Faster Boot Support
+
+Files Modified: spx/PACKAGES.D/miscctrl/SCRIPTS/dev-install
+
+--Submitter: Winston (winstont@ami.com) Thu, 24 Apr 2014 11:01:09 GMT
+
+Package: miscctrl (1.28.0); urgency = medium
+
+Abstract:
+	Faster Boot Support
+
+Files Modified: spx/PACKAGES.D/miscctrl/SCRIPTS/dev-install
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Fri, 18 Apr 2014 20:54:29 HMT
+
+Package: miscctrl (1.27.0); urgency = medium
+
+Abstract:
+	Adding DevNodes to Build-Depends and Required fields
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Thu, 03 Oct 2013 23:28:00 EDT
+
+Package: miscctrl (1.26.0); urgency = medium
+
+Abstract:
+	Updated to support Debian Wheezy target and new complier
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Sun, 22 Sep 2013 01:37:50 EDT
+
+Package: miscctrl (1.25.0); urgency = medium
+
+Abstract:
+	Adding full support for intrusion detection .
+
+Files Modified: data/miscctrl.h, data/miscctrl_mod.c
+
+--Submitter: akshay p (akshayp@amiindia.co.in) Mon, 29 Jul 2013 03:12:40 HMT
+
+Package: miscctrl (1.24.0); urgency = low
+
+Abstract:
+	Removed unwanted printk.
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: muthuchamyk (muthusamyk@amiindia.co.in) Mon, 06 May 2013 21:47:59 HMT
+
+Package: miscctrl (1.23.0); urgency = medium
+
+Abstract:
+	Included the read and write for Battery backup register.
+
+Files Modified: data/miscctrl.h, data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Thu, 21 Feb 2013 18:51:07 HMT
+
+Package: miscctrl (1.22.0); urgency = medium
+
+Abstract:
+	Added interrupt support for SLP state.
+
+Files Modified: data/miscctrl.h, data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Thu, 22 Nov 2012 20:17:08 HMT
+
+Package: miscctrl (1.21.0); urgency = medium
+
+Abstract:
+	Added provision to get and set System and clock control registers.
+
+Files Modified: data/miscctrl.h, data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Fri, 26 Oct 2012 15:25:20 HMT
+
+Package: miscctrl (1.20.0); urgency = medium
+
+Abstract:
+	Corrected the if condition check.
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Wed, 12 Sep 2012 11:50:13 IST
+
+Package: miscctrl (1.19.0); urgency = medium
+
+Abstract:
+	Modified get_reg_data to get the specified register value.
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Wed, 18 Jul 2012 19:13:04 IST
+
+Package: miscctrl (1.18.0); urgency = medium
+
+Abstract:
+	Added IOCTL to get intrusion raw status. Added interrupt handler method for chassis intrusion.
+
+Files Modified: data/miscctrl.h, data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Thu, 19 Apr 2012 15:41:43 IST
+
+Package: miscctrl (1.17.0); urgency = low
+
+Abstract:
+	Adding GPL license.
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: Winston (winstont@ami.com) Thu, 12 Apr 2012 14:50:53 EDT
+
+Package: miscctrl (1.16.0); urgency = low
+
+Abstract:
+	Clearing the global variable 'g_swm_powergood_pending' before waiting for power good change event; This is to make both misctest and power button to work independently.
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: Kiran Kumar S (kirankumars@amiindia.co.in) Thu, 12 Apr 2012 20:34:35 IST
+
+Package: miscctrl (1.15.0); urgency = medium
+
+Abstract:
+	Fixes for strict compiler - Generates error if a variable is assigned and not used
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 23 Mar 2012 10:04:26 EDT
+
+Package: miscctrl (1.14.0); urgency = medium
+
+Abstract:
+	Removed kernel thread and added timer for power operations with delay.
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Thu, 29 Dec 2011 12:11:15 IST
+
+Package: miscctrl (1.13.0); urgency = medium
+
+Abstract:
+	Miscctrl made delay in the background for power on off.
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Thu, 03 Nov 2011 14:42:16 IST
+
+Package: miscctrl (1.12.0); urgency = medium
+
+Abstract:
+	Removed Debug messages for SMI and SCI software event.
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Tue, 06 Sep 2011 15:53:32 IST
+
+Package: miscctrl (1.11.0); urgency = medium
+
+Abstract:
+	Generate SMI/SCI software event Support.
+
+Files Modified: data/miscctrl.h, data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Mon, 08 Aug 2011 17:37:39 IST
+
+Package: miscctrl (1.10.0); urgency = high
+
+Abstract:
+	Correction in licensing.
+
+Files Added: spx/LICENSES/LICENSE.GPL-V2
+Files Deleted: spx/LICENSES/LICENSE.AMI
+Files Modified: spx/INFO
+
+--Submitter: winston (winstonv@amiindia.co.in) Fri, 24 Jun 2011 15:05:24 IST
+
+Package: miscctrl (1.9.0); urgency = medium
+
+Abstract:
+	Modified the power on/off using misc driver with timeout option.
+
+Files Modified: data/miscctrl.h, data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Thu, 26 May 2011 10:25:07 EDT
+
+Package: miscctrl (1.8.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 15:18:05 EDT
+
+Package: miscctrl (1.7.0); urgency = medium
+
+Abstract:
+	Initialised all the interrupt related global variables when unregister swc interrupt is invoked.
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Mon, 11 Apr 2011 19:38:26 IST
+
+Package: miscctrl (1.6.0); urgency = medium
+
+Abstract:
+	Supporting Interrupt handler for SWC controller(PASS-THRU, PWBTIN, Power Good interrupts), similar to GPIO driver.
+
+Files Modified: data/miscctrl.h, data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Wed, 16 Feb 2011 11:13:23 IST
+
+Package: miscctrl (1.5.0); urgency = medium
+
+Abstract:
+	Modified to get PWRBTN_IN interrupt, The interrupt is not generating according to the Enable register.
+
+Files Modified: data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Mon, 27 Dec 2010 17:08:52 IST
+
+Package: miscctrl (1.4.0); urgency = medium
+
+Abstract:
+	Included the POWER_GOOD bit for getting interrupt.
+
+Files Modified: data/miscctrl.h, data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Fri, 17 Dec 2010 17:01:33 IST
+
+Package: miscctrl (1.3.0); urgency = medium
+
+Abstract:
+	Added the support for SWC.
+
+Files Modified: data/miscctrl.h, data/miscctrl_mod.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Fri, 26 Nov 2010 23:19:19 GMT-5:30
+
+Package: miscctrl (1.2.0); urgency = medium
+
+Abstract:
+	Copied driver to generic location instead of kernel specific locaton
+
+Files Modified: spx/PACKAGES.D/miscctrl/SCRIPTS/dev-install
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 27 Oct 2010 14:49:29 EDT
+
+Package: miscctrl (1.1.0); urgency = high
+
+Abstract:
+	MISCCTRL device support option is now available during project configuration
+
+Files Modified: spx/INFO
+
+--Submitter: Anurag Bhatia (anuragb@ami.com) Mon, 11 Oct 2010 16:19:37 EDT
+
+Package: miscctrl (1.0.0); urgency = new
+
+Abstract:
+	Misc Control driver for Pilot-ii
+
+Files Added: data, data/Makefile, data/miscctrl.h, data/miscctrl_mod.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/PACKAGES.D, spx/PACKAGES.D/miscctrl, spx/PACKAGES.D/miscctrl/DATA, spx/PACKAGES.D/miscctrl/SCRIPTS, spx/PACKAGES.D/miscctrl/SCRIPTS/dev-install, spx/PACKAGES.D/miscctrl_driver_dev, spx/PACKAGES.D/miscctrl_driver_dev/DATA, spx/PACKAGES.D/miscctrl_driver_dev/SCRIPTS, spx/PACKAGES.D/miscctrl_driver_dev/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Alex Yang (alexyang@ami.com.tw) Tue, 22 Jun 2010 17:41:20 CST
+

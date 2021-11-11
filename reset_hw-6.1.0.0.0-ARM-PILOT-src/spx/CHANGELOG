@@ -1,0 +1,269 @@
+Package: reset_hw (6.1.0.0.0); urgency = low
+
+Abstract:
+	Reset Hardware driver package.
+
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 16 Feb 2019 00:38:45 UTC
+
+Package: reset_hw (6.1.0.0.0); urgency = low
+
+Abstract:
+	Adding previous Changelog
+
+Files Modified: spx/CHANGELOG
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 08 Dec 2018 19:46:59 UTC
+
+Package: reset_hw (6.0.0.0.0); urgency = low
+
+Abstract:
+	Reset Hardware driver package.
+
+Files Added: data, data/Makefile, data/resetmain_hw.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/reset_hw, spx/PACKAGES.D/reset_hw/DATA, spx/PACKAGES.D/reset_hw/DATA/keep.folder, spx/PACKAGES.D/reset_hw/SCRIPTS, spx/PACKAGES.D/reset_hw/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Winston (winstont)(winstont@ami.com) Mon, 09 Apr 2018 23:27:31 UTC
+
+Package: reset_hw (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:36:20 UTC
+
+Package: reset_hw (2.4.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: spx/PACKAGES.D/reset_hw/DATA/keep.folder
+Files Deleted: spx/PACKAGES.D/reset_hw/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 17:55:20 EDT
+
+Package: reset_hw (2.3.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/PACKAGES.D/reset_hw/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 22:58:40 EST
+
+Package: reset_hw (2.2.0); urgency = low
+
+Abstract:
+	Added changes to avoid strictly compile errors
+
+Files Modified: data/resetmain_hw.c
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Tue, 05 May 2015 12:39:30 HMT
+
+Package: reset_hw (2.1.0); urgency = low
+
+Abstract:
+	Updated Copyrights year
+
+Files Modified: data/resetmain_hw.c, spx/INFO
+
+--Submitter: prateekv (prateekv@amiindia.co.in) Tue, 16 Dec 2014 19:33:55 HMT
+
+Package: reset_hw (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 06:18:47 GMT
+
+Package: reset_hw (1.16.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 07:46:29 GMT
+
+Package: reset_hw (1.15.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 05:58:42 GMT
+
+Package: reset_hw (1.14.0); urgency = medium
+
+Abstract:
+	Return IRQ None if the combined interrupt is not raised up for host reset
+
+Files Modified: data/resetmain_hw.c
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Tue, 23 Sep 2014 16:15:57 HMT
+
+Package: reset_hw (1.13.0); urgency = medium
+
+Abstract:
+	Kernel 3.14.17 related changes
+
+Files Modified: data/resetmain_hw.c
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Sat, 06 Sep 2014 15:23:43 HMT
+
+Package: reset_hw (1.12.0); urgency = medium
+
+Abstract:
+	3.x Kernel related changes
+
+Files Modified: data/resetmain_hw.c
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Fri, 08 Aug 2014 19:43:25 HMT
+
+Package: reset_hw (1.11.0); urgency = medium
+
+Abstract:
+	Adding back proper macros ADD_MODULES,ADD_MODULES_ONLY which was changed recently for Faster Boot Support
+
+Files Modified: spx/PACKAGES.D/reset_hw/SCRIPTS/dev-install
+
+--Submitter: Winston (winstont@ami.com) Thu, 24 Apr 2014 11:03:48 GMT
+
+Package: reset_hw (1.10.0); urgency = medium
+
+Abstract:
+	Faster Boot Support
+
+Files Modified: spx/PACKAGES.D/reset_hw/SCRIPTS/dev-install
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Fri, 18 Apr 2014 21:04:07 HMT
+
+Package: reset_hw (1.9.0); urgency = medium
+
+Abstract:
+	Adding DevNodes to Build-Depends and Required fields
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Thu, 03 Oct 2013 23:42:24 EDT
+
+Package: reset_hw (1.8.0); urgency = medium
+
+Abstract:
+	Updated to support Debian Wheezy target and new complier
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Sun, 22 Sep 2013 02:00:06 EDT
+
+Package: reset_hw (1.7.0); urgency = low
+
+Abstract:
+	Removed unwanted printk.
+
+Files Modified: data/resetmain_hw.c
+
+--Submitter: muthuchamyk (muthusamyk@amiindia.co.in) Mon, 06 May 2013 21:48:12 HMT
+
+Package: reset_hw (1.6.0); urgency = medium
+
+Abstract:
+	Fixes for strict compiler - Generates error if a variable is assigned and not used
+
+Files Modified: data/resetmain_hw.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 23 Mar 2012 10:03:34 EDT
+
+Package: reset_hw (1.5.0); urgency = medium
+
+Abstract:
+	Fixes for strict compiler - Generates error if a variable is assigned and not used
+
+Files Modified: data/resetmain_hw.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Thu, 22 Mar 2012 22:49:26 EDT
+
+Package: reset_hw (1.4.0); urgency = high
+
+Abstract:
+	Correction in licensing.
+
+Files Added: spx/LICENSES/LICENSE.GPL-V2
+Files Deleted: spx/LICENSES/LICENSE.AMI
+Files Modified: data/resetmain_hw.c, spx/INFO
+
+--Submitter: winston (winstonv@amiindia.co.in) Fri, 24 Jun 2011 16:59:02 IST
+
+Package: reset_hw (1.3.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 15:32:30 EDT
+
+Package: reset_hw (1.2.0); urgency = medium
+
+Abstract:
+	Copied driver to generic location instead of kernel specific locaton
+
+Files Modified: spx/PACKAGES.D/reset_hw/SCRIPTS/dev-install
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 27 Oct 2010 14:51:06 EDT
+
+Package: reset_hw (1.1.0); urgency = low
+
+Abstract:
+	Incrementing Minor and setting Aux to Zero
+
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 21 Sep 2010 14:13:21 EDT
+
+Package: reset_hw (1.0.4); urgency = medium
+
+Abstract:
+	PILOT_II SOC renamed to PILOT to support Both PILOT_II and PILOT_III
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 13 Apr 2010 14:30:41 EDT
+
+Package: reset_hw (1.0.3); urgency = medium
+
+Abstract:
+	dependencies fixed
+
+Files Modified: spx/INFO
+
+--Submitter: Anurag Bhatia (anuragb@ami.com) Fri, 02 Apr 2010 18:24:58 EDT
+
+Package: reset_hw (1.0.2); urgency = medium
+
+Abstract:
+	packages dependencies updated
+
+Files Modified: spx/INFO
+
+--Submitter: Anurag Bhatia (anuragb@ami.com) Wed, 17 Mar 2010 18:02:02 EDT
+
+Package: reset_hw (1.0.1); urgency = low
+
+Abstract:
+	Version Dependecies Removed
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 10 Feb 2010 17:14:22 EST
+
+Package:reset_hw (1.0.0);urgency=new
+
+Abstract:
+	Reset Hardware driver package.
+
+Files Added: resetmain_hw.c, Makefile
+
+--Submitter: Vinay Tandon (vinayt@ami.com) Thu, 12 Nov 2009 18:42:26 -0500

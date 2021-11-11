@@ -1,0 +1,25 @@
+--- uboot/cpu/arm926ejs/PILOTIII/misc.c	2015-09-18 13:32:13.000000000 +0200
++++ uboot_new/cpu/arm926ejs/PILOTIII/misc.c	2015-09-18 16:16:56.000000000 +0200
+@@ -478,6 +478,14 @@
+     }
+ }
+ 
++void initPermdatAfterPOR(void)
++{
++    /* If SYSCFG Power-On-Reset bit (bit 1) is set, invalidate the permdat header version */
++    if (*((volatile unsigned long *)(SE_SYS_CLK_VA_BASE + 0x00)) & 0x00000002) {
++        *((unsigned int *)(0x8FF00000)) = 0xFFFFFFFF;
++    }
++}
++
+ void platformSpecificInit(void)
+ {
+     ResetConfigReg();
+@@ -486,6 +494,7 @@
+     set2AC_Defaul();
+     PwButtonLock();
+     movePermdat();
++    initPermdatAfterPOR();
+ 
+ return;
+ }

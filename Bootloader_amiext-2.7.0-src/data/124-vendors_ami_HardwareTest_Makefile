@@ -1,0 +1,22 @@
+diff -Naur uboot.org/vendors/ami/HardwareTest/Makefile uboot/vendors/ami/HardwareTest/Makefile
+--- uboot.org/vendors/ami/HardwareTest/Makefile	1970-01-01 08:00:00.000000000 +0800
++++ uboot/vendors/ami/HardwareTest/Makefile	2014-01-27 15:09:50.985236776 +0800
+@@ -1,12 +1,11 @@
+ # Makefile for AMI ractrends board
+-include $(TOPDIR)/config.mk
+ 
+-all :
+-	
+-$(LIB):	$(OBJS)
+-	$(AR) crv $@ $(OBJS)
++SUBDIRS := lib
++SUBDIRS += nettest
++SUBDIRS += dramtest
+ 
+-$(OBJS) : subdirs
++
++all : subdirs
+ 
+ subdirs:
+ 	@for dir in $(SUBDIRS) ; do $(MAKE) -C $$dir || exit 1 ; done
+

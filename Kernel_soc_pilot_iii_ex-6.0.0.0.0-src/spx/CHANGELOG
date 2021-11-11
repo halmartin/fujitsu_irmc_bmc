@@ -1,0 +1,125 @@
+Package: Kernel_soc_pilot_iii_ex (6.0.0.0.0); urgency = high
+
+Abstract:
+	HORNET SOC Fixes to Kernel 3.4.74
+
+
+--Submitter: Balasubramanian C (balasubramanianc)(balasubramanianc@amiindia.co.in) Wed, 20 Jun 2018 09:44:52 UTC
+
+Package: Kernel_soc_pilot_iii_ex (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:03:30 UTC
+
+Package: Kernel_soc_pilot_iii_ex (2.8.0); urgency = low
+
+Abstract:
+	Replaced printf in python RULES with print
+
+Files Modified: spx/RULES.py
+
+--Submitter: Abirami M (abiramim@amiindia.co.in) Thu, 03 Aug 2017 14:25:40 IST
+
+Package: Kernel_soc_pilot_iii_ex (2.7.0); urgency = medium
+
+Abstract:
+	Included the Pilot specific ioctl numbers in the kernel i2c-dev.h
+
+Files Added: data/03_include_uapi_linux_i2c-dev.h
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Wed, 22 Feb 2017 19:23:28 IST
+
+Package: Kernel_soc_pilot_iii_ex (2.6.0); urgency = medium
+
+Abstract:
+	Update Pilot IV SDK to v20160630 for eth driver
+
+Files Modified: data/02-drivers_net-ethernet_pilot3_tulip.patch
+
+--Submitter: charliechin (CharlieChin@ami.com.tw) Tue, 23 Aug 2016 10:59:19 CST
+
+Package: Kernel_soc_pilot_iii_ex (2.5.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: spx/PACKAGES.D/Kernel_soc_pilot_iii_ex/DATA/keep.folder
+Files Deleted: spx/PACKAGES.D/Kernel_soc_pilot_iii_ex/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 15:40:04 EDT
+
+Package: Kernel_soc_pilot_iii_ex (2.4.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/PACKAGES.D/Kernel_soc_pilot_iii_ex/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 20:49:33 EST
+
+Package: Kernel_soc_pilot_iii_ex (2.3.0); urgency = medium
+
+Abstract:
+	Modified to adapt common changes
+
+Files Modified: data/02-drivers_net-ethernet_pilot3_tulip.patch
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Thu, 23 Apr 2015 00:41:22 HMT
+
+Package: Kernel_soc_pilot_iii_ex (2.2.0); urgency = medium
+
+Abstract:
+	Flow control support
+
+Files Added: data/02-drivers_net-ethernet_pilot3_tulip.patch
+
+--Submitter: sridhar chinthala (sridharch@amiindia.co.in) Thu, 09 Apr 2015 23:40:18 HMT
+
+Package: Kernel_soc_pilot_iii_ex (2.1.0); urgency = medium
+
+Abstract:
+	Removing LICENSE.AMI from LICENSES folder to prevent multiple licensing issue
+
+Files Deleted: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Winston (winstont@ami.com) Tue, 23 Dec 2014 22:22:35 GMT
+
+Package: Kernel_soc_pilot_iii_ex (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 04:27:43 GMT
+
+Package: Kernel_soc_pilot_iii_ex (1.2.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 06:10:01 GMT
+
+Package: Kernel_soc_pilot_iii_ex (1.1.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 04:21:09 GMT
+
+Package: Kernel_soc_pilot_iii_ex (1.0.0); urgency = new
+
+Abstract:
+	HORNET SOC Fixes to Kernel 3.4.74
+
+Files Added: data, data/01-arch_arm_mach-pilot_Makefile.boot, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/Kernel_soc_pilot_iii_ex, spx/PACKAGES.D/Kernel_soc_pilot_iii_ex/DATA, spx/PACKAGES.D/Kernel_soc_pilot_iii_ex/SCRIPTS, spx/PACKAGES.D/Kernel_soc_pilot_iii_ex/SCRIPTS/dev-install.py, spx/RULES.py
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Mon, 08 Sep 2014 13:57:46 HMT
+

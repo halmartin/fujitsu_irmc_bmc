@@ -1,0 +1,284 @@
+--- u-boot-1.1.6/board/HORNET/int.equ	1969-12-31 19:00:00.000000000 -0500
++++ u-boot-1.1.6-PilotIII/board/HORNET/int.equ	2010-04-05 16:47:24.000000000 -0400
+@@ -0,0 +1,281 @@
++##	Interrupt Controller
++Irq_inten	=	0x00
++Irq_intmask	=	0x08
++Irq_intforce	=	0x10
++Irq_rawstatus	=	0X18
++Irq_status	=	0x20
++Irq_status_hi	=	0x22
++Irq_maskstatus	=	0x28
++Irq_finalstatus	=	0x30
++Irq_vector	=	0x38
++Irq_vector_0	=	0x40
++Irq_vector_1	=	0x48
++Irq_vector_2	=	0x50
++Irq_vector_3	=	0x58
++Irq_vector_4	=	0x60
++Irq_vector_5	=	0x68
++Irq_vector_6	=	0x70
++Irq_vector_7	=	0x78
++Irq_vector_8	=	0x80
++Irq_vector_9	=	0x88
++Irq_vector_10	=	0x90
++Irq_vector_11	=	0x98
++Irq_vector_12	=	0xA0
++Irq_vector_13	=	0xA8
++Irq_vector_14	=	0xB0
++Irq_vector_15	=	0xB8
++Fiq_inten	=	0xC0
++Fiq_intmask	=	0xC4
++Fiq_intforce	=	0xC8
++Fiq_rawstatus	=	0xCC
++Fiq_status	=	0xD0
++Fiq_finalstatus	=	0xD4
++Irq_plevel	=	0xD8
++Irq_plevel0	=	0xE8
++
++ICTL_COMP_PARAMS_2	=	0x3f0
++ICTL_COMP_PARAMS_1	=	0x3f4
++ICTL_COMP_VERSION	=	0x3f8
++ICTL_COMP_TYPE	=	0x3FC
++
++IRQCTRL		=	0x38
++FIQCTRL		=	0x3C
++IRQSTS		=	0x40
++FIQSTS		=	0x44
++
++IRQCTRL2        =	0x60
++FIQCTRL2        =	0x64
++IRQSTS2	        =	0x68
++FIQSTS2	        =	0x6C
++ 
++
++.ifdef NONVECTORED
++MAC1INT		=	1
++MAC2INT		=	1<<1
++FGEEINT		=	1<<2
++USBDeviceINT	=	1<<3
++GPIOINT		=	1<<10
++KCSCOMBOINT	=	1<<4
++BMCWDTINT	=	1<<14
++PS2INT		=	1<<16
++SIOWDTINT	=	1<<5
++PSRINT		=	1<<6
++STANDBYINT  	=       1<<27
++
++
++MAC1INTNO	=	0
++MAC2INTNO	=	1
++FGEEINTNO	=	2
++USBDeviceINTNO	=	3
++KCSCOMBOINTNO	=	4
++BMCWDTINTNO	=	14
++PSRINTNO	=	6
++SWCINTNO	=	7
++UART6INT        =    	8	@virtual uart1
++UART7INT        =     	9	@virtual uart2
++GPIOINTNO	=	10
++Timer1INT	=	11
++Timer2INT	=	12
++Timer3INT	=	13
++RTCINT		=	15
++PS2INTNO	=	16
++#PWMINTNO	=	17
++ADCINTNO	=	18
++MemoryEDRAMINT	=	19
++SPIINTNO	=	20
++UART3INT	=	21
++UART4INT	=	22
++UART5INT	=	23
++ICMBUART	=	24
++I2C1INT		=	23    @25
++I2C2INT		=	24    @26
++I2C3INT		=	25    @27
++I2C4INT		=	26    @28
++I2C5INT		=	29
++I2C6INT		=	30
++UART1INT        =    	4	@not used but needed to avoid compile errors
++UART2INT        =     	5	@not used but needed to avoid compile errors
++STDBY		=	31
++.else
++
++
++MAC1INT		=	1
++MAC2INT		=	1<<1
++FGEEINT		=	1<<2
++USBINT		=	1<<3
++
++
++GPIOINT		=	1<<16
++KCSCOMBOINT	=	1<<18
++BMCWDTINT	=	1<<13   @@@@ 1<<11 Saurabh
++PS2INT		=	1<<13
++PWMINT		=	1<<13
++SIOWDTINT	=	1<<11   @@@@ 1<<13 Saurabh
++PSRINT		=	1<<11
++SWCINTBIT       =       1<<17
++STANDBYINT  	=       1<<27
++
++
++
++@VIC INTR NOS
++MAC1INTNO	=	0
++MAC2INTNO	=	1
++FGEEINTNO	=	2
++USBINTNO	=	3
++I2C5INT		=	4
++I2C6INT		=	5
++Timer1INT	=	6
++Timer2INT	=	7
++
++@8,9,10 are reused for mac0.mac1,fgb,usb for compatibility wit FIQ
++
++SIOWDTINTNO	=	11
++PSRINTNO	=	11
++UART6INT        =    	11	@virtual uart1
++UART7INT        =     	11	@virtual uart2
++
++Timer3INT	=	12
++
++BMCWDTINTNO	=	13
++RTCINT		=	13
++PS2INTNO	=	13
++PWMINTNO	=	13
++ADCINTNO	=	13
++MemoryEDRAMINT	=	13
++SPIINTNO	=	13
++
++UART3INT        =    	14
++I2C1INT		=	15
++GPIOINTNO	=	16
++SWCINTNO	=	17
++KCSCOMBOINTNO	=	18
++
++
++UART4INT	=	20
++UART5INT	=	21
++ICMBUART	=	22
++
++I2C1INTNO	=	23
++I2C2INT		=	24
++I2C3INT		=	25
++I2C4INT		=	26
++
++BOMINTNO        =       28
++
++VECTSIOINTCOMB		=	12
++VECTTIMERINTCOMB	=	13
++VECTSYSINTCOMB		=	14
++VECTUARTINTCOMB		=	15
++VECTI2CINTCOMB		=	16
++
++UART1INT        =    	4	@not used but needed to avoid compile errors
++UART2INT        =     	5	@not used but needed to avoid compile errors
++
++@SYSCONTROL IRQ ENABLE BITS
++SYSCTRL_MAC1INT		=	1
++SYSCTRL_MAC2INT		=	1<<1
++SYSCTRL_FGEEINT		=	1<<2
++SYSCTRL_USBINT		=	1<<3
++SYSCTRL_GPIOINT		=	1<<10
++SYSCTRL_KCSCOMBOINT	=	1<<4
++SYSCTRL_BMCWDTINT	=	1<<14
++SYSCTRL_PS2INT		=	1<<16
++SYSCTRL_SIOWDTINT	=	1<<5
++SYSCTRL_PSRINT		=	1<<6
++SYSCTRL_UART6INTBIT	=	1<<8
++SYSCTRL_UART7INTBIT	=	1<<9
++SYSCTRL_STANDBYINT  	=       1<<27
++
++ICMBUARTBIT             =       1<<22
++
++
++SYSCTRL_MAC1INTNO	=	0
++SYSCTRL_MAC2INTNO	=	1
++SYSCTRL_FGEEINTNO	=	2
++SYSCTRL_USBDeviceINTNO	=	3
++SYSCTRL_KCSCOMBOINTNO	=	4
++SYSCTRL_SIOWDTINTNO	=	5
++SYSCTRL_PSRINTNO	=	6
++SYSCTRL_SWCINTNO	=	7
++SYSCTRL_UART6INTNO      =    	8	@virtual uart1
++SYSCTRL_UART7INTNO      =     	9	@virtual uart2
++SYSCTRL_GPIOINTNO	=	10
++SYSCTRL_Timer1INT	=	11
++SYSCTRL_Timer2INT	=	12
++SYSCTRL_Timer3INT	=	13
++SYSCTRL_BMCWDTINTNO	=	14
++SYSCTRL_RTCINT		=	15
++SYSCTRL_PS2INTNO	=	16
++SYSCTRL_PWMINTNO	=	17
++SYSCTRL_ADCINTNO	=	18
++SYSCTRL_DDRINT		=	19
++SYSCTRL_SPIINTNO	=	20
++SYSCTRL_UART3INT	=	21
++SYSCTRL_UART4INT	=	22
++SYSCTRL_UART5INT	=	23
++SYSCTRL_ICMBUART	=	24
++SYSCTRL_I2C1INT		=	25
++SYSCTRL_I2C2INT		=	26
++SYSCTRL_I2C3INT		=	27
++SYSCTRL_I2C4INT		=	28
++SYSCTRL_I2C5INT		=	29
++SYSCTRL_I2C6INT		=	30
++SYSCTRL_UART1INT        =    	4	@not used but needed to avoid compile errors
++SYSCTRL_UART2INT        =     	5	@not used but needed to avoid compile errors
++SYSCTRL_STDBY		=	31
++
++
++SYSCTRL_Timer3INTBIT	=	1<<13
++SYSCTRL_BMCWDTINTBIT    =       1<<14
++SYSCTRL_RTCINTBIT	=	1<<15
++SYSCTRL_PS2INTBIT	=	1<<16
++SYSCTRL_PWMINTBIT	=	1<<17
++SYSCTRL_ADCINTBIT	=	1<<18
++SYSCTRL_DDRINTBIT	=	1<<19
++SYSCTRL_SPIINTBIT	=	1<<20
++SYSCTRL_UART6INTBIT	=	1<<8
++SYSCTRL_UART7INTBIT	=	1<<9
++
++@@@@@@@@@@@@@@@@ FIQ INT NOs @@@@@@@@@@@@@@@@@@
++MAC1_FIQNO              =       0
++MAC2_FIQNO              =       1
++FGEE_FIQNO              =       2
++USB_FIQNO               =       3
++KCSCOMBO_FIQNO          =       4
++SIOWDT_FIQNO            =       5
++PSR_FIQNO               =       6
++SWC_FIQNO               =       7
++UART6_FIQNO             =       8
++UART7_FIQNO             =       9
++GPIO_FIQNO              =       10
++TIMER0_FIQNO            =       11
++TIMER1_FIQNO            =       12
++TIMER2_FIQNO            =       13
++SYSWDT_FIQNO            =       14
++RTC_FIQNO               =       15
++PS2_FIQNO               =       16
++PWM_FIQNO               =       17
++PECI_FIQNO              =       18
++DDR_FIQNO               =       19
++SPI_FIQNO	        =	20
++UART3_FIQNO		=       21
++UART4_FIQNO		=       22
++UART5_FIQNO		=       23
++ICMBUART_FIQNO		=       24
++I2C1_FIQNO		=	25
++I2C2_FIQNO		=	26
++I2C3_FIQNO		=	27
++I2C4_FIQNO		=	28
++I2C5_FIQNO		=	29
++I2C6_FIQNO		=	30
++SEC_FIQNO               =       32
++BOM_TO_ARM_FIQNO        =       33
++A2S_FIQNO               =       34
++S2A_FIQNO               =       35  
++
++.endif
++
++
++
++
++

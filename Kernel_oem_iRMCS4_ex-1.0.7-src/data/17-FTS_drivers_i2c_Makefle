@@ -1,0 +1,9 @@
+--- linux_orig/drivers/i2c/Makefile	2016-10-13 14:30:43.000000000 +0200
++++ linux/drivers/i2c/Makefile	2016-10-13 14:33:08.000000000 +0200
+@@ -11,5 +11,5 @@
+ obj-$(CONFIG_I2C_STUB)		+= i2c-stub.o
+ 
+ ccflags-$(CONFIG_I2C_DEBUG_CORE) := -DDEBUG
+-ccflags-y += -DI2C_BUS_RECOVERY
++# ccflags-y += -DI2C_BUS_RECOVERY	// FTSCHG_Ircona - Prevent periodic execution of I2C bus recovery
+ CFLAGS_i2c-core.o := -Wno-deprecated-declarations

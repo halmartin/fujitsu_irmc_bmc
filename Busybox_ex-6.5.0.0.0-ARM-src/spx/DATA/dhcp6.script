@@ -1,0 +1,119 @@
+#!/bin/sh
+
+#interface=`grep 'iface eth' /conf/interfaces  | awk '{ print $2 }'`
+interface=`grep ' inet6' /conf/interfaces  | awk '{ print $2 }'`
+
+iface1=$(echo $interface | cut -f1 -d' ')
+iface2=$(echo $interface | cut -f2 -d' ')
+
+IsIfaceStatic()
+{
+    IsIfaceStatic=`grep $1 /conf/interfaces | grep 'static' | grep 'inet6'`
+    if [ "$IsIfaceStatic" != "" ]; then
+        iface1=""
+        interface=$iface2
+    fi
+
+    IsIfaceStatic=`grep $2 /conf/interfaces | grep 'static' | grep 'inet6'`
+    if [ "$IsIfaceStatic" != "" ]; then
+        iface2=""
+	interface="$iface1"
+    fi
+}
+
+IsIfaceStatic $iface1 $iface2
+
+if [ "$iface1" == "" ] && [ "$iface2" == "" ]; then
+    exit 0
+fi
+
+
+if [ -f  "/etc/dhcp-script" ]
+then
+    . /etc/dhcp-script
+    #echo "AMI DHCP6 script : dhcp.conf found."
+#else
+    #echo "AMI DHCP6 script : dhcp.conf not found.  The extend parameters will not use."
+fi
+
+#if [ -n "$SET_DHCP_PREIP6" ];then
+#    echo "AMI DHCP6 : Send requested address"
+#       REQ_PRE_IP="-R $SET_DHCP_PREIP6"
+#fi
+if [ -f  "/conf/dns.conf" ]
+then
+    . /conf/dns.conf
+fi
+
+    echo " calling dhcp6c.... "
+    HOST_NAME=`hostname`
+#if [ -f  "/etc/dhcp-script" ];then
+    if [ "$DO_DDNS" == 'yes'  -o "$DO_DDNS" == 'y' ]; then
+        if [ "$SET_FQDN" == 'yes'  -o "$SET_FQDN" == 'y' ]; then
+            echo "Dhcpv6 Client FQDN (Option 39)..."
+            REG_BMC_HOSTNAME="-F $HOST_NAME "
+        fi
+    fi
+#fi
+
+#if [ -f  "/etc/dhcp-script" ];then
+#    dhcp6c -p /var/run/dhcp6c.$1.pid $1 $REQ_PRE_IP
+#else
+#Checking the interface has vlan
+VLAN_SETTING_CONF="/conf/vlansetting.conf"
+TMP_IFACE_NAME=""
+TMP_VLAN_ID=0
+
+if [ -f "$VLAN_SETTING_CONF" ];
+then
+        MAX_NUM=`grep 'index' $VLAN_SETTING_CONF | awk -F= 'END{print $2}'`
+
+        GetVLANIfaceName()
+        {
+                VLAN_SECTION="[vlan$1]"
+                TMP_IFACE_NAME=`cat $VLAN_SETTING_CONF | awk -v val=$VLAN_SECTION '$1 == val, $1 == ""' |
+                                                                          awk 'BEGIN {FS="="} /interface_name/ {print $2}'      |
+                                                                          awk 'NR==1 {print $0}'`
+        }
+
+        GetVLANID()
+        {
+                VLAN_SECTION="[vlan$1]"
+                TMP_VLAN_ID=`cat $VLAN_SETTING_CONF | awk -v val=$VLAN_SECTION '$1 == val, $1 == ""' |
+                                                                          awk 'BEGIN {FS="="} /vlanid/ {print $2}'           |
+                                                                          awk 'NR==1 {print $0}'`
+        }
+
+        COUNTER=0
+        while [  $COUNTER -le $MAX_NUM ]; do
+                GetVLANIfaceName $COUNTER
+                GetVLANID       $COUNTER
+                if  [ "$TMP_IFACE_NAME" == "$iface1" ]  && [ "$TMP_VLAN_ID" -gt 0 ];
+                then
+                        vlaniface1="$TMP_IFACE_NAME.$TMP_VLAN_ID"
+                elif [ "$TMP_IFACE_NAME" == "$iface2" ]  && [ "$TMP_VLAN_ID" -gt 0 ];
+                then
+                        vlaniface2="$TMP_IFACE_NAME.$TMP_VLAN_ID"
+                fi
+
+                let COUNTER=COUNTER+1
+        done
+
+        if [ -n "$vlaniface1" ] && [ -n "$vlaniface2" ];
+        then
+                interface="$vlaniface1 $vlaniface2"
+        elif [ -n "$vlaniface1" ];
+        then
+                interface="$vlaniface1 $iface2"
+        elif [ -n "$vlaniface2" ];
+        then
+                interface="$vlaniface2 $iface1"
+        fi
+fi
+
+
+test -f /var/run/dhcp6c.eth.pid && kill `cat /var/run/dhcp6c.eth.pid`
+dhcp6c -p /var/run/dhcp6c.eth.pid $interface $REG_BMC_HOSTNAME
+
+exit 0
+

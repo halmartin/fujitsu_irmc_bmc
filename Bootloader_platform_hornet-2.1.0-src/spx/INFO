@@ -1,0 +1,23 @@
+Source                   	:	Bootloader_platform_hornet
+Version : 2.1.0
+SPX-Version              	:	4.0
+SPX-Format               	:	2.0
+Owner                    	:	AMI
+Maintainer               	:	Samvinesh Christopher  (vineshc@ami.com)
+License                  	:	GPL-V2
+Source-Location          	:	AMI
+Source-Version           	:	1.1.6
+Builds                   	:	@Bootloader_platform_hornet
+Build-Depends            	:	@Bootloader_soc_pilot_iii
+Architecture             	:	ANY
+Urgency : medium
+Description              	:	Hornet (Pilot III Reference Board) Fixes to Bootloader (U-boot 1.1.6)
+.
+
+Package                  	:	@Bootloader_platform_hornet
+Section                  	:	info
+Group                    	:	BASE
+Essential                	:	NO
+Description              	:	Hornet (Pilot III Reference Board) Fixes to Bootloader (U-boot 1.1.6)
+.
+

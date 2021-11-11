@@ -1,0 +1,34 @@
+--- uboot/cpu/arm926ejs/PILOTIII/misc.c	2013-01-22 00:05:59.896459044 -0500
++++ uboot_new/cpu/arm926ejs/PILOTIII/misc.c	2013-01-22 00:08:15.987576193 -0500
+@@ -3,6 +3,8 @@
+ #include <linux/types.h>
+ #include "soc_hw.h"
+ 
++extern int rconsole(void);
++
+ /* List of gpio pins which are going to activate in uboot of particular Pilot-III SOC*/
+ GPIO GpioTable[] = {
+ 
+@@ -173,6 +175,22 @@
+ return 0;
+ }
+ 
++void CheckForEmergencyMode(void)
++{
++    /* OEM's can overwrite this condition accordingly to enter BMC recovery/emergency mode dynamically */
++    /* Eg: considering GPIO value to move BMC into recovery mode for every reboot */
++    //if()
++    //rconsole();  /* Remote Recovery Console */
++
++return;
++}
++
++void platformSpecificInit(void)
++{
++    CheckForEmergencyMode();
++
++return;
++}
+ 
+ void
+ soc_init(void)

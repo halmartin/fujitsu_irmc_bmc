@@ -1,0 +1,7 @@
+# Install Script
+
+build-install:
+	MKDIR_NOCLEAN %SPXINC/ps2hw
+	COPY_DIR ./ %SPXINC/ps2hw
+	
+debug-install:

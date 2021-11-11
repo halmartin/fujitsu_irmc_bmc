@@ -1,0 +1,236 @@
+Package: pwmtach_hw (6.2.0.0.0); urgency = low
+
+Abstract:
+	This package includes the hardware level PWMTACH driver for Pilot SoC.
+
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 16 Feb 2019 00:38:27 UTC
+
+Package: pwmtach_hw (6.2.0.0.0); urgency = low
+
+Abstract:
+	Adding previous Changelog
+
+Files Modified: spx/CHANGELOG
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 08 Dec 2018 19:46:53 UTC
+
+Package: pwmtach_hw (6.1.0.0.0); urgency = medium
+
+Abstract:
+	Fix for EIP [410480,410526]- Fixing Memory leaks and support for Pilot-IV in pwmtach_hw package 
+
+Files Modified: data/pwmtach_hw.h, spx/FILES, spx/INFO
+
+--Submitter: Abhilash Padmakar Nimbalkar (abhilashpadmakarn)(abhilashpadmakarn@amiindia.co.in) Wed, 23 May 2018 13:46:49 UTC
+
+Package: pwmtach_hw (6.0.0.0.0); urgency = low
+
+Abstract:
+	This package includes the hardware level PWMTACH driver for Pilot SoC.
+
+Files Added: data, data/Makefile, data/pwmtach_hw.h, data/pwmtach_hw_prop.h, data/pwmtachmain_hw.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/pwmtach_hw, spx/PACKAGES.D/pwmtach_hw/DATA, spx/PACKAGES.D/pwmtach_hw/DATA/keep.folder, spx/PACKAGES.D/pwmtach_hw/SCRIPTS, spx/PACKAGES.D/pwmtach_hw/SCRIPTS/dev-install, spx/PACKAGES.D/pwmtach_hw_dev, spx/PACKAGES.D/pwmtach_hw_dev/DATA, spx/PACKAGES.D/pwmtach_hw_dev/DATA/keep.folder, spx/PACKAGES.D/pwmtach_hw_dev/SCRIPTS, spx/PACKAGES.D/pwmtach_hw_dev/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Winston (winstont)(winstont@ami.com) Mon, 09 Apr 2018 23:26:46 UTC
+
+Package: pwmtach_hw (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:35:02 UTC
+
+Package: pwmtach_hw (2.7.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: spx/PACKAGES.D/pwmtach_hw/DATA/keep.folder
+Files Deleted: spx/PACKAGES.D/pwmtach_hw/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 17:50:51 EDT
+
+Package: pwmtach_hw (2.6.0); urgency = low
+
+Abstract:
+	Corrected sleep for waiting the status flag update.
+
+Files Modified: data/yarkon_pwmtach.c
+
+--Submitter: akshay p (akshayp@amiindia.co.in) Tue, 12 Apr 2016 18:44:27 GMT-5
+
+Package: pwmtach_hw (2.5.0); urgency = low
+
+Abstract:
+	Fixes for tachometer driver.
+
+Files Modified: data/yarkon_pwmtach.c, data/yarkon_pwmtach.h
+
+--Submitter: akshay p (akshayp@amiindia.co.in) Mon, 11 Apr 2016 18:44:23 GMT-5
+
+Package: pwmtach_hw (2.4.0); urgency = medium
+
+Abstract:
+	Added PWM and TACH support for Poleg.
+
+Files Modified: data/yarkon_pwmtach.c, data/yarkon_pwmtach.h
+
+--Submitter: muthuchamyk (muthusamyk@amiindia.co.in) Thu, 03 Mar 2016 17:13:00 HMT
+
+Package: pwmtach_hw (2.3.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/PACKAGES.D/pwmtach_hw/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 22:54:10 EST
+
+Package: pwmtach_hw (2.2.0); urgency = low
+
+Abstract:
+	Modified NUVOTON drivers to make compatible for kernel version 3.4.11.
+
+Files Modified: data/yarkon_pwmtach.c, data/yarkon_pwmtach.h
+
+--Submitter: akshay p (akshayp@amiindia.co.in) Thu, 01 Oct 2015 18:18:40 HMT
+
+Package: pwmtach_hw (2.1.0); urgency = low
+
+Abstract:
+	Updated Copyrights year
+
+Files Modified: data/yarkon_pwmtach.c, data/yarkon_pwmtach.h, spx/INFO
+
+--Submitter: prateekv (prateekv@amiindia.co.in) Tue, 16 Dec 2014 19:32:05 HMT
+
+Package: pwmtach_hw (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 06:13:41 GMT
+
+Package: pwmtach_hw (1.11.0); urgency = medium
+
+Abstract:
+	INFO file for SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: shravan (shravan@amiindia.co.in) Fri, 17 Oct 2014 17:50:40 HMT
+
+Package: pwmtach_hw (1.10.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 07:42:49 GMT
+
+Package: pwmtach_hw (1.9.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 05:54:59 GMT
+
+Package: pwmtach_hw (1.8.0); urgency = medium
+
+Abstract:
+	Adding DevNodes to Build-Depends and Required fields
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Thu, 03 Oct 2013 23:43:36 EDT
+
+Package: pwmtach_hw (1.7.0); urgency = medium
+
+Abstract:
+	Updated to support Debian Wheezy target and new complier
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Sun, 22 Sep 2013 01:56:37 EDT
+
+Package: pwmtach_hw (1.6.0); urgency = medium
+
+Abstract:
+	Fixed build error, Changed function declarations.
+
+Files Modified: data/yarkon_pwmtach.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Tue, 06 Sep 2011 17:52:53 IST
+
+Package: pwmtach_hw (1.5.0); urgency = medium
+
+Abstract:
+	Added Get status IOCTL for tach and pwm, Added 4 generic IOCTL command to set appropriate properties of PWM and TACH.
+
+Files Modified: data/yarkon_pwmtach.c
+
+--Submitter: gokul (gokulakannans@amiindia.co.in) Mon, 05 Sep 2011 15:19:43 IST
+
+Package: pwmtach_hw (1.4.0); urgency = high
+
+Abstract:
+	Correction in licensing.
+
+Files Added: spx/LICENSES/LICENSE.GPL-V2
+Files Deleted: spx/LICENSES/LICENSE.AMI
+Files Modified: data/yarkon_pwmtach.c, spx/INFO
+
+--Submitter: winston (winstonv@amiindia.co.in) Fri, 24 Jun 2011 17:32:22 IST
+
+Package: pwmtach_hw (1.3.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 15:30:30 EDT
+
+Package: pwmtach_hw (1.2.0); urgency = medium
+
+Abstract:
+	Copied driver to generic location instead of kernel specific location
+
+Files Modified: spx/PACKAGES.D/pwmtach_hw/SCRIPTS/dev-install
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 27 Oct 2010 16:28:04 EDT
+
+Package: pwmtach_hw (1.1.0); urgency = low
+
+Abstract:
+	Incrementing Minor and setting Aux to Zero
+
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 21 Sep 2010 14:12:00 EDT
+
+Package: pwmtach_hw (1.0.1); urgency = medium
+
+Abstract:
+	Change default counter resolution value of Hermon/Yarkon pwmtach hw driver to 255.
+In an attempt to match common driver new ioctl: SET_DUTY_CYCLE_BY_PWM_CHANNEL 
+In this new ioctl, it is assumed that each driver's default counter resolution is 255 for (ast,pillot,NUVOTON) pwmtach hw driver.
+
+Files Modified: data/yarkon_pwmtach.c
+
+--Submitter: joywu (joywu) Wed, 01 Sep 2010 21:25:32 CST
+
+Package: pwmtach_hw (1.0.0); urgency = new
+
+Abstract:
+	This package contains the PWMTACH hardware driver for NUVOTON SoC.
+
+Files Added: data, data/Makefile, data/yarkon_pwmtach.c, data/yarkon_pwmtach.h, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/PACKAGES.D, spx/PACKAGES.D/pwmtach_hw, spx/PACKAGES.D/pwmtach_hw/DATA, spx/PACKAGES.D/pwmtach_hw/SCRIPTS, spx/PACKAGES.D/pwmtach_hw/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: joywu (joywu@ami.com.tw) Wed, 21 Apr 2010 16:20:02 EDT
+

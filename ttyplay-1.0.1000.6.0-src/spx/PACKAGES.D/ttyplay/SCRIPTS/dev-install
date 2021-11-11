@@ -1,0 +1,7 @@
+# Install Script
+
+build-install:
+	COPY_FILE ./ttyplay %IMAGE_TREE/usr/local/bin
+
+debug-install:
+

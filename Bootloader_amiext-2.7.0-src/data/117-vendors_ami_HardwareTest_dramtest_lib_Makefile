@@ -1,0 +1,40 @@
+diff -Naur uboot.org/vendors/ami/HardwareTest/lib/Makefile uboot/vendors/ami/HardwareTest/lib/Makefile
+--- uboot.org/vendors/ami/HardwareTest/lib/Makefile	1970-01-01 08:00:00.000000000 +0800
++++ uboot/vendors/ami/HardwareTest/lib/Makefile	2014-01-27 15:09:50.973236926 +0800
+@@ -0,0 +1,36 @@
++# Makefile for AMI ractrends board
++include $(TOPDIR)/config.mk
++
++O_TARGET= lib.o
++
++COBJS	 =  
++COBJS	+= DRAM_SPI.o
++COBJS	+= IO.o
++COBJS	+= LIB.o
++COBJS	+= PCI_SPI.o
++COBJS	+= SPIM.o
++COBJS	+= STDUBOOT.o
++
++OBJS	 = $(AOBJS) $(COBJS)
++
++CPPFLAGS += -I..
++
++CFLAGS += -I$(TOPDIR)/include/
++CFLAGS += -I$(TOPDIR)/vendors/ami/HardwareTest/lib
++
++all:	$(O_TARGET) 
++
++$(O_TARGET): .depend $(OBJS)
++	$(LD) -r -o $@ $(OBJS)
++
++distclean clean :
++	rm -f $(OBJS) $(O_TARGET)
++
++#########################################################################
++
++.depend:	Makefile $(AOBJS:.o=.S) $(COBJS:.o=.c)
++	$(CC) -M $(CFLAGS) $(AOBJS:.o=.S) $(COBJS:.o=.c) > $@
++
++sinclude .depend
++
++#########################################################################

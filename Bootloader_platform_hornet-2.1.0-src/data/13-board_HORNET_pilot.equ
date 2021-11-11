@@ -1,0 +1,144 @@
+--- u-boot-1.1.6/board/HORNET/pilot.equ	1969-12-31 19:00:00.000000000 -0500
++++ u-boot-1.1.6-PilotIII/board/HORNET/pilot.equ	2010-04-05 16:47:24.000000000 -0400
+@@ -0,0 +1,141 @@
++TLPCROM			=	0x00000000              @@ d
++DDRRAM			=	0x80000000              @@ d
++SRAM			=	0x02000000              @@ d
++LMEMSTART		=	0x10000000              @@ d
++VIC			=	0x40000000              @@ d
++INTbase			=	0x40000000              @@ d
++LPCREGBASE     	        =	0x40100000              @@ d
++MemoryLPCROM     	=        0x40100000             @@ d
++MemoryDDRSRAM  		=        0x40200000             @@ d
++MemoryEDRAM     	=        0x40300000             @@ d
++AHBSecAHBBridge		=        0x40400000 
++AHBPeriAPBBridge  	=        0x40430000             @@ d
++Ethernet 		=        0x40500000             @@ d
++FrameGrabber      	=        0x40900000             @@ d
++DMAController     	=        0x40400000             @@ d
++AHBSysAPBBridge		=        0x40410000             @@ d
++AHBSIOAPBBridge   	=        0x40420000             @@ d
++GPIO          		=        0x40420000             @@ d
++UART1          		=        0x40421000             @@ d
++UART2          		=        0x40422000             @@ d
++PSR               	=        0x40426500             @@ d
++SystemWakeup      	=        0x40425000             @@ d
++SWCBASE			=	SystemWakeup
++Mailbox          	=        0x40426000             @@ d
++WatchdogTimerMSFT 	=        0x40427000             @@ d
++RealTimeClock     	=        0x40428000             @@ d
++RTCbase         	=       RealTimeClock
++RTCSTDbase         	=        0x40428100             @@ d
++RTCEXTbase              =        0x40428180             @@ d
++HSPIbase                =        0x40429000             @@ d
++TAPbase                 =        0x40429100             @@ d
++WatchdogTimer     	=        0x40410000             @@ d
++Timer1Base        	=        0x40411000             @@ d
++PS2Interface      	=        0x40412000             @@ d
++FanTachandPWM     	=        0x40413000             @@ d
++ADCandThermal     	=        0x40414000             @@ d
++VirtualUART1      	=        0x40415000             @@ d
++VirtualUART2      	=        0x40416000             @@ d
++Bomber                  =        0x40417000             @@ d
++PECIBASE                =        0x40418000             @@ d
++UART3          		=        0x40430000             @@ d
++UART4          		=        0x40431000             @@ d
++UART5          		=        0x40432000             @@ d
++I2C1          		=        0x40433000             @@ d
++I2C2          		=        0x40434000             @@ d
++I2C3          		=        0x40435000             @@ d
++I2C4            	=        0x40436000             @@ d
++I2C5            	=        0x40437000             @@ d
++I2C6            	=        0x40438000             @@ d
++SPIBASE			=	 0x40439000             @@ d
++KCS1BASE		=	 0x40426000             @@ d
++KCS3BASE		=	 0x40426200             @@ d
++KCS4BASE		=	 0x40426300             @@ d
++KCS5BASE		=	 0x40426400             @@ d
++SYSCONTROL		=	 0x40100100             @@ d    
++SCLKSTS			=	 0x40100104             @@ d
++SCLKCTL			=	 0x40100108             @@ d
++PLLSTS			=	 0x40100110             @@ d
++USBDevice               =        0x40700000             @@ d
++MAC_RGMII_CTRL      =  0x40100188
++
++SYS_PLLLOCK =            (1<<14)
++DDR_PLLLOCK  =           (1<<29)
++PLLLOCK       =          (SYS_PLLLOCK + DDR_PLLLOCK)
++
++
++
++I2C1base                =       I2C1
++I2C2base                =       I2C2
++I2C3base                =       I2C3
++I2C4base                =       I2C4
++I2C5base                =       I2C5
++I2C6base                =       I2C6
++UART1base               =       UART1
++UART2base               =       UART2
++UART3base               =       UART3
++UART4base               =       UART4
++UART5base               =       UART5
++UART6base	        =	VirtualUART1
++UART7base	        =	VirtualUART2
++
++#;PIOLOT VERIFICATION.EQU
++Mode_USR32		=	0x10
++Mode_FIQ32		=	0x11
++Mode_IRQ32		=	0x12
++Mode_ABT32		=	0x17
++Mode_UND32		=	0x1b
++Mode_SVC32		=	0x13
++
++I_Bit			=	0x80
++F_Bit			=	0x40
++
++			#; See SDT reference manual section 8 (Angel)
++			#; Angel SWIs
++AngelSWI_ARMSWI		=	0x123456
++AngelSWI_ThumbSWI	=	0xAB
++AngelSWI_SYS_OPEN	=	0x01
++AngelSWI_SYS_CLOSE	=	0x02
++AngelSWI_SYS_WRITEC	=	0x03
++AngelSWI_SYS_WRITE0	=	0x04
++AngelSWI_SYS_WRITE	=	0x05
++AngelSWI_SYS_READ 	=	0x06
++AngelSWI_SYS_READC	=	0x07
++AngelSWI_SYS_ISERROR	=	0x08
++AngelSWI_SYS_ISTTY	=	0x09
++AngelSWI_SYS_SEEK	=	0x0A
++AngelSWI_SYS_FLEN	=	0x0C
++AngelSWI_SYS_TMPNAM	=	0x0D
++AngelSWI_SYS_REMOVE	=	0x0E
++AngelSWI_SYS_RENAME	=	0x0F
++AngelSWI_SYS_CLOCK	=	0x10
++AngelSWI_SYS_TIME	=	0x11
++AngelSWI_SYS_SYSTEM	=	0x12
++AngelSWI_SYS_ERRNO	=	0x13
++AngelSWI_SYS_GET_CMDLINE =	0x15
++AngelSWI_SYS_HEAPINFO	=	0x16
++AngelSWI_EnterSVC	=	0x17
++AngelSWI_ReportException =	0x18
++AngelSWI_ApplDevice	=	0x19
++AngelSWI_LateStartup	=	0x20
++AngelSWI_ADPAppExit	=	0x20026
++
++fopenReadbin		=	1
++
++TubeBase                =       0x40000000    @temporay
++TubeCharOff		=	0x00
++TubeHexOff		=	0x04
++TubeQuadOff		=	0x08
++TubeAddressChar		=	TubeBase + TubeCharOff
++TubeAddressHex		=	TubeBase + TubeHexOff
++TubeAddressQuad		=	TubeBase + TubeQuadOff
++			
++TubeNewline		=	10
++TubeTerminate		=	4
++
++SYS_IRQ_STS     =       0x40100140
++
++
++@SYSCONTROL SPECIFIC MOVE THEM TO SEPARATE FILE
++PIDBG0         =   0x54
++RSTCTL          =     0x5C

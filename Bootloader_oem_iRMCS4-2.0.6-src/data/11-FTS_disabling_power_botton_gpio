@@ -1,0 +1,15 @@
+--- uboot.org/board/HORNET/init.S	2014-12-03 17:51:47.156117121 +0100
++++ uboot/board/HORNET/init.S	2014-12-03 18:24:16.297080829 +0100
+@@ -72,6 +72,12 @@
+         bic       r2,r2,#0x80
+         msr        cpsr,r2
+ 
++@Prevent power button signal to the external ACPI controler until the FW unlock this
++        ldr     r0,=0x40425026        @ use P3 SLP_ST_CFG register
++        mov     r1,#0x28
++        strb    r1,[r0]               @disable Power Button and PowerButton Event
++
++
+ @Graphics Controller's P3 ID
+         ldr     r0,=0x40100152
+         mov     r1,#0x2

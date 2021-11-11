@@ -1,0 +1,22 @@
+--- uboot_old/lib_arm/armlinux.c	2012-04-06 10:43:45.426009842 +0530
++++ uboot/lib_arm/armlinux.c	2012-04-06 10:44:28.947672198 +0530
+@@ -343,7 +343,18 @@
+ static void setup_commandline_tag (bd_t *bd, char *commandline)
+ {
+ 	char *p;
+-
++	char phyreg0[16],*pReg;
++	char pTemp[256];
++	pReg = getenv((char *)"phyreg0");
++	if ( (pReg != NULL) && (NULL == strstr(commandline, "phyreg0")) )
++	{
++		sprintf(phyreg0, " phyreg0=%s", pReg);
++		memset((void *)pTemp, 0, 256);
++		strcpy(pTemp, commandline);
++		strcat(pTemp, phyreg0);
++		commandline = pTemp;	
++	}
++	
+ 	if (!commandline)
+ 		return;
+ 

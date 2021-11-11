@@ -1,0 +1,24 @@
+diff -Naur linux_orig/drivers/mtd/spichips/pilot3spi.c linux/drivers/mtd/spichips/pilot3spi.c
+--- linux_orig/drivers/mtd/spichips/pilot3spi.c	2018-08-16 11:51:18.225027873 +0530
++++ linux/drivers/mtd/spichips/pilot3spi.c	2018-08-16 11:47:46.931829712 +0530
+@@ -159,7 +159,7 @@
+   if (CONFIG_FLASH_OPERATION_MODE_MASK & 0xE)
+   {
+     printk("Fast clk is set\n");
+-    pilot_change_spi_source_clk100mhz(0);
++    //pilot_change_spi_source_clk100mhz(0);
+     Regs->CmdCtrl|=0x4;
+   }
+ #endif  
+diff -Naur linux_orig/drivers/mtd/spichips/winbond.c linux/drivers/mtd/spichips/winbond.c
+--- linux_orig/drivers/mtd/spichips/winbond.c	2018-08-16 11:33:34.128986439 +0530
++++ linux/drivers/mtd/spichips/winbond.c	2018-08-16 11:46:37.716026734 +0530
+@@ -38,7 +38,7 @@
+ 	{ "Winbond W25Q128", 0xEF, 0x1840, 0x0001000F, 0x1000000, 104 * 1000000,  1, 0x00, {{ 0, 64  * 1024, 256 },} },
+ 	{ "Winbond W25Q256", 0xEF, 0x1940, 0x001F001F, 0x2000000, 50 * 1000000,  1, 0x02, {{ 0, 64  * 1024, 512 },} },
+ 	{ "Winbond W25Q257", 0xEF, 0x1940, 0x001F001F, 0x2000000, 50 * 1000000,  1, 0x01, {{ 0, 64  * 1024, 512 },} },
+-	{ "Winbond W25M512", 0xEF, 0x1971, 0x001F001f, 0x4000000, 50 * 1000000,  2, 0x06, {{ 0, 64  * 1024, 512 },{ 0x2000000, 64  * 1024, 512 },} },
++	{ "Winbond W25M512", 0xEF, 0x1971, 0x001F001d, 0x4000000, 50 * 1000000,  2, 0x06, {{ 0, 64  * 1024, 512 },{ 0x2000000, 64  * 1024, 512 },} },
+ };
+ 
+ static

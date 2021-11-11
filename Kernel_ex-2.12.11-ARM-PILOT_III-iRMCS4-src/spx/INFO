@@ -1,0 +1,55 @@
+Source : Kernel_ex
+Version : 2.12.11
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : Suresh V (sureshv@amiindia.co.in)
+License : GPL-V2
+Source-Location : AMI
+Source-Version : 1.0.0
+Builds : Kernel_dev_ex, Kernel_ex, Kernel_modules_ex
+Build-Depends : buildtools, Crosscc, Kernel_platform_hornet_ex, Kernel_oem_iRMCS4_ex
+Customization-Type : CONFIG
+Architecture : ARM
+SOC : PILOT_III
+PLATFORM : iRMCS4
+Urgency : medium
+Description : HORNET Platform Kernel 3.4.74 configuration
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : Kernel_dev_ex
+Section : dev
+Group : DEVEL
+Essential : YES
+Feature-Required : CONFIG_SPX_FEATURE_GLOBAL_KERNEL_VER3
+Required : DevNodes
+Provides : kernel_dev
+Description : Provides the Kernel Development files - Needed for driver developement
+.
+
+Package : Kernel_ex
+Section : app
+Group : BASE
+Essential : YES
+Feature-Required : CONFIG_SPX_FEATURE_GLOBAL_KERNEL_VER3
+Provides : kernel
+Description : Package Description.
+.
+
+Package : Kernel_modules_ex
+Section : app
+Group : BASE
+Essential : YES
+Feature-Required : CONFIG_SPX_FEATURE_GLOBAL_KERNEL_VER3
+Provides : kernel_modules
+Description : Package Description.
+.
+

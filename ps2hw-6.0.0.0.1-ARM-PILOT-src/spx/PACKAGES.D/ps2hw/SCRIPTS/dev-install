@@ -1,0 +1,9 @@
+# Install Script
+
+build-install:
+	COPY_DIR ./ %IMAGE_TREE/lib/modules/generic/misc/
+	ADD_MODULES ps2hw
+	MAKE_CHAR_NODE ps20 55 0
+	MAKE_CHAR_NODE ps21 55 1
+
+debug-install:

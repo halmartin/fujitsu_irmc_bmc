@@ -1,0 +1,11 @@
+--- linux-3.14.17/arch/arm/mm/Kconfig	2014-08-14 07:08:34.000000000 +0530
++++ linux-3.14.17.new/arch/arm/mm/Kconfig	2014-09-04 11:59:42.541814972 +0530
+@@ -127,7 +127,7 @@
+ 
+ # ARM926T
+ config CPU_ARM926T
+-	bool "Support ARM926T processor" if ARCH_INTEGRATOR || MACH_REALVIEW_EB
++  bool "Support ARM926T processor" if ARCH_INTEGRATOR || MACH_REALVIEW_EB || SOC_SE_PILOT3
+ 	select CPU_32v5
+ 	select CPU_ABRT_EV5TJ
+ 	select CPU_CACHE_VIVT

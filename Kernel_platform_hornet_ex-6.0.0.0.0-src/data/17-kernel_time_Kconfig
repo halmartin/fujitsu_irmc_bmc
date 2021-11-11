@@ -1,0 +1,20 @@
+--- linux_oooo/kernel/time/Kconfig	2016-04-11 10:09:07.964061831 +0530
++++ linux/kernel/time/Kconfig	2016-04-11 10:24:58.392059732 +0530
+@@ -30,7 +30,7 @@
+ 
+ # The generic clock events infrastructure
+ config GENERIC_CLOCKEVENTS
+-	bool
++	bool y
+ 
+ # Migration helper. Builds, but does not invoke
+ config GENERIC_CLOCKEVENTS_BUILD
+@@ -63,7 +63,7 @@
+ # only related to the tick functionality. Oneshot clockevent devices
+ # are supported independ of this.
+ config TICK_ONESHOT
+-	bool
++	bool y
+ 
+ config NO_HZ_COMMON
+ 	bool

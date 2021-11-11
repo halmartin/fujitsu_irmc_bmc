@@ -1,0 +1,48 @@
+Source : phyctrl
+Version : 1.10.0.6.0
+SPX-Version : 4.0
+SPX-Format : 1.0
+Builds : phyctrl, phyctrl_driver_dev
+Build-Depends : Crosscc, global_dev, helper_driver_dev, kernel_dev, rules
+Essential : NO
+Config-Tag : PHY Configuration Driver
+Owner : AMI
+Maintainer : Gokula Kannan. S  (gokulakannans@amiindia.co.in)
+Source-Location : FTS
+Source-Version : 1.0.0
+Source-License : GPL-V2
+Package-License : GPL-V2
+Architecture : ALL
+OEM : FTS
+Urgency : low
+Description : PHY configuration driver for FTS platforms.
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,Source-License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Install-Size (Optional) can be automatically calculated
+# Provides,Depends,Required,Conflicts ?
+# ---------------------------------------------------------------------------
+
+Package : phyctrl
+Section : sys
+Essential : NO
+Config-Tag : PHY Configuration Driver
+Group : DEVICE
+Depends : kernel
+Required : helper
+Package-License : AMI
+Description : This package contains initial configuration for PHY hardwares.
+.
+
+Package : phyctrl_driver_dev
+Section : dev
+Essential : NO
+Group : DEVEL
+Package-License : AMI
+Description : This package contains phyctrl driver development header files.
+.
+

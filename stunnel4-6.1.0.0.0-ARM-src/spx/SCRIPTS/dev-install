@@ -1,0 +1,10 @@
+# Install Script
+
+build-install:
+    MKDIR_NOCLEAN %IMAGE_TREE/usr/bin/
+    MKDIR_NOCLEAN %IMAGE_TREE/etc/init.d/
+    COPY_FILE %TARGETDIR/usr/bin/stunnel4 %IMAGE_TREE/usr/bin/
+    #EXECUTE if [ "%CONFIG_SPX_FEATURE_OPENSSL_0_9_8" == "YES" ]; then cp ./binary/stunnel4 %IMAGE_TREE/usr/bin; fi
+    COPY_FILE ./script/stunnel4 %IMAGE_TREE/etc/init.d/
+
+debug-install:

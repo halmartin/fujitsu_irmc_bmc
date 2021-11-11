@@ -1,0 +1,265 @@
+Package: i2c_mux_pca954x (1.0.1000.7.0); urgency = low
+
+Abstract:
+	For patch_base 09.60j: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 20 Nov 2019 10:59:37 CET
+
+Package: i2c_mux_pca954x (1.0.1000.6.0); urgency = low
+
+Abstract:
+	For patch_base 09.60g: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 03 Sep 2019 13:43:09 CEST
+
+Package: i2c_mux_pca954x (1.0.1000.5.0); urgency = low
+
+Abstract:
+	For patch_base 02.41P: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 14 Mar 2019 13:22:24 CET
+
+Package: i2c_mux_pca954x (1.0.1000.4.0); urgency = low
+
+Abstract:
+	For patch_base 02.20c: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Dec 2018 11:21:44 CET
+
+Package: i2c_mux_pca954x (1.0.1000.3.0); urgency = medium
+
+Abstract:
+	Included Pilot-III specific fix.
+
+Files Modified: data/pca954x_proc.h
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Tue, 18 Sep 2018 17:43:47 IST
+
+Package: i2c_mux_pca954x (1.0.1000.2.0); urgency = low
+
+Abstract:
+	For patch_base 02.00b: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 28 Aug 2018 13:41:29 CEST
+
+Package: i2c_mux_pca954x (1.0.1000.1.0); urgency = low
+
+Abstract:
+	For patch_base 01.60b oem version number incremented, OemAux version number set to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 21 Jun 2018 09:44:18 CEST
+
+Package: i2c_mux_pca954x (1.0.1000.0.0); urgency = low
+
+Abstract:
+	adapt spx package with five digits
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 20 Mar 2018 13:16:03 CET
+
+Package: i2c_mux_pca954x (1.0.1000); urgency = low
+
+Abstract:
+	For 01.20a_09.20a increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Sep 2017 16:39:21 CEST
+
+Package: i2c_mux_pca954x (1.0.900); urgency = low
+
+Abstract:
+	For 01.20aPre_R62446__base increment auxiliary version by 100
+
+
+--Submitter: Martin Clemens (Martin.Clemens.external@ts.fujitsu.com) Fri, 25 Aug 2017 17:14:56 CEST
+
+Package: i2c_mux_pca954x (1.0.800); urgency = low
+
+Abstract:
+	For 09.00b_R61776_base increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 02 Aug 2017 09:53:52 CEST
+
+Package: i2c_mux_pca954x (1.0.700); urgency = low
+
+Abstract:
+	For 01.04b_R59755_base increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Fri, 19 May 2017 12:35:06 CEST
+
+Package: i2c_mux_pca954x (1.0.601); urgency = low
+
+Abstract:
+	Change user-visible copyright and vendor strings
+
+Files Added: spx/PACKAGES.D/i2c_mux_pca954x/DATA/keep.folder
+Files Modified: data/pca954x.c, spx/INFO
+
+--Submitter: Andrzej Kosowski (Andrzej.Kosowski@ts.fujitsu.com) Sat, 11 Mar 2017 12:19:36 CET
+
+Package: i2c_mux_pca954x (1.0.600); urgency = low
+
+Abstract:
+	For FW 8.61F increment auxiliary version by 100
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Thu, 01 Sep 2016 09:02:32 CEST
+
+Package: i2c_mux_pca954x (1.0.500); urgency = low
+
+Abstract:
+	For FW increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Tue, 07 Jun 2016 09:30:30 CEST
+
+Package: i2c_mux_pca954x (1.0.400); urgency = low
+
+Abstract:
+	For 08.20F_R49270__base increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Sun, 06 Mar 2016 16:36:04 CET
+
+Package: i2c_mux_pca954x (1.0.303); urgency = low
+
+Abstract:
+	Add supprot for pca_9544
+
+Files Modified: data/pca954x.c, data/pca954x.h, data/pca954x_proc.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 07 Sep 2015 18:39:41 CEST
+
+Package: i2c_mux_pca954x (1.0.302); urgency = low
+
+Abstract:
+	Indroduce present file, move pca954x folder to i2c_mux folder
+
+Files Modified: data/pca954x_proc.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 18 Aug 2015 16:34:59 CEST
+
+Package: i2c_mux_pca954x (1.0.301); urgency = low
+
+Abstract:
+	Replace i2c_mux driver by Kernel setting: CONFIG_I2C_MUX
+
+Files Modified: data/pca954x.c, data/pca954x_proc.c, spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Wed, 05 Aug 2015 12:41:22 CEST
+
+Package: i2c_mux_pca954x (1.0.300); urgency = low
+
+Abstract:
+	Increment auxiliary version by 100 due to new patch_base 08.00g_R45733__150712
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Mon, 13 Jul 2015 11:26:04 CEST
+
+Package: i2c_mux_pca954x (1.0.202); urgency = low
+
+Abstract:
+	RR9 merge: checkin based on (1.0.201)
+
+Files Modified: data/pca954x_proc.c, spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 30 Mar 2015 19:06:19 CEST
+
+Package: i2c_mux_pca954x (1.0.201); urgency = low
+
+Abstract:
+	Add support for PCA9548
+
+Files Modified: data/pca954x.c, data/pca954x.h, data/pca954x_proc.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 23 Mar 2015 16:54:32 CET
+
+Package: i2c_mux_pca954x (1.0.200); urgency = low
+
+Abstract:
+	Increment auxiliary version by 100 due to new patch_base 07.80b_R41103__base
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Fri, 13 Mar 2015 22:51:16 CET
+
+Package: i2c_mux_pca954x (1.0.100); urgency = low
+
+Abstract:
+	Update aux version to next hundred
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sat, 29 Nov 2014 09:13:38 CET
+
+Package: i2c_mux_pca954x (1.0.6); urgency = low
+
+Abstract:
+	Enable deselect function
+
+Files Modified: data/pca954x.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 12 Aug 2014 18:45:01 CEST
+
+Package: i2c_mux_pca954x (1.0.5); urgency = low
+
+Abstract:
+	Move reset of PCA to first action
+
+Files Modified: data/pca954x.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 03 Jun 2014 11:37:20 CEST
+
+Package: i2c_mux_pca954x (1.0.4); urgency = low
+
+Abstract:
+	Add support of proc fs for config of i2C mux driver
+
+Files Added: data/pca954x_proc.c, data/pca954x_proc.h
+Files Modified: data/Makefile, data/pca954x.c, data/pca954x.h
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 02 Jun 2014 19:31:24 CEST
+
+Package: i2c_mux_pca954x (1.0.3); urgency = low
+
+Abstract:
+	Add reset support for PCA, bind to fix GPIO
+
+Files Modified: data/pca954x.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Wed, 14 May 2014 19:29:30 CEST
+
+Package: i2c_mux_pca954x (1.0.2); urgency = low
+
+Abstract:
+	Remove auto load, add default params
+
+Files Deleted: data/i2c-mux-pca954x.c
+Files Modified: data/pca954x.c, spx/PACKAGES.D/i2c_mux_pca954x/SCRIPTS/dev-install
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 28 Apr 2014 19:40:04 CEST
+
+Package: i2c_mux_pca954x (1.0.1); urgency = low
+
+Abstract:
+	Set fix order to i2c module
+
+Files Modified: spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Thu, 17 Apr 2014 18:53:54 CEST
+
+Package: i2c_mux_pca954x (1.0.0); urgency = new
+
+Abstract:
+	This module supports the PCA954x series of I2C multiplexer.
+
+Files Added: data, data/Makefile, data/i2c-mux-pca954x.c, data/pca954x.c, data/pca954x.h, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/i2c_mux_pca954x, spx/PACKAGES.D/i2c_mux_pca954x/DATA, spx/PACKAGES.D/i2c_mux_pca954x/SCRIPTS, spx/PACKAGES.D/i2c_mux_pca954x/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Sun, 02 Mar 2014 19:04:02 CET
+

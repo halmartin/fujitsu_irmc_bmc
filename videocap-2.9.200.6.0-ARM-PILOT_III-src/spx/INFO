@@ -1,0 +1,45 @@
+Source : videocap
+Version : 2.9.200.6.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : Viswanathan S (viswanathans@ami.com)
+License : GPL-V2
+Source-Location : AMI
+Source-Version : 1.0.0
+Builds : videocap, videocap_driver_dev
+Build-Depends : Crosscc, helper_driver_dev, kernel_dev, libdbgout_dev, rules, DevNodes
+Architecture : ARM
+SOC : PILOT_III
+Urgency : low
+Description : This package contains the videocap driver for Pilot-iii.
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,Source-License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : videocap
+Config-Tag : Video Cap Driver(Pilot III)
+Section : sys
+Group : DEVICE
+Essential : NO
+Depends : kernel, video
+Required : DevNodes
+Provides : VideoDriver
+Description : This package contains the Videocap driver for Pilot-iii
+.
+
+Package : videocap_driver_dev
+Config-Tag : Video Cap Driver(Pilot III)
+Section : dev
+Group : DEVEL
+Essential : NO
+Provides : VideoDriverDevelopment
+Description : This package provides the videocap development header files for Pilot-iii
+.
+

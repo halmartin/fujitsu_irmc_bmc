@@ -1,0 +1,200 @@
+diff -Naur uboot/vendors/ami/IPMI//cmdhandler.c uboot_new/vendors/ami/IPMI//cmdhandler.c
+--- uboot/vendors/ami/IPMI//cmdhandler.c	2013-06-19 12:25:22.000000000 +0200
++++ uboot_new/vendors/ami/IPMI//cmdhandler.c	2013-06-19 13:38:34.000000000 +0200
+@@ -1871,7 +1871,9 @@
+                 break;
+ 
+         default:
+-                return CC_INV_CMD;
++		      *pRes  = CC_INV_CMD;
++		      return sizeof(INT8U);
++
+     }
+ 
+ return  CC_SUCCESS;
+@@ -1896,7 +1898,80 @@
+     return sizeof(AMIYAFUDualImgSupRes_T);
+ }
+ 
++u8 IsIANAValid(u8* pInna)
++{
++    INT8U inan[IPMI_IANA_SIZE]={IANA_BYTE_2,IANA_BYTE_1,IANA_BYTE_0};
++    if(memcmp(inan,pInna,IPMI_IANA_SIZE))
++        return 0;
++
++return 1;
++}
++
++/*---------------------------------------
++ * GetSelfTestResults
++ *---------------------------------------*/
++int
++GetSelfTestResults (unsigned char *pReq, unsigned char ReqLen, unsigned char *pRes)
++{
++    GetSelfTestRes_T*  pGetSelfTest = (GetSelfTestRes_T*) pRes;
++
++    pGetSelfTest->CompletionCode  = CC_NORMAL;
++    pGetSelfTest->TestResultByte1 =    GST_NO_ERROR;
++    pGetSelfTest->TestResultByte2 = 0;
++
++    return ( sizeof (GetSelfTestRes_T) );
++}
++
+ 
++//---------------------------------------
++//  BMC cmds 
++//---------------------------------------
++int OemFTSBmcCmds  (unsigned char *pReq, unsigned char ReqLen, unsigned char *pRes)
++{
++    u8 compCode = CC_SUCCESS;
++    u8 ResLen = 0;
++
++    OEMBMCReq_T *OemBmcCmdReq=(OEMBMCReq_T*)pReq;
++    OEMBMCRes_T *OemBmcCmdRes=(OEMBMCRes_T*)pRes;
++	
++    if( (ReqLen < ReqLength ) || (!IsIANAValid(OemBmcCmdReq->Iana)) )
++    {
++        OemBmcCmdRes->CompletionCode = CC_REQ_INV_LEN;
++        return 1;
++    }
++
++    switch(OemBmcCmdReq->Cmd)
++    {
++        case 0x07:  //Dual Image settings
++		          {	
++				  		AMIDualImageSupReq_T dualImageSupReq = {0};
++						AMIDualImageSupRes_T dualImageSupRes = {0};
++
++						dualImageSupReq.Parameter = OemBmcCmdReq->Data[0];
++						dualImageSupReq.BootSelector = OemBmcCmdReq->Data[1];
++
++						ResLen = AMIDualImageSupport( (INT8U *)&dualImageSupReq, ReqLen-4, (INT8U *)&dualImageSupRes);
++						compCode = 	dualImageSupRes.CompletionCode;
++						
++						if(compCode == CC_SUCCESS)
++						{
++							ResLen = (ResLen > 1)? (ResLen - 1): ResLen;
++							memcpy(&OemBmcCmdRes->Data[0],&dualImageSupRes.BootSelOpt.GetBootSelector,ResLen);
++						}
++				 }		
++        break;
++        default:
++                compCode = CC_INV_CMD;
++        break;
++    }
++
++    OemBmcCmdRes->CompletionCode = compCode;
++    ResLen += 1;
++    memcpy(OemBmcCmdRes->Iana, OemBmcCmdReq->Iana, IPMI_IANA_SIZE);
++    ResLen += IPMI_IANA_SIZE;
++	
++return (ResLen);
++}
+ 
+ /*-----------------------
+  * Command Handler Type
+@@ -1917,6 +1992,8 @@
+ const CmdInfo_T	m_CmdInfo [] = 
+ {
+     { NETFN_APP,		CMD_GET_DEV_ID,		            GET_DEV_ID, 	        	0x00    					},
++    { NETFN_APP,		CMD_GET_SELF_TEST_RESULTS,      GET_SELF_TEST_RESULTS,      0x00	},
++    { NETFN_OEM_FTS,    CMD_OEM_FTS_BMC_CMDS,           OEM_FTS_BMC_CMDS,           0xFF	},		
+ 	{ NETFN_OEM_AMI,	CMD_AMI_INIT_FLASH,				AMI_INIT_FLASH,				0xFF	},
+ 	{ NETFN_OEM_AMI,	CMD_AMI_UPGRADE_BLOCK,			AMI_UPGRADE_BLOCK,			0xFF	},
+ 	{ NETFN_OEM_AMI,	CMD_AMI_EXIT_FLASH,				AMI_EXIT_FLASH,				0xFF	},
+diff -Naur uboot/vendors/ami/IPMI//cmdhandler.h uboot_new/vendors/ami/IPMI//cmdhandler.h
+--- uboot/vendors/ami/IPMI//cmdhandler.h	2013-06-19 12:25:22.000000000 +0200
++++ uboot_new/vendors/ami/IPMI//cmdhandler.h	2013-06-19 13:38:34.000000000 +0200
+@@ -65,6 +65,8 @@
+  * @brief Command code for Get Device ID Command
+  **/
+ #define CMD_GET_DEV_ID				0x01
++#define CMD_GET_SELF_TEST_RESULTS   0x04
++#define CMD_OEM_FTS_BMC_CMDS        0xF5   
+ #define CMD_GET_CH_AUTH_CAPS			0x38
+ #define CMD_GET_SESSION_CHALLENGE		0x39
+ #define CMD_ACTIVATE_SESSION			0x3A
+@@ -108,7 +110,9 @@
+  * @def CMD_GET_DEV_ID
+  * @brief Get Device ID Command Handler
+  **/
+-#define GET_DEV_ID					GetDevID
++#define GET_DEV_ID						GetDevID
++#define GET_SELF_TEST_RESULTS	        GetSelfTestResults	
++#define OEM_FTS_BMC_CMDS                OemFTSBmcCmds
+ #define GET_IMC_STATUS					GetIMCStatus
+ #define SET_TFTP_INFO					SetTFTPInfo
+ #define GET_CH_AUTH_CAPS				GetChAuthCaps
+@@ -175,6 +179,14 @@
+     unsigned long  AuxFirmwareRevision;
+ } PACKED GetDevIDRes_T;
+ 
++
++/* GetSelfTestRes_T */
++typedef struct {
++    INT8U   CompletionCode;
++    INT8U   TestResultByte1;
++    INT8U   TestResultByte2;
++} PACKED  GetSelfTestRes_T;
++
+ typedef struct
+ {
+ 	unsigned int	ServerIPAddr;
+@@ -885,6 +897,28 @@
+ 	YafuHeader DualImgSupRes;
+ }PACKED AMIYAFUDualImgSupRes_T;
+ 
++/* IANA Enterprise Number   */
++#define IANA_BYTE_0   0x00
++#define IANA_BYTE_1   0x28
++#define IANA_BYTE_2   0x80
++#define IPMI_IANA_SIZE 3	// IANA Number = 3 Bytes
++#define CMD_SIZE 1
++
++typedef struct
++{
++	INT8U Iana[IPMI_IANA_SIZE];
++	INT8U Cmd;
++	INT8U Data[CMD_SIZE];
++}OEMBMCReq_T;
++
++typedef struct
++{
++	INT8U CompletionCode;
++	INT8U Iana[IPMI_IANA_SIZE];
++	INT8U Data[CMD_SIZE];
++}OEMBMCRes_T;
++
++
+ #pragma pack()
+ 
+ #define NO_ADDRESS						0xFFFFFFFF
+@@ -1035,6 +1069,17 @@
+ #define ResDataByte_5    (ResDataByte + 5)  
+ #define ResDataByte_6    (ResDataByte + 6)  
+ 
++/**
++ * @def GST_NO_ERROR
++ * @brief Error Code for Get Self Test Results
++ **/
++#define GST_NO_ERROR                    0x55 
++/**
++ * @def GST_CORRUPTED_DEVICES           
++ * @brief Error code for Get Self Test Results 
++ **/
++#define GST_CORRUPTED_DEVICES           0x57 
++
+ extern unsigned char gFWUploadSelector;
+ extern unsigned int gSessionSeqNum;
+ extern unsigned int gSessionID;
+diff -Naur uboot/vendors/ami/IPMI//IPMIDefs.h uboot_new/vendors/ami/IPMI//IPMIDefs.h
+--- uboot/vendors/ami/IPMI//IPMIDefs.h	2013-06-19 12:25:22.000000000 +0200
++++ uboot_new/vendors/ami/IPMI//IPMIDefs.h	2013-06-19 13:38:52.000000000 +0200
+@@ -33,6 +33,7 @@
+ #define NETFN_TRANSPORT					0x0C
+ #define NETFN_GROUP_EXT					0x2C
+ #define NETFN_OEM_AMI					0x32
++#define NETFN_OEM_FTS					0x2E
+ 
+ /**** Command Completion Codes ****/
+ #define	CC_NORMAL										0x00

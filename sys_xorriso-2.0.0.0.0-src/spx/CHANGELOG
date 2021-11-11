@@ -1,0 +1,64 @@
+Package: sys_xorriso (2.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:44:10 UTC
+
+Package: sys_xorriso (1.5.0); urgency = low
+
+Abstract:
+	Changing Group from FEATURES to BASE
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sun, 19 Feb 2017 19:32:40 EST
+
+Package: sys_xorriso (1.4.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: data/keep.folder, spx/PACKAGES.D/sys_xorriso/DATA/keep.folder
+Files Deleted: data/.keep, spx/PACKAGES.D/sys_xorriso/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 18:30:58 EDT
+
+Package: sys_xorriso (1.3.0); urgency = medium
+
+Abstract:
+	Updated to Support Jessie
+
+Files Deleted: spx/RULES.D/softlink.lst
+Files Modified: spx/INFO, spx/RULES.D/files.lst
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 14 Apr 2016 15:50:03 EDT
+
+Package: sys_xorriso (1.2.0); urgency = medium
+
+Abstract:
+	Wrong paramters to Py_CreateSysTree resulting in multiple duplicate files
+
+Files Modified: spx/RULES.py
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Mon, 04 Apr 2016 12:22:42 EDT
+
+Package: sys_xorriso (1.1.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: data/.keep, spx/PACKAGES.D/sys_xorriso/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 23:33:24 EST
+
+Package: sys_xorriso (1.0.0); urgency = new
+
+Abstract:
+	This Package copies binaries and essential libraries of xorriso from target to Imagetree.xorriso helps to create iso images.
+
+Files Added: data, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/sys_xorriso, spx/PACKAGES.D/sys_xorriso/DATA, spx/PACKAGES.D/sys_xorriso/SCRIPTS, spx/PACKAGES.D/sys_xorriso/SCRIPTS/dev-install.py, spx/RULES.D, spx/RULES.D/directory.lst, spx/RULES.D/files.lst, spx/RULES.D/softlink.lst, spx/RULES.py
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Thu, 25 Jun 2015 11:16:52 HMT
+

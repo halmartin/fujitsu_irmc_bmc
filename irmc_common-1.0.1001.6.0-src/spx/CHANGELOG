@@ -1,0 +1,364 @@
+Package: irmc_common (1.0.1001.6.0); urgency = low
+
+Abstract:
+	For patch_base 09.60j: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 20 Nov 2019 10:59:40 CET
+
+Package: irmc_common (1.0.1001.5.1); urgency = medium
+
+Abstract:
+	Updated iRMC debug buffer to user DRAM for iRMCS4, SRAM for iRMCS5
+
+Files Modified: data/ring_buffer.c, data/ring_buffer.h
+
+--Submitter: Siva Prakash (sivaprakash@ircona.com) Thu, 24 Oct 2019 14:56:52 CEST
+
+Package: irmc_common (1.0.1001.5.0); urgency = low
+
+Abstract:
+	For patch_base 09.60g: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 03 Sep 2019 13:43:12 CEST
+
+Package: irmc_common (1.0.1001.4.1); urgency = medium
+
+Abstract:
+	SRAM usage is disabled for Pilot3, because whole SRAM is used by videocap driver
+
+Files Modified: data/ring_buffer.c
+
+--Submitter: Siva Prakash (sivaprakash@ircona.com) Thu, 22 Aug 2019 15:04:35 CEST
+
+Package: irmc_common (1.0.1001.4.0); urgency = low
+
+Abstract:
+	For patch_base 02.41P: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 14 Mar 2019 13:22:28 CET
+
+Package: irmc_common (1.0.1001.3.0); urgency = low
+
+Abstract:
+	For patch_base 02.20c: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Dec 2018 11:21:48 CET
+
+Package: irmc_common (1.0.1001.2.0); urgency = low
+
+Abstract:
+	For patch_base 02.00b: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 28 Aug 2018 13:41:33 CEST
+
+Package: irmc_common (1.0.1001.1.1); urgency = low
+
+Abstract:
+	Copyright update
+
+Files Modified: data/device.c, data/device.h, data/filter.c, data/filter.h, data/irmc_common.h, data/irmc_common_main.c, data/proc.c, data/proc.h, data/ring_buffer.c, data/ring_buffer.h
+
+--Submitter: Wojciech Kunikowski (Wojciech.Kunikowski@ts.fujitsu.com) Thu, 16 Aug 2018 16:31:11 CEST
+
+Package: irmc_common (1.0.1001.1.0); urgency = low
+
+Abstract:
+	For patch_base 01.60b oem version number incremented, OemAux version number set to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 21 Jun 2018 09:44:24 CEST
+
+Package: irmc_common (1.0.1001.0.3); urgency = low
+
+Abstract:
+	Changed UART tx/rx based array to SRAM based memory
+
+Files Modified: data/ring_buffer.c, data/ring_buffer.h
+
+--Submitter: Siva Prakash (sivaprakash@ircona.com) Tue, 12 Jun 2018 23:17:37 CEST
+
+Package: irmc_common (1.0.1001.0.2); urgency = low
+
+Abstract:
+	Copyright update Fix
+
+Files Modified: data/device.c, data/device.h, data/filter.c, data/filter.h, data/irmc_common.h, data/irmc_common_main.c, data/proc.c, data/proc.h, data/ring_buffer.c, data/ring_buffer.h
+
+--Submitter: Wojciech Kunikowski (Wojciech.Kunikowski@ts.fujitsu.com) Mon, 14 May 2018 14:28:27 CEST
+
+Package: irmc_common (1.0.1001.0.1); urgency = low
+
+Abstract:
+	Copyright update
+
+Files Modified: data/device.c, data/device.h, data/filter.c, data/filter.h, data/irmc_common.h, data/irmc_common_main.c, data/proc.c, data/proc.h, data/ring_buffer.c, data/ring_buffer.h
+
+--Submitter: Wojciech Kunikowski (Wojciech.Kunikowski@ts.fujitsu.com) Wed, 09 May 2018 15:40:20 CEST
+
+Package: irmc_common (1.0.1001.0.0); urgency = low
+
+Abstract:
+	adapt spx package with five digits
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 20 Mar 2018 13:16:11 CET
+
+Package: irmc_common (1.0.1001); urgency = low
+
+Abstract:
+	=Fix for kernel crashes caused by debug console outputs.
+
+Files Modified: data/device.c
+
+--Submitter: Mario Malenica (mmalenica@ircona.com) Tue, 07 Nov 2017 11:37:38 CET
+
+Package: irmc_common (1.0.1000); urgency = low
+
+Abstract:
+	For 01.20a_09.20a increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Sep 2017 16:39:40 CEST
+
+Package: irmc_common (1.0.901); urgency = low
+
+Abstract:
+	Added support for UART2 debug console to be logged to the logbuffer.
+
+Files Modified: data/irmc_common_main.c
+
+--Submitter: Stephen Boylan (sboylan@ircona.com) Wed, 30 Aug 2017 16:55:58 CEST
+
+Package: irmc_common (1.0.900); urgency = low
+
+Abstract:
+	For 01.20aPre_R62446__base increment auxiliary version by 100
+
+
+--Submitter: Martin Clemens (Martin.Clemens.external@ts.fujitsu.com) Fri, 25 Aug 2017 17:15:13 CEST
+
+Package: irmc_common (1.0.800); urgency = low
+
+Abstract:
+	For 09.00b_R61776_base increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 02 Aug 2017 09:54:06 CEST
+
+Package: irmc_common (1.0.701); urgency = low
+
+Abstract:
+	Added character device for iRMC Debug Console logging via UART2 to logbuffer
+
+Files Modified: spx/PACKAGES.D/irmc_common/SCRIPTS/dev-install
+
+--Submitter: Stephen Boylan (sboylan@ircona.com) Thu, 08 Jun 2017 09:57:50 CEST
+
+Package: irmc_common (1.0.700); urgency = low
+
+Abstract:
+	For 01.04b_R59755_base increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Fri, 19 May 2017 12:35:17 CEST
+
+Package: irmc_common (1.0.602); urgency = low
+
+Abstract:
+	Added iRMC Debug Console logging via UART2 to logbuffer.
+
+Files Modified: data/device.c, data/device.h, data/irmc_common.h, data/irmc_common_main.c, data/ring_buffer.c, data/ring_buffer.h
+
+--Submitter: Stephen Boylan (sboylan@ircona.com) Thu, 18 May 2017 15:06:03 CEST
+
+Package: irmc_common (1.0.601); urgency = medium
+
+Abstract:
+	Change user-visible copyright and vendor strings
+
+Files Added: spx/PACKAGES.D/irmc_common/DATA/keep.folder, spx/PACKAGES.D/irmc_common_dev/DATA/keep.folder
+Files Modified: data/irmc_common_main.c
+
+--Submitter: Andrzej Kosowski (Andrzej.Kosowski@ts.fujitsu.com) Mon, 06 Mar 2017 10:52:30 CET
+
+Package: irmc_common (1.0.600); urgency = low
+
+Abstract:
+	For FW 8.61F increment auxiliary version by 100
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Thu, 01 Sep 2016 09:02:44 CEST
+
+Package: irmc_common (1.0.500); urgency = low
+
+Abstract:
+	For FW increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Tue, 07 Jun 2016 09:30:43 CEST
+
+Package: irmc_common (1.0.401); urgency = low
+
+Abstract:
+	Removed additional kernel version check for console logging init
+
+Files Modified: data/irmc_common_main.c
+
+--Submitter: Stephen Boylan (sboylan@ircona.com) Tue, 26 Apr 2016 15:11:08 CEST
+
+Package: irmc_common (1.0.400); urgency = low
+
+Abstract:
+	For 08.20F_R49270__base increment auxiliary version by 100
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Sun, 06 Mar 2016 16:36:13 CET
+
+Package: irmc_common (1.0.300); urgency = low
+
+Abstract:
+	Increment auxiliary version by 100 due to new patch_base 08.00g_R45733__150712
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Mon, 13 Jul 2015 11:27:01 CEST
+
+Package: irmc_common (1.0.201); urgency = low
+
+Abstract:
+	RR9 merge: checkin based on (1.1.4)
+
+Files Modified: data/Makefile, data/device.c, data/irmc_common_main.c, data/proc.c, spx/INFO, spx/PACKAGES.D/irmc_common/SCRIPTS/dev-install
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 31 Mar 2015 15:20:02 CEST
+
+Package: irmc_common (1.0.200); urgency = low
+
+Abstract:
+	Increment auxiliary version by 100 due to new patch_base 07.80b_R41103__base
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Fri, 13 Mar 2015 22:51:57 CET
+
+Package: irmc_common (1.0.100); urgency = low
+
+Abstract:
+	Update aux version to next hundred
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sat, 29 Nov 2014 09:14:42 CET
+
+Package: irmc_common (1.0.11); urgency = low
+
+Abstract:
+	Add support for direct power on if power button is press during FW boot
+
+Files Modified: data/Makefile, data/irmc_common.h, data/irmc_common_main.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Fri, 26 Sep 2014 14:41:42 CEST
+
+Package: irmc_common (1.0.10); urgency = low
+
+Abstract:
+	fix license, FTS -> GPL-V2 (binary package)
+
+Files Deleted: spx/LICENSES/LICENSE.FTS
+Files Modified: spx/INFO
+
+--Submitter: Diana Riemer (diana.riemer.externals@ts.fujitsu.com) Mon, 30 Jun 2014 11:51:05 CEST
+
+Package: irmc_common (1.0.9); urgency = medium
+
+Abstract:
+	Changed Pkg license to GPL-V2
+
+Files Modified: spx/INFO
+
+--Submitter: revantha (revantha@amiindia.co.in) Tue, 06 Aug 2013 19:31:51 IST
+
+Package: irmc_common (1.0.8); urgency = low
+
+Abstract:
+	improve console log interface
+
+Files Modified: data/device.c, data/irmc_common.h, data/irmc_common_main.c, data/proc.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 09 Jul 2012 14:37:09 CEST
+
+Package: irmc_common (1.0.7); urgency = low
+
+Abstract:
+	Add additional #ifdef for CONSOLE_LOG_DISABLED
+
+Files Modified: data/irmc_common_main.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Thu, 09 Feb 2012 12:48:55 CET
+
+Package: irmc_common (1.0.6); urgency = low
+
+Abstract:
+	CONSOLE_LOG_ENABLED
+
+Files Modified: data/Makefile, data/irmc_common_main.c, spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Thu, 09 Feb 2012 12:34:01 CET
+
+Package: irmc_common (1.0.5); urgency = low
+
+Abstract:
+	Merge SaM SVN version 16717
+
+Files Modified: data/Makefile, data/device.c, data/filter.c, data/filter.h, data/irmc_common_main.c, data/ring_buffer.c, data/ring_buffer.h, spx/PACKAGES.D/irmc_common/SCRIPTS/dev-install
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Wed, 08 Feb 2012 12:24:01 CET
+
+Package: irmc_common (1.0.4); urgency = low
+
+Abstract:
+	Disable console login
+
+Files Modified: data/irmc_common_main.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Mon, 06 Feb 2012 10:12:56 CET
+
+Package: irmc_common (1.0.3); urgency = low
+
+Abstract:
+	Add condole login source code, disabled today.
+
+Files Added: data/device.c, data/device.h, data/filter.c, data/filter.h, data/proc.c, data/proc.h, data/ring_buffer.c, data/ring_buffer.h
+Files Modified: data/Makefile, data/irmc_common.h, data/irmc_common_main.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Thu, 02 Feb 2012 12:00:51 CET
+
+Package: irmc_common (1.0.2); urgency = low
+
+Abstract:
+	Switch to PRAM.
+
+Files Modified: data/Makefile, data/irmc_common.h, data/irmc_common_main.c
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Thu, 28 Apr 2011 11:18:40 CEST
+
+Package: irmc_common (1.0.1); urgency = low
+
+Abstract:
+	dummy commit, full support for svnspx, Makefile add a space
+
+Files Modified: data/Makefile
+
+--Submitter: Diana Riemer (diana.riemer.externals@ts.fujitsu.com) Sat, 19 Feb 2011 01:32:39 CET
+
+Package: irmc_common (1.0.0); urgency = new
+
+Abstract:
+	iRMC common infrastructure (/proc/irmc/ entry)
+
+Files Added: data, data/Makefile, data/irmc_common.h, data/irmc_common_main.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.FTS, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/irmc_common, spx/PACKAGES.D/irmc_common/DATA, spx/PACKAGES.D/irmc_common/SCRIPTS, spx/PACKAGES.D/irmc_common/SCRIPTS/dev-install, spx/PACKAGES.D/irmc_common_dev, spx/PACKAGES.D/irmc_common_dev/DATA, spx/PACKAGES.D/irmc_common_dev/SCRIPTS, spx/PACKAGES.D/irmc_common_dev/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Fri, 07 Jan 2011 15:22:19 CET
+

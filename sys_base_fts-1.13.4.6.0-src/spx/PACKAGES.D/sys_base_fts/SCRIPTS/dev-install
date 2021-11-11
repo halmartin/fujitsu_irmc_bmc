@@ -1,0 +1,33 @@
+# Install Script
+
+build-install:
+		COPY_DIR ./terminfo %IMAGE_TREE/usr/share/terminfo
+		COPY_DIR ./locale %IMAGE_TREE/usr/lib/locale
+		COPY_DIR ./fts %IMAGE_TREE/etc/defconfig/fts
+		COPY_DIR ./certs %IMAGE_TREE/etc/ssl/certs
+		CREATE_SOFT_LINK GeoTrust_Global_CA.pem %IMAGE_TREE/etc/ssl/certs/2c543cd1.0
+		CREATE_SOFT_LINK VeriSign_Class_3_Public_Primary_Certification_Authority_G5.pem %IMAGE_TREE/etc/ssl/certs/b204d74a.0
+		CREATE_SOFT_LINK GlobalSignRootR1.pem %IMAGE_TREE/etc/ssl/certs/5ad8a5d6.0
+		CREATE_SOFT_LINK GlobalSignRootR3.pem %IMAGE_TREE/etc/ssl/certs/062cdee6.0
+		COPY_FILE ./wget %IMAGE_TREE/usr/bin
+		COPY_FILE ./02-pre-up-resolv %IMAGE_TREE/etc/network/if-pre-up.d 
+		COPY_FILE ./irmclogrotate.conf %IMAGE_TREE/etc/logrotate.d/
+		COPY_FILE ./flasher.conf %IMAGE_TREE/etc/logrotate.d/
+		COPY_FILE ./logfiles.conf %IMAGE_TREE/etc/logrotate.d/
+		COPY_FILE ./reservedusers %IMAGE_TREE/etc/
+		COPY_FILE ./irmclogmove.sh %IMAGE_TREE/etc/init.d/
+		EXECUTE chmod +x %IMAGE_TREE/etc/init.d/irmclogmove.sh
+		EXECUTE if [ -f ./libidn.so.11.6.8 ]; then cp ./libidn.so.11.6.8 %IMAGE_TREE/usr/lib/; ln -sf libidn.so.11.6.8 %IMAGE_TREE/usr/lib/libidn.so.11.6; ln -sf libidn.so.11.6.8 %IMAGE_TREE/usr/lib/libidn.so.11; ln -sf libidn.so.11.6.8 %IMAGE_TREE/usr/lib/libidn.so; else cp ./libidn.so.11.6.12 %IMAGE_TREE/usr/lib/; ln -sf libidn.so.11.6.12 %IMAGE_TREE/usr/lib/libidn.so.11.6; ln -sf libidn.so.11.6.12 %IMAGE_TREE/usr/lib/libidn.so.11; ln -sf libidn.so.11.6.12 %IMAGE_TREE/usr/lib/libidn.so; fi
+		SET_INIT_SCRIPT sdcard-umount
+		SET_INIT_SCRIPT ipmi_monitor.sh
+		SET_INIT_SCRIPT mount_tpl.sh
+		COPY_FILE ./ipmi_monitor_crontab_register.sh %IMAGE_TREE/etc/init.d/
+		CREATE_SOFT_LINK /etc/init.d/ipmi_monitor_crontab_register.sh %IMAGE_TREE/etc/rc3.d/S98ipmi_monitor_crontab_register.sh
+		EXECUTE grep "ipmi_monitor.sh" %IMAGE_TREE/conf/crontab; if [ $? != 0 ]; then echo "5 * * * *  sysadmin  /etc/init.d/ipmi_monitor.sh" >> %IMAGE_TREE/conf/crontab; echo "5 * * * *  sysadmin  /etc/init.d/ipmi_monitor.sh" >> %IMAGE_TREE/etc/defconfig/crontab;fi
+		EXECUTE sed -i '/echo "options timeout:1" >> $API_RESOLV_CONF_FILE/i[ -f /tmp/resolv_options.conf ] && cat $API_RESOLV_CONF_FILE | grep -v options >> /tmp/resolv_options.conf && mv /tmp/resolv_options.conf $API_RESOLV_CONF_FILE' %IMAGE_TREE/etc/nwhelperapi.sh
+		EXECUTE sed -i "/sed -i '\/options timeout:1$\/d' $API_RESOLV_CONF_FILE/d" %IMAGE_TREE/etc/nwhelperapi.sh
+		EXECUTE sed -i "/sed -i '\/options attempts:1$\/d' $API_RESOLV_CONF_FILE/d" %IMAGE_TREE/etc/nwhelperapi.sh
+		EXECUTE sed -i 's/echo "options timeout:1" >> $API_RESOLV_CONF_FILE/grep -q "timeout:" $API_RESOLV_CONF_FILE || echo "options timeout:5" >> $API_RESOLV_CONF_FILE/g' %IMAGE_TREE/etc/nwhelperapi.sh
+		EXECUTE sed -i 's/echo "options attempts:1" >> $API_RESOLV_CONF_FILE/grep -q "attempts:" $API_RESOLV_CONF_FILE || echo "options attempts:2" >> $API_RESOLV_CONF_FILE/g' %IMAGE_TREE/etc/nwhelperapi.sh
+			
+debug-install:

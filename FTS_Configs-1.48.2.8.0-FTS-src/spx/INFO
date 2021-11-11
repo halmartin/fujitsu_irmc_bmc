@@ -1,0 +1,33 @@
+Source : FTS_Configs
+Version : 1.48.2.8.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : Revanth A (revantha@amiindia.co.in)
+License : AMI
+Source-Location : FTS
+Source-Version : 1.0.0
+Builds : FTS_Configs
+Build-Depends : BaseSystem, sys_ipv6
+Architecture : ALL
+OEM : FTS
+Urgency : low
+Description : Configs for FTS SOC
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : FTS_Configs
+Section : sys
+Group : BASE
+Essential : YES
+Depends : BaseSystem, sys_ipv6
+Description : Configs for FTS SOC
+.
+

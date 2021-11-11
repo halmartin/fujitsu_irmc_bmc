@@ -1,0 +1,12 @@
+diff -Naur uboot_ORIG/cpu/arm926ejs/PILOTIII/astmac.c uboot/cpu/arm926ejs/PILOTIII/astmac.c
+--- uboot_ORIG/cpu/arm926ejs/PILOTIII/astmac.c	2015-04-08 22:01:53.376919252 +0530
++++ uboot/cpu/arm926ejs/PILOTIII/astmac.c	2015-04-08 22:02:37.489137993 +0530
+@@ -613,7 +613,7 @@
+         ast_miiphy_write(dev->name, addr, 0x1, data);
+         ast_miiphy_write(dev->name, addr, 0x1F, 0x0);
+         //As per H/w set MACRGMICTRL value
+-        *((volatile unsigned long *)(SE_SYS_CLK_VA_BASE + 0x88)) = 0x293;
++        *((volatile unsigned long *)(SE_SYS_CLK_VA_BASE + 0x88)) = 0x220;
+     }
+     else if(((phyid&0x3f0)>>0x4)==0x21)
+     {

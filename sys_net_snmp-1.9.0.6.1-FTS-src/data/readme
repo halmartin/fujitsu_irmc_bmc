@@ -1,0 +1,40 @@
+#############################################
+############# Build information ############# 
+#############################################
+
+Source package named net_snmp_build_5621 is at FTS/OpenSource/NET-SNMP/packages repository.
+Init script is in binary/FTS_SNMP_CONFIG package.
+
+
+If you want to rebuild the NetSNMP:
+
+1. remove sys_net_snmp*.spx from packages/
+2. checkout net_snmp_build from FTS/OpenSource/NET-SNMP/packages 
+3. place net_snmp_build*.spx to packages/
+4. update the project and rebuild it
+5. get spx binaries from workspace.iRMCS4/Build/binary/{sys_net_snmp*.spx, sys_net_snmp_dev*.spx}
+6. update binary sys_net_snmp package files by content from 5. spx packages
+ 
+
+
+Current configuration:
+
+--------------------------------------------------------
+            Net-SNMP configuration summary:
+---------------------------------------------------------
+
+  SNMP Versions Supported:    1 2c 3
+  Building for:               linux
+  Net-SNMP Version:           5.6.2.1
+  Network transport support:  Alias Callback Unix TCP UDP TCPIPv6 UDPIPv6 IPv4Base SocketBase TCPBase UDPIPv4Base UDPBase IPv6Base
+  SNMPv3 Security Modules:     usm
+  Agent MIB code:             default_modules =>  snmpv3mibs mibII agent_mibs agentx
+  MYSQL Trap Logging:         unavailable
+  Embedded Perl support:      disabled
+  SNMP Perl modules:          disabled
+  SNMP Python modules:        disabled
+  Crypto support from:        internal
+  Authentication support:     MD5 SHA1
+  Encryption support:         DES AES
+
+---------------------------------------------------------

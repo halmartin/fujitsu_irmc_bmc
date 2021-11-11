@@ -1,0 +1,15 @@
+# Install Script
+
+build-install:
+	COPY_FILE ./inittab %IMAGE_TREE/etc/inittab
+	COPY_TO_CONF ./interfaces
+	COPY_TO_CONF ./syslog.conf
+	COPY_TO_CONF ./preservefiles_list
+	COPY_FILE ./group %IMAGE_TREE/etc/default_group
+	EXECUTE if [ "%CONFIG_SPX_FEATURE_GLOBAL_DUAL_IMAGE_SUPPORT" == "YES" ]; then cp ./mountall_iRMCS4.sh %IMAGE_TREE/etc/init.d/mountall.sh;  else cp ./mountall_iRMCS2.sh %IMAGE_TREE/etc/init.d/mountall.sh; fi;
+	COPY_FILE ./fstab %IMAGE_TREE/etc/fstab
+	COPY_FILE ./module-init-tools %IMAGE_TREE/etc/init.d/module-init-tools
+	SET_INIT_SCRIPT ./force_cim_disable.sh
+	COPY_FILE ./change_syslog_severity.sh %IMAGE_TREE/etc/init.d/
+	
+debug-install:

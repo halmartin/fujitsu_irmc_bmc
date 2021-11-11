@@ -1,0 +1,10 @@
+--- linux-3.14.17/drivers/net/ethernet/Kconfig	2014-08-14 07:08:34.000000000 +0530
++++ linux-3.14.17.new/drivers/net/ethernet/Kconfig	2014-09-04 12:03:19.005821228 +0530
+@@ -35,6 +35,7 @@
+ source "drivers/net/ethernet/cirrus/Kconfig"
+ source "drivers/net/ethernet/cisco/Kconfig"
+ source "drivers/net/ethernet/davicom/Kconfig"
++source "drivers/net/ethernet/pilot_tulip/Kconfig"
+ 
+ config DNET
+ 	tristate "Dave ethernet support (DNET)"

@@ -1,0 +1,160 @@
+--- uboot/cpu/arm926ejs/PILOTIII/misc.c	2013-01-22 00:16:29.814654082 -0500
++++ uboot_new/cpu/arm926ejs/PILOTIII/misc.c	2013-01-22 00:24:39.603494039 -0500
+@@ -2,9 +2,16 @@
+ #include <command.h>
+ #include <linux/types.h>
+ #include "soc_hw.h"
++#include <linux/ctype.h>
+ 
+ extern int rconsole(void);
+ 
++#define MAX_UBOOT_VAR_COUNT          64
++#define MAX_UBOOT_VAR_NAME_LENGTH    32
++#define MAX_UBOOT_VAR_VALUE_LENGTH   64
++#define HWREG_ENVVAR_FORMAT          "pilotreg"
++#define HWREG_ENVVAL_DELIMITER       ","
++
+ /* List of gpio pins which are going to activate in uboot of particular Pilot-III SOC*/
+ GPIO GpioTable[] = {
+ 
+@@ -185,6 +192,108 @@
+ return;
+ }
+ 
++int IsNumberStr(char *str)
++{
++    u8 i=0;
++    if (*str == '0')
++    {
++        if ((str[1] == 'x') && isxdigit(str[2]))
++            i=2;
++    }
++	 
++    while(*(str+i))
++    {
++        if( !isxdigit(*(str+i)))
++            return -1;
++        i++;
++    }
++    if(i==0)
++      return -1;
++
++return 0;
++}
++
++int ParseDataWriteRegister(char *data)
++{
++    unsigned char regType;
++    unsigned int addrs,mask,value,regVal;
++    char str[MAX_UBOOT_VAR_VALUE_LENGTH];
++    char *ptr = NULL;
++ 
++    strcpy(str, data);
++
++    ptr =strtok(str,HWREG_ENVVAL_DELIMITER);
++    if(ptr != NULL)
++    {
++        if( IsNumberStr(ptr) == -1)
++            return -1;
++        regType = simple_strtol(ptr,NULL,0);
++    }
++
++    ptr =strtok(NULL,HWREG_ENVVAL_DELIMITER);
++    if(ptr != NULL)
++    {
++        if( IsNumberStr(ptr) == -1)
++            return -1;
++        addrs = simple_strtoul(ptr,NULL,0);
++    }
++
++    ptr =strtok(NULL,HWREG_ENVVAL_DELIMITER);
++    if(ptr != NULL)
++    {
++        if( IsNumberStr(ptr) == -1)
++            return -1;
++        mask = simple_strtoul(ptr,NULL,0);
++    }
++ 
++    ptr =strtok(NULL,HWREG_ENVVAL_DELIMITER);
++    if(ptr != NULL)
++    {
++        if( IsNumberStr(ptr) == -1)
++            return -1;	 	
++        value = simple_strtoul(ptr,NULL,0);
++    } 
++
++    if( WriteRegister(addrs,mask,value,regType) != 0)
++       return -1;
++
++return 0;
++}
++
++void  ReadEnvVarsSetHWRegs(void)
++{
++    unsigned char EnvVarsName[MAX_UBOOT_VAR_COUNT * MAX_UBOOT_VAR_NAME_LENGTH];
++    char EnvVar[MAX_UBOOT_VAR_NAME_LENGTH];
++    char EnvVal[MAX_UBOOT_VAR_VALUE_LENGTH];
++    int EnvVarlen =0,len=0;
++    u8 EnvVarCount = 0, Count=0;
++
++    memset(EnvVarsName,0,sizeof(EnvVarsName));
++    Getenvvar (&EnvVarCount,EnvVarsName,&EnvVarlen);
++
++    for(Count = 0;Count<EnvVarCount;Count++)
++    {
++        strcpy(EnvVar,(char *)(EnvVarsName + len));
++        len+=(strlen(EnvVar) + 1);
++        if( !memcmp(EnvVar,HWREG_ENVVAR_FORMAT,strlen(HWREG_ENVVAR_FORMAT)) )
++        {
++            if ( IsNumberStr(EnvVar + strlen(HWREG_ENVVAR_FORMAT)) == -1)
++            {
++                printf("Not a valid env var:%s to set HW register\n",EnvVar);
++                continue;//will continue to set for next register.
++            }
++            
++            if( getenv_r (EnvVar,EnvVal,sizeof(EnvVal)) != -1)
++            {
++                if(ParseDataWriteRegister(EnvVal) == -1)
++                    printf("Can't set HW register for given data %s=%s\n",EnvVar,EnvVal);
++            }
++        }
++    }
++
++return;
++}
++
+ void ResetConfigReg(void)
+ {
+     WRITE_REG32(0x4010080C, 0x0000FF00);
+@@ -196,6 +305,7 @@
+ {
+     ResetConfigReg();
+     CheckForEmergencyMode();
++    ReadEnvVarsSetHWRegs();
+ 
+ return;
+ }
+--- uboot_old/cpu/arm926ejs/PILOTIII/misc.c	2013-03-15 13:23:16.501530738 +0530
++++ uboot/cpu/arm926ejs/PILOTIII/misc.c	2013-03-15 13:26:24.275910000 +0530
+@@ -11,6 +11,8 @@
+ #define MAX_UBOOT_VAR_VALUE_LENGTH   64
+ #define HWREG_ENVVAR_FORMAT          "pilotreg"
+ #define HWREG_ENVVAL_DELIMITER       ","
++#define I2C_INTERFACE_RESET 0x0000FF00
++#define ENABLE_SOFTWARE_RESET 0x00003002
+ 
+ /* List of gpio pins which are going to activate in uboot of particular Pilot-III SOC*/
+ GPIO GpioTable[] = {
+@@ -296,8 +298,10 @@
+ 
+ void ResetConfigReg(void)
+ {
+-    WRITE_REG32(0x4010080C, 0x0000FF00);
+-    WRITE_REG32(0x40100800, 0x00003002);
++    WRITE_REG32(SYS_SOFT_RST_EN, I2C_INTERFACE_RESET);
++    WRITE_REG32(SYS_WDT_RST_EN,0x00);
++    WRITE_REG32(SYS_RST_CTRL_REG, ENABLE_SOFTWARE_RESET);
++    WRITE_REG8(PCCT_REG, 0x00); //Disabling Port Capture Ctrl Reg
+     return;
+ }
+ 

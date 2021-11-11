@@ -1,0 +1,634 @@
+Package: sys_base_fts (1.13.4.6.0); urgency = low
+
+Abstract:
+	For patch_base 09.60j: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 20 Nov 2019 11:10:22 CET
+
+Package: sys_base_fts (1.13.4.5.1); urgency = medium
+
+Abstract:
+	iRMC log collection and rotation enhancements
+
+Files Added: data/defconfig/irmclogmove.sh, data/defconfig/irmclogrotate.conf
+Files Modified: data/defconfig/flasher.conf, data/defconfig/logfiles.conf, spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Siva Prakash (sivaprakash@ircona.com) Wed, 11 Sep 2019 14:03:37 CEST
+
+Package: sys_base_fts (1.13.4.5.0); urgency = low
+
+Abstract:
+	For patch_base 09.60g: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 03 Sep 2019 13:54:12 CEST
+
+Package: sys_base_fts (1.13.4.4.4); urgency = low
+
+Abstract:
+	[IRMC-4413] Add Globabl Sign Root R3 CA for webdownloads.ts.fujitsu.com (deployment repository)
+
+Files Added: data/certs/GlobalSignRootR3.pem
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install
+
+--Submitter: Adam Taciak (Adam.Taciak@ts.fujitsu.com) Mon, 29 Jul 2019 19:25:06 CEST
+
+Package: sys_base_fts (1.13.4.4.3); urgency = low
+
+Abstract:
+	improve fix
+
+Files Modified: data/defconfig/logfiles.conf
+
+--Submitter: Manfred Weichel (Manfred.Weichel.external@ts.fujitsu.com) Thu, 04 Jul 2019 08:00:43 CEST
+
+Package: sys_base_fts (1.13.4.4.2); urgency = low
+
+Abstract:
+	ugly fix configuration error
+
+Files Modified: data/defconfig/logfiles.conf
+
+--Submitter: Manfred Weichel (Manfred.Weichel.external@ts.fujitsu.com) Wed, 03 Jul 2019 08:46:06 CEST
+
+Package: sys_base_fts (1.13.4.4.1); urgency = low
+
+Abstract:
+	[IRMC-4181] Adjust logrotate for Redfish srv and task mngr log files to NTT logging requirements
+
+Files Modified: data/defconfig/logfiles.conf
+
+--Submitter: Andrzej Zamojski (Andrzej.Zamojski@ts.fujitsu.com) Tue, 19 Mar 2019 15:56:06 CET
+
+Package: sys_base_fts (1.13.4.4.0); urgency = low
+
+Abstract:
+	For patch_base 02.41P: increment oem version number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 14 Mar 2019 13:32:31 CET
+
+Package: sys_base_fts (1.13.4.3.0); urgency = low
+
+Abstract:
+	For patch_base 02.20c: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Wed, 12 Dec 2018 11:38:14 CET
+
+Package: sys_base_fts (1.13.4.2.0); urgency = low
+
+Abstract:
+	For patch_base 02.00b: increment oem versin number and set oemaux version number to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 28 Aug 2018 13:53:27 CEST
+
+Package: sys_base_fts (1.13.4.1.2); urgency = medium
+
+Abstract:
+	Included reserved users file to exclude root user.
+
+Files Added: data/defconfig/reservedusers
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Wed, 01 Aug 2018 15:47:00 IST
+
+Package: sys_base_fts (1.13.4.1.1); urgency = medium
+
+Abstract:
+	Fix for maintaining the dns retry and timeout as non volatile. it is specific to FTS, so fixed in this package.
+
+Files Added: data/02-pre-up-resolv
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Wed, 25 Jul 2018 10:49:31 IST
+
+Package: sys_base_fts (1.13.4.1.0); urgency = low
+
+Abstract:
+	For patch_base 01.60b oem version number incremented, OemAux version number set to zero
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Thu, 21 Jun 2018 10:01:47 CEST
+
+Package: sys_base_fts (1.13.4.0.5); urgency = low
+
+Abstract:
+	Removed squashfs directory, removed TPL link
+
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install
+
+--Submitter: Ralph Zacharias (Ralph.Zacharias.external@ts.fujitsu.com) Wed, 16 May 2018 14:19:20 CEST
+
+Package: sys_base_fts (1.13.4.0.4); urgency = low
+
+Abstract:
+	Reverted to maintain build capability
+
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install
+
+--Submitter: Ralph Zacharias (Ralph.Zacharias.external@ts.fujitsu.com) Mon, 14 May 2018 14:22:42 CEST
+
+Package: sys_base_fts (1.13.4.0.3); urgency = low
+
+Abstract:
+	Moved squashfs directory creation and linking to build script
+
+Files Modified: data/defconfig/mount_tpl.sh, spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install
+
+--Submitter: Ralph Zacharias (Ralph.Zacharias.external@ts.fujitsu.com) Mon, 14 May 2018 13:30:34 CEST
+
+Package: sys_base_fts (1.13.4.0.2); urgency = low
+
+Abstract:
+	Changed .sqash  suffix to .squashfs
+
+Files Modified: data/defconfig/mount_tpl.sh
+
+--Submitter: Ralph Zacharias (Ralph.Zacharias.external@ts.fujitsu.com) Tue, 24 Apr 2018 13:48:58 CEST
+
+Package: sys_base_fts (1.13.4.0.1); urgency = low
+
+Abstract:
+	Mount ThirdPartyLicenseReadme.txt as squash FS
+
+Files Added: data/defconfig/mount_tpl.sh
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Ralph Zacharias (Ralph.Zacharias.external@ts.fujitsu.com) Thu, 19 Apr 2018 11:01:06 CEST
+
+Package: sys_base_fts (1.13.4.0.0); urgency = low
+
+Abstract:
+	adapt spx package with five digits
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 20 Mar 2018 13:32:10 CET
+
+Package: sys_base_fts (1.13.4); urgency = low
+
+Abstract:
+	Occasionally, the ipmi_monitor.sh script has aborted the creation of an IPMImain core dump by killing the process during coredump creation. The created coredump archives were then useless. The modified script will now wait until a maybe running core dump is finished.
+
+Files Modified: data/defconfig/ipmi_monitor.sh
+
+--Submitter: Juergen Schmigelski (juergen.schmigelski.external@ts.fujitsu.com) Fri, 23 Feb 2018 11:44:10 CET
+
+Package: sys_base_fts (1.13.3); urgency = medium
+
+Abstract:
+	Updated idn library properly.
+
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Fri, 09 Feb 2018 12:23:56 IST
+
+Package: sys_base_fts (1.13.2); urgency = medium
+
+Abstract:
+	updated for jessie packages.
+
+Files Modified: spx/INFO, spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Thu, 08 Feb 2018 15:47:22 IST
+
+Package: sys_base_fts (1.13.1); urgency = low
+
+Abstract:
+	logfile changes
+
+Files Modified: data/defconfig/logfiles.conf
+
+--Submitter: Manfred Weichel (Manfred.Weichel.external@ts.fujitsu.com) Wed, 15 Nov 2017 14:20:22 CET
+
+Package: sys_base_fts (1.13.0); urgency = low
+
+Abstract:
+	For 01.20a_09.20a increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Sep 2017 14:43:08 CEST
+
+Package: sys_base_fts (1.12.2); urgency = low
+
+Abstract:
+	use logrotate for /var/LogFile.*
+
+Files Modified: data/defconfig/logfiles.conf
+
+--Submitter: Manfred Weichel (Manfred.Weichel.external@ts.fujitsu.com) Thu, 21 Sep 2017 11:12:58 CEST
+
+Package: sys_base_fts (1.12.1); urgency = low
+
+Abstract:
+	remove /var/LogFile.* entry, bad syntax, each module is responsible for its own log file
+
+Files Modified: data/defconfig/logfiles.conf
+
+--Submitter: Manfred Weichel (Manfred.Weichel.external@ts.fujitsu.com) Fri, 08 Sep 2017 09:20:32 CEST
+
+Package: sys_base_fts (1.12.0); urgency = low
+
+Abstract:
+	For 01.20aPre_R62446__base increment minor version by 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens.external@ts.fujitsu.com) Fri, 25 Aug 2017 16:40:34 CEST
+
+Package: sys_base_fts (1.11.1); urgency = low
+
+Abstract:
+	logrotate size limitation for /var/Log.* to  100K
+
+Files Modified: data/defconfig/logfiles.conf
+
+--Submitter: Ralph Zacharias (Ralph.Zacharias.external@ts.fujitsu.com) Thu, 24 Aug 2017 14:11:05 CEST
+
+Package: sys_base_fts (1.11.0); urgency = low
+
+Abstract:
+	For 09.00b_R61776_base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Tue, 01 Aug 2017 16:22:05 CEST
+
+Package: sys_base_fts (1.10.0); urgency = low
+
+Abstract:
+	For 01.04b_R59755_base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Fri, 19 May 2017 12:31:09 CEST
+
+Package: sys_base_fts (1.9.8); urgency = low
+
+Abstract:
+	Adding logrotate files with file mode bits 644
+
+Files Added: data/defconfig/flasher.conf, data/defconfig/logfiles.conf
+
+--Submitter: Mark Dorman (mark.dorman@ircona.com) Mon, 24 Apr 2017 14:49:06 CEST
+
+Package: sys_base_fts (1.9.7); urgency = low
+
+Abstract:
+	removing logrotate files with file mode bits 664
+
+Files Deleted: data/defconfig/flasher.conf, data/defconfig/logfiles.conf
+Files Modified: spx/INFO
+
+--Submitter: Mark Dorman (mark.dorman@ircona.com) Mon, 24 Apr 2017 14:42:48 CEST
+
+Package: sys_base_fts (1.9.6); urgency = high
+
+Abstract:
+	[SA#233628474] Add the GlobalSign Root R1 certificate authority to support the latest ssl certificate change on the update repository
+
+Files Added: data/certs/GlobalSignRootR1.pem
+Files Modified: spx/INFO, spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install
+
+--Submitter: Adam Taciak (Adam.Taciak@ts.fujitsu.com) Tue, 21 Mar 2017 15:47:13 CET
+
+Package: sys_base_fts (1.9.5); urgency = low
+
+Abstract:
+	SA#233626605: IPMIMain error simulation: restart of IPMIMain doesn't work
+
+Files Modified: data/defconfig/ipmi_monitor.sh, data/defconfig/ipmi_monitor_crontab_register.sh
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Fri, 10 Feb 2017 18:11:11 CET
+
+Package: sys_base_fts (1.9.4); urgency = low
+
+Abstract:
+	ipmi_monitor.sh modified: Do not kill IPMIMain if there is no space left in /var.
+
+Files Modified: data/defconfig/ipmi_monitor.sh, spx/INFO
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Wed, 04 Jan 2017 09:17:26 CET
+
+Package: sys_base_fts (1.9.3); urgency = low
+
+Abstract:
+	A new symbolic link for GeoTrust Global CA, according to a new openssl
+
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install
+
+--Submitter: Adam Taciak (Adam.Taciak@ts.fujitsu.com) Mon, 17 Oct 2016 16:09:48 CEST
+
+Package: sys_base_fts (1.9.2); urgency = low
+
+Abstract:
+	Added additional restart reasons for Management Controller Access Degraded SEL - Thread Monitor Timeout and Ipmi Monitor
+
+Files Modified: data/defconfig/ipmi_monitor.sh
+
+--Submitter: Stephen Boylan (sboylan@ircona.com) Fri, 14 Oct 2016 14:36:27 CEST
+
+Package: sys_base_fts (1.9.1); urgency = low
+
+Abstract:
+	Replace crontab entry for IPMI stack monitoring if it is not correct
+
+Files Modified: data/defconfig/ipmi_monitor_crontab_register.sh
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sat, 17 Sep 2016 11:32:45 CEST
+
+Package: sys_base_fts (1.9.0); urgency = low
+
+Abstract:
+	For FW 8.61F increment minor version by 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Thu, 01 Sep 2016 08:38:52 CEST
+
+Package: sys_base_fts (1.8.2); urgency = medium
+
+Abstract:
+	Removed the libuserauth_dev in dependency and moved to libipmipdk for kernel build issue.
+
+Files Modified: spx/INFO, spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Thu, 21 Jul 2016 14:51:42 HMT
+
+Package: sys_base_fts (1.8.1); urgency = medium
+
+Abstract:
+	Fix : Radius login is not working when enabled.
+
+Files Added: data/defconfig/fts/iel/keep.folder, data/defconfig/fts/nvram/keep.folder, data/defconfig/fts/pwrh/keep.folder, data/defconfig/fts/www/certs/keep.folder, spx/PACKAGES.D/sys_base_fts/DATA/keep.folder
+Files Deleted: data/defconfig/pam_withunix, data/defconfig/pam_wounix
+Files Modified: spx/INFO, spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Tue, 19 Jul 2016 17:27:01 HMT
+
+Package: sys_base_fts (1.8.0); urgency = low
+
+Abstract:
+	For FW 8.40e increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Tue, 07 Jun 2016 08:34:59 CEST
+
+Package: sys_base_fts (1.7.3); urgency = low
+
+Abstract:
+	crontab entry change for ipmi_monitor.sh to be activated evrey two minutes instead of once per our at ..:05
+In case of IPMIMain hungs also ipmiraw hung. Modification of ipmi_monitor.sh to handle this situation.
+
+Files Modified: data/defconfig/ipmi_monitor.sh, data/defconfig/ipmi_monitor_crontab_register.sh
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Thu, 21 Apr 2016 09:44:56 CEST
+
+Package: sys_base_fts (1.7.2); urgency = low
+
+Abstract:
+	modified ipmi_monitor_crontab_register.sh script
+
+Files Modified: data/defconfig/ipmi_monitor_crontab_register.sh
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Wed, 20 Apr 2016 19:45:51 HMT
+
+Package: sys_base_fts (1.7.1); urgency = medium
+
+Abstract:
+	Added scripts to monitor ipmi and restart ipmi if ipmi hangs
+
+Files Added: data/defconfig/ipmi_monitor.sh, data/defconfig/ipmi_monitor_crontab_register.sh
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Tue, 19 Apr 2016 21:15:43 HMT
+
+Package: sys_base_fts (1.7.0); urgency = low
+
+Abstract:
+	For 08.20F_R49270__base increment minor version by 1
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Sun, 06 Mar 2016 15:42:04 CET
+
+Package: sys_base_fts (1.6.2); urgency = medium
+
+Abstract:
+	[IRMC-358] Add the root certificate provided by VeriSign
+
+Files Added: data/certs/VeriSign_Class_3_Public_Primary_Certification_Authority_G5.pem
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install
+
+--Submitter: Adam Taciak (Adam.Taciak@ts.fujitsu.com) Mon, 01 Feb 2016 13:49:18 CET
+
+Package: sys_base_fts (1.6.1); urgency = low
+
+Abstract:
+	Replace snmpd.conf by logfiles.conf for cleanup all /var/log/*.log instead of /var/log/snmpd.log only
+
+Files Added: data/defconfig/logfiles.conf
+Files Deleted: data/defconfig/snmpd.conf
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Wed, 12 Aug 2015 13:24:01 CEST
+
+Package: sys_base_fts (1.6.0); urgency = low
+
+Abstract:
+	Increment minor version by 1 due to new patch_base 08.00g_R45733__150712
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Mon, 13 Jul 2015 11:14:35 CEST
+
+Package: sys_base_fts (1.5.4); urgency = medium
+
+Abstract:
+	SA#233565496 The SSL root certificate has been moved to /etc/ssl/certs location
+
+Files Deleted: data/certs/7999be0d.0
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install
+
+--Submitter: Adam Taciak (Adam.Taciak@ts.fujitsu.com) Tue, 16 Jun 2015 10:51:25 CEST
+
+Package: sys_base_fts (1.5.3); urgency = low
+
+Abstract:
+	SVS-3175 [eLCM] No SDCARD unmount during reboot workaround
+
+Files Added: data/defconfig/sdcard-umount
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Vlad Shakhov (Vlad.Shakhov@ts.fujitsu.com) Wed, 10 Jun 2015 17:29:32 CEST
+
+Package: sys_base_fts (1.5.2); urgency = low
+
+Abstract:
+	Added wget dependent libraries.
+
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: ramakrishna (nagaramakrishnak@amiindia.co.in) Thu, 09 Apr 2015 08:08:28 HMT
+
+Package: sys_base_fts (1.5.1); urgency = low
+
+Abstract:
+	RR9 merge: checkin based on (1.4.3)
+
+Files Added: data/defconfig/flasher.conf, data/defconfig/snmpd.conf
+Files Modified: spx/INFO, spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Wed, 01 Apr 2015 15:20:31 CEST
+
+Package: sys_base_fts (1.5.0); urgency = low
+
+Abstract:
+	Increment minor version by 1 due to new patch_base 07.80b_R41103__base
+
+
+--Submitter: Helmut Emmerich (helmut.emmerich@ts.fujitsu.com) Fri, 13 Mar 2015 22:42:08 CET
+
+Package: sys_base_fts (1.4.0); urgency = low
+
+Abstract:
+	increment minor version due to customer release 7.61d
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sun, 28 Sep 2014 19:01:05 CEST
+
+Package: sys_base_fts (1.3.1); urgency = medium
+
+Abstract:
+	Add GeoTrust Root Certificat for access to update repository via HTTPS
+
+Files Added: data/certs, data/certs/7999be0d.0, data/certs/GeoTrust_Global_CA.pem
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Adam Taciak (Adam.Taciak@ts.fujitsu.com) Mon, 18 Aug 2014 13:16:08 CEST
+
+Package: sys_base_fts (1.3.0); urgency = low
+
+Abstract:
+	increment minor version due to customer release 1
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Sun, 13 Jul 2014 13:29:55 CEST
+
+Package: sys_base_fts (1.2.1); urgency = low
+
+Abstract:
+	Add wget utility
+
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 03 Jun 2014 09:45:23 CEST
+
+Package: sys_base_fts (1.2.0); urgency = low
+
+Abstract:
+	increment minor version due to customer release 07.36F
+
+
+--Submitter: Diana Riemer (diana.riemer.externals@ts.fujitsu.com) Thu, 15 May 2014 11:33:39 CEST
+
+Package: sys_base_fts (1.1.0); urgency = low
+
+Abstract:
+	increment minor version due to customer release 07.36F
+
+
+--Submitter: Diana Riemer (diana.riemer.externals@ts.fujitsu.com) Thu, 15 May 2014 10:56:42 CEST
+
+Package: sys_base_fts (1.0.9); urgency = low
+
+Abstract:
+	Moved pam_withunix and pam_wounix from /conf to /etc.
+
+Files Added: data/defconfig/pam_withunix, data/defconfig/pam_wounix
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Fri, 28 Feb 2014 14:33:32 HMT
+
+Package: sys_base_fts (1.0.8); urgency = low
+
+Abstract:
+	Remove FTS license from package
+
+Files Deleted: spx/LICENSES/LICENSE.FTS
+Files Modified: spx/INFO
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Wed, 06 Nov 2013 16:21:06 CET
+
+Package: sys_base_fts (1.0.7); urgency = medium
+
+Abstract:
+	Modified te source license as GPL-V2.
+
+Files Modified: spx/INFO
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Wed, 07 Aug 2013 21:43:29 GMT-5
+
+Package: sys_base_fts (1.0.6); urgency = low
+
+Abstract:
+	Remove inittab
+
+Files Deleted: data/etc, data/etc/inittab
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Fri, 11 May 2012 09:28:49 CEST
+
+Package: sys_base_fts (1.0.5); urgency = low
+
+Abstract:
+	Add inittab
+
+Files Added: data/etc, data/etc/inittab
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Thu, 22 Mar 2012 19:01:33 CET
+
+Package: sys_base_fts (1.0.4); urgency = low
+
+Abstract:
+	Add defconfig/fts folder
+
+Files Added: data/defconfig, data/defconfig/fts, data/defconfig/fts/iel, data/defconfig/fts/nvram, data/defconfig/fts/pwrh, data/defconfig/fts/www, data/defconfig/fts/www/certs
+Files Modified: spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Wed, 22 Feb 2012 19:28:33 CET
+
+Package: sys_base_fts (1.0.3); urgency = low
+
+Abstract:
+	Add locale for FTS Web server
+
+Files Added: data/locale/de_DE.utf8/LC_MESSAGES, data/locale/de_DE.utf8/LC_MESSAGES/SYS_LC_MESSAGES, data/locale/de_DE.utf8/LC_TIME, data/locale/en_US.utf8/LC_MESSAGES, data/locale/en_US.utf8/LC_MESSAGES/SYS_LC_MESSAGES, data/locale/en_US.utf8/LC_TIME, data/locale/ja_JP.utf8/LC_MESSAGES, data/locale/ja_JP.utf8/LC_MESSAGES/SYS_LC_MESSAGES, data/locale/ja_JP.utf8/LC_TIME
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Wed, 19 Oct 2011 10:12:29 CEST
+
+Package: sys_base_fts (1.0.2); urgency = low
+
+Abstract:
+	add locale/en_US.utf8/LC_CTYPE for FTS_WebServer
+
+Files Added: data/locale/en_US.utf8/LC_CTYPE
+
+--Submitter: Diana Riemer (diana.riemer.externals@ts.fujitsu.com) Thu, 13 Oct 2011 15:40:49 CEST
+
+Package: sys_base_fts (1.0.1); urgency = low
+
+Abstract:
+	fix folder name for Japanese
+
+Files Added: data/locale/ja_JP.utf8
+Files Deleted: data/locale/ja_JP.uft8
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Wed, 15 Jun 2011 15:03:26 CEST
+
+Package: sys_base_fts (1.0.0); urgency = new
+
+Abstract:
+	FTS add-ons for root file system. Extend AMI root file system with FTS add-ons.
+
+Files Added: data, data/locale, data/locale/de_DE.utf8, data/locale/en_US.utf8, data/locale/ja_JP.uft8, data/terminfo, data/terminfo/E, data/terminfo/E/Eterm, data/terminfo/E/Eterm-color, data/terminfo/a, data/terminfo/a/ansi, data/terminfo/c, data/terminfo/c/cons25, data/terminfo/c/cygwin, data/terminfo/d, data/terminfo/d/dumb, data/terminfo/h, data/terminfo/h/hurd, data/terminfo/l, data/terminfo/l/linux, data/terminfo/m, data/terminfo/m/mach, data/terminfo/m/mach-bold, data/terminfo/m/mach-color, data/terminfo/p, data/terminfo/p/pcansi, data/terminfo/r, data/terminfo/r/rxvt, data/terminfo/r/rxvt-basic, data/terminfo/r/rxvt-m, data/terminfo/r/rxvt-unicode, data/terminfo/s, data/terminfo/s/screen, data/terminfo/s/screen-256color, data/terminfo/s/screen-256color-bce, data/terminfo/s/screen-bce, data/terminfo/s/screen-s, data/terminfo/s/screen-w, data/terminfo/s/sun, data/terminfo/v, data/terminfo/v/vt100, data/terminfo/v/vt102, data/terminfo/v/vt220, data/terminfo/v/vt52, data/terminfo/w, data/terminfo/w/wsvt25, data/terminfo/w/wsvt25m, data/terminfo/x, data/terminfo/x/xterm, data/terminfo/x/xterm-256color, data/terminfo/x/xterm-color, data/terminfo/x/xterm-debian, data/terminfo/x/xterm-mono, data/terminfo/x/xterm-r5, data/terminfo/x/xterm-r6, data/terminfo/x/xterm-vt220, data/terminfo/x/xterm-xfree86, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.FTS, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/sys_base_fts, spx/PACKAGES.D/sys_base_fts/DATA, spx/PACKAGES.D/sys_base_fts/SCRIPTS, spx/PACKAGES.D/sys_base_fts/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Walter Unruh (walter.unruh@ts.fujitsu.com) Tue, 14 Jun 2011 13:17:28 CEST
+

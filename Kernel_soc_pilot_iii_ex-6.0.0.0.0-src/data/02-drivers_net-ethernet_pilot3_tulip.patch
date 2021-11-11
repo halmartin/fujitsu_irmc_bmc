@@ -1,0 +1,186 @@
+diff -Naur linux/drivers/net/ethernet/pilot_tulip/tulip_core.c linux_orig/drivers/net/ethernet/pilot_tulip/tulip_core.c
+--- linux/drivers/net/ethernet/pilot_tulip/tulip_core.c	2015-04-09 21:33:52.553285357 +0530
++++ linux_orig/drivers/net/ethernet/pilot_tulip/tulip_core.c	2015-04-09 21:30:22.948245982 +0530
+@@ -505,7 +505,11 @@
+ 	int next_tick = 3*HZ;
+ //	u32 reg;
+ 	int i;
+-
++#if P3_PAUSE_FR_ENABLE	
++	unsigned int MACL;
++	unsigned int MACH;
++	u16 *mac_addrs = (u16 *)dev->dev_addr;
++#endif	
+ #ifdef CONFIG_TULIP_NAPI
+ 	napi_enable(&tp->napi);
+ #endif
+@@ -540,6 +544,16 @@
+ 	iowrite32((ioread32(ioaddr + CSR0)|0x2), ioaddr + CSR0);
+ #endif
+ 	iowrite32( (CSR11_TIM), (ioaddr + CSR11)); 
++#if P3_PAUSE_FR_ENABLE
++	MACL=mac_addrs[0];
++	MACL|=(mac_addrs[1]<<16);
++	MACH=mac_addrs[2];
++	iowrite32(MACL, (ioaddr + CSR16));
++	iowrite16(MACH, (ioaddr + CSR17));
++	iowrite32(PAUSE_QUANTA_TIME, (ioaddr + CSR18) );
++	iowrite32(PAUSE_THRESHOLD_VALUE, (ioaddr + CSR19) );
++	iowrite32( (ioread32(ioaddr + CSR20)|FLOW_CTRL_ENBALE), (ioaddr+ CSR20) );
++#endif
+ /* Pilot-III Addition End */
+ 	if (tulip_debug > 1)
+ 		printk(KERN_DEBUG "%s: tulip_up(), irq==%d.\n", dev->name, dev->irq);
+@@ -1124,6 +1138,105 @@
+         return mii_link_ok(&nic->mii);
+ }
+ 
++static void tulip_get_pauseparam(struct net_device *netdev,
++		                                 struct ethtool_pauseparam *pause)
++{
++#if P3_PAUSE_FR_ENABLE	
++	struct tulip_private *nic = netdev_priv(netdev);
++	struct ethtool_cmd ecmd;
++
++	ethtool_override_get_pauseparam(nic->phy_index,netdev,pause);
++	mii_ethtool_gset(&(nic->mii),&ecmd);
++	pause->autoneg  = ecmd.autoneg;
++
++	if (ecmd.advertising & ADVERTISED_Asym_Pause)
++	{		
++		if ( nic->sym_advertise & TULIP_FC_RX_PAUSE)
++		{			
++			pause->rx_pause = 1;
++			pause->tx_pause = 0;
++		}			
++		else if ( nic->sym_advertise & TULIP_FC_TX_PAUSE)
++		{			
++			pause->rx_pause = 0;
++			pause->tx_pause = 1;
++		}			
++
++	}		
++	else if (ecmd.advertising & ADVERTISED_Pause)
++	{		
++		pause->rx_pause = 1;
++		pause->tx_pause = 1;
++	}		
++	else
++	{
++		pause->rx_pause = 0;
++		pause->tx_pause = 0;
++	}
++#endif			
++}
++				
++static int tulip_set_pauseparam(struct net_device *netdev,
++		                                struct ethtool_pauseparam *pause)
++{
++#if P3_PAUSE_FR_ENABLE	
++	struct tulip_private *nic = netdev_priv(netdev);
++	struct ethtool_cmd ecmd;
++	unsigned int csr20;
++	u32 advert = 0, tmp;
++
++	ethtool_override_set_pauseparam (nic->phy_index,netdev,pause);
++	if (nic->full_duplex)
++	{
++		mii_ethtool_gset(&(nic->mii),&ecmd);
++		csr20 = ioread32(nic->base_addr + CSR20);
++		advert = tulip_mdio_read(netdev, nic->mii.phy_id, MII_ADVERTISE);
++		tmp=advert;
++		if (pause->rx_pause)
++		{			
++			if(pause->tx_pause)
++			{	
++				ecmd.advertising |= ADVERTISED_Pause;
++				ecmd.advertising &= ~ADVERTISED_Asym_Pause;
++				nic->sym_advertise = TULIP_FC_FULL;
++				csr20 |= (ENABLE_FLW_REG << 29);
++				tulip_set_settings (netdev, &ecmd);
++			}			
++			else
++			{
++				csr20 &= ~(ENABLE_FLW_REG << 29);
++				tmp |= ADVERTISE_PAUSE_CAP;
++	                        tmp |= ADVERTISE_PAUSE_ASYM;
++				nic->sym_advertise = TULIP_FC_RX_PAUSE;
++			}
++			csr20 |= (ENABLE_FLW_REG << 28);
++		}			
++		else if (pause->tx_pause)
++		{
++			nic->sym_advertise = TULIP_FC_TX_PAUSE;
++			csr20 |= (ENABLE_FLW_REG << 29);
++			csr20 &= ~(ENABLE_FLW_REG << 28);
++			tmp &= ~ADVERTISE_PAUSE_CAP;
++	                tmp |= ADVERTISE_PAUSE_ASYM;
++		}			
++		else
++		{
++			ecmd.advertising &= ~ADVERTISED_Pause;
++			ecmd.advertising &= ~ADVERTISED_Asym_Pause;
++			nic->sym_advertise = TULIP_FC_NONE;
++			csr20 &= ~(ENABLE_FLW_REG << 28);
++			csr20 &= ~(ENABLE_FLW_REG << 29);
++			tulip_set_settings (netdev, &ecmd);
++		}			
++		iowrite32(csr20, (nic->base_addr+ CSR20));
++		if (advert != tmp) {
++			tulip_mdio_write(netdev, nic->mii.phy_id, MII_ADVERTISE, tmp);
++			nic->mii.advertising = tmp;
++		}
++	}	
++#endif	
++	return 0;			
++}	
+ 
+ static const struct ethtool_ops ops = {
+ 	.get_drvinfo = tulip_get_drvinfo,
+@@ -1131,6 +1244,8 @@
+ 	.nway_reset	 = tulip_nway_reset,
+ 	.get_settings = tulip_get_settings,
+ 	.set_settings = tulip_set_settings,
++	.set_pauseparam = tulip_set_pauseparam,
++	.get_pauseparam = tulip_get_pauseparam,
+ };
+ 
+ 
+diff -Naur linux/drivers/net/ethernet/pilot_tulip/tulip.h linux_orig/drivers/net/ethernet/pilot_tulip/tulip.h
+--- linux/drivers/net/ethernet/pilot_tulip/tulip.h	2015-04-09 21:33:52.573285456 +0530
++++ linux_orig/drivers/net/ethernet/pilot_tulip/tulip.h	2015-04-09 21:31:01.360436457 +0530
+@@ -135,7 +135,11 @@
+ 	CSR13 = 0x68,
+ 	CSR14 = 0x70,
+ 	CSR15 = 0x78,
+-
++	CSR16 = 0x80,
++	CSR17 = 0x88,
++	CSR18 = 0x90,
++	CSR19 = 0x98,
++	CSR20 = 0xA0
+ };
+ 
+ /* register offset and bits for CFDD PCI config reg */
+@@ -358,6 +362,21 @@
+ #endif
+ };
+ 
++/* Flow Control Settings */
++#define P3_PAUSE_FR_ENABLE    1
++#define ENABLE_FLW_REG        0x01
++#define PAUSE_QUANTA_TIME     0x00000fff
++#define FLOW_CTRL_ENBALE      0xc0000000
++#define PAUSE_THRESHOLD_VALUE 0x00800040
++
++typedef enum {
++	TULIP_FC_NONE = 0,
++	TULIP_FC_TX_PAUSE = 1,
++	TULIP_FC_RX_PAUSE = 2,
++	TULIP_FC_FULL = 3,
++	TULIP_FC_DEFAULT = 0xFF
++} tulip_fc_type;
++
+ 
+ struct tulip_private {
+ 	const char *product_name;

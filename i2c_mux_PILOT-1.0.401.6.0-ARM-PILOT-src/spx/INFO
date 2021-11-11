@@ -1,0 +1,42 @@
+Source : i2c_mux_PILOT
+Version : 1.0.401.6.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : FTS
+Maintainer : Reinhard Bernhardi-Grisson (Reinhard.bernhardi@ts.fujitsu.com)
+License : GPL-V2
+Source-Location : Paderborn
+Source-Version : 1.0
+Builds : i2c_mux_PILOT, i2c_mux_PILOT_dev
+Build-Depends : i2c_hw
+Architecture : ARM
+SOC : PILOT
+Urgency : low
+Description : internal i2c mux driver for Pilot 4
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : i2c_mux_PILOT
+Config-Tag : I2C MUX PILOT Module
+Section : app
+License : GPL-V2
+Group : DEVICE
+Essential : NO
+Description : support for internal PILOT 4 i2c muxer
+.
+
+Package : i2c_mux_PILOT_dev
+Section : dev
+License : GPL-V2
+Group : DEVEL
+Essential : NO
+Description : Development package for I2C mux driver PILOT 4
+.
+

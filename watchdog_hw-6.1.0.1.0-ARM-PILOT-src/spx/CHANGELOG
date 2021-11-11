@@ -1,0 +1,293 @@
+Package: watchdog_hw (6.1.0.1.0); urgency = medium
+
+Abstract:
+	FTS specific changes
+
+Files Modified: data/pilot_watchdog.c, data/pilot_watchdog.h, spx/INFO
+
+--Submitter: Pravin V (pravinv@amiindia.co.in) Thu, 28 Feb 2019 21:55:56 IST
+
+Package: watchdog_hw (6.1.0.0.0); urgency = low
+
+Abstract:
+	This package contains watchdog hardware driver for Pilot SoC.
+
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 16 Feb 2019 01:32:43 UTC
+
+Package: watchdog_hw (6.1.0.0.0); urgency = low
+
+Abstract:
+	Adding previous Changelog
+
+Files Modified: spx/CHANGELOG
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 08 Dec 2018 19:47:27 UTC
+
+Package: watchdog_hw (6.0.0.0.0); urgency = low
+
+Abstract:
+	This package contains watchdog hardware driver for Pilot SoC.
+
+Files Added: data, data/Makefile, data/pilot_watchdog.c, data/pilot_watchdog.h, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/watchdog_hw, spx/PACKAGES.D/watchdog_hw/DATA, spx/PACKAGES.D/watchdog_hw/DATA/keep.folder, spx/PACKAGES.D/watchdog_hw/SCRIPTS, spx/PACKAGES.D/watchdog_hw/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Winston (winstont)(winstont@ami.com) Mon, 09 Apr 2018 23:26:56 UTC
+
+Package: watchdog_hw (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:54:07 UTC
+
+Package: watchdog_hw (2.9.0); urgency = medium
+
+Abstract:
+	modified default watchdog based on PRJ { RB : 18005 }
+
+Files Modified: data/pilot_watchdog.h
+
+--Submitter: RAJA JAYAVELU (jraja@amiindia.co.in) Mon, 24 Apr 2017 15:22:53 IST
+
+Package: watchdog_hw (2.8.0); urgency = low
+
+Abstract:
+	Added code to reset the Boot SPI device and SPI controller during reset,reboot, panic and wdt expiration. Initialized wdt1 in uboot.  EIP:285416, Review Request:15980
+
+Files Modified: data/pilot_watchdog.c, data/pilot_watchdog.h
+
+--Submitter: Balaji Nagalingam Rajendiran (balajinr@ami.com) Mon, 17 Oct 2016 14:44:21 EDT
+
+Package: watchdog_hw (2.7.0); urgency = low
+
+Abstract:
+	Corrected clearing the pre-trigger status.
+
+Files Modified: data/pilot_watchdog.c
+
+--Submitter: akshay p (akshayp@amiindia.co.in) Tue, 13 Sep 2016 14:16:00 GMT-5
+
+Package: watchdog_hw (2.6.0); urgency = low
+
+Abstract:
+	Provision to configure the watchdog reset enable register.
+
+Files Modified: data/pilot_watchdog.c, data/pilot_watchdog.h
+
+--Submitter: akshay p (akshayp@amiindia.co.in) Mon, 11 Jul 2016 13:54:17 GMT-5
+
+Package: watchdog_hw (2.5.0); urgency = low
+
+Abstract:
+	Support for mutiple watchdog devices.
+
+Files Added: data/pilot_watchdog.h
+Files Modified: data/pilot_watchdog.c, spx/INFO
+
+--Submitter: akshay p (akshayp@amiindia.co.in) Fri, 01 Jul 2016 19:14:56 GMT-5
+
+Package: watchdog_hw (2.4.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: spx/PACKAGES.D/watchdog_hw/DATA/keep.folder
+Files Deleted: spx/PACKAGES.D/watchdog_hw/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 19:02:31 EDT
+
+Package: watchdog_hw (2.3.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/PACKAGES.D/watchdog_hw/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Tue, 05 Jan 2016 00:00:24 EST
+
+Package: watchdog_hw (2.2.0); urgency = low
+
+Abstract:
+	changes to support pilot4.
+
+Files Modified: data/pilot_watchdog.c
+
+--Submitter: akshay p (akshayp@amiindia.co.in) Mon, 01 Jun 2015 09:31:05 HMT
+
+Package: watchdog_hw (2.1.0); urgency = low
+
+Abstract:
+	Updated Copyrights year
+
+Files Modified: data/pilot_watchdog.c, spx/INFO
+
+--Submitter: prateekv (prateekv@amiindia.co.in) Tue, 16 Dec 2014 19:41:51 HMT
+
+Package: watchdog_hw (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 07:21:29 GMT
+
+Package: watchdog_hw (1.15.0); urgency = medium
+
+Abstract:
+	INFO file for SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: shravan (shravan@amiindia.co.in) Fri, 17 Oct 2014 17:59:27 HMT
+
+Package: watchdog_hw (1.14.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 08:48:58 GMT
+
+Package: watchdog_hw (1.13.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 07:01:18 GMT
+
+Package: watchdog_hw (1.12.0); urgency = medium
+
+Abstract:
+	Kernel 3.14.17 related changes
+
+Files Modified: data/pilot_watchdog.c
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Sat, 06 Sep 2014 15:26:31 HMT
+
+Package: watchdog_hw (1.11.0); urgency = medium
+
+Abstract:
+	Adding back proper macros ADD_MODULES,ADD_MODULES_ONLY which was changed recently for Faster Boot Support
+
+Files Modified: spx/PACKAGES.D/watchdog_hw/SCRIPTS/dev-install
+
+--Submitter: Winston (winstont@ami.com) Thu, 24 Apr 2014 11:07:16 GMT
+
+Package: watchdog_hw (1.10.0); urgency = medium
+
+Abstract:
+	Faster Boot Support
+
+Files Modified: spx/PACKAGES.D/watchdog_hw/SCRIPTS/dev-install
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Fri, 18 Apr 2014 21:10:35 HMT
+
+Package: watchdog_hw (1.9.0); urgency = medium
+
+Abstract:
+	Adding DevNodes to Build-Depends and Required fields
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Thu, 03 Oct 2013 23:36:48 EDT
+
+Package: watchdog_hw (1.8.0); urgency = medium
+
+Abstract:
+	Updated to support Debian Wheezy target and new complier
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Sun, 22 Sep 2013 02:57:44 EDT
+
+Package: watchdog_hw (1.7.0); urgency = low
+
+Abstract:
+	watchdog reset to ARM processor and I2C modules.
+
+Files Modified: data/pilot_watchdog.c
+
+--Submitter: NagaRamakrishna.K (nagaramakrishnak@amiindia.co.in) Wed, 29 May 2013 07:56:21 EDT
+
+Package: watchdog_hw (1.6.0); urgency = high
+
+Abstract:
+	Correction in licensing.
+
+Files Added: spx/LICENSES/LICENSE.GPL-V2
+Files Deleted: spx/LICENSES/LICENSE.AMI
+Files Modified: data/pilot_watchdog.c, spx/INFO
+
+--Submitter: winston (winstonv@amiindia.co.in) Fri, 24 Jun 2011 11:44:57 IST
+
+Package: watchdog_hw (1.5.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 16:01:04 EDT
+
+Package: watchdog_hw (1.4.0); urgency = medium
+
+Abstract:
+	When the firmware reset is occurred due to hard reset and after that,
+when the watchdog timeout occurs, the firmware gets halt.
+This is because the Power-On-Reset(This is set whenever there is hard reset) is not cleared.
+So the fix is to clear the Power-On-Reset.
+
+Files Modified: data/pilot_watchdog.c
+
+--Submitter: karthiksubramaniambr (karthiksubramaniambr@amiindia.co.in) Fri, 21 Jan 2011 13:28:25 IST
+
+Package: watchdog_hw (1.3.0); urgency = medium
+
+Abstract:
+	While setting the watchdog count value, the high count value was wrongly written in to the register.
+Now the value is shifted and written in to the register.
+
+Files Modified: data/pilot_watchdog.c
+
+--Submitter: karthiksubramaniambr (karthiksubramaniambr@amiindia.co.in) Wed, 15 Dec 2010 06:54:26 EST
+
+Package: watchdog_hw (1.2.0); urgency = medium
+
+Abstract:
+	Copied driver to generic location instead of kernel specific locaton
+
+Files Modified: spx/PACKAGES.D/watchdog_hw/SCRIPTS/dev-install
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 27 Oct 2010 14:52:24 EDT
+
+Package: watchdog_hw (1.1.0); urgency = low
+
+Abstract:
+	Incrementing Minor and setting Aux to Zero
+
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 21 Sep 2010 14:55:37 EDT
+
+Package: watchdog_hw (1.0.1); urgency = medium
+
+Abstract:
+	Watchdog reset implemented for pilot-iii.
+
+Files Modified: data/pilot_watchdog.c
+
+--Submitter: arunkumar (arunkumars@amiindia.co.in) Thu, 19 Aug 2010 17:17:32 IST
+
+Package: watchdog_hw (1.0.0); urgency = new
+
+Abstract:
+	This package contains watchdog hardware driver for Pilot SoC.
+
+Files Added: data, data/Makefile, data/pilot_watchdog.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/PACKAGES.D, spx/PACKAGES.D/watchdog_hw, spx/PACKAGES.D/watchdog_hw/DATA, spx/PACKAGES.D/watchdog_hw/SCRIPTS, spx/PACKAGES.D/watchdog_hw/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: David Chang (DavidChang@ami.com.tw) Tue, 15 Jun 2010 14:50:55 CST
+

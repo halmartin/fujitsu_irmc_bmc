@@ -1,0 +1,22 @@
+#!/bin/sh
+# rmmod adc_hw : unloads adc_hw driver.
+#
+#Runlevel : 0 = K80
+#Runlevel : 6 = K80
+
+# Silently exit if the kernel does not support modules or needs modutils.
+[ -f /proc/modules ] || exit 0
+
+PATH="/sbin:/bin"
+
+case "$1" in
+  stop)
+    echo -n "unloading adc_hw driver."
+    rmmod adc_hw
+    ;;
+   *)
+    echo "Usage: rmmod adc_hw"
+    exit 1
+esac
+
+exit 0

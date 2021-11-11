@@ -1,0 +1,45 @@
+--- uboot.old/cpu/arm926ejs/PILOTIII/misc.c	1969-12-31 19:00:00.000000000 -0500
++++ uboot/cpu/arm926ejs/PILOTIII/misc.c	2010-07-14 13:09:58.469517713 -0400
+@@ -0,0 +1,42 @@
++#include <common.h>
++#include <command.h>
++#include <linux/types.h>
++#include "soc_hw.h"
++
++typedef volatile unsigned int *   tPVU32;
++#define WRITE_REG32(a,d)  (*((tPVU32) (a)) = d)
++
++void
++soc_init(void)
++{
++
++	/* Do any PILOT-II SOC Initialization here */
++	*((volatile u32 *)(SE_MAC_A_BASE +AST_MAC_CSR11)) = 0;
++	*((volatile u32 *)(SE_MAC_B_BASE +AST_MAC_CSR11)) = 0;
++
++	/* Enable Backup SPI */
++	*((volatile u32 *)(SE_TOP_LEVEL_PIN_CTRL_BASE)) = 0;
++	
++	/* Change CPU freq to max if possible */
++#ifdef CONFIG_SPX_FEATURE_GLOBAL_PCIE_FUNCTION1_SUPPORT
++	/* Init PCIe Function 1 */
++   WRITE_REG32(0x40440F00, 0x080019A2);
++   WRITE_REG32(0x40440F04, 0x00000002);
++   WRITE_REG32(0x40440F08, 0x11200000); //To Change PCIe Device name from Co-Processor to Management Device
++   WRITE_REG32(0x40440F0C, 0x00000001);
++   WRITE_REG32(0x40440F10, CONFIG_SPX_FEATURE_GLOBAL_PCIE_FUNCTION1_SHARED_MEM_SIZE - 0x10);
++    WRITE_REG32(0x40440F14, 0x000000F0);
++    WRITE_REG32(0x40440F18, CONFIG_SPX_FEATURE_GLOBAL_MEMORY_START+CONFIG_SPX_FEATURE_GLOBAL_MEMORY_SIZE-CONFIG_SPX_FEATURE_GLOBAL_PCIE_FUNCTION1_SHARED_MEM_SIZE);
++    WRITE_REG32(0x40440F1C, 0x00000000);
++    WRITE_REG32(0x40440F20, 0x00000000);
++    WRITE_REG32(0x40440F28, 0x00000000);
++    WRITE_REG32(0x40440F2C, 0x080019A2);
++    WRITE_REG32(0x40440F30, 0x00000000);
++    WRITE_REG32(0x40440F34, 0x00000000);
++    WRITE_REG32(0x40440F38, 0x00000000);
++    WRITE_REG32(0x40440F3C, 0x000002FF);
++    WRITE_REG32(0x4010091C, 0x00000001);
++    WRITE_REG32(0x4010091C, 0x00000007);
++#endif
++	return;
++}

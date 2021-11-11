@@ -1,0 +1,16 @@
+usr/bin/xorriso
+
+usr/lib/libburn.so
+usr/lib/libburn.so.4
+usr/lib/libisoburn.so
+usr/lib/libisoburn.so.1
+usr/lib/libisofs.so
+usr/lib/libisofs.so.6
+usr/lib/libjte.so
+usr/lib/libjte.so.1
+
+lib/%MULTI_ARCH_LIB%/libacl.so
+lib/%MULTI_ARCH_LIB%/libacl.so.1
+lib/%MULTI_ARCH_LIB%/libbz2.so.1
+lib/%MULTI_ARCH_LIB%/libreadline.so.6
+lib/%MULTI_ARCH_LIB%/libtinfo.so.5

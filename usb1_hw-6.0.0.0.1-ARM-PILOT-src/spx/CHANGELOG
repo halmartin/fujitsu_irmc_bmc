@@ -1,0 +1,18 @@
+Package: usb1_hw (6.0.0.0.1); urgency = low
+
+Abstract:
+	git update for usb1_hw-ARM-PILOT-src.spx
+
+Files Modified: spx/INFO
+
+--Submitter: Helmut Emmerich (helmut.emmerich.external@ts.fujitsu.com) Mon, 25 Feb 2019 14:48:27 CET
+
+Package: usb1_hw (6.0.0.0.0); urgency = high
+
+Abstract:
+	This package includes the hardware level USB 2.0 controller driver for Pilot Series of SOC
+
+Files Added: data, data/Makefile, data/board.h, data/seusb20.h, data/usb_hw1.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/usb1_hw, spx/PACKAGES.D/usb1_hw/DATA, spx/PACKAGES.D/usb1_hw/DATA/keep.folder, spx/PACKAGES.D/usb1_hw/SCRIPTS, spx/PACKAGES.D/usb1_hw/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 05 May 2018 08:11:42 UTC
+

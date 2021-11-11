@@ -1,0 +1,9 @@
+Package: Kernel_Pristine_ex (6.0.0.0.0); urgency = high
+
+Abstract:
+	Pristine Linux Kernel 3.14.X from www.kernel.org
+
+Files Added: data, data/linux-3.14.17.tar.gz, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/Kernel_Pristine_ex, spx/PACKAGES.D/Kernel_Pristine_ex/DATA, spx/PACKAGES.D/Kernel_Pristine_ex/DATA/keep.folder, spx/PACKAGES.D/Kernel_Pristine_ex/SCRIPTS, spx/PACKAGES.D/Kernel_Pristine_ex/SCRIPTS/dev-install.py, spx/RULES.py
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 05 May 2018 06:29:31 UTC
+

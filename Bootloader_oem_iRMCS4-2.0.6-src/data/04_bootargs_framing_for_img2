@@ -1,0 +1,39 @@
+--- uboot/vendors/ami/fmh/cmd_fmh.c	2015-04-26 23:24:58.756252128 +0530
++++ uboot_new/vendors/ami/fmh/cmd_fmh.c	2015-04-26 23:28:35.088242249 +0530
+@@ -867,9 +867,16 @@
+ 				}
+ 			}
+ 
+-			printf("%s @ /dev/mtdblock%d Address %x\n",mod_Name, MtdPartition, (CONFIG_SPX_FEATURE_GLOBAL_FLASH_START+(i*SectorSize)) + le32_to_host(mod->Module_Location));
+-
++                	if (imagetoboot == IMAGE_2)
++	                {
++				printf("%s @ /dev/mtdblock%d Address: %x\n",mod_Name, MtdPartition+2, (CONFIG_SPX_FEATURE_GLOBAL_FLASH_START+(i*SectorSize)) + le32_to_host(mod->Module_Location));
++			}
++			else
++			{
++				printf("%s @ /dev/mtdblock%d Address: %x\n",mod_Name, MtdPartition, (CONFIG_SPX_FEATURE_GLOBAL_FLASH_START+(i*SectorSize)) + le32_to_host(mod->Module_Location));
++			}
+ 			MtdPartition++;
++
+ 		}
+ 
+ 
+@@ -956,8 +963,15 @@
+ 		argv[2] = "all";
+ 		argv[3] = NULL;
+ 		do_protect (NULL,0,3,argv);
+-
+-		Get_bootargs(bootargs,rootisinitrd,RootMtdNo);
++    
++                if (imagetoboot == IMAGE_2)
++                {
++			Get_bootargs(bootargs,rootisinitrd,RootMtdNo+2);
++                }
++		else
++		{
++			Get_bootargs(bootargs,rootisinitrd,RootMtdNo);
++		}
+ /*
+ 		//we found root mtd.now we see if it is initrd
+ 		if(rootisinitrd == 1)

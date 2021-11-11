@@ -1,0 +1,33 @@
+--- u-boot-1.1.6/vendors/ami/Makefile	1970-01-01 08:00:00.000000000 +0800
++++ u-boot-1.1.6-ami/vendors/ami/Makefile	2014-04-08 10:41:04.884511139 +0800
+@@ -0,0 +1,30 @@
++# Makefile for AMI ractrends board
++include $(TOPDIR)/config.mk
++
++LIB = ../libvendor.a
++
++SUBDIRS := IPMI fwupdate r2c fmh ncsi HardwareTest sideband
++OBJS = IPMI/ipmi.o fwupdate/fwupd.o r2c/r2c.o fmh/fmh.o ncsi/ncsilib.o bootargs.o HardwareTest/lib/lib.o HardwareTest/nettest/nettest.o HardwareTest/dramtest/dramtest.o sideband/sidebandlib.o
++
++
++all : $(LIB)
++	
++$(LIB):	$(OBJS)
++	$(AR) crv $@ $(OBJS)
++
++$(OBJS) : subdirs
++
++subdirs:
++	@for dir in $(SUBDIRS) ; do $(MAKE) -C $$dir || exit 1 ; done
++
++.depend:
++	@for dir in $(SUBDIRS) ; do $(MAKE) -C $$dir .depend ; done
++
++distclean:
++	@for dir in $(SUBDIRS) ; do $(MAKE) -C $$dir distclean ; done
++	rm -f $(LIB)
++
++clean:
++	@for dir in $(SUBDIRS) ; do $(MAKE) -C $$dir clean ; done
++	rm -f $(LIB)
++

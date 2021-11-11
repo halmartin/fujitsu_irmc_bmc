@@ -1,0 +1,32 @@
+Source : ttyplay
+Version : 1.0.1000.6.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : FTS
+Maintainer : Walter Unruh (walter.unruh@ts.fujitsu.com)
+License : BSD.TTYPLAY
+Source-Location : FTS
+Source-Version : 1.0.0
+Builds : ttyplay
+Build-Depends : rules, Crosscc
+Architecture : ALL
+Urgency : low
+Description : ttyplay tool
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : ttyplay
+Section : app
+Group : FEATURES
+Essential : YES
+Required : BaseSystem
+Description : ttyplay tool
+.
+

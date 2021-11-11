@@ -1,0 +1,20 @@
+--- uboot/cpu/arm926ejs/PILOTIII/misc.c	2015-07-07 23:27:43.080514906 +0530
++++ uboot_new/cpu/arm926ejs/PILOTIII/misc.c	2015-07-07 23:48:43.404512122 +0530
+@@ -142,7 +142,7 @@
+ int Readgpio (u8 pindata)
+ {
+ 	unsigned int Addr;
+-	unsigned int Value;
++	unsigned char Value;
+         unsigned char port,pin;
+ 
+ 	port = pindata / 8;
+@@ -513,7 +513,7 @@
+ 	/* Init PCIe Function 1 */
+    WRITE_REG32(0x40440F00, 0x080019A2);
+    WRITE_REG32(0x40440F04, 0x00000002);
+-   WRITE_REG32(0x40440F08, 0x11200000); //To Change PCIe Device name from Co-Processor to Management Device
++   WRITE_REG32(0x40440F08, 0x0B400000); //change back from Management Device to Co-Processor
+    WRITE_REG32(0x40440F0C, 0x00000001);
+    WRITE_REG32(0x40440F10, CONFIG_SPX_FEATURE_GLOBAL_PCIE_FUNCTION1_SHARED_MEM_SIZE - 0x10);
+     WRITE_REG32(0x40440F14, 0x000000F0);

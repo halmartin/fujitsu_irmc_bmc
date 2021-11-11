@@ -1,0 +1,26 @@
+#Extract Source	in %SOURCE
+extract_source:
+
+#Build Source in %BUILD
+build_source:
+		CWD %BUILD/%PACKAGE/data
+		INVOKE_MAKE
+
+#Clean Source
+clean_source:
+		CWD %BUILD/%PACKAGE/data
+		INVOKE_MAKE clean
+
+#--------------------- Mandatory Rules for every binary package -------------------------
+
+# Rules to create libfts_base64 package
+build_package-libfts_base64:
+	PACK_SPX  ./   %BUILD/%PACKAGE/data/libfts_base64.so.%PKG_MAJOR.%PKG_MINOR.%PKG_AUX
+	
+# Rules to create libfts_base64_dev package
+build_package-libfts_base64_dev:
+		MKDIR_CLEAN %TEMPDIR/%PACKAGE/tmp
+		COPY_FILE %BUILD/%PACKAGE/data/fts_base64.h %TEMPDIR/%PACKAGE/tmp
+		COPY_FILE %BUILD/%PACKAGE/data/libfts_base64.a %TEMPDIR/%PACKAGE/tmp
+		COPY_FILE %BUILD/%PACKAGE/data/libfts_base64.so.%PKG_MAJOR.%PKG_MINOR.%PKG_AUX %TEMPDIR/%PACKAGE/tmp
+		PACK_SPX ./ %TEMPDIR/%PACKAGE/tmp

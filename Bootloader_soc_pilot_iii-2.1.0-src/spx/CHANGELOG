@@ -1,0 +1,451 @@
+Package: Bootloader_soc_pilot_iii (2.1.0); urgency = medium
+
+Abstract:
+	Removing LICENSE.AMI from LICENSES folder to prevent multiple licensing issue
+
+Files Deleted: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Winston (winstont@ami.com) Tue, 23 Dec 2014 22:02:25 GMT
+
+Package: Bootloader_soc_pilot_iii (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 03:10:46 GMT
+
+Package: Bootloader_soc_pilot_iii (1.37.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 04:55:45 GMT
+
+Package: Bootloader_soc_pilot_iii (1.36.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO, spx/LICENSES/LICENSE.AMI
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 03:04:39 GMT
+
+Package: Bootloader_soc_pilot_iii (1.35.0); urgency = low
+
+Abstract:
+	Changed PCIe Device name from Co-Processor to Management Device.
+
+Files Modified: data/10-cpu_arm926ejs_PILOTIII_misc.c
+
+--Submitter: ramakrishna (nagaramakrishnak@amiindia.co.in) Tue, 17 Dec 2013 18:56:42 HMT
+
+Package: Bootloader_soc_pilot_iii (1.34.0); urgency = low
+
+Abstract:
+	Added adjust MII management registers and MAC RGMII Control Register (MACRGMIICTL) by different
+
+Files Modified: data/03-cpu_arm926ejs_PILOTIII_astmac.c, data/05-cpu_arm926ejs_PILOTIII_astmii.c
+
+--Submitter: jcchiu (jcchiu@ami.com.tw) Mon, 01 Jul 2013 11:25:17 CST
+
+Package: Bootloader_soc_pilot_iii (1.33.0); urgency = low
+
+Abstract:
+	Combine two patch files
+
+Files Deleted: data/39-cpu_arm926ejs_PILOTIII_astmac.c
+Files Modified: data/03-cpu_arm926ejs_PILOTIII_astmac.c
+
+--Submitter: jcchiu (jcchiu@ami.com.tw) Wed, 19 Jun 2013 13:05:20 CST
+
+Package: Bootloader_soc_pilot_iii (1.32.0); urgency = low
+
+Abstract:
+	Disable watchdog modules reset support.
+
+Files Modified: data/38-cpu_arm926ejs_PILOTIII_wdt.c
+
+--Submitter: NagaRamakrishna.K (nagaramakrishnak@amiindia.co.in) Tue, 18 Jun 2013 07:28:01 EDT
+
+Package: Bootloader_soc_pilot_iii (1.31.0); urgency = medium
+
+Abstract:
+	Fixed jumbo frame packet will corrupting the network memory issue.
+
+Files Added: data/39-cpu_arm926ejs_PILOTIII_astmac.c
+
+--Submitter: ivanlee (ivanlee@ami.com.tw) Wed, 05 Jun 2013 10:31:30 CST
+
+Package: Bootloader_soc_pilot_iii (1.30.0); urgency = low
+
+Abstract:
+	watchdog reset to ARM processor and I2C modules.
+
+Files Modified: data/38-cpu_arm926ejs_PILOTIII_wdt.c
+
+--Submitter: NagaRamakrishna.K (nagaramakrishnak@amiindia.co.in) Wed, 29 May 2013 07:55:09 EDT
+
+Package: Bootloader_soc_pilot_iii (1.29.0); urgency = high
+
+Abstract:
+	Adding support to configure baudrate of debug console from PRJ
+
+Files Added: data/38-cpu_arm926ejs_PILOTIII_wdt.c
+Files Modified: data/09-cpu_arm926ejs_PILOTIII_Makefile
+
+--Submitter: Winston (winstont@ami.com) Wed, 27 Mar 2013 14:54:19 EDT
+
+Package: Bootloader_soc_pilot_iii (1.28.0); urgency = medium
+
+Abstract:
+	Disabling Port Capture Control Register-PCCT.
+
+Files Modified: data/22-include_pilotiii_hwreg.h, data/37-Read_EnvVars_Set_PilotRegs
+
+--Submitter: Revanth A (revantha@amiindia.co.in) Mon, 18 Mar 2013 15:08:48 HMT
+
+Package: Bootloader_soc_pilot_iii (1.27.0); urgency = low
+
+Abstract:
+	Added support to check emergency mode dynamically, resetting config registers and setting pilot registers based on env variable presence in uboot.
+
+Files Added: data/34-platform_specific_initializations, data/35-emergency-mode-check, data/36-reseting-config-registers, data/37-Read_EnvVars_Set_PilotRegs
+
+--Submitter: NagaRamakrishna.K (nagaramakrishnak@amiindia.co.in) Thu, 24 Jan 2013 08:51:52 EST
+
+Package: Bootloader_soc_pilot_iii (1.26.0); urgency = high
+
+Abstract:
+	- Sync with Emulex's latest SDK. (fixed timeout rollover issue and bring down SPI clock when reset)
+
+Files Modified: data/08-cpu_arm926ejs_PILOTIII_asttimer.c, data/31-cpu_arm926ejs_PILOTIII_reset.c
+
+--Submitter: Cheng-Chia,Yang (ChiaYang@ami.com.tw) Fri, 07 Dec 2012 18:12:48 CST
+
+Package: Bootloader_soc_pilot_iii (1.25.0); urgency = medium
+
+Abstract:
+	- Correct the valid length range of SPI command.
+
+Files Modified: data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: Cheng-Chia,Yang (ChiaYang@ami.com.tw) Wed, 21 Nov 2012 17:40:04 CST
+
+Package: Bootloader_soc_pilot_iii (1.24.0); urgency = medium
+
+Abstract:
+	changed to support N25Q512 - 64MB flash
+
+Files Modified: data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: adamlin (AdamLin@ami.com.tw) Wed, 31 Oct 2012 13:59:48 CST
+
+Package: Bootloader_soc_pilot_iii (1.23.0); urgency = medium
+
+Abstract:
+	according to Emulex to correct the value of 64MB spi flash
+
+Files Modified: data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: adamlin (AdamLin@ami.com.tw) Fri, 26 Oct 2012 10:21:16 CST
+
+Package: Bootloader_soc_pilot_iii (1.22.0); urgency = low
+
+Abstract:
+	Generic method to set GPIO and Hardware registers in uboot.
+
+Files Added: data/32-default_GPIO_HWRegisters_settings, data/33-required_Macros_GPIO_HWRegisters_settings
+
+--Submitter: ramakrishna (nagaramakrishnak@amiindia.co.in) Fri, 21 Sep 2012 08:00:39 EDT
+
+Package: Bootloader_soc_pilot_iii (1.21.0); urgency = high
+
+Abstract:
+	- Based on the suggestion from EMULEX to correct the value of the register SYSCFG.
+
+Files Modified: data/31-cpu_arm926ejs_PILOTIII_reset.c
+
+--Submitter: Cheng-Chia,Yang (ChiaYang@ami.com.tw) Mon, 10 Sep 2012 18:17:50 CST
+
+Package: Bootloader_soc_pilot_iii (1.20.0); urgency = high
+
+Abstract:
+	- Modify Boot-loader with new definition for assign BACKUP SPI flash banks.
+
+Files Modified: data/11-cpu_arm926ejs_PILOTIII_pilot3spi_bkup.c, data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: Cheng-Chia,Yang (ChiaYang@ami.com.tw) Mon, 14 May 2012 16:38:35 CST
+
+Package: Bootloader_soc_pilot_iii (1.19.0); urgency = high
+
+Abstract:
+	- Correct CS# for the current flash address.
+
+Files Modified: data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: Cheng-Chia,Yang (ChiaYang@ami.com.tw) Wed, 09 May 2012 17:15:49 CST
+
+Package: Bootloader_soc_pilot_iii (1.18.0); urgency = high
+
+Abstract:
+	1. Extern the public structure of flash info to get the correct flash address.
+2. Configure CS# bit to probe the device ID on the current flash bank.
+3. Configure the flash upper address to BMISC register.
+
+Files Modified: data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: Cheng-Chia,Yang (ChiaYang@ami.com.tw) Mon, 30 Apr 2012 17:06:00 CST
+
+Package: Bootloader_soc_pilot_iii (1.17.0); urgency = medium
+
+Abstract:
+	Adding Reset and Debug control registers
+
+Files Modified: data/22-include_pilotiii_hwreg.h
+
+--Submitter: Winston (winstont@ami.com) Thu, 19 Apr 2012 19:00:03 EDT
+
+Package: Bootloader_soc_pilot_iii (1.16.0); urgency = low
+
+Abstract:
+	Updating hwmap.h with SE_RES_DEB_VA_BASE register details.
+
+Files Modified: data/21-include_pilotiii_hwmap.h
+
+--Submitter: Winston (winstont@ami.com) Thu, 19 Apr 2012 10:47:41 EDT
+
+Package: Bootloader_soc_pilot_iii (1.15.0); urgency = high
+
+Abstract:
+	Supported the SPI "Fast Read" command.
+
+Files Modified: data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: Cheng-Chia,Yang (ChiaYang@ami.com.tw) Thu, 19 Apr 2012 18:03:54 CST
+
+Package: Bootloader_soc_pilot_iii (1.14.0); urgency = medium
+
+Abstract:
+	Fixes for strict compiler - Generates error if a variable is assigned and not used
+
+Files Modified: data/03-cpu_arm926ejs_PILOTIII_astmac.c, data/28-cpu_arm926ejs_PILOTIII_kcsifc.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 23 Mar 2012 12:05:11 EDT
+
+Package: Bootloader_soc_pilot_iii (1.13.0); urgency = medium
+
+Abstract:
+	Duplicate member in structure : New strict compiler gives error
+
+Files Modified: data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 21 Mar 2012 17:27:32 EDT
+
+Package: Bootloader_soc_pilot_iii (1.12.0); urgency = medium
+
+Abstract:
+	MSB of address corrected in case of 32MB chip in bootloader
+
+Files Modified: data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: pavithras (pavithras@amiindia.co.in) Mon, 09 Jan 2012 11:50:40 IST
+
+Package: Bootloader_soc_pilot_iii (1.11.0); urgency = high
+
+Abstract:
+	Added the fixes from emulex for interrupt enable and disable.
+Modified the reset register for clearing the iomap register
+
+Files Added: data/30-cpu_arm926ejs_PILOTIII_astintr.c, data/31-cpu_arm926ejs_PILOTIII_reset.c
+
+--Submitter: othiyappnk (othiyappank@amiindia.co.in) Thu, 01 Dec 2011 15:35:11 IST
+
+Package: Bootloader_soc_pilot_iii (1.10.0); urgency = high
+
+Abstract:
+	removed unnecessary parameter in pilot3spi_bkup_transfer
+
+Files Modified: data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: royku (royku@ami.com.tw) Sat, 26 Nov 2011 15:30:14 CST
+
+Package: Bootloader_soc_pilot_iii (1.9.0); urgency = high
+
+Abstract:
+	1.support MX25L25635E 32MB flash for pilotiii
+2.support multi-flash 32/16,16/32 and 32/32 flash size combination for pilotiii
+
+Files Modified: data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: royku (royku@ami.com.tw) Fri, 25 Nov 2011 14:51:13 CST
+
+Package: Bootloader_soc_pilot_iii (1.8.0); urgency = medium
+
+Abstract:
+	PCIe function1 initialization added
+
+Files Modified: data/10-cpu_arm926ejs_PILOTIII_misc.c
+
+--Submitter: Rama Rao Bisa (ramab@ami.com) Mon, 31 Oct 2011 14:57:58 EDT
+
+Package: Bootloader_soc_pilot_iii (1.7.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 14:03:45 EDT
+
+Package: Bootloader_soc_pilot_iii (1.6.0); urgency = high
+
+Abstract:
+	DECLARE_GLOBAL_DATA_PTR has to be defined as global (as the name implies). It should not be defined as locals inside functions. Some compiler optimizations generate incorrect code breaking some fucntionality of bootloader
+
+Files Modified: data/14-cpu_arm926ejs_PILOTIII_serial.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 23 Feb 2011 21:05:30 EST
+
+Package: Bootloader_soc_pilot_iii (1.5.0); urgency = high
+
+Abstract:
+	Fix for new strict compilers
+
+Files Modified: data/03-cpu_arm926ejs_PILOTIII_astmac.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 16 Feb 2011 11:15:17 EST
+
+Package: Bootloader_soc_pilot_iii (1.4.0); urgency = medium
+
+Abstract:
+	Enable Prefetch added during startup. 
+This is needed because Watchdog reset clears prefetch
+and after the watchdog reset, the booting from SPI becomes slow
+
+Files Modified: data/16-cpu_arm926ejs_start.S
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 21 Jan 2011 12:29:22 EST
+
+Package: Bootloader_soc_pilot_iii (1.3.0); urgency = low
+
+Abstract:
+	Description files cleanup
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 10 Nov 2010 15:23:54 EST
+
+Package: Bootloader_soc_pilot_iii (1.2.0); urgency = medium
+
+Abstract:
+	The KCS status byte is set to ERROR_STATE for pilot-iii u-boot
+
+Files Modified: data/28-cpu_arm926ejs_PILOTIII_kcsifc.c
+
+--Submitter: karthiksubramaniambr (karthiksubramaniambr@amiindia.co.in) Thu, 28 Oct 2010 01:34:04 EDT
+
+Package: Bootloader_soc_pilot_iii (1.1.0); urgency = low
+
+Abstract:
+	Incrementing Minor and setting Aux to Zero
+
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 21 Sep 2010 13:40:08 EDT
+
+Package: Bootloader_soc_pilot_iii (1.0.9); urgency = medium
+
+Abstract:
+	Added generic PHY Support including Gbit PHY
+
+Files Modified: data/03-cpu_arm926ejs_PILOTIII_astmac.c, data/05-cpu_arm926ejs_PILOTIII_astmii.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 07 Sep 2010 23:14:27 EDT
+
+Package: Bootloader_soc_pilot_iii (1.0.8); urgency = high
+
+Abstract:
+	Fix for SPI Failure when number of banks is set to 1
+
+Files Modified: data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 03 Sep 2010 17:05:40 EDT
+
+Package: Bootloader_soc_pilot_iii (1.0.7); urgency = high
+
+Abstract:
+	Added KCS Support for YAFU
+
+Files Added: data/28-cpu_arm926ejs_PILOTIII_kcsifc.c, data/29-cpu_arm926ejs_PILOTIII_kcsregs.h
+Files Modified: data/09-cpu_arm926ejs_PILOTIII_Makefile
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Thu, 26 Aug 2010 13:06:21 EDT
+
+Package: Bootloader_soc_pilot_iii (1.0.6); urgency = high
+
+Abstract:
+	Added code to Support NC-SI. If MII PHY (ID = 0xFFFF)is not present, 
+set the MAC to 100 Mbps Full Duplex, because NC-SI can be communicated at this speed/duplex only
+
+Files Modified: data/03-cpu_arm926ejs_PILOTIII_astmac.c, data/05-cpu_arm926ejs_PILOTIII_astmii.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 25 Aug 2010 16:25:10 EDT
+
+Package: Bootloader_soc_pilot_iii (1.0.5); urgency = high
+
+Abstract:
+	Burst read is enabled again.
+
+Files Modified: data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: Anurag Bhatia (anuragb@ami.com) Thu, 15 Jul 2010 15:37:44 EDT
+
+Package: Bootloader_soc_pilot_iii (1.0.4); urgency = medium
+
+Abstract:
+	Multiplexed lines set to Backup SPI Access.
+
+Files Modified: data/10-cpu_arm926ejs_PILOTIII_misc.c, data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c, data/21-include_pilotiii_hwmap.h
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 14 Jul 2010 14:04:33 EDT
+
+Package: Bootloader_soc_pilot_iii (1.0.3); urgency = medium
+
+Abstract:
+	Added Multiple Boot SPI support
+
+Files Modified: data/11-cpu_arm926ejs_PILOTIII_pilot3spi_bkup.c, data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Thu, 08 Jul 2010 23:52:35 EDT
+
+Package: Bootloader_soc_pilot_iii (1.0.2); urgency = high
+
+Abstract:
+	Fix for Reset failure after spi write access
+
+Files Modified: data/13-cpu_arm926ejs_PILOTIII_reset.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Mon, 24 May 2010 23:59:22 EDT
+
+Package: Bootloader_soc_pilot_iii (1.0.1); urgency = low
+
+Abstract:
+	Some Cleanup done
+
+Files Deleted: data/24-include_pilotiii_pilot_types.
+Files Modified: data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c, data/21-include_pilotiii_hwmap.h, data/22-include_pilotiii_hwreg.h
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 21 May 2010 14:43:28 EDT
+
+Package: Bootloader_soc_pilot_v (1.0.0); urgency = new
+
+Abstract:
+	ServerEngines Pilot III SOC Fixes to Bootloader 1.1.6
+
+Files Added: data, data/01-cpu_arm926ejs_interrupts.c, data/02-cpu_arm926ejs_PILOTIII_astintr.c, data/03-cpu_arm926ejs_PILOTIII_astmac.c, data/04-cpu_arm926ejs_PILOTIII_astmac.h, data/05-cpu_arm926ejs_PILOTIII_astmii.c, data/06-cpu_arm926ejs_PILOTIII_astserial.c, data/07-cpu_arm926ejs_PILOTIII_astserial.h, data/08-cpu_arm926ejs_PILOTIII_asttimer.c, data/09-cpu_arm926ejs_PILOTIII_Makefile, data/10-cpu_arm926ejs_PILOTIII_misc.c, data/11-cpu_arm926ejs_PILOTIII_pilot3spi_bkup.c, data/12-cpu_arm926ejs_PILOTIII_pilot3spi.c, data/13-cpu_arm926ejs_PILOTIII_reset.c, data/14-cpu_arm926ejs_PILOTIII_serial.c, data/15-cpu_arm926ejs_PILOTIII_soc_hw.h, data/16-cpu_arm926ejs_start.S, data/17-include_pilotiii_ddr.h, data/18-include_pilotiii_ddr_misc.h, data/19-include_pilotiii_hwdef.h, data/20-include_pilotiii_hw.h, data/21-include_pilotiii_hwmap.h, data/22-include_pilotiii_hwreg.h, data/23-include_pilotiii_macreg.h, data/24-include_pilotiii_pilot_types., data/25-include_pilotiii_serreg.h, data/26-include_pilotiii_xdma.h, data/27-net_eth.c, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/@Bootloader_soc_pilot_iii, spx/PACKAGES.D/@Bootloader_soc_pilot_iii/DATA, spx/PACKAGES.D/@Bootloader_soc_pilot_iii/SCRIPTS, spx/PACKAGES.D/@Bootloader_soc_pilot_iii/SCRIPTS/dev-install, spx/RULES, spx/RULES.D, spx/RULES.D/ApplyPatch
+
+--Submitter: Jothiram Selvam (jothirams@ami.com) Mon, 05 Apr 2010 19:44:19 EDT
+

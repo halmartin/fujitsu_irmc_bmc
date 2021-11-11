@@ -1,0 +1,399 @@
+--- uboot/drivers/spiflash/generic.c	2015-07-07 23:01:25.124518391 +0530
++++ uboot_new/drivers/spiflash/generic.c	2015-07-07 23:03:31.284518113 +0530
+@@ -56,6 +56,9 @@
+ #define ADDRESS_4BYTE	0x01
+ #define ADDRESS_LO3_HI4_BYTE 0x02
+ 
++#define ADDRESS_DIE_LO3_HI4_BYTE 0x06
++#define ADDR_32MB 		0x2000000
++#define CMD_WX25XX_CS		0xc2	/* Die select */
+ 
+ extern flash_info_t flash_info[CFG_MAX_FLASH_BANKS];
+ static int wait_till_ready(int bank,struct spi_ctrl_driver *ctrl_drv);
+@@ -144,6 +147,30 @@
+ 	return 0;
+ }
+ 
++int spi_generic_select_die(int bank, u8 die_num, struct spi_ctrl_driver *ctrl_drv)
++{
++	int retval;
++	u8 command[2];
++
++	command[0] = CMD_WX25XX_CS;
++	command[1] = die_num;
++
++	/* Wait until finished previous command. */
++	if (wait_till_ready(bank,ctrl_drv))
++	{
++		return -1;
++	}
++
++	retval = ctrl_drv->spi_transfer(bank, command, 2, SPI_NONE, NULL, 0,0);
++
++	if (retval < 0)
++	{
++		printk ("Could not select die.\n");
++		return spi_error(retval);
++	}
++	//udelay(10000); delay not needed
++	return 0;
++}
+ int enter_4byte_addr_mode(int bank, struct spi_ctrl_driver *ctrl_drv)
+ {
+ 	//enable 32 MB Address mode
+@@ -230,19 +257,19 @@
+ // the function just for WINBOND W25Q256 only, always revise the extended address to the defalut
+ int w25q256_force_extended_address(int bank, struct spi_ctrl_driver *ctrl_drv)
+ {
+-	int retval;
++//	int retval;
+ 	u8 code;
+ 	u8 reg_data;
+ 	u8 command[5];
+ 
+ 	code = 0xC8; // "Read Extended Address Register"
+-	retval = ctrl_drv->spi_transfer(bank, &code, 1, SPI_READ, &reg_data, 1, 0);
++	ctrl_drv->spi_transfer(bank, &code, 1, SPI_READ, &reg_data, 1, 0);
+ 	if (reg_data == 0x01)
+ 	{
+ 		spi_generic_write_enable(bank,ctrl_drv);
+ 		command[0] = 0xC5; // "Write Extended Address Register" with the force address 0x00
+ 		command[1] = command[2] = command[3] = command[4] = 0x00;
+-		retval = ctrl_drv->spi_transfer(bank, command, 5, SPI_NONE, NULL, 0, 0);
++		ctrl_drv->spi_transfer(bank, command, 5, SPI_NONE, NULL, 0, 0);
+ 		spi_generic_write_disable(bank,ctrl_drv);
+ 	}
+ 	return 0;
+@@ -312,6 +339,7 @@
+ 	int cmd_size;	
+ 	u8 address32 = priv->address32;
+ 	unsigned long flash_size = priv->size;
++	u8 had_switch_die = 0;
+ 	
+ 	down(&priv->chip_drv->lock);
+ 	
+@@ -322,14 +350,25 @@
+ 		up(&priv->chip_drv->lock);
+ 		return -1;
+ 	}
++	if (address32 == ADDRESS_DIE_LO3_HI4_BYTE) { 
++		if(sect_addr >= ADDR_32MB){
++			spi_generic_select_die( bank, 1,ctrl_drv);
++			had_switch_die = 1;
++			sect_addr-=ADDR_32MB;
++		}
++	}
+ 
+ 	/* Logic for 4 byte address mode Enter */
+-	if ((sect_addr >= ADDR_16MB) && (address32 == ADDRESS_LO3_HI4_BYTE ))
++	if ((sect_addr >= ADDR_16MB) && ((address32 == ADDRESS_LO3_HI4_BYTE )||(address32 == ADDRESS_DIE_LO3_HI4_BYTE)))
+ 	{
+ 		retval = enter_4byte_addr_mode(bank, ctrl_drv);
+ 		if (retval < 0)
+ 		{
+ 			printk ("Unable to enter 4 byte address mode\n");
++			if(had_switch_die == 1)
++			{   
++				spi_generic_select_die( bank, 0,ctrl_drv);
++			}
+ 			up(&priv->chip_drv->lock);
+ 			return spi_error(retval);
+ 		}
+@@ -339,7 +378,7 @@
+ 	if ((flash_info[bank].flash_id == 0x002020BA) || (flash_info[bank].flash_id == 0x00C21A20))
+ 		spi_generic_extended_address(bank, SPI_WRITE, (sect_addr & 0xFF000000) >> 24, ctrl_drv);
+ 
+-	if ( ((sect_addr >= ADDR_16MB) && (address32 == ADDRESS_LO3_HI4_BYTE)) || (address32 == ADDRESS_4BYTE))
++	if ( ((sect_addr >= ADDR_16MB) && ((address32 == ADDRESS_LO3_HI4_BYTE)||(address32 == ADDRESS_DIE_LO3_HI4_BYTE))) || (address32 == ADDRESS_4BYTE))
+ 	{
+ 		/* Set up command buffer. */
+ 		command[0] = OPCODE_SE;
+@@ -379,7 +418,7 @@
+ 	if (retval < 0)
+ 	{
+ 		//if 4 byte mode exit
+-		if ((sect_addr >= ADDR_16MB) && (address32 == ADDRESS_LO3_HI4_BYTE))
++		if ((sect_addr >= ADDR_16MB) && ((address32 == ADDRESS_LO3_HI4_BYTE)||(address32 == ADDRESS_DIE_LO3_HI4_BYTE)))
+ 		{
+ 			retval = exit_4byte_addr_mode(bank, ctrl_drv);
+ 			if (retval < 0)
+@@ -392,11 +431,15 @@
+ 		if ((flash_info[bank].flash_id == 0x002020BA) || (flash_info[bank].flash_id == 0x00C21A20))
+ 			spi_generic_extended_address(bank, SPI_WRITE, 0x00, ctrl_drv);
+ 
++		if(had_switch_die == 1)
++		{
++			spi_generic_select_die( bank, 0,ctrl_drv);
++		}
+ 		up(&priv->chip_drv->lock);
+ 		return spi_error(retval);
+ 	}
+ 
+-	if ((sect_addr >= ADDR_16MB) && (address32 == ADDRESS_LO3_HI4_BYTE))
++	if ((sect_addr >= ADDR_16MB) && ((address32 == ADDRESS_LO3_HI4_BYTE)||(address32 == ADDRESS_DIE_LO3_HI4_BYTE)))
+ 	{
+ 		retval = exit_4byte_addr_mode(bank, ctrl_drv);
+ 		if (retval < 0)
+@@ -409,6 +452,10 @@
+ 	if ((flash_info[bank].flash_id == 0x002020BA) || (flash_info[bank].flash_id == 0x00C21A20))
+ 		spi_generic_extended_address(bank, SPI_WRITE, 0x00, ctrl_drv);
+ 
++	if(had_switch_die == 1)
++	{
++		spi_generic_select_die( bank, 0,ctrl_drv);
++	}
+ 	up(&priv->chip_drv->lock);
+ 	return retval;
+ }
+@@ -420,7 +467,7 @@
+ 	struct spi_flash_private *priv=map->fldrv_priv;
+ 	int bank = map->map_priv_1;
+ 	struct spi_ctrl_driver *ctrl_drv = priv->ctrl_drv;	
+-	int retval;
++	int retval = 0;
+ 	size_t transfer;
+ 	unsigned char command[6];
+ 	int cmd_size;
+@@ -428,11 +475,30 @@
+ 	int end_addr = (addr+bytes-1);	
+ 	u8 address32 = priv->address32;
+ 	unsigned long flash_size = priv->size;
++	u8 had_switch_die = 0;
+ 	
+ 	/* Some time zero bytes length are sent */
+ 	if (bytes==0)
+ 		return 0;
+ 	
++	if (address32 == ADDRESS_DIE_LO3_HI4_BYTE)
++	{ 
++		if (addr < ADDR_32MB && end_addr >= ADDR_32MB)
++		{
++			int ErrorCode;
++			transfer = (ADDR_32MB - addr);
++			ErrorCode = spi_generic_read(map, addr, transfer, buff);
++			if (ErrorCode != 0) return ErrorCode;
++			 
++			//fix address
++			bytes-=transfer;
++			addr+=transfer;
++			buff+=transfer;
++			
++			end_addr = (addr+bytes-1);
++			if (bytes==0) return 0;
++		}
++	}
+ 	down(&priv->chip_drv->lock);
+ 	
+ 	
+@@ -444,6 +510,15 @@
+ 		return -1;
+ 	}
+ 
++	if (address32 == ADDRESS_DIE_LO3_HI4_BYTE){
++		if(addr >= ADDR_32MB){
++			spi_generic_select_die( bank, 1,ctrl_drv);
++			had_switch_die = 1;
++			addr-=ADDR_32MB;
++			end_addr = (addr+bytes-1);
++		}
++	}
++
+ 	if (ctrl_drv->spi_burst_read)
+ 		readfn = ctrl_drv->spi_burst_read;
+ 	else
+@@ -453,13 +528,17 @@
+ 
+ 
+ 	/* Logic for 4 byte address mode Enter */
+-	if (( end_addr >= ADDR_16MB) && (address32 == ADDRESS_LO3_HI4_BYTE ))
++	if (( end_addr >= ADDR_16MB) && ((address32 == ADDRESS_LO3_HI4_BYTE )||(address32 == ADDRESS_DIE_LO3_HI4_BYTE)))
+ 	{
+ 		//printk ("Trying to enter 4 byte mode\n");
+ 		retval = enter_4byte_addr_mode(bank, ctrl_drv);
+ 		if (retval < 0)
+ 		{
+ 			printk ("Unable to enter 4 byte address mode\n");
++			if(had_switch_die == 1)
++			{
++				spi_generic_select_die( bank, 0,ctrl_drv);
++			}
+ 			up(&priv->chip_drv->lock);
+ 			return spi_error(retval);
+ 		}
+@@ -482,7 +561,7 @@
+ 
+ 		if (!ctrl_drv->fast_read)
+ 		{
+-			if ( (( end_addr  >= ADDR_16MB) && (address32 == ADDRESS_LO3_HI4_BYTE)) || (address32 == ADDRESS_4BYTE) )
++			if ( (( end_addr  >= ADDR_16MB) && ((address32 == ADDRESS_LO3_HI4_BYTE)||(address32 == ADDRESS_DIE_LO3_HI4_BYTE))) || (address32 == ADDRESS_4BYTE) )
+ 			{
+ 				/* Set up command buffer. */	/* Normal Read */
+ 				command[0] = OPCODE_READ;
+@@ -509,7 +588,7 @@
+ 		}
+ 		else // Need to check Fast Read in 4 byte address mode
+ 		{
+-			if ( (( end_addr  >= ADDR_16MB) && (address32 == ADDRESS_LO3_HI4_BYTE)) || (address32 == ADDRESS_4BYTE) )
++			if ( (( end_addr  >= ADDR_16MB) && ((address32 == ADDRESS_LO3_HI4_BYTE)||(address32 == ADDRESS_DIE_LO3_HI4_BYTE))) || (address32 == ADDRESS_4BYTE) )
+ 			{ 
+ 				/* Set up command buffer. */   /* Fast Read */
+ 				command[0] = OPCODE_FAST_READ;
+@@ -540,7 +619,7 @@
+ 		if (retval < 0)
+ 		{
+ 			//if 4 byte mode, exit
+-			if (( end_addr >= ADDR_16MB) && (address32 == ADDRESS_LO3_HI4_BYTE))
++			if (( end_addr >= ADDR_16MB) && ((address32 == ADDRESS_LO3_HI4_BYTE)||(address32 == ADDRESS_DIE_LO3_HI4_BYTE)))
+ 			{
+ 				retval = exit_4byte_addr_mode(bank, ctrl_drv);
+ 				if (retval < 0)
+@@ -553,6 +632,10 @@
+ 			if ((flash_info[bank].flash_id == 0x002020BA) || (flash_info[bank].flash_id == 0x00C21A20))
+ 				spi_generic_extended_address(bank, SPI_WRITE, 0x00, ctrl_drv);
+ 
++			if(had_switch_die == 1)
++			{
++				spi_generic_select_die( bank, 0,ctrl_drv);
++			}
+ 			up(&priv->chip_drv->lock);
+ 			return spi_error(retval);
+ 		}
+@@ -563,7 +646,7 @@
+ 	}
+ 
+ 	//if 4 byte mode exit
+-	if (( end_addr >= ADDR_16MB) && (address32 == ADDRESS_LO3_HI4_BYTE))
++	if (( end_addr >= ADDR_16MB) && ((address32 == ADDRESS_LO3_HI4_BYTE)||(address32 == ADDRESS_DIE_LO3_HI4_BYTE)))
+ 	{
+ 		//printk ("Trying to exit 4 byte mode\n");
+ 		retval = exit_4byte_addr_mode(bank, ctrl_drv);
+@@ -576,6 +659,10 @@
+ 	if (flash_info[bank].flash_id == 0x00EF1940) w25q256_force_extended_address(bank, ctrl_drv);
+ 	if ((flash_info[bank].flash_id == 0x002020BA) || (flash_info[bank].flash_id == 0x00C21A20))
+ 		spi_generic_extended_address(bank, SPI_WRITE, 0x00, ctrl_drv);
++	if(had_switch_die == 1)
++	{
++		spi_generic_select_die( bank, 0,ctrl_drv);
++	}
+ 
+ 	up(&priv->chip_drv->lock);
+ 	return 0;
+@@ -592,24 +679,56 @@
+ 	int retval;
+ 	unsigned char command[5];
+ 	size_t transfer;
+-	int cmd_size;
++	int cmd_size = 0;
+ 	int end_addr = (addr+bytes-1);
+ 	u8 address32 = priv->address32;
+ 	unsigned long flash_size = priv->size;
++	u8 had_switch_die = 0;
+ 	
+ 	/* Some time zero bytes length are sent */
+ 	if (bytes==0)
+ 		return 0;
++	
++	if (address32 == ADDRESS_DIE_LO3_HI4_BYTE)
++	{ 
++		if (addr < ADDR_32MB && end_addr >= ADDR_32MB) // flash id or type is special
++		{
++			int ErrorCode;
++			transfer = (ADDR_32MB - addr);
++			ErrorCode = spi_generic_write(map, addr, transfer, buff);
++			if (ErrorCode != 0) return ErrorCode;
++			 
++			 //fix address
++			bytes-=transfer;
++			addr+=transfer;
++			buff+=transfer;
++			
++			end_addr = (addr+bytes-1);
++			if (bytes==0) return 0;
++		}
++	}
+ 
+ 	down(&priv->chip_drv->lock);
+ 	
++	if (address32 == ADDRESS_DIE_LO3_HI4_BYTE){
++		if(addr >= ADDR_32MB){
++			spi_generic_select_die( bank, 1,ctrl_drv);
++			had_switch_die = 1;
++			addr-=ADDR_32MB;
++			end_addr = (addr+bytes-1);
++		}
++	}
+ 	/* Logic for 4 byte address mode Enter */
+-	if (( end_addr >= ADDR_16MB) && (address32 == ADDRESS_LO3_HI4_BYTE))
++	if (( end_addr >= ADDR_16MB) && ((address32 == ADDRESS_LO3_HI4_BYTE)||(address32 == ADDRESS_DIE_LO3_HI4_BYTE)))
+ 	{
+ 		retval = enter_4byte_addr_mode(bank, ctrl_drv);
+ 		if (retval < 0)
+ 		{
+ 			printk ("Unable to enter 4 byte address mode\n");
++			if(had_switch_die == 1)
++			{
++				spi_generic_select_die( bank, 0,ctrl_drv);
++			}
+ 			up(&priv->chip_drv->lock);
+ 			return spi_error(retval);
+ 		}
+@@ -624,6 +743,10 @@
+ 		/* Wait until finished previous command. */
+ 		if (wait_till_ready(bank,ctrl_drv))
+ 		{
++			if(had_switch_die == 1)
++			{
++				spi_generic_select_die( bank, 0,ctrl_drv);
++			}
+ 			up(&priv->chip_drv->lock);
+ 			return -1;
+ 		}
+@@ -632,7 +755,7 @@
+ 		if (bytes <  transfer)
+ 			transfer = bytes;
+ 
+-		if ( ((end_addr >= ADDR_16MB) && (address32 == ADDRESS_LO3_HI4_BYTE)) || (address32 == ADDRESS_4BYTE) ) 
++		if ( ((end_addr >= ADDR_16MB) && ((address32 == ADDRESS_LO3_HI4_BYTE)||(address32 == ADDRESS_DIE_LO3_HI4_BYTE))) || (address32 == ADDRESS_4BYTE) ) 
+ 		{
+ 			/* Set up command buffer. */
+ 			command[0] = OPCODE_PP;
+@@ -671,7 +794,7 @@
+ 		if (retval < 0)
+ 		{
+ 			//if 4 byte mode exit
+-			if (( end_addr >= ADDR_16MB) && (address32 == ADDRESS_LO3_HI4_BYTE))
++			if (( end_addr >= ADDR_16MB) && ((address32 == ADDRESS_LO3_HI4_BYTE)||(address32 == ADDRESS_DIE_LO3_HI4_BYTE)))
+ 			{
+ 				retval = exit_4byte_addr_mode(bank, ctrl_drv);
+ 				if (retval < 0)
+@@ -684,6 +807,10 @@
+ 			if ((flash_info[bank].flash_id == 0x002020BA) || (flash_info[bank].flash_id == 0x00C21A20))
+ 				spi_generic_extended_address(bank, SPI_WRITE, 0x00, ctrl_drv);
+ 
++			if(had_switch_die == 1)
++			{
++				spi_generic_select_die( bank, 0,ctrl_drv);
++			}
+ 			up(&priv->chip_drv->lock);
+ 			return spi_error(retval);
+ 		}
+@@ -693,7 +820,7 @@
+ 	}
+ 
+ 	//if 4 byte mode exit
+-	if (( end_addr >= ADDR_16MB) && (address32 == ADDRESS_LO3_HI4_BYTE))
++	if (( end_addr >= ADDR_16MB) && ((address32 == ADDRESS_LO3_HI4_BYTE)||(address32 == ADDRESS_DIE_LO3_HI4_BYTE)))
+ 	{
+ 		retval = exit_4byte_addr_mode(bank, ctrl_drv);
+ 		if (retval < 0)
+@@ -706,6 +833,10 @@
+ 	if ((flash_info[bank].flash_id == 0x002020BA) || (flash_info[bank].flash_id == 0x00C21A20))
+ 		spi_generic_extended_address(bank, SPI_WRITE, 0x00, ctrl_drv);
+ 
++	if(had_switch_die == 1)
++	{
++		spi_generic_select_die( bank, 0,ctrl_drv);
++	}
+ 	up(&priv->chip_drv->lock);
+ 	return 0;
+ }

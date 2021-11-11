@@ -1,0 +1,86 @@
+--- uboot/cpu/arm926ejs/PILOTIII/wdt.c	2015-07-08 15:06:14.184390517 +0530
++++ uboot_new/cpu/arm926ejs/PILOTIII/wdt.c	2015-07-09 10:55:03.000000000 +0530
+@@ -41,8 +41,13 @@
+        *((volatile unsigned long *)(WDT_CONTROL_REG)) &= ~0x40;
+ 
+        /*if watchdog fired but wdo is not set, bootloader watchdog expired */
+-       if (watchdog_fired && !wdo_enable) {
+-               *watchdog_reset_status = 1;
++       if (watchdog_fired) {
++               if (wdo_enable) {
++                       *watchdog_reset_status = 2; // OS watchdog reset
++               }
++               else {
++                       *watchdog_reset_status = 1; // Bootloader watchdog reset
++               }
+        }
+        else {
+                *watchdog_reset_status = 0;
+--- uboot/vendors/ami/fmh/cmd_fmh.c	2015-07-08 13:34:57.000000000 +0200
++++ uboot_new/vendors/ami/fmh/cmd_fmh.c	2015-07-08 13:34:57.000000000 +0200
+@@ -47,6 +47,9 @@
+ extern short ReadJumperConfig(void);
+ extern int rconsole(void);
+ extern int do_protect (cmd_tbl_t *cmdtp, int flag, int argc, char *argv[]);
++extern int Enable_watchdog(unsigned long *);
++extern int Disable_watchdog(void);
++extern int Get_bootargs(char *, int, int);
+ 
+ #ifdef CFG_YAFU_SUPPORT
+ extern int fwupdate(void);
+@@ -461,7 +464,7 @@
+ *@param [out]  0 - on success
+ *             -1 - on error
+ **/
+-int GetBootImage(u8 *imagetoboot)
++int GetBootImage(u8 *imagetoboot, u32 *watchdog_status)
+ {
+ 	flash_info_t *flinfo;
+ 	unsigned long i=0,SectorSize=CONFIG_SPX_FEATURE_GLOBAL_ERASE_BLOCK_SIZE;
+@@ -475,6 +478,7 @@
+ 
+ 	#ifdef CONFIG_SPX_FEATURE_FAIL_SAFE_BOOTING
+ 		Enable_watchdog(&watchdog_reset_status);
++		*watchdog_status=watchdog_reset_status;
+ 	#endif
+ 
+ 
+@@ -559,7 +563,7 @@
+ 	    }
+ 
+                 /* check whether reboot caused by watchdog modules reset */
+-	        if(watchdog_reset_status)
++	        if(watchdog_reset_status == 1)
+ 		{
+                         /*if both images corrupts uboot has to launch Recovery Console */
+                         if( getenv("fwimage1corrupted") && getenv("fwimage2corrupted") )
+@@ -717,6 +721,8 @@
+ 	char baudrate_str[16];
+ 	u8 imagetoboot = IMAGE_1; /* By default will boot image-1 */
+ 	char phyreg0[16],*pReg = NULL;	
++	char wdtstr[16];
++	u32 wdtstatus;	
+ 
+ 	sprintf(baudrate_str,"%ld",CONFIG_BAUDRATE);
+ 
+@@ -764,7 +770,7 @@
+ 
+ 
+ #ifdef CONFIG_SPX_FEATURE_GLOBAL_DUAL_IMAGE_SUPPORT
+-    if( GetBootImage(&imagetoboot) != 0 )
++    if( GetBootImage(&imagetoboot, &wdtstatus) != 0 )
+ 	 return -1;
+ #endif
+ 
+@@ -1041,6 +1047,11 @@
+                         sprintf(phyreg0, " phyreg0=%s", pReg);
+                         strcat(bootargs, phyreg0);
+                 }
++                if (wdtstatus)
++                {
++                        sprintf(wdtstr, " wdtstatus=%d", wdtstatus);
++                        strcat(bootargs, wdtstr);
++                }
+ 	}
+ 
+ 	/* Check if anything to be executed */

@@ -1,0 +1,13 @@
+#!/bin/sh
+
+SET_RETRY=3
+SET_TIMEOUT=3
+
+HOST_NAME=`hostname`
+
+
+if [ "$HOST_NAME" == "" ]; then
+        echo "DHCP CONF: hostname is empty!!!"
+        exit 0
+fi
+

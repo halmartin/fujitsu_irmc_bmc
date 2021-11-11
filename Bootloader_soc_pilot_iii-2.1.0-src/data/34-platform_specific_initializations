@@ -1,0 +1,21 @@
+--- uboot/common/main.c	2013-01-24 06:10:23.219581582 -0500
++++ uboot_new/common/main.c	2013-01-24 06:12:01.362547737 -0500
+@@ -53,7 +53,7 @@
+ #endif
+ 
+ extern int do_bootd (cmd_tbl_t *cmdtp, int flag, int argc, char *argv[]);
+-
++extern void platformSpecificInit(void);
+ 
+ #define MAX_DELAY_STOP_STR 32
+ 
+@@ -502,6 +502,9 @@
+ 	init_cmd_timeout ();
+ # endif	/* CONFIG_BOOT_RETRY_TIME */
+ 
++        /* Initialize or sets all platform specific registers and tasks.............*/
++        platformSpecificInit();
++
+ #ifdef CONFIG_BOOTCOUNT_LIMIT
+ 	if (bootlimit && (bootcount > bootlimit)) {
+ 		printf ("Warning: Bootlimit (%u) exceeded. Using altbootcmd.\n",

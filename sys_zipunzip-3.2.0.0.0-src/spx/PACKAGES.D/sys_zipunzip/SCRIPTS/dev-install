@@ -1,0 +1,20 @@
+# Install Script
+build-install:
+	DELETE  %IMAGE_TREE/usr/bin/unzip
+	DELETE  %IMAGE_TREE/usr/bin/unzipsfx
+	DELETE  %IMAGE_TREE/usr/bin/zip
+	DELETE  %IMAGE_TREE/usr/bin/zipcloak
+	DELETE  %IMAGE_TREE/usr/bin/zipgrep
+	DELETE  %IMAGE_TREE/usr/bin/zipinfo
+	DELETE  %IMAGE_TREE/usr/bin/zipnote
+	DELETE  %IMAGE_TREE/usr/bin/zipsplit
+	EXECUTE if [ "%CONFIG_SPX_FEATURE_UNZIP_ENABLED" != "YES" ]; then rm -f ./usr/bin/unzip; fi
+	EXECUTE if [ "%CONFIG_SPX_FEATURE_UNZIPSFX_ENABLED" != "YES" ]; then rm -f  ./usr/bin/unzipsfx; fi
+	EXECUTE if [ "%CONFIG_SPX_FEATURE_ZIP_ENABLED" != "YES" ]; then rm -f  ./usr/bin/zip; fi
+	EXECUTE if [ "%CONFIG_SPX_FEATURE_ZIPCLOAK_ENABLED" != "YES" ]; then rm -f  ./usr/bin/zipcloak; fi
+	EXECUTE if [ "%CONFIG_SPX_FEATURE_ZIPGREP_ENABLED" != "YES" ]; then rm -f  ./usr/bin/zipgrep; fi
+	EXECUTE if [ "%CONFIG_SPX_FEATURE_ZIPINFO_ENABLED" != "YES" ]; then rm -f  ./usr/bin/zipinfo; fi
+	EXECUTE if [ "%CONFIG_SPX_FEATURE_ZIPNOTE_ENABLED" != "YES" ]; then rm -f  ./usr/bin/zipnote; fi
+	EXECUTE if [ "%CONFIG_SPX_FEATURE_ZIPSPLIT_ENABLED" != "YES" ]; then rm -f  ./usr/bin/zipsplit; fi
+	COPY_DIR . %IMAGE_TREE
+debug-install:

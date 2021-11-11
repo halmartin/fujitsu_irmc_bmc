@@ -1,0 +1,43 @@
+Source : function1hw
+Version : 3.1.0.6.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : Rama Rao Bisa (RamaB@ami.com)
+License : GPL-V2
+Source-Location : AMI
+Source-Version : 1.0.0
+Builds : function1hw, function1hw_dev
+Build-Depends : Crosscc, global_dev, helper_driver_dev, kernel_dev, rules, reset_driver_dev, DevNodes
+Architecture : ARM
+SOC : PILOT
+OEM : FTS
+Urgency : low
+Description : This Package includes Function1 driver module for PILOT SOC
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : function1hw
+Config-Tag : Function1 Driver Support (PILOT)
+Section : sys
+Group : DEVICE
+Essential : NO
+Depends : kernel
+Required : helper, function1hw_support, DevNodes
+Description : This Package include Built Function1 driver module.
+.
+
+Package : function1hw_dev
+Section : dev
+Group : DEVEL
+Essential : NO
+Description : This Package provides Function1 driver development header files.
+.
+

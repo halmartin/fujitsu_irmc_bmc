@@ -1,0 +1,23 @@
+Source                   	:	Bootloader_bugfix
+Version : 2.0.0
+SPX-Version              	:	4.0
+SPX-Format               	:	2.0
+Owner                    	:	AMI
+Maintainer               	:	Samvinesh Christopher  (vineshc@ami.com)
+License                  	:	GPL-V2
+Source-Location          	:	AMI
+Source-Version           	:	1.1.6
+Builds                   	:	@Bootloader_bugfix
+Build-Depends            	:	@Bootloader_amiext
+Architecture             	:	ANY
+Urgency : high
+Description              	:	Bug Fixes to Bootloader (U-boot 1.1.6)
+.
+
+Package                  	:	@Bootloader_bugfix
+Section                  	:	info
+Group                    	:	BASE
+Essential                	:	NO
+Description              	:	Bug Fixes to Bootloader (U-boot 1.1.6)
+.
+

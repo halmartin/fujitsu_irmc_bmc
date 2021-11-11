@@ -1,0 +1,5 @@
+lib/%MULTI_ARCH_LIB%/libbz2.so.1.0.4
+./usr/bin/zip
+./usr/bin/zipcloak
+./usr/bin/zipnote
+./usr/bin/zipsplit

@@ -1,0 +1,205 @@
+--- uboot/cpu/arm926ejs/PILOTIII/misc.c	2012-09-20 06:27:00.876686065 -0400
++++ uboot_new/cpu/arm926ejs/PILOTIII/misc.c	2012-09-20 06:42:58.018546964 -0400
+@@ -3,8 +3,176 @@
+ #include <linux/types.h>
+ #include "soc_hw.h"
+ 
+-typedef volatile unsigned int *   tPVU32;
+-#define WRITE_REG32(a,d)  (*((tPVU32) (a)) = d)
++/* List of gpio pins which are going to activate in uboot of particular Pilot-III SOC*/
++GPIO GpioTable[] = {
++
++	/* { GPIO_00_0,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO } */
++	{ 0xFF,    0xFF,    0xFF,    0xFF }
++};
++
++/* List of Pilot-III SOC Hardware Registers to initialize in uboot*/
++HWREG RegTable[] = {
++
++	/* { 0x40100188, 0x0, 0x220, REGISTER_TYPE_BIT32 } */
++	{ 0xFF,    0xFF,    0xFF,    0xFF }
++};
++
++#define IS_INPUT_PIN(port, pin) (!( READ_REG8( GPIO_BASE_OFFS + pin + port * 0x10) & GPIO_OUTPUT_ENB))
++
++int Readgpio (u8 pindata)
++{
++	unsigned int Addr;
++	unsigned int Value;
++        unsigned char port,pin;
++
++	port = pindata / 8;
++	pin = pindata % 8;
++
++	if(pindata <= 31) 
++	{
++		/* check is it input pin */
++		if (IS_INPUT_PIN(port, pin))
++                {
++			Addr = GPIO_BASE_OFFS + GPIO_GPDI_OFFSET + port * 0x10;
++                }
++		else
++                {
++			Addr = GPIO_BASE_OFFS + GPIO_GPDO_OFFSET + port * 0x10;
++                }
++	}
++	else 
++	{
++		Addr = GPIO_BASE_OFFS + GPIO_GPDI_OFFSET + port * 0x10;
++	}
++
++	/* Get the particular bit */
++      	Value = READ_REG8( Addr );
++
++	Value &= ( 0x01 << pin );
++	Value >>= pin ;
++
++return Value;
++}
++
++void SetGpio(u8 pindata, u8 data)
++{
++        unsigned int Addr;
++        unsigned int Value;
++        unsigned char port,pin;
++
++	port = pindata / 8;
++	pin = pindata % 8;
++
++	Addr = GPIO_BASE_OFFS + GPIO_GPDO_OFFSET + port * 0x10;
++	Value = READ_REG8( Addr );
++
++	if ( data )
++		Value = Value | ( 0x01 << pin );
++	else
++		Value = Value & ~ ( 0x01 << pin);
++
++	WRITE_REG8( Addr, Value );
++
++}
++
++void SetGpioDir(u8 pindata, u8 data, u8 pull)
++{
++        unsigned int Addr;
++        unsigned int Value;
++        unsigned char port,pin; 
++
++	port = pindata / 8;
++	pin = pindata % 8;
++
++	Addr = GPIO_BASE_OFFS + pin + port * 0x10;
++
++	Value = READ_REG8( Addr );
++
++	if ( data == GPIO_DIR_OUT )
++		Value = Value | GPIO_OUTPUT_ENB;
++	else if ( data == GPIO_DIR_IN )
++		Value = Value & ~GPIO_OUTPUT_ENB;
++
++	// add pull-down pull-up pull-no
++	// 0b00: Internal Pulldown enabled
++	// 0b10: Internal Pullup enabled
++	// 0b11: No Pullup/Pulldown
++	if ( pull == GPIO_PULL_DOWN ) {
++		Value = Value & ~GPIO_PULL_NO; // clear bit 2 and 1
++	}
++	else if ( pull == GPIO_PULL_UP ) {
++		Value = Value & ~GPIO_PULL_NO; // clear bit 2 and 1
++		Value = Value |  GPIO_PULL_UP; // set bit 2
++	}
++	else if ( pull == GPIO_PULL_NO ) {
++		Value = Value |  GPIO_PULL_NO; // set bit 2 and 1
++	}
++
++	WRITE_REG8( Addr, Value );
++
++}
++
++
++void InitGPIO(void)
++{
++     unsigned char  index = 0;
++
++     for(index =0 ; index< sizeof(GpioTable)/sizeof(GPIO);index++)
++     {
++
++         if(GpioTable[index].type != GPIO_TYPE_INVALID)
++         {
++
++              if(GpioTable[index].type == GPIO_TYPE_IN)
++              {
++                  SetGpioDir(GpioTable[index].num, GPIO_DIR_IN, GpioTable[index].pull);
++              }
++	 	
++              if(GpioTable[index].type == GPIO_TYPE_OUT)
++              {
++                  SetGpioDir(GpioTable[index].num, GPIO_DIR_OUT, GpioTable[index].pull);
++
++                  if( GpioTable[index].initVal )
++                     SetGpio( GpioTable[index].num, GPIO_DATA_HIGH);
++                  else
++                    SetGpio( GpioTable[index].num, GPIO_DATA_LOW);
++              }
++         }
++    }
++}
++
++
++int WriteRegister(u32 addrs,u32 mask,u32 value,u8 regType)
++{
++    unsigned int regVal;
++
++    if(regType == REGISTER_TYPE_BIT8)
++    {
++        regVal = READ_REG8(addrs);
++        regVal = ( (regVal & mask) | value);
++        WRITE_REG8(addrs,regVal);
++    }
++    else if(regType == REGISTER_TYPE_BIT16)
++    {
++        regVal = READ_REG16(addrs);
++        regVal = ( (regVal & mask) | value);
++        WRITE_REG16(addrs,regVal);
++    }
++    else if(regType == REGISTER_TYPE_BIT32)
++    {
++        regVal = READ_REG32(addrs);
++        regVal = ( (regVal & mask) | value);
++        WRITE_REG32(addrs,regVal);
++    }
++    else
++    {
++       printf("Invalid register type of HW register:%lx for given value:%lx\n",addrs,value);
++       return -1;
++    }
++
++return 0;
++}
++
+ 
+ void
+ soc_init(void)
+@@ -14,6 +182,13 @@
+ 	*((volatile u32 *)(SE_MAC_A_BASE +AST_MAC_CSR11)) = 0;
+ 	*((volatile u32 *)(SE_MAC_B_BASE +AST_MAC_CSR11)) = 0;
+ 
++        u8 index = 0;
++        for(index = 0;index < ( sizeof(RegTable) / sizeof(HWREG) );index++)
++        {
++            if(RegTable[index].RegType != REGISTER_TYPE_INVALID)
++                WriteRegister(RegTable[index].Address,RegTable[index].Mask,RegTable[index].Val,RegTable[index].RegType);
++        }
++
+ 	/* Enable Backup SPI */
+ 	*((volatile u32 *)(SE_TOP_LEVEL_PIN_CTRL_BASE)) = 0;
+ 	
+@@ -38,5 +213,8 @@
+     WRITE_REG32(0x4010091C, 0x00000001);
+     WRITE_REG32(0x4010091C, 0x00000007);
+ #endif
+-	return;
++
++    /* Inialize all PILOT-III SOC GPIO's */
++    InitGPIO();
++return;
+ }

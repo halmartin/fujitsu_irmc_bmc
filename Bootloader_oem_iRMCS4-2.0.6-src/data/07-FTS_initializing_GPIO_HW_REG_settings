@@ -1,0 +1,216 @@
+--- uboot/cpu/arm926ejs/PILOTIII/misc.c	2013-03-28 05:14:32.031762725 -0400
++++ uboot_new/cpu/arm926ejs/PILOTIII/misc.c	2013-03-28 05:31:56.129984783 -0400
+@@ -9,23 +9,132 @@
+ #define MAX_UBOOT_VAR_COUNT          64
+ #define MAX_UBOOT_VAR_NAME_LENGTH    32
+ #define MAX_UBOOT_VAR_VALUE_LENGTH   64
+-#define HWREG_ENVVAR_FORMAT          "pilotreg"
++#define HWREG_ENVVAR_FORMAT          "ftsreg"
+ #define HWREG_ENVVAL_DELIMITER       ","
+ #define I2C_INTERFACE_RESET 0x0000FF00
+ #define ENABLE_SOFTWARE_RESET 0x00003002
++#define SLP_ST_REG          0x26
++#define PASS1_CFG_REG		 0x34
++#define PASS2_CFG_REG		 0x35
++#define PASS3_CFG_REG		 0x36
++#define PWBTIN_STS_REG		 0x37  
++#define ENABLE_PWR_BT_LOCK  0x20
++
+ 
+ /* List of gpio pins which are going to activate in uboot of particular Pilot-III SOC*/
+ GPIO GpioTable[] = {
+-
+-	/* { GPIO_00_0,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO } */
++	//Port_00
++	{ GPIO_00_0,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },  
++	{ GPIO_00_1,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_00_2,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_00_3,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_00_4,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_00_5,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_00_6,    GPIO_TYPE_OUT,   GPIO_DATA_HIGH,   GPIO_PULL_NO },
++	{ GPIO_00_7,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++        //Port_01                                                   
++	{ GPIO_01_0,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_01_1,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_01_2,    GPIO_TYPE_OUT,   GPIO_DATA_HIGH,   GPIO_PULL_NO },
++	{ GPIO_01_3,    GPIO_TYPE_OUT,   GPIO_DATA_HIGH,   GPIO_PULL_NO },
++	{ GPIO_01_4,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_01_5,    GPIO_TYPE_OUT,   GPIO_DATA_HIGH,   GPIO_PULL_NO },
++	{ GPIO_01_6,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_01_7,    GPIO_TYPE_OUT,   GPIO_DATA_HIGH,   GPIO_PULL_NO },
++	//Port_02
++	{ GPIO_02_0,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_02_1,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_02_2,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_02_3,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_02_4,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_02_5,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_02_6,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_02_7,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//Port_14 only 5 bits;
++	{ GPIO_14_0,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_14_1,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_UP },
++	{ GPIO_14_2,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_14_3,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//{ GPIO_14_4,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO }, // leave aa default
++	//Port_18
++	//{ GPIO_18_0,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO }, // leave GPIO_18_0..5 as default
++	//{ GPIO_18_1,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//{ GPIO_18_2,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//{ GPIO_18_3,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//{ GPIO_18_4,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//{ GPIO_18_5,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_18_6,    GPIO_TYPE_OUT,   GPIO_DATA_HIGH,    GPIO_PULL_NO },
++	{ GPIO_18_7,    GPIO_TYPE_OUT,   GPIO_DATA_HIGH,    GPIO_PULL_NO },
++	//Port_19
++	{ GPIO_19_0,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_19_1,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_19_2,    GPIO_TYPE_OUT,   GPIO_DATA_HIGH,   GPIO_PULL_NO },
++	//{ GPIO_19_3,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_19_4,    GPIO_TYPE_OUT,   GPIO_DATA_HIGH,   GPIO_PULL_NO },
++	{ GPIO_19_5,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_19_6,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_19_7,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//Port_20
++	//{ GPIO_20_0,    GPIO_TYPE_IN,   GPIO_DATA_LOW,    GPIO_PULL_UP },
++	//{ GPIO_20_1,    GPIO_TYPE_IN,   GPIO_DATA_LOW,    GPIO_PULL_UP },
++	//{ GPIO_20_2,    GPIO_TYPE_IN,   GPIO_DATA_HIGH,   GPIO_PULL_UP },
++	{ GPIO_20_3,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//{ GPIO_20_4,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_UP },
++	{ GPIO_20_5,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_20_6,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//{ GPIO_20_7,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_UP },
++	//Port_22
++	{ GPIO_22_0,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_22_1,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_22_2,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//{ GPIO_22_3,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_UP },
++	{ GPIO_22_4,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_22_5,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_22_6,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//{ GPIO_22_7,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//Port_23
++	{ GPIO_23_0,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_23_1,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_23_2,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_23_3,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_23_4,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_23_5,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_23_6,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//{ GPIO_23_7,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_UP },
++	//Port_24
++	//{ GPIO_24_4,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_UP },
++	{ GPIO_24_5,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_24_6,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//{ GPIO_24_7,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_UP },
++	//Port_26
++	//{ GPIO_26_0,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_26_1,    GPIO_TYPE_IN,    GPIO_DATA_HIGH,   GPIO_PULL_NO },
++	{ GPIO_26_2,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_26_3,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_26_4,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_26_5,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_26_6,    GPIO_TYPE_IN,    GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_26_7,    GPIO_TYPE_OUT,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	//Port_29
++	{ GPIO_29_0,    GPIO_TYPE_IN,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_29_1,    GPIO_TYPE_IN,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_29_2,    GPIO_TYPE_IN,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_29_3,    GPIO_TYPE_IN,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_29_4,    GPIO_TYPE_IN,   GPIO_DATA_LOW,    GPIO_PULL_NO },
++	{ GPIO_29_5,    GPIO_TYPE_IN,   GPIO_DATA_LOW,    GPIO_PULL_NO },
+ 	{ 0xFF,    0xFF,    0xFF,    0xFF }
+ };
+ 
+ /* List of Pilot-III SOC Hardware Registers to initialize in uboot*/
+ HWREG RegTable[] = {
+ 
+-	/* { 0x40100188, 0x0, 0x220, REGISTER_TYPE_BIT32 } */
+-	{ 0xFF,    0xFF,    0xFF,    0xFF }
++	{ 0x40100188, 0x00000000, 0x00000220, REGISTER_TYPE_BIT32 }, /* MACRGMIICTL */
++	{ 0x40100920, 0xFFF00000, 0x000AAAAA, REGISTER_TYPE_BIT32 }, /* LPCPINCTL - LPC Pull up Pull down Control register*/
++	{ 0x404200F7, 0x000000FE, 0x00000001, REGISTER_TYPE_BIT8  }, /* SGPIO - Enabling Port Capture Data on SGPIO*/
++	{ 0x40425004, 0x0000007F, 0x00000080, REGISTER_TYPE_BIT8  }, /* WK_CFG0 - PWRBTN Overide Enable */
++   { 0x40420006, 0x00000000, 0x00000005, REGISTER_TYPE_BIT8  }, /* GPIO6 ->output and Debounce off */
++	{ 0x4042000D, 0x000000CF, 0x00000010, REGISTER_TYPE_BIT8  }, /* LED output blinking rate (1 sec on/ 1 sec off) */
++	{ 0xFF,       0xFF,       0xFF,       REGISTER_TYPE_INVALID}
+ };
+ 
+ #define IS_INPUT_PIN(port, pin) (!( READ_REG8( GPIO_BASE_OFFS + pin + port * 0x10) & GPIO_OUTPUT_ENB))
+@@ -186,10 +289,17 @@
+ 
+ void CheckForEmergencyMode(void)
+ {
+-    /* OEM's can overwrite this condition accordingly to enter BMC recovery/emergency mode dynamically */
+-    /* Eg: considering GPIO value to move BMC into recovery mode for every reboot */
+-    //if()
+-    //rconsole();  /* Remote Recovery Console */
++    u8 check = 0x3;
++
++    for(;check;check--)
++    {
++        if (Readgpio(GPIO_01_1))//ID_SWITCH_IRMC_N
++         return;
++    }
++    SetGpio(GPIO_00_2,GPIO_DATA_HIGH);//FP_ID_LED
++    SetGpio(GPIO_01_3,GPIO_DATA_LOW);//LED_GERR_IRMC_N
++    *((unsigned char *)(SE_SYS_WAKEUP_VA_BASE + SLP_ST_REG)) = 0x00;
++    rconsole();  /* Remote Recovery Console */
+ 
+ return;
+ }
+@@ -305,11 +415,53 @@
+     return;
+ }
+ 
++void PwButtonLock(void)
++{
++    unsigned char icr;
++    icr = *((unsigned char *)(SE_SYS_WAKEUP_VA_BASE + SLP_ST_REG));
++    icr |= ENABLE_PWR_BT_LOCK;
++    *((unsigned char *)(SE_SYS_WAKEUP_VA_BASE + SLP_ST_REG)) = icr;
++    return;
++}
++
++void set2AC_Defaul(void)
++{
++	unsigned char icr;
++	*((unsigned char *)(SE_SYS_WAKEUP_VA_BASE + SLP_ST_REG)) = 0x00;
++	*((unsigned char *)(SE_SYS_WAKEUP_VA_BASE + PASS1_CFG_REG)) = 0x84;
++	*((unsigned char *)(SE_SYS_WAKEUP_VA_BASE + PASS2_CFG_REG)) = 0x84;
++	*((unsigned char *)(SE_SYS_WAKEUP_VA_BASE + PASS3_CFG_REG)) = 0x84;
++	icr = *((unsigned char *)(SE_SYS_WAKEUP_VA_BASE + PWBTIN_STS_REG));
++	icr &= 0xF3; //disable interrupts;
++	icr |= 0x03; // clear event bits
++	*((unsigned char *)(SE_SYS_WAKEUP_VA_BASE + PWBTIN_STS_REG)) = icr;
++}
++
++static char g_toggle_led = 0;
++void Blink_Err_ID_leds(void)
++{
++    if(g_toggle_led)
++    {
++        SetGpio(GPIO_01_3,GPIO_DATA_HIGH);//LED_GERR_IRMC_N
++        SetGpio(GPIO_00_2,GPIO_DATA_HIGH);//FP_ID_LED
++        g_toggle_led = 0;
++    }
++    else
++    {
++        SetGpio(GPIO_00_2,GPIO_DATA_LOW);//FP_ID_LED
++        SetGpio(GPIO_01_3,GPIO_DATA_LOW);//LED_GERR_IRMC_N
++        g_toggle_led = 1;
++     }
++return;
++}
++
+ void platformSpecificInit(void)
+ {
+     ResetConfigReg();
+     CheckForEmergencyMode();
+     ReadEnvVarsSetHWRegs();
++    set2AC_Defaul();
++    PwButtonLock();
+ 
+ return;
+ }

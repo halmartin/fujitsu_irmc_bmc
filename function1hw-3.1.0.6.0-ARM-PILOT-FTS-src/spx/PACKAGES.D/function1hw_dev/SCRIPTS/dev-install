@@ -1,0 +1,8 @@
+# Install Script
+
+build-install:
+	MKDIR_NOCLEAN %SPXINC/function1hw
+	COPY_DIR ./ %SPXINC/function1hw
+	
+debug-install:
+

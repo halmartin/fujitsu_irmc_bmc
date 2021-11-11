@@ -1,0 +1,7 @@
+--- linux-3.14.17/arch/arm/tools/mach-types	2014-08-14 07:08:34.000000000 +0530
++++ linux-3.14.17.new/arch/arm/tools/mach-types	2014-09-04 11:54:16.257805542 +0530
+@@ -1007,3 +1007,4 @@
+ eukrea_cpuimx28sd	MACH_EUKREA_CPUIMX28SD	EUKREA_CPUIMX28SD	4573
+ domotab			MACH_DOMOTAB		DOMOTAB			4574
+ pfla03			MACH_PFLA03		PFLA03			4575
++hornet    MACH_HORNET   HORNET      5555

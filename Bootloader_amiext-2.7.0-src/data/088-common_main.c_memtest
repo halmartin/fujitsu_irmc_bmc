@@ -1,0 +1,123 @@
+--- uboot.old/common/main.c	2012-06-22 14:56:47.473128635 +0530
++++ uboot/common/main.c	2012-06-22 13:21:50.906005368 +0530
+@@ -296,6 +296,65 @@
+ # endif	/* CONFIG_AUTOBOOT_KEYED */
+ #endif	/* CONFIG_BOOTDELAY >= 0  */
+ 
++#ifdef CONFIG_MEMTEST_ENABLE
++int do_mtest(vu_long *start,vu_long *end,ulong pattern)
++{
++    vu_long *addr;
++    ulong incr=0;
++    int rcode = 0,i;
++    ulong   val;
++    ulong   readback;
++
++    incr = 1;
++    /*Allow only 4 Iteration now*/
++    for (i=0;i<4;i++) {
++        if (ctrlc()) {
++            putc ('\n');
++            return 1;
++        }
++
++        printf ("\rPattern %08lX  Writing..."
++                            "%12s"
++                            "\b\b\b\b\b\b\b\b\b\b",
++                            pattern, "");
++
++        for (addr=start,val=pattern; addr<end; addr++) {
++            *addr = val;
++            val  += incr;
++        }
++
++        puts ("Reading...");
++
++        for (addr=start,val=pattern; addr<end; addr++) {
++            readback = *addr;
++            if (readback != val) {
++                printf ("\nMem error @ 0x%08X: "
++                                            "found %08lX, expected %08lX\n",
++                                            (uint)addr, readback, val);
++                rcode = 1;
++            }
++            val += incr;
++        }
++
++        /*
++        * Flip the pattern each time to make lots of zeros and
++        * then, the next time, lots of ones.  We decrement
++        * the "negative" patterns and increment the "positive"
++        * patterns to preserve this feature.
++        */
++        if(pattern & 0x80000000) {
++            pattern = -pattern;	/* complement & increment */
++        }
++        else {
++            pattern = ~pattern;
++        }
++        incr = -incr;
++    }
++    return rcode;
++
++}
++#endif
++
+ /****************************************************************************/
+ 
+ void main_loop (void)
+@@ -314,6 +373,12 @@
+ #ifdef CONFIG_PREBOOT
+ 	char *p;
+ #endif
++#ifdef CONFIG_MEMTEST_ENABLE
++        char *mtest;
++        int mRet;
++        vu_long *start,*end;
++        ulong pattern;
++#endif
+ #ifdef CONFIG_BOOTCOUNT_LIMIT
+ 	unsigned long bootcount = 0;
+ 	unsigned long bootlimit = 0;
+@@ -332,6 +397,41 @@
+ 	trab_vfd (bmp);
+ #endif	/* CONFIG_VFD && VFD_TEST_LOGO */
+ 
++#ifdef CONFIG_MEMTEST_ENABLE
++        /*Doing Memory Test*/
++        mtest = getenv("do_memtest");
++        if(strcmp(mtest ,"1") == 0)
++        {
++            start = (ulong *)CFG_MEMTEST_START;
++            end = (ulong *)CFG_MEMTEST_END;
++            pattern = 0;    /*As of now set the pattern as 0*/
++            mRet = do_mtest(start,end,pattern);
++            if(mRet == 0)
++            {
++                setenv("memtest_pass","yes");
++                /*Save the new value into spi*/
++                saveenv();
++            }
++            else
++            {
++                setenv("memtest_pass","no");
++                /*Save the new value into spi*/
++                saveenv();
++            }
++        }
++        else
++        {
++            mtest=getenv("memtest_pass");
++            if(strcmp(mtest,"idle") != 0)
++            {
++                /*Change the Memory Test staus as idle if the memtest is disabled*/
++                setenv("memtest_pass","idle");
++                /*Save the new value into spi*/
++                saveenv();
++            }
++        }
++#endif
++
+ #ifdef CONFIG_BOOTCOUNT_LIMIT
+ 	bootcount = bootcount_load();
+ 	bootcount++;

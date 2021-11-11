@@ -1,0 +1,32 @@
+--- u-boot-1.1.6/vendors/ami/sideband/Makefile	1970-01-01 08:00:00.000000000 +0800
++++ u-boot-1.1.6-ami/vendors/ami/sideband/Makefile	2014-04-08 10:55:14.932512583 +0800
+@@ -0,0 +1,29 @@
++# Makefile for AMI ractrends board
++include $(TOPDIR)/config.mk
++
++O_TARGET= sidebandlib.o
++
++OBJS	=
++
++COBJS	= sidebandstart.o cmd_sideband.o
++
++OBJS	= $(AOBJS) $(COBJS)
++
++CFLAGS += -I.. -I$(TOPDIR)/vendors/ami/sideband
++
++all:	$(O_TARGET) 
++
++$(O_TARGET): .depend $(OBJS)
++	$(LD) -r -o $@ $(OBJS)
++
++distclean clean :
++	rm -f $(OBJS) $(O_TARGET)
++
++#########################################################################
++
++.depend:	Makefile $(AOBJS:.o=.S) $(COBJS:.o=.c)
++		$(CC) -M $(CFLAGS) $(AOBJS:.o=.S) $(COBJS:.o=.c) > $@
++
++sinclude .depend
++
++#########################################################################

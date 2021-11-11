@@ -1,0 +1,35 @@
+Source : peci_hw
+Version : 6.1.0.1.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : Dinesh Selvam (dineshs@amiindia.co.in)
+License : GPL-V2
+Source-Location : AMI
+Source-Version : 1.0.0
+Builds : peci_hw
+Build-Depends : Crosscc, helper_driver_dev, kernel_dev, rules, peci_driver_dev, reset_driver_dev, DevNodes
+Architecture : ARM
+SOC : PILOT
+Urgency : medium
+Description : This Package includes PECI hardware module for Pilot SoC.
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,Source-License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : peci_hw
+Section : sys
+Group : DEVICE
+Essential : YES
+Depends : peci, kernel
+Required : helper, DevNodes
+Provides : peciDriver
+Description : This pacakge includes built PECI hardware driver module for PILOT
+.
+

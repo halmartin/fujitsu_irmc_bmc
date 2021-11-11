@@ -1,0 +1,7 @@
+--- linux-3.14.17/drivers/net/ethernet/Makefile	2014-08-14 07:08:34.000000000 +0530
++++ linux-3.14.17.new/drivers/net/ethernet/Makefile	2014-09-04 12:06:49.385827308 +0530
+@@ -77,3 +77,4 @@
+ obj-$(CONFIG_NET_VENDOR_WIZNET) += wiznet/
+ obj-$(CONFIG_NET_VENDOR_XILINX) += xilinx/
+ obj-$(CONFIG_NET_VENDOR_XIRCOM) += xircom/
++obj-$(CONFIG_PILOT_NET_TULIP) += pilot_tulip/

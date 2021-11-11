@@ -1,0 +1,26 @@
+--- uboot/net/net.c	2013-03-12 15:48:34.117521017 -0400
++++ uboot-new/net/net.c	2013-03-12 15:46:03.205458393 -0400
+@@ -200,6 +200,7 @@
+ uchar 		NetArpWaitPacketBuf[PKTSIZE_ALIGN + PKTALIGN];
+ ulong		NetArpWaitTimerStart;
+ int		NetArpWaitTry;
++unsigned char Disable_PingTimeout = 0;
+ 
+ void ArpRequest (void)
+ {
+@@ -796,7 +797,14 @@
+ #if defined(CONFIG_NET_MULTI)
+ 	printf ("Using %s device\n", eth_get_name());
+ #endif	/* CONFIG_NET_MULTI */
+-	NetSetTimeout (10 * CFG_HZ, PingTimeout);
++	if(Disable_PingTimeout)
++	{
++		NetSetTimeout (1, PingTimeout);
++	}
++	else
++	{
++		NetSetTimeout (10 * CFG_HZ, PingTimeout);
++	}
+ 	NetSetHandler (PingHandler);
+ 
+ 	PingSend();

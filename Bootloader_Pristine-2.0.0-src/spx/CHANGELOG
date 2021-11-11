@@ -1,0 +1,54 @@
+Package: Bootloader_Pristine (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 03:07:46 GMT
+
+Package: Bootloader_Pristine (1.4.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 04:52:33 GMT
+
+Package: Bootloader_Pristine (1.3.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO, spx/LICENSES/LICENSE.AMI
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 03:01:55 GMT
+
+Package: Bootloader_Pristine (1.2.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 14:02:48 EDT
+
+Package: Bootloader_Pristine (1.1.0); urgency = low
+
+Abstract:
+	Description files cleanup
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 10 Nov 2010 15:23:32 EST
+
+Package: Bootloader_Pristine (1.0.0); urgency = new
+
+Abstract:
+	Pristine U-Boot Boot loader 1.1.6
+
+Files Added: data, data/u-boot-1.1.6.tar.bz2, spx, spx/CHANGELOG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/@Bootloader_Pristine, spx/PACKAGES.D/@Bootloader_Pristine/DATA, spx/PACKAGES.D/@Bootloader_Pristine/SCRIPTS, spx/PACKAGES.D/@Bootloader_Pristine/SCRIPTS/dev-install, spx/RULES
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Thu, 09 Sep 2010 17:06:36 EDT
+

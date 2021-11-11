@@ -1,0 +1,201 @@
+Package: stunnel4 (6.1.0.0.0); urgency = low
+
+Abstract:
+	This package contains the stunnel binary for ARM architecture which supports both IPv4 and IPv6 connections.
+
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 16 Feb 2019 00:40:24 UTC
+
+Package: stunnel4 (6.1.0.0.0); urgency = low
+
+Abstract:
+	Adding previous Changelog
+
+Files Modified: spx/CHANGELOG
+
+--Submitter: Winston (winstont)(winstont@ami.com) Sat, 08 Dec 2018 20:16:45 UTC
+
+Package: stunnel4 (6.0.0.0.0); urgency = high
+
+Abstract:
+	This package contains the stunnel binary for ARM architecture which supports both IPv4 and IPv6 connections.
+
+Files Added: data, data/binary, data/binary/stunnel4, data/script, data/script/stunnel4, spx, spx/CHANGELOG, spx/DATA, spx/DATA/keep.folder, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/SCRIPTS, spx/SCRIPTS/dev-install
+
+--Submitter: Winston (winstont)(winstont@ami.com) Mon, 09 Apr 2018 23:38:48 UTC
+
+Package: stunnel4 (3.0.0.0.0); urgency = high
+
+Abstract:
+	Upgraded to 5 Digit format
+
+
+--Submitter: Samvinesh Christopher (vinesh)(vinesh@ami.com) Sat, 19 Aug 2017 03:40:41 UTC
+
+Package: stunnel4 (2.4.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: spx/DATA/keep.folder
+Files Deleted: spx/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 18:17:54 EDT
+
+Package: stunnel4 (2.3.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: spx/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 23:20:33 EST
+
+Package: stunnel4 (2.2.0); urgency = low
+
+Abstract:
+	Fixed essential, dependencies and empty menues
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 03 Dec 2014 13:47:48 EST
+
+Package: stunnel4 (2.1.0); urgency = medium
+
+Abstract:
+	Correction for GROUP, Source-Location and Source-Version fields
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Thu, 23 Oct 2014 23:07:44 GMT
+
+Package: stunnel4 (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 06:32:33 GMT
+
+Package: stunnel4 (1.12.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 07:58:27 GMT
+
+Package: stunnel4 (1.11.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 06:10:24 GMT
+
+Package: stunnel4 (1.10.0); urgency = medium
+
+Abstract:
+	Changed from refering package name to Provides Value
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Thu, 31 Jul 2014 12:16:26 EDT
+
+Package: stunnel4 (1.9.0); urgency = medium
+
+Abstract:
+	Commenting as the newly compiled binary compatible to OpenSSL version 0.9.8za will be used
+
+Files Modified: spx/SCRIPTS/dev-install
+
+--Submitter: Winston (winstont@ami.com) Thu, 19 Jun 2014 19:10:20 GMT
+
+Package: stunnel4 (1.8.0); urgency = medium
+
+Abstract:
+	Adding back the binaries which are needed when openssl of version 0.9.8 is selected in PRJ.
+
+Files Added: data/binary, data/binary/stunnel4
+Files Modified: spx/SCRIPTS/dev-install
+
+--Submitter: Winston (winstont@ami.com) Mon, 01 Jul 2013 23:10:21 EDT
+
+Package: stunnel4 (1.7.0); urgency = medium
+
+Abstract:
+	Modifications done to support openssl version 1.0.1e.
+
+Files Deleted: data/binary, data/binary/stunnel4
+Files Modified: spx/SCRIPTS/dev-install
+
+--Submitter: Winston (winstont@ami.com) Tue, 21 May 2013 20:12:48 EDT
+
+Package: stunnel4 (1.6.0); urgency = low
+
+Abstract:
+	Modified the Error Message
+
+Files Modified: data/script/stunnel4
+
+--Submitter: sudarshan (sudarshans@amiindia.co.in) Mon, 04 Feb 2013 19:32:00 HMT
+
+Package: stunnel4 (1.5.0); urgency = low
+
+Abstract:
+	Fixed to boot in non verbose mode when quiet option is given in kernel command line option
+
+Files Modified: data/script/stunnel4
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 25 Jan 2012 16:17:44 EST
+
+Package: stunnel4 (1.4.0); urgency = high
+
+Abstract:
+	Need to create init.d from this package to install the script to prevent Extract error
+
+Files Modified: spx/SCRIPTS/dev-install
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Mon, 02 May 2011 16:01:26 EDT
+
+Package: stunnel4 (1.3.0); urgency = high
+
+Abstract:
+	Updating the stunnel4 binary for ARM
+
+Files Added: data/binary, data/binary/stunnel4, data/script, data/script/stunnel4
+Files Deleted: data/stunnel4, spx/LICENSES/LICENSE.AMI
+Files Modified: spx/INFO, spx/SCRIPTS/dev-install
+
+--Submitter: Viswanathan Swaminathan (viswanathans@ami.com) Fri, 29 Apr 2011 11:42:02 EDT
+
+Package: stunnel4 (1.2.0); urgency = low
+
+Abstract:
+	* changed the stunnel4 wrong binary path from /usr/sbin to /usr/bin.
+
+Files Modified: spx/SCRIPTS/dev-install
+
+--Submitter: arunkumar (arunkumars@amiindia.co.in) Wed, 06 Oct 2010 01:56:34 IST
+
+Package: stunnel4 (1.1.0); urgency = low
+
+Abstract:
+	* stunnel is dependent to sys_base package
+
+Files Modified: spx/INFO
+
+--Submitter: arunkumar (arunkumars@amiindia.co.in) Wed, 06 Oct 2010 00:28:26 IST
+
+Package: stunnel4 (1.0.0); urgency = new
+
+Abstract:
+	This package contains the stunnel binary for ARM architecture which supports both IPv4 and IPv6 connections.
+
+Files Added: data, data/stunnel4, spx, spx/CHANGELOG, spx/DATA, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.AMI, spx/LICENSES/LICENSE.GPL-V2, spx/SCRIPTS, spx/SCRIPTS/dev-install
+
+--Submitter: arunkumar (arunkumars@amiindia.co.in) Tue, 05 Oct 2010 22:53:16 IST
+

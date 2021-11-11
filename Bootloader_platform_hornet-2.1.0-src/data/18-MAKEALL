@@ -1,0 +1,10 @@
+--- u-boot-1.1.6/MAKEALL	2006-11-02 09:15:01.000000000 -0500
++++ u-boot-1.1.6-PilotIII/MAKEALL	2010-04-05 16:47:24.000000000 -0400
+@@ -196,6 +196,7 @@
+ 	scb9328		smdk2400	smdk2410	trab		\
+ 	VCMA9		versatile	versatileab	versatilepb	\
+ 	voiceblue							\
++	HORNET							\
+ "
+ 
+ #########################################################################

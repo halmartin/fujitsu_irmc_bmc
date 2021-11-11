@@ -1,0 +1,87 @@
+--- uboot/vendors/ami/fwupdate/fwupdate.c	2013-01-22 05:59:19.940808491 -0500
++++ uboot_new/vendors/ami/fwupdate/fwupdate.c	2013-01-22 06:02:26.194748185 -0500
+@@ -39,7 +39,7 @@
+ # include "cmdhandler.h"
+ 
+ 
+-#define 	UBOOT_TIMEOUT_VALUE			0xE00000
++#define 	UBOOT_TIMEOUT_VALUE			0xFFFFFFFF
+ #define 	STR_WRITING					"writing"
+ #define 	STR_DONE					"completed"
+ #define 	FLSTATE_DOING     			0
+@@ -66,6 +66,18 @@
+ extern unsigned char *pNewFirmwareImage;
+ extern unsigned long gImageconfigStart, gImageconfigSize;
+ extern unsigned long Responselen;
++extern void Blink_Err_ID_leds(void);
++ulong start=0;
++#define         EMERGENCY_MODE_LED_BLINKING()  \
++do {                                           \
++       if( get_timer(start) > (500))      \
++       {                                       \
++           Blink_Err_ID_leds();                \
++           set_timer(0);                       \
++           start = get_timer(0);               \
++       }                                       \
++} while (0)	
++
+ 
+ //#define DEBUG 1
+ /*
+@@ -187,7 +199,9 @@
+ 	printf ("done\n");
+ 	gUbootTimeout = UBOOT_TIMEOUT_VALUE;
+ 	memset(&gAMIFlashStatus, 0, sizeof (gAMIFlashStatus));
+-
++ 
++	set_timer (0);
++	start = get_timer(0);
+ 	printf("Uboot waiting for firmware update to start...\n");
+ 
+ 	while (1)
+@@ -209,12 +223,14 @@
+ 			PerformFirmwareReset ();
+ 			continue;			
+ 		}
++
++		EMERGENCY_MODE_LED_BLINKING();
+ 		if(gStartFirmwareUpdation == 1) 
+ 		{
+ 					if (gFWUploadSelector == IMAGE_2)
+ 						BaseFlashAddrs =  CONFIG_SPX_FEATURE_GLOBAL_USED_FLASH_SIZE;
++
+ 					BlkToUpgrade = gEraseBlock;
+-					
+ 					pRamAddress =(unsigned char *)YAFU_IMAGE_UPLOAD_LOCATION;
+ 									   
+ 						if((BlkToUpgrade /CONFIG_SPX_FEATURE_GLOBAL_ERASE_BLOCK_SIZE) < (CONFIG_SPX_FEATURE_GLOBAL_FLASH_SIZE/CONFIG_SPX_FEATURE_GLOBAL_ERASE_BLOCK_SIZE) )
+@@ -233,7 +249,8 @@
+ 								printf ("Flash Read Failed at sector %d and retrying...\n", i);
+ 								continue;
+ 							}
+-		
++
++							EMERGENCY_MODE_LED_BLINKING();
+ 					
+ 							if (0 == memcmp ((unsigned char*)TempBuf, pRamAddress, CONFIG_SPX_FEATURE_GLOBAL_ERASE_BLOCK_SIZE))	
+ 							{
+@@ -252,7 +269,10 @@
+ 									continue;
+ 								}
+ 									break;
+-								}
++							}
++
++							EMERGENCY_MODE_LED_BLINKING();
++								  
+ 							if (0 == retries)
+ 							{
+ 								PerformFirmwareReset ();
+@@ -273,6 +293,7 @@
+ 								}	
+ 								break;
+ 							}
++							EMERGENCY_MODE_LED_BLINKING();
+ 						}
+ 						if (0 == retries)
+ 						{

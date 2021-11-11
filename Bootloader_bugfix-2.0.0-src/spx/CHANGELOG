@@ -1,0 +1,98 @@
+Package: Bootloader_bugfix (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 03:00:22 GMT
+
+Package: Bootloader_bugfix (1.8.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 04:45:53 GMT
+
+Package: Bootloader_bugfix (1.7.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 02:55:26 GMT
+
+Package: Bootloader_bugfix (1.6.0); urgency = low
+
+Abstract:
+	ast1250 bootloader support Support sideband LAN
+
+Files Modified: data/08-net_net.c, spx/LICENSES/LICENSE.AMI
+
+--Submitter: jcchiu (jcchiu@ami.com.tw) Thu, 10 Apr 2014 10:28:07 CST
+
+Package: Bootloader_bugfix (1.5.0); urgency = medium
+
+Abstract:
+	Added support for disabling ping wait timeout
+
+Files Modified: data/08-net_net.c
+
+--Submitter: Sudan Varadachari Ayanam (varadiacharia@ami.com) Tue, 12 Mar 2013 17:23:09 EDT
+
+Package: Bootloader_bugfix (1.4.0); urgency = medium
+
+Abstract:
+	Fixes for strict compiler - Generates error if a variable is assigned and not used
+
+Files Added: data/12-drivers_usbdcore.c, data/13-drivers_videomodes.c, data/14-common_cmd_mem.c, data/15-common_console.c
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 23 Mar 2012 12:04:43 EDT
+
+Package: Bootloader_bugfix (1.3.0); urgency = medium
+
+Abstract:
+	Proper AMI License Added
+
+Files Modified: spx/LICENSES/LICENSE.AMI
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 13 May 2011 14:00:42 EDT
+
+Package: Bootloader_bugfix (1.2.0); urgency = low
+
+Abstract:
+	Description files cleanup
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 10 Nov 2010 15:22:46 EST
+
+Package: Bootloader_bugfix (1.1.0); urgency = medium
+
+Abstract:
+	When some flash is not present, the check should be skip.
+
+Files Modified: data/06-tftp-flash-0.patch
+
+--Submitter: David Chang (DavidChang@ami.com.tw) Fri, 17 Sep 2010 16:30:51 CST
+
+Package: Bootloader_bugfix (1.0.1); urgency = low
+
+Abstract:
+	Version Dependecies Removed
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Wed, 10 Feb 2010 16:53:55 EST
+
+Package:Bootloader_bugfix (1.0.0);urgency=new
+
+Abstract:
+	Bug Fixes to Bootloader 1.1.6
+
+Files Added: 01-ServerIP.patch, 07-bootelf-args.patch, 08-net_net.c, 09-strnicmp.patch, 11-nand_bad_block_options_issue.c, 03-common-make.patch, 10-drivers_nand_nand_ids.c, 04-FC6-makefile.patch, 06-tftp-flash-0.patch
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Tue, 22 Dec 2009 00:37:05 -0500

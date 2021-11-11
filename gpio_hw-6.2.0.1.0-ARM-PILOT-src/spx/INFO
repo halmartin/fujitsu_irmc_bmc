@@ -1,0 +1,42 @@
+Source : gpio_hw
+Version : 6.2.0.1.0
+SPX-Version : 4.0
+SPX-Format : 2.0
+Owner : AMI
+Maintainer : Neelavathi G. (neelavathig@amiindia.co.in)
+License : GPL-V2
+Source-Location : AMI
+Source-Version : 1.0.0
+Builds : gpio_hw, gpio_hw_dev
+Build-Depends : Crosscc, rules, gpio_driver_dev, helper_driver_dev, kernel_dev, DevNodes
+Architecture : ARM
+SOC : PILOT
+Urgency : medium
+Description : This package contains GPIO hardware level driver for PILOT SoC.
+.
+
+#---------------------------------------------------------------------------
+# Binary Packages follows
+# Binary package takes the following fields from source pacakage:
+# Version, SPX-Version, SPX-Format, Owner, Maintainer,License,
+# Architecture,SOC,BOARD,OEM,Urgency
+# Provides,Depends,Required ?
+# ---------------------------------------------------------------------------
+
+Package : gpio_hw
+Section : sys
+Group : DEVICE
+Essential : YES
+Depends : gpio, kernel
+Required : helper, DevNodes
+Provides : gpioDriver
+Description : This package contains built GPIO hardware driver for PILOT SoC.
+.
+
+Package : gpio_hw_dev
+Section : dev
+Group : DEVEL
+Essential : NO
+Description : This package contains gpio driver development header files.
+.
+

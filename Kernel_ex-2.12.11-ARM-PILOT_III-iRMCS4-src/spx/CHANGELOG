@@ -1,0 +1,258 @@
+Package: Kernel_ex (2.12.11); urgency = medium
+
+Abstract:
+	Updated the pilot_time.c as per latest SDK Patch.
+
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Thu, 08 Aug 2019 22:08:23 IST
+
+Package: Kernel_ex (2.12.10); urgency = medium
+
+Abstract:
+	Updated the pilot_time.c as per latest SDK Patch.
+
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Thu, 08 Aug 2019 18:16:15 IST
+
+Package: Kernel_ex (2.12.9); urgency = medium
+
+Abstract:
+	Updated expackage for SPX-12
+
+Files Modified: spx/DEFCONFIG, spx/PACKAGES.D/Kernel_dev_ex/SCRIPTS/dev-install.py, spx/RULES.py
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Wed, 12 Sep 2018 17:19:06 IST
+
+Package: Kernel_ex (2.12.8); urgency = medium
+
+Abstract:
+	Dummy Commit
+
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Wed, 07 Mar 2018 07:29:48 CET
+
+Package: Kernel_ex (2.12.7); urgency = medium
+
+Abstract:
+	Enabled SMBV2.
+
+Files Deleted: spx/RULES.pyc
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Mon, 05 Mar 2018 18:18:30 IST
+
+Package: Kernel_ex (2.12.6); urgency = medium
+
+Abstract:
+	Enabled SMBV2.
+
+Files Added: spx/RULES.pyc
+Files Modified: spx/RULES.py
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Mon, 05 Mar 2018 18:14:11 IST
+
+Package: Kernel_ex (2.12.5); urgency = medium
+
+Abstract:
+	Enabled SMBV2.
+
+Files Modified: spx/DEFCONFIG, spx/RULES.py
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Mon, 05 Mar 2018 17:56:12 IST
+
+Package: Kernel_ex (2.12.4); urgency = medium
+
+Abstract:
+	Dummy Commit : Fix : Winbond 64mb and Macronix 32 mb issue.
+
+
+--Submitter: Gokulakannan Sampath (gokulakannans@amiindia.co.in) Fri, 08 Sep 2017 12:48:22 CEST
+
+Package: Kernel_ex (2.12.3); urgency = low
+
+Abstract:
+	dummy commit to be in sync with binaries
+
+
+--Submitter: Martin Clemens (Martin.Clemens@ts.fujitsu.com) Fri, 25 Aug 2017 09:40:08 CEST
+
+Package: Kernel_ex (2.12.2); urgency = low
+
+Abstract:
+	fix for .config warning message
+
+Files Modified: spx/PACKAGES.D/Kernel_dev_ex/SCRIPTS/dev-install.py, spx/RULES.py
+
+--Submitter: Gourav Kumar Garg (gouravkumarg@amiindia.co.in) Fri, 05 May 2017 18:59:05 HMT
+
+Package: Kernel_ex (2.12.1); urgency = low
+
+Abstract:
+	Added FTS changes
+
+Files Modified: spx/DEFCONFIG, spx/PACKAGES.D/Kernel_dev_ex/SCRIPTS/dev-install.py, spx/PACKAGES.D/Kernel_ex/DATA/keep.folder, spx/RULES.py
+
+--Submitter: deepesh jain (deepeshjain@amiindia.co.in) Tue, 11 Apr 2017 19:45:56 HMT
+
+Package: Kernel_ex (2.12.0); urgency = medium
+
+Abstract:
+	Update Pilot IV SDK to v20160630 for eth driver
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: charliechin (CharlieChin@ami.com.tw) Tue, 23 Aug 2016 10:58:16 CST
+
+Package: Kernel_ex (2.11.0); urgency = medium
+
+Abstract:
+	Changes added to update time stamp accuracy with usec value.
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: neelavathi (neelavathi@amiindia.co.in) Thu, 07 Jul 2016 17:11:35 IST
+
+Package: Kernel_ex (2.10.0); urgency = low
+
+Abstract:
+	Fix Build fail for the CONFIG_FLASH_OPERATION_MODE_MASK not defined issue.
+
+Files Modified: spx/DEFCONFIG, spx/INFO
+
+--Submitter: jcchiu (jcchiu@ami.com.tw) Sun, 29 May 2016 19:45:33 JWST
+
+Package: Kernel_ex (2.9.0); urgency = medium
+
+Abstract:
+	.keep files changed to keep.folder
+
+Files Added: data/keep.folder, spx/PACKAGES.D/Kernel_dev_ex/DATA/keep.folder, spx/PACKAGES.D/Kernel_ex/DATA/keep.folder, spx/PACKAGES.D/Kernel_modules_ex/DATA/keep.folder
+Files Deleted: data/.keep, spx/PACKAGES.D/Kernel_dev_ex/DATA/.keep, spx/PACKAGES.D/Kernel_ex/DATA/.keep, spx/PACKAGES.D/Kernel_modules_ex/DATA/.keep
+
+--Submitter: Samvinesh Christopher (vinesh@ami.com) Thu, 05 May 2016 15:25:16 EDT
+
+Package: Kernel_ex (2.8.0); urgency = medium
+
+Abstract:
+	Initrd is enabled
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Winston (winstont@ami.com) Wed, 17 Feb 2016 17:17:49 EST
+
+Package: Kernel_ex (2.7.0); urgency = medium
+
+Abstract:
+	Adding .keep file to empty directories to satisfy source controls like git
+
+Files Added: data/.keep, spx/PACKAGES.D/Kernel_dev_ex/DATA/.keep, spx/PACKAGES.D/Kernel_ex/DATA/.keep, spx/PACKAGES.D/Kernel_modules_ex/DATA/.keep
+
+--Submitter: Winston (winstont@ami.com) Mon, 04 Jan 2016 20:35:20 EST
+
+Package: Kernel_ex (2.6.0); urgency = medium
+
+Abstract:
+	Initramfs is disabled
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Winston (winstont@ami.com) Thu, 04 Jun 2015 23:26:41 EDT
+
+Package: Kernel_ex (2.5.0); urgency = medium
+
+Abstract:
+	Change udev reguired from sys_udev to DevNodes
+
+Files Modified: spx/INFO
+
+--Submitter: Samvinesh Christopher (vineshc@ami.com) Fri, 22 May 2015 11:34:07 EDT
+
+Package: Kernel_ex (2.4.0); urgency = medium
+
+Abstract:
+	Change Customization-Type.
+
+Files Modified: spx/INFO
+
+--Submitter: ivanlee (ivanlee@ami.com.tw) Thu, 30 Apr 2015 19:18:41 CST
+
+Package: Kernel_ex (2.3.0); urgency = medium
+
+Abstract:
+	Modified to adapt common changes between Pilot-III & Pilot-IV
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Thu, 23 Apr 2015 00:21:00 HMT
+
+Package: Kernel_ex (2.2.0); urgency = medium
+
+Abstract:
+	Added Kernel_oem package in Build-Depends
+
+Files Modified: spx/INFO
+
+--Submitter: bhavesh sahu (bhaveshsahu@amiindia.co.in) Fri, 13 Feb 2015 19:45:25 HMT
+
+Package: Kernel_ex (2.1.0); urgency = medium
+
+Abstract:
+	Enabling Ethernet Brdige Support in Kernel
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Winston (winstont@ami.com) Wed, 04 Feb 2015 15:20:59 GMT
+
+Package: Kernel_ex (2.0.0); urgency = high
+
+Abstract:
+	Converting the packages to SPX 2.0 Format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 18 Oct 2014 04:14:29 GMT
+
+Package: Kernel_ex (1.4.0); urgency = medium
+
+Abstract:
+	Due to various issues reverting the package to SPX 1.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Sat, 27 Sep 2014 05:56:52 GMT
+
+Package: Kernel_ex (1.3.0); urgency = medium
+
+Abstract:
+	Converting the package to SPX 2.0 format
+
+Files Modified: spx/INFO
+
+--Submitter: Winston (winstont@ami.com) Fri, 26 Sep 2014 04:06:35 GMT
+
+Package: Kernel_ex (1.2.0); urgency = medium
+
+Abstract:
+	Removing unnecessary kernel configurations
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Winston (winstont@ami.com) Wed, 17 Sep 2014 18:10:15 GMT
+
+Package: Kernel_ex (1.1.0); urgency = medium
+
+Abstract:
+	Enabling SD support for Pilot-iii for kernel 3.14.17
+
+Files Modified: spx/DEFCONFIG
+
+--Submitter: Winston (winstont@ami.com) Fri, 12 Sep 2014 19:10:25 GMT
+
+Package: Kernel_ex (1.0.0); urgency = new
+
+Abstract:
+	HORNET Platform Kernel 3.4.74 configuration
+
+Files Added: data, spx, spx/CHANGELOG, spx/DEFCONFIG, spx/FILES, spx/INFO, spx/LICENSES, spx/LICENSES/LICENSE.GPL-V2, spx/PACKAGES.D, spx/PACKAGES.D/Kernel_dev_ex, spx/PACKAGES.D/Kernel_dev_ex/DATA, spx/PACKAGES.D/Kernel_dev_ex/SCRIPTS, spx/PACKAGES.D/Kernel_dev_ex/SCRIPTS/dev-install.py, spx/PACKAGES.D/Kernel_ex, spx/PACKAGES.D/Kernel_ex/DATA, spx/PACKAGES.D/Kernel_ex/SCRIPTS, spx/PACKAGES.D/Kernel_ex/SCRIPTS/dev-install.py, spx/PACKAGES.D/Kernel_modules_ex, spx/PACKAGES.D/Kernel_modules_ex/DATA, spx/PACKAGES.D/Kernel_modules_ex/SCRIPTS, spx/PACKAGES.D/Kernel_modules_ex/SCRIPTS/dev-install.py, spx/RULES.py
+
+--Submitter: sureshv (sureshv@amiindia.co.in) Sat, 06 Sep 2014 15:39:41 HMT
+
